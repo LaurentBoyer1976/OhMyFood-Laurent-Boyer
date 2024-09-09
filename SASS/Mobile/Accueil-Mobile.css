@@ -1,0 +1,36 @@
+/*Variables*/
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #f6f6f6;
+}
+
+@media screen and (min-width: 320px) and (max-width: 780px) {
+  /*Header*/
+  .Navbar {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+  }
+  .Navbar .Navbar__Title {
+    padding: 14px 89px 13px 89px;
+    border: 1px solid pink;
+  }
+  .Navbar .Navbar__GeoLoc {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #EAEAEA;
+    border: 1px solid blue;
+    gap: 17px;
+    padding: 15.5px 118.5px;
+  }
+  .Navbar .Navbar__GeoLoc--sample {
+    font-weight: 500;
+  }
+}/*# sourceMappingURL=Accueil-Mobile.css.map */

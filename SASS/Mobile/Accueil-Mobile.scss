@@ -1,0 +1,48 @@
+    /*Variables*/
+    $mainColor : #f3f3f3;
+    $bodyColor : #f6f6f6;
+    $mainFont : 'Roboto', sans-serif;
+    $brandFont : 'Shrikhand', sans-serif;
+    $geolocColor: #EAEAEA;
+    $mainFontW500: 500;
+    
+    *{
+        font-family: $mainFont;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        background-color: $bodyColor;
+        
+    }
+@media screen and (min-width : 320px) and (max-width : 780px) {
+    /*Header*/
+    .Navbar{
+        display: flex;flex-flow: column nowrap;
+        border: 2px solid black;
+        justify-content: center;
+        align-items: center;
+        .Navbar__Title{
+            padding: 14px 89px 13px 89px;
+            border: 1px solid pink;
+        }        
+        .Navbar__GeoLoc{
+            display: flex;
+            flex-flow: row nowrap;
+            background-color: $geolocColor;
+            border: 1px solid blue;
+            gap: 17px;
+            padding: 15.5px 118.5px; 
+            &--sample{
+                font-weight: $mainFontW500;
+            }           
+        }
+    }
+    
+}
+
+    
+    
+
+
