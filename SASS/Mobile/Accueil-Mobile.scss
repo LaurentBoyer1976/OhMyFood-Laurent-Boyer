@@ -1,234 +1,48 @@
-       
-/*Importation des fichiers styles, variables et mixins*/
-
-    @import '../Footer';
-    @import '../Var&Mixins.scss';
-
-/*Général*/
+    /*Variables*/
+    $mainColor : #f3f3f3;
+    $bodyColor : #f6f6f6;
+    $mainFont : 'Roboto', sans-serif;
+    $brandFont : 'Shrikhand', sans-serif;
+    $geolocColor: #EAEAEA;
+    $mainFontW500: 500;
+    
     *{
-        font-family: $mainFont;        
+        font-family: $mainFont;
     }
 
-@media screen and (min-width : 320px) and (max-width : 780px){
-/*BODY*/
     body {
         display: grid;
         grid-template-columns: 1fr;
         background-color: $bodyColor;
-        margin:0;
-        @include Size__Box();            
-        }    
-        /*Main-Container*/
-        .Main-Container{
-            @include Display__Box();
-            @include Size__Box();
-        } 
-        /*Header*/
         
-        #Head__site{
-            @include HeaderPosition();            
-            @include Size__Box();
+    }
+@media screen and (min-width : 320px) and (max-width : 780px) {
+    /*Header*/
+    .Navbar{
+        display: flex;flex-flow: column nowrap;
+        border: 2px solid black;
+        justify-content: center;
+        align-items: center;
+        .Navbar__Title{
+            padding: 14px 89px 13px 89px;
+            border: 1px solid pink;
+        }        
+        .Navbar__GeoLoc{
+            display: flex;
+            flex-flow: row nowrap;
+            background-color: $geolocColor;
+            border: 1px solid blue;
+            gap: 17px;
+            padding: 15.5px 118.5px; 
+            &--sample{
+                font-weight: $mainFontW500;
+            }           
         }
-        .Navbar{
-            @include NavbarStyle();
-            padding-bottom: 9px;
-        }                    
-            .Navbar__Title{
-                padding: 14px 89px 13px 89px;
-            }        
-            .Navbar__GeoLoc{
-                @include NavbarStyle($flow: row wrap);                
-                background-color: $geolocColor;
-                gap: 17px;
-                width: 100%;
-                padding: 15.5px 0;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                &--sample{
-                    font-weight: $mainFontW500;
-                    font-size: $mainFontS16;
-                }           
-            }
-        
-        /*Main*/
-        main{
-            @include Display__Box();
-            @include Size__Box();
-            background-color: $BtnFontColor;
-        }
-            /* Explore__section*/
-        #Explore{
-            @include Display__Box();
-            @include Size__Box();
-            background-color: $bodyColor;
-            padding: 30px 15px 55px 15px;
-            .C-Explore__Site{
-                @include Display__Box();
-                @include Size__Box();
-                gap:20px;   
-                &--title{
-                    @include mains__title();
-                    align-self: center;
-                    text-align: center;
-                    max-width: 74%;
-                    margin: 0;
-                }
-                &--text{
-                    font-size: $mainFontS18;
-                    font-weight: $mainFontW300;
-                    align-self: center;
-                    width: 315px;
-                    margin: 0px;
-                    text-align: center;
-                }
-                &--Btn{
-                    @include mains__Btn--Rounded();
-                    align-self: center;    
-                }            
-            }
-        }
-        /*How It Works Section*/
-        #HowItWorks{
-            @include Display__Box();
-            @include Size__Box();        
-            .C-HowItWorks{
-                @include Display__Box();
-                @include Size__Box();
-                padding: 40px 20px 65px 20px;             
-                .C-HowItWorks__title{
-                    @include mains__title();
-                    align-self: flex-start;
-                    margin: 0;
-                }
-                .C-HowItWorks__Container{
-                    @include Size__Box();
-                    margin-left: 15px;                                                           
-                }                               
-                .C-HowItWorks__BlockStep{
-                    &--NumberContainer{
-                        display: flex;                    
-                    }                
-                    &--Nbr{
-                        @include Display-Step();                   
-                        @include Position-Step();
-                        @include Step-Style();                          
-                    }                               
-                    &--Btn{ 
-                        @include HowItWorksBTN;                                                                               
-                    }
-                    &--Btn i{ 
-                        display: flex;
-                        align-self: flex-end;                                                                   
-                        margin: auto 15px auto 25px;
-                        color: #7e7e7e;                                                                    
-                    }
-                    &--Btn .fa-store{
-                        color: $BtnBckColor1;
-                    }
-                }    
-            }
-                        
-        }
-            /*Main-Article, restaurant lien et carte de présentation*/
-            #Main__Article{
-                @include Display__Box($justifyC: unset, $Alignitems: unset);
-                @include Size__Box();
-                background-color: $bodyColor;
-                padding: 0 18px 0 17px;
-                max-height: 1230px;
-            }
-            .Show__Restaurant{
-                @include Display__Box($justifyC: unset);
-                @include Size__Box();
-                max-height: 100%;           
-            }
-            .Cards__Container{
-                @include Display__Box($justifyC: unset);
-                @include Size__Box();
-                max-height: 85%;
-                border-radius: 15px;
-                gap: 18px;
-                &--title {
-                    font-size: $mainFontS24;
-                    font-weight: $mainFontW700;
-                    align-self: flex-start;
-                    padding-top: 55px;
-                    padding-bottom: 2px;
-                    margin:0;
-                }                    
-            }
-            .Restaurant__cards{
-                @include Display__Box();
-                @include Size__Box();
-                max-height: 23.2%;                
-                border-radius: 15px;
-                &--link{
-                    @include Display__Box($justifyC: flex-end, $Alignitems: unset);
-                    @include Size__Box();                
-                    height: 100%;
-                    text-decoration: none;
-                    border-radius: 15px;
-                }                             
-            }                                  
-            .Picture__Box{
-                @include Display__Box($Alignitems:unset, $justifyC: flex-end);
-                @include Size__Box();
-                max-height: 70%;                 
-                    &--new{
-                        @include BoxNew--position;
-                        @include BoxNew--color;
-                        @include BoxNew--Size;
-                        @include BoxNew--Fontsize;                         
-                        }
-                    &--IMG{
-                        display: flex;                                    
-                        clip-path: $cutoutIMG;
-                        object-fit: cover;
-                        }
-                }
-                .Cards__Container .Restaurant__cards:nth-child(4) .Picture__Box--new:first-child {
-                    visibility: $Advertise;
-                  }
-                  .Cards__Container .Restaurant__cards:nth-child(5) .Picture__Box--new:first-child {
-                    visibility: $Advertise;
-                  }      
-                    .Restaurant__info{
-                        display: flex;
-                        flex-flow: row;
-                        justify-content: space-between;
-                        border-bottom-left-radius: 15px;
-                        border-bottom-right-radius: 15px ;
-                        padding: 10px 25px 10px 10px;
-                        background-color: $BtnFontColor;                    
-                        max-height: 30%;
-                        & i{
-                            display: flex;
-                            align-self: center;
-                            position: relative;
-                            height: 21px;
-                            width: 22px;
-                            left: 10px;
-                            font-size: larger;                                                
-                            bottom: 5px;
-                            color: $BlackFont;                
-                        }
-                        .Information__text{
-                            display: flex;
-                            flex-flow: column wrap; 
-                            gap:5px;
-                            &--name{
-                                font-weight: $mainFontW700;
-                                font-size: $mainFontS18;
-                                color: $BlackFont;
-                                margin:0;
-                            }
-                            &--district{
-                                font-weight: $mainFontW300;
-                                font-size: $mainFontS17;
-                                color: $BlackFont;
-                                margin:0;
-                            }                     
-                        }             
-                    }
-                    
-
+    }
+    
 }
+
+    
+    
+
+
