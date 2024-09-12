@@ -192,8 +192,7 @@ body {
                     @include Display-Step();                   
                     @include Position-Step();
                     @include Step-Style();                          
-                }      
-                                
+                }                               
                 &--Btn{                                    
                     display: flex;
                     position: relative;
@@ -212,8 +211,7 @@ body {
                     display: flex;
                     align-self: flex-end;                                                                   
                     margin: auto 15px auto 25px;
-                    color: #7e7e7e;
-                                                                    
+                    color: #7e7e7e;                                                                    
                 }
                 &--Btn .fa-store{
                     color: $BtnBckColor1;
@@ -222,4 +220,5 @@ body {
         }
                     
     }
+    /*Main-Article, restaurant lien et carte de présentation*/
 }
