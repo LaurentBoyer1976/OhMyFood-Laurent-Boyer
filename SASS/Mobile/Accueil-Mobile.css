@@ -1,22 +1,53 @@
+@charset "UTF-8";
 /*Variables*/
+/*color*/
+/*Font*/
+/*Sizing Width Height Box-Sizing*/
+/*liste*/
+/*Mixins*/
+/*mixins Section HowItWorks*/
+/*Général*/
 * {
   font-family: "Roboto", sans-serif;
 }
 
-body {
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: #f6f6f6;
-}
-
 @media screen and (min-width: 320px) and (max-width: 780px) {
+  /*BODY*/
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #f6f6f6;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  /*Main-Container*/
+  .Main-Container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
   /*Header*/
+  header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
   .Navbar {
     display: flex;
     flex-flow: column nowrap;
     border: 2px solid black;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
   }
   .Navbar .Navbar__Title {
     padding: 14px 89px 13px 89px;
@@ -32,5 +63,142 @@ body {
   }
   .Navbar .Navbar__GeoLoc--sample {
     font-weight: 500;
+  }
+  /*Main*/
+  main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 2px solid purple;
+  }
+  /* Explore__section*/
+  #Explore {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 30px 15px;
+    border: 2px dashed red;
+  }
+  #Explore .C-Explore__Site {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    gap: 20px;
+    border: 1px dashed gray;
+  }
+  #Explore .C-Explore__Site--title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    align-self: center;
+    text-align: center;
+    max-width: 74%;
+    margin: 0;
+  }
+  #Explore .C-Explore__Site--text {
+    font-size: 1.125rem;
+    font-weight: 300;
+    align-self: center;
+    width: 315px;
+    margin: 0px;
+    text-align: center;
+  }
+  #Explore .C-Explore__Site--Btn {
+    font-weight: 500;
+    color: #FFFFFF;
+    border-radius: 25px;
+    background: linear-gradient(to top, #9356DC, #FF79DA);
+    padding: 13px 16px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    align-self: center;
+  }
+  /*How It Works Section*/
+  #HowItWorks {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 2px dashed yellow;
+  }
+  #HowItWorks .C-HowItWorks {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 40px 20px 65px 20px;
+    border: 2px solid yellowgreen;
+  }
+  #HowItWorks .C-HowItWorks .C-HowItWorks__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    align-self: flex-start;
+    margin: 0;
+  }
+  #HowItWorks .C-HowItWorks .C-HowItWorks__Container {
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: 15px;
+  }
+  #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--NumberContainer {
+    display: flex;
+  }
+  #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--Nbr {
+    display: flex;
+    flex-flow: wrap;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+    z-index: 2;
+    top: 40px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #9356DC;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--Btn {
+    display: flex;
+    position: relative;
+    align-items: center;
+    font-size: 1rem;
+    width: 85%;
+    font-weight: 500;
+    background-color: #f6f6f6;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+    padding: 20px 10px 20px 0px;
+    margin-left: 5px;
+  }
+  #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--Btn i {
+    display: flex;
+    align-self: flex-end;
+    margin: auto 15px auto 25px;
+    color: #7e7e7e;
+  }
+  #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--Btn .fa-store {
+    color: #9356DC;
   }
 }/*# sourceMappingURL=Accueil-Mobile.css.map */
