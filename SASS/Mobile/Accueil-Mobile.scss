@@ -1,0 +1,348 @@
+    /*Variables*/
+        /*color*/
+    $mainColor : #f3f3f3;
+    $bodyColor : #f6f6f6;
+    $geolocColor: #EAEAEA;
+    $BtnFontColor: #FFFFFF;
+    $BtnBckColor1: #9356DC;
+    $BtnBckColor2: #FF79DA;
+    $NewCardColor: #99E2D0;
+    $FontNewCardColor: #008766;
+    $BlackFont: black;
+
+    $BtnGradient: linear-gradient(to top, $BtnBckColor1, $BtnBckColor2);
+    $Shadow:0px 4px 10px 0px rgba(0,0,0,0.15);
+    
+        /*Font*/
+    $mainFont : 'Roboto', sans-serif;
+    $brandFont : 'Shrikhand', sans-serif; 
+    $mainFontW300: 300;  
+    $mainFontW500: 500;
+    $mainFontW700: 700;
+    $mainFontS14: 0.875rem;
+    $mainFontS17: 1.0625rem;
+    $mainFontS18: 1.125rem;
+    $mainFontS24: 1.5rem;
+
+    /*Sizing Width Height Box-Sizing*/
+    $main-MinW: 320px;
+    $main-MaxW: 100%;
+    $main-Bsizing: border-box;
+    $cutoutIMG: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+
+   
+    /*Mixins*/
+    @mixin Size__Box($MinW: $main-MinW, $MaxW: $main-MaxW, $Sizing:$main-Bsizing){
+        min-width: $MinW;
+        max-width: $MaxW;
+        box-sizing: $Sizing;
+    }
+    @mixin Display__Box($display: flex, $flow: column nowrap, $justifyC: center, $Alignitems: center){
+        display: $display;
+        flex-flow: $flow;
+        justify-content: $justifyC;
+        align-items: $Alignitems;
+    }
+    @mixin mains__title($size: $mainFontS24, $weight: $mainFontW700){
+        font-size: $size;
+        font-weight: $weight;
+    }
+    @mixin mains__Btn--Rounded($weight: $mainFontW500, $FontColor: $BtnFontColor, $Radius:25px, $Padding: 13px 16px, $Gradient: $BtnGradient, $Shadow:0px 4px 10px 0px rgba(0,0,0,0.25), $Border: none){
+        font-weight: $weight;
+        color: $BtnFontColor;
+        border-radius: $Radius;
+        background: $Gradient;        
+        padding: $Padding;
+        box-shadow: $Shadow;
+        border: $Border;
+    }
+    /*mixins Section HowItWorks*/
+    @mixin Display-Step($display:flex, $flow:wrap, $position:relative, $align: center, $justify: center){
+        display: $display;
+        flex-flow: $flow;
+        position: $position;
+        align-content: $align;
+       justify-content: $justify; 
+    }
+    @mixin Position-Step($Zindex:2, $Postop:40px, $PosRight:10px, $WSize:24px, $HSize:24px, $Radius:50%){
+        z-index: $Zindex;
+        top:$Postop;
+        right:$PosRight;                   
+        width: $WSize;
+        height: $HSize;
+        border-radius: $Radius;   
+    }
+    @mixin Step-Style($BckColor: $BtnBckColor1, $Fontcolor: $BtnFontColor, $FSize: $mainFontS14, $FWeight: $mainFontW500){
+        background-color: $BckColor;
+        color: $Fontcolor;
+        font-size: $FSize;
+        font-weight: $FWeight;
+    }             
+
+    /*Général*/
+    *{
+        font-family: $mainFont;        
+    }
+
+@media screen and (min-width : 320px) and (max-width : 780px){
+/*BODY*/
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: $bodyColor;
+    margin:0;
+    @include Size__Box();            
+    }    
+    /*Main-Container*/
+    .Main-Container{
+        @include Display__Box();
+        @include Size__Box();
+    } 
+    /*Header*/
+    header{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        @include Size__Box();
+    }
+    .Navbar{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        
+        .Navbar__Title{
+            padding: 14px 89px 13px 89px;
+        }        
+        .Navbar__GeoLoc{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            background-color: $geolocColor;
+            gap: 17px;
+            width: 100%;
+            padding: 15.5px 0px; 
+            &--sample{
+                font-weight: $mainFontW500;
+            }           
+        }
+    }
+    /*Main*/
+    main{
+        @include Display__Box();
+        @include Size__Box();
+        border: 2px solid purple;
+        background-color: $BtnFontColor;
+    }
+        /* Explore__section*/
+    #Explore{
+        @include Display__Box();
+        @include Size__Box();
+        padding: 30px 15px;
+        border: 2px dashed red;
+        .C-Explore__Site{
+            @include Display__Box();
+            @include Size__Box();
+            gap:20px;
+            border: 1px dashed gray;
+            &--title{
+                @include mains__title();
+                align-self: center;
+                text-align: center;
+                max-width: 74%;
+                margin: 0;
+            }
+            &--text{
+                font-size: $mainFontS18;
+                font-weight: $mainFontW300;
+                align-self: center;
+                width: 315px;
+                margin: 0px;
+                text-align: center;
+            }
+            &--Btn{
+                @include mains__Btn--Rounded();
+                align-self: center;    
+            }            
+        }
+    }
+    /*How It Works Section*/
+    #HowItWorks{
+        @include Display__Box();
+        @include Size__Box();
+        border: 2px dashed yellow;
+        .C-HowItWorks{
+            @include Display__Box();
+            @include Size__Box();
+            padding: 40px 20px 65px 20px; 
+            border: 2px solid yellowgreen;
+            .C-HowItWorks__title{
+                @include mains__title();
+                align-self: flex-start;
+                margin: 0;
+            }
+            .C-HowItWorks__Container{
+                @include Size__Box();
+                margin-left: 15px;                                                           
+            }                               
+            .C-HowItWorks__BlockStep{
+                &--NumberContainer{
+                    display: flex;                    
+                }                
+                &--Nbr{
+                    @include Display-Step();                   
+                    @include Position-Step();
+                    @include Step-Style();                          
+                }                               
+                &--Btn{                                    
+                    display: flex;
+                    position: relative;
+                    align-items: center;
+                    font-size: 1rem;                                    
+                    width: 85%;                                       
+                    font-weight: $mainFontW500;
+                    background-color: $bodyColor;
+                    border: none;
+                    border-radius: 20px;
+                    box-shadow: $Shadow;
+                    padding: 20px 10px 20px 0px;
+                    margin-left: 5px;       
+                }
+                &--Btn i{ 
+                    display: flex;
+                    align-self: flex-end;                                                                   
+                    margin: auto 15px auto 25px;
+                    color: #7e7e7e;                                                                    
+                }
+                &--Btn .fa-store{
+                    color: $BtnBckColor1;
+                }
+            }    
+        }
+                    
+    }
+        /*Main-Article, restaurant lien et carte de présentation*/
+        #Main__Article{
+            @include Display__Box($justifyC: unset, $Alignitems: unset);
+            @include Size__Box();
+            background-color: $bodyColor;
+            padding: 0 18px 0 17px;
+            max-height: 1230px;
+        }
+        .Show__Restaurant{
+            @include Display__Box($justifyC: unset);
+            @include Size__Box();
+            max-height: 100%;           
+        }
+            .Cards__Container{
+                @include Display__Box($justifyC: unset);
+                @include Size__Box();
+                max-height: 85%;
+                border-radius: 15px;
+                gap: 18px;
+                & h1{
+                    font-size: $mainFontS24;
+                    font-weight: $mainFontW700;
+                    align-self: flex-start;
+                    padding-top: 55px;
+                    padding-bottom: 2px;
+                    margin:0;
+                }    
+                
+            }
+            .Show__Restaurant--cards{
+                @include Display__Box();
+                @include Size__Box();
+                max-height: 23.2%;                
+                border-radius: 15px;             
+                
+            }                                  
+            .Show__Restaurant--link{
+                @include Display__Box($justifyC: flex-end, $Alignitems: unset);
+                @include Size__Box();                
+                height: 100%;
+                text-decoration: none;
+                border-radius: 15px;
+            }
+            .Picture__Box{
+                @include Display__Box($Alignitems:unset, $justifyC: flex-end);
+                @include Size__Box();
+                max-height: 70%;
+                    &--new{
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $NewCardColor;
+                        color: $FontNewCardColor;
+                        z-index: 2;
+                        width: 80px;
+                        height: 29px;
+                        left: 240px;
+                        top: 90px;
+                        padding: 5px 0;
+                        border-radius: 2px;
+                        font-size: $mainFontS14;
+                        font-weight: $mainFontW500;  
+                        }
+                    & img{
+                        display: flex;                                    
+                        clip-path: $cutoutIMG;
+                        object-fit: cover;
+                        }
+                }     
+                .Show__Restaurant--text{
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: space-between;
+                    border-bottom-left-radius: 15px;
+                    border-bottom-right-radius: 15px ;
+                    padding: 10px 25px 10px 10px;
+                    background-color: $BtnFontColor;                    
+                    max-height: 30%;
+
+                    & img{
+                        display: flex;
+                        align-self: center;
+                        position: relative;
+                        height: 21px;
+                        width: 22px;
+                        font-size: larger;
+                        left: 10px;
+                        bottom: 5px;
+                        color: $BlackFont;                
+                    }             
+                }
+                .Show__Restaurant--info{
+                    display: flex;
+                    flex-flow: column wrap; 
+                    gap:5px;
+                    & h2{
+                        font-weight: $mainFontW700;
+                        font-size: $mainFontS18;
+                        color: $BlackFont;
+                        margin:0;
+                    }
+                    & h3{
+                        font-weight: $mainFontW300;
+                        font-size: $mainFontS17;
+                        color: $BlackFont;
+                        margin:0;
+                    }                     
+                }      
+        
+        /*.Show__Restaurant .Show__Restaurant--cards:nth-of-type(2) .Show__Restaurant--IMG {
+            /* Styles spécifiques pour la deuxième image */
+            /*clip-path: xywh(0 103px 101% 52% round 5% 5% 0 0);
+            
+        }
+        /*.Show__Restaurant .Show__Restaurant--cards:nth-of-type(2) .Show__Restaurant--text {
+            /* Styles spécifiques pour la deuxième image */
+           /*z-index: 2;
+           position: relative;
+           bottom:42px;
+        }*/
+        
+}
