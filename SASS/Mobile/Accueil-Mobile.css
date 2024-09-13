@@ -3,7 +3,6 @@
 /*color*/
 /*Font*/
 /*Sizing Width Height Box-Sizing*/
-/*liste*/
 /*Mixins*/
 /*mixins Section HowItWorks*/
 /*Général*/
@@ -17,6 +16,7 @@
     display: grid;
     grid-template-columns: 1fr;
     background-color: #f6f6f6;
+    margin: 0;
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
@@ -44,22 +44,21 @@
   .Navbar {
     display: flex;
     flex-flow: column nowrap;
-    border: 2px solid black;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
   }
   .Navbar .Navbar__Title {
     padding: 14px 89px 13px 89px;
-    border: 1px solid pink;
   }
   .Navbar .Navbar__GeoLoc {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: center;
     background-color: #EAEAEA;
-    border: 1px solid blue;
     gap: 17px;
-    padding: 15.5px 118.5px;
+    width: 100%;
+    padding: 15.5px 0px;
   }
   .Navbar .Navbar__GeoLoc--sample {
     font-weight: 500;
@@ -74,6 +73,7 @@
     max-width: 100%;
     box-sizing: border-box;
     border: 2px solid purple;
+    background-color: #FFFFFF;
   }
   /* Explore__section*/
   #Explore {
@@ -202,4 +202,152 @@
     color: #9356DC;
   }
   /*Main-Article, restaurant lien et carte de présentation*/
+  #Main__Article {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: unset;
+    align-items: unset;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    background-color: #f6f6f6;
+    padding: 0 18px 0 17px;
+    max-height: 1230px;
+  }
+  .Show__Restaurant {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: unset;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    max-height: 100%;
+  }
+  .Cards__Container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: unset;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    max-height: 85%;
+    border-radius: 15px;
+    gap: 18px;
+  }
+  .Cards__Container h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    align-self: flex-start;
+    padding-top: 55px;
+    padding-bottom: 2px;
+    margin: 0;
+  }
+  .Show__Restaurant--cards {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    max-height: 23.2%;
+    border-radius: 15px;
+  }
+  .Show__Restaurant--link {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: unset;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    text-decoration: none;
+    border-radius: 15px;
+  }
+  .Picture__Box {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: unset;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    max-height: 70%;
+  }
+  .Picture__Box--new {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #99E2D0;
+    color: #008766;
+    z-index: 2;
+    width: 80px;
+    height: 29px;
+    left: 240px;
+    top: 90px;
+    padding: 5px 0;
+    border-radius: 2px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .Picture__Box img {
+    display: flex;
+    -webkit-clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+            clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .Show__Restaurant--text {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px 25px 10px 10px;
+    background-color: #FFFFFF;
+    max-height: 30%;
+  }
+  .Show__Restaurant--text img {
+    display: flex;
+    align-self: center;
+    position: relative;
+    height: 21px;
+    width: 22px;
+    font-size: larger;
+    left: 10px;
+    bottom: 5px;
+    color: black;
+  }
+  .Show__Restaurant--info {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 5px;
+  }
+  .Show__Restaurant--info h2 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: black;
+    margin: 0;
+  }
+  .Show__Restaurant--info h3 {
+    font-weight: 300;
+    font-size: 1.0625rem;
+    color: black;
+    margin: 0;
+  }
+  /*.Show__Restaurant .Show__Restaurant--cards:nth-of-type(2) .Show__Restaurant--IMG {
+      /* Styles spécifiques pour la deuxième image */
+  /*clip-path: xywh(0 103px 101% 52% round 5% 5% 0 0);
+
+  }
+  /*.Show__Restaurant .Show__Restaurant--cards:nth-of-type(2) .Show__Restaurant--text {
+      /* Styles spécifiques pour la deuxième image */
+  /*z-index: 2;
+     position: relative;
+     bottom:42px;
+  }*/
 }/*# sourceMappingURL=Accueil-Mobile.css.map */

@@ -6,6 +6,10 @@
     $BtnFontColor: #FFFFFF;
     $BtnBckColor1: #9356DC;
     $BtnBckColor2: #FF79DA;
+    $NewCardColor: #99E2D0;
+    $FontNewCardColor: #008766;
+    $BlackFont: black;
+
     $BtnGradient: linear-gradient(to top, $BtnBckColor1, $BtnBckColor2);
     $Shadow:0px 4px 10px 0px rgba(0,0,0,0.15);
     
@@ -16,6 +20,7 @@
     $mainFontW500: 500;
     $mainFontW700: 700;
     $mainFontS14: 0.875rem;
+    $mainFontS17: 1.0625rem;
     $mainFontS18: 1.125rem;
     $mainFontS24: 1.5rem;
 
@@ -23,21 +28,20 @@
     $main-MinW: 320px;
     $main-MaxW: 100%;
     $main-Bsizing: border-box;
+    $cutoutIMG: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
 
-    /*liste*/
-    $step-count: 3;
-
+   
     /*Mixins*/
     @mixin Size__Box($MinW: $main-MinW, $MaxW: $main-MaxW, $Sizing:$main-Bsizing){
         min-width: $MinW;
         max-width: $MaxW;
         box-sizing: $Sizing;
     }
-    @mixin Display__Box($display: flex, $flow: column nowrap, $justify-C: center, $A-items: center){
+    @mixin Display__Box($display: flex, $flow: column nowrap, $justifyC: center, $Alignitems: center){
         display: $display;
         flex-flow: $flow;
-        justify-content: $justify-C;
-        align-items: $A-items;
+        justify-content: $justifyC;
+        align-items: $Alignitems;
     }
     @mixin mains__title($size: $mainFontS24, $weight: $mainFontW700){
         font-size: $size;
@@ -86,8 +90,9 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     background-color: $bodyColor;
+    margin:0;
     @include Size__Box();            
-}    
+    }    
     /*Main-Container*/
     .Main-Container{
         @include Display__Box();
@@ -104,22 +109,21 @@ body {
     .Navbar{
         display: flex;
         flex-flow: column nowrap;
-        border: 2px solid black;
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
         
         .Navbar__Title{
             padding: 14px 89px 13px 89px;
-            border: 1px solid pink;
         }        
         .Navbar__GeoLoc{
             display: flex;
             flex-flow: row nowrap;
+            justify-content: center;
             background-color: $geolocColor;
-            border: 1px solid blue;
             gap: 17px;
-            padding: 15.5px 118.5px; 
+            width: 100%;
+            padding: 15.5px 0px; 
             &--sample{
                 font-weight: $mainFontW500;
             }           
@@ -130,6 +134,7 @@ body {
         @include Display__Box();
         @include Size__Box();
         border: 2px solid purple;
+        background-color: $BtnFontColor;
     }
         /* Explore__section*/
     #Explore{
@@ -180,13 +185,11 @@ body {
             }
             .C-HowItWorks__Container{
                 @include Size__Box();
-                margin-left: 15px; 
-                                                          
+                margin-left: 15px;                                                           
             }                               
             .C-HowItWorks__BlockStep{
                 &--NumberContainer{
-                    display: flex;
-                    
+                    display: flex;                    
                 }                
                 &--Nbr{
                     @include Display-Step();                   
@@ -220,5 +223,126 @@ body {
         }
                     
     }
-    /*Main-Article, restaurant lien et carte de présentation*/
+        /*Main-Article, restaurant lien et carte de présentation*/
+        #Main__Article{
+            @include Display__Box($justifyC: unset, $Alignitems: unset);
+            @include Size__Box();
+            background-color: $bodyColor;
+            padding: 0 18px 0 17px;
+            max-height: 1230px;
+        }
+        .Show__Restaurant{
+            @include Display__Box($justifyC: unset);
+            @include Size__Box();
+            max-height: 100%;           
+        }
+            .Cards__Container{
+                @include Display__Box($justifyC: unset);
+                @include Size__Box();
+                max-height: 85%;
+                border-radius: 15px;
+                gap: 18px;
+                & h1{
+                    font-size: $mainFontS24;
+                    font-weight: $mainFontW700;
+                    align-self: flex-start;
+                    padding-top: 55px;
+                    padding-bottom: 2px;
+                    margin:0;
+                }    
+                
+            }
+            .Show__Restaurant--cards{
+                @include Display__Box();
+                @include Size__Box();
+                max-height: 23.2%;                
+                border-radius: 15px;             
+                
+            }                                  
+            .Show__Restaurant--link{
+                @include Display__Box($justifyC: flex-end, $Alignitems: unset);
+                @include Size__Box();                
+                height: 100%;
+                text-decoration: none;
+                border-radius: 15px;
+            }
+            .Picture__Box{
+                @include Display__Box($Alignitems:unset, $justifyC: flex-end);
+                @include Size__Box();
+                max-height: 70%;
+                    &--new{
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $NewCardColor;
+                        color: $FontNewCardColor;
+                        z-index: 2;
+                        width: 80px;
+                        height: 29px;
+                        left: 240px;
+                        top: 90px;
+                        padding: 5px 0;
+                        border-radius: 2px;
+                        font-size: $mainFontS14;
+                        font-weight: $mainFontW500;  
+                        }
+                    & img{
+                        display: flex;                                    
+                        clip-path: $cutoutIMG;
+                        object-fit: cover;
+                        }
+                }     
+                .Show__Restaurant--text{
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: space-between;
+                    border-bottom-left-radius: 15px;
+                    border-bottom-right-radius: 15px ;
+                    padding: 10px 25px 10px 10px;
+                    background-color: $BtnFontColor;                    
+                    max-height: 30%;
+
+                    & img{
+                        display: flex;
+                        align-self: center;
+                        position: relative;
+                        height: 21px;
+                        width: 22px;
+                        font-size: larger;
+                        left: 10px;
+                        bottom: 5px;
+                        color: $BlackFont;                
+                    }             
+                }
+                .Show__Restaurant--info{
+                    display: flex;
+                    flex-flow: column wrap; 
+                    gap:5px;
+                    & h2{
+                        font-weight: $mainFontW700;
+                        font-size: $mainFontS18;
+                        color: $BlackFont;
+                        margin:0;
+                    }
+                    & h3{
+                        font-weight: $mainFontW300;
+                        font-size: $mainFontS17;
+                        color: $BlackFont;
+                        margin:0;
+                    }                     
+                }      
+        
+        /*.Show__Restaurant .Show__Restaurant--cards:nth-of-type(2) .Show__Restaurant--IMG {
+            /* Styles spécifiques pour la deuxième image */
+            /*clip-path: xywh(0 103px 101% 52% round 5% 5% 0 0);
+            
+        }
+        /*.Show__Restaurant .Show__Restaurant--cards:nth-of-type(2) .Show__Restaurant--text {
+            /* Styles spécifiques pour la deuxième image */
+           /*z-index: 2;
+           position: relative;
+           bottom:42px;
+        }*/
+        
 }
