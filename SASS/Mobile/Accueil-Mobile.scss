@@ -1,0 +1,253 @@
+       
+/*Importation des fichiers styles, variables et mixins*/
+
+    @import 'Footer';
+    @import 'Var&mixins';
+
+/*Général*/
+    *{
+        font-family: $mainFont;        
+    }
+
+@media screen and (min-width : 320px) and (max-width : 780px){
+/*BODY*/
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: $bodyColor;
+    margin:0;
+    @include Size__Box();            
+    }    
+    /*Main-Container*/
+    .Main-Container{
+        @include Display__Box();
+        @include Size__Box();
+    } 
+    /*Header*/
+    header{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        @include Size__Box();
+    }
+    .Navbar{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        
+        .Navbar__Title{
+            padding: 14px 89px 13px 89px;
+        }        
+        .Navbar__GeoLoc{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            background-color: $geolocColor;
+            gap: 17px;
+            width: 100%;
+            padding: 15.5px 0px; 
+            &--sample{
+                font-weight: $mainFontW500;
+                font-size: $mainFontS16;
+            }           
+        }
+    }
+    /*Main*/
+    main{
+        @include Display__Box();
+        @include Size__Box();
+        background-color: $BtnFontColor;
+    }
+        /* Explore__section*/
+    #Explore{
+        @include Display__Box();
+        @include Size__Box();
+        padding: 30px 15px 55px 15px;
+        .C-Explore__Site{
+            @include Display__Box();
+            @include Size__Box();
+            gap:20px;   
+            &--title{
+                @include mains__title();
+                align-self: center;
+                text-align: center;
+                max-width: 74%;
+                margin: 0;
+            }
+            &--text{
+                font-size: $mainFontS18;
+                font-weight: $mainFontW300;
+                align-self: center;
+                width: 315px;
+                margin: 0px;
+                text-align: center;
+            }
+            &--Btn{
+                @include mains__Btn--Rounded();
+                align-self: center;    
+            }            
+        }
+    }
+    /*How It Works Section*/
+    #HowItWorks{
+        @include Display__Box();
+        @include Size__Box();        
+        .C-HowItWorks{
+            @include Display__Box();
+            @include Size__Box();
+            padding: 40px 20px 65px 20px;             
+            .C-HowItWorks__title{
+                @include mains__title();
+                align-self: flex-start;
+                margin: 0;
+            }
+            .C-HowItWorks__Container{
+                @include Size__Box();
+                margin-left: 15px;                                                           
+            }                               
+            .C-HowItWorks__BlockStep{
+                &--NumberContainer{
+                    display: flex;                    
+                }                
+                &--Nbr{
+                    @include Display-Step();                   
+                    @include Position-Step();
+                    @include Step-Style();                          
+                }                               
+                &--Btn{                                    
+                    display: flex;
+                    position: relative;
+                    align-items: center;
+                    font-size: 1rem;                                    
+                    width: 85%;                                       
+                    font-weight: $mainFontW500;
+                    background-color: $bodyColor;
+                    border: none;
+                    border-radius: 20px;
+                    box-shadow: $Shadow;
+                    padding: 20px 10px 20px 0px;
+                    margin-left: 5px;       
+                }
+                &--Btn i{ 
+                    display: flex;
+                    align-self: flex-end;                                                                   
+                    margin: auto 15px auto 25px;
+                    color: #7e7e7e;                                                                    
+                }
+                &--Btn .fa-store{
+                    color: $BtnBckColor1;
+                }
+            }    
+        }
+                    
+    }
+        /*Main-Article, restaurant lien et carte de présentation*/
+        #Main__Article{
+            @include Display__Box($justifyC: unset, $Alignitems: unset);
+            @include Size__Box();
+            background-color: $bodyColor;
+            padding: 0 18px 0 17px;
+            max-height: 1230px;
+        }
+        .Show__Restaurant{
+            @include Display__Box($justifyC: unset);
+            @include Size__Box();
+            max-height: 100%;           
+        }
+            .Cards__Container{
+                @include Display__Box($justifyC: unset);
+                @include Size__Box();
+                max-height: 85%;
+                border-radius: 15px;
+                gap: 18px;
+                & h1{
+                    font-size: $mainFontS24;
+                    font-weight: $mainFontW700;
+                    align-self: flex-start;
+                    padding-top: 55px;
+                    padding-bottom: 2px;
+                    margin:0;
+                }                    
+            }
+            .Show__Restaurant--cards{
+                @include Display__Box();
+                @include Size__Box();
+                max-height: 23.2%;                
+                border-radius: 15px;                             
+            }                                  
+            .Show__Restaurant--link{
+                @include Display__Box($justifyC: flex-end, $Alignitems: unset);
+                @include Size__Box();                
+                height: 100%;
+                text-decoration: none;
+                border-radius: 15px;
+            }
+            .Picture__Box{
+                @include Display__Box($Alignitems:unset, $justifyC: flex-end);
+                @include Size__Box();
+                max-height: 70%;
+                    &--new{
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $NewCardColor;
+                        color: $FontNewCardColor;
+                        z-index: 2;
+                        width: 80px;
+                        height: 29px;
+                        left: 240px;
+                        top: 90px;
+                        padding: 5px 0;
+                        border-radius: 2px;
+                        font-size: $mainFontS14;
+                        font-weight: $mainFontW500;  
+                        }
+                    & img{
+                        display: flex;                                    
+                        clip-path: $cutoutIMG;
+                        object-fit: cover;
+                        }
+                }     
+                .Show__Restaurant--text{
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: space-between;
+                    border-bottom-left-radius: 15px;
+                    border-bottom-right-radius: 15px ;
+                    padding: 10px 25px 10px 10px;
+                    background-color: $BtnFontColor;                    
+                    max-height: 30%;
+                    & img{
+                        display: flex;
+                        align-self: center;
+                        position: relative;
+                        height: 21px;
+                        width: 22px;
+                        font-size: larger;                                                left: 10px;
+                        bottom: 5px;
+                        color: $BlackFont;                
+                    }             
+                }
+                .Show__Restaurant--info{
+                    display: flex;
+                    flex-flow: column wrap; 
+                    gap:5px;
+                    & h2{
+                        font-weight: $mainFontW700;
+                        font-size: $mainFontS18;
+                        color: $BlackFont;
+                        margin:0;
+                    }
+                    & h3{
+                        font-weight: $mainFontW300;
+                        font-size: $mainFontS17;
+                        color: $BlackFont;
+                        margin:0;
+                    }                     
+                }
+
+}

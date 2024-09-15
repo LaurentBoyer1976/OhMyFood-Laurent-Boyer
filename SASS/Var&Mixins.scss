@@ -1,0 +1,83 @@
+    /*Variables*/
+        /*color*/
+        $mainColor : #f3f3f3;
+        $bodyColor : #f6f6f6;
+        $geolocColor: #EAEAEA;
+        $BtnFontColor: #FFFFFF;
+        $BtnBckColor1: #9356DC;
+        $BtnBckColor2: #FF79DA;
+        $NewCardColor: #99E2D0;
+        $FooterBCKColor: #353535;
+        $FontNewCardColor: #008766;
+        $BlackFont: black;
+    
+        $BtnGradient: linear-gradient(to top, $BtnBckColor1, $BtnBckColor2);
+        $Shadow:0px 4px 10px 0px rgba(0,0,0,0.15);
+        
+            /*Font*/
+        $mainFont : 'Roboto', sans-serif;
+        $brandFont : 'Shrikhand', sans-serif; 
+        $mainFontW300: 300;
+        $mainFontW400: 400;  
+        $mainFontW500: 500;
+        $mainFontW700: 700;
+        $mainFontS14: 0.875rem;
+        $mainFontS16: 1rem;
+        $mainFontS17: 1.0625rem;
+        $mainFontS18: 1.125rem;
+        $mainFontS24: 1.5rem;
+    
+        /*Sizing Width Height Box-Sizing*/
+        $main-MinW: 320px;
+        $main-MaxW: 100%;
+        $main-Bsizing: border-box;
+        $cutoutIMG: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+    
+       
+        /*Mixins*/
+        @mixin Size__Box($MinW: $main-MinW, $MaxW: $main-MaxW, $Sizing:$main-Bsizing){
+            min-width: $MinW;
+            max-width: $MaxW;
+            box-sizing: $Sizing;
+        }
+        @mixin Display__Box($display: flex, $flow: column nowrap, $justifyC: center, $Alignitems: center){
+            display: $display;
+            flex-flow: $flow;
+            justify-content: $justifyC;
+            align-items: $Alignitems;
+        }
+        @mixin mains__title($size: $mainFontS24, $weight: $mainFontW700){
+            font-size: $size;
+            font-weight: $weight;
+        }
+        @mixin mains__Btn--Rounded($weight: $mainFontW500, $FontColor: $BtnFontColor, $Radius:25px, $Padding: 13px 16px, $Gradient: $BtnGradient, $Shadow:0px 4px 10px 0px rgba(0,0,0,0.25), $Border: none){
+            font-weight: $weight;
+            color: $BtnFontColor;
+            border-radius: $Radius;
+            background: $Gradient;        
+            padding: $Padding;
+            box-shadow: $Shadow;
+            border: $Border;
+        }
+        /*mixins Section HowItWorks*/
+        @mixin Display-Step($display:flex, $flow:wrap, $position:relative, $align: center, $justify: center){
+            display: $display;
+            flex-flow: $flow;
+            position: $position;
+            align-content: $align;
+           justify-content: $justify; 
+        }
+        @mixin Position-Step($Zindex:2, $Postop:40px, $PosRight:10px, $WSize:24px, $HSize:24px, $Radius:50%){
+            z-index: $Zindex;
+            top:$Postop;
+            right:$PosRight;                   
+            width: $WSize;
+            height: $HSize;
+            border-radius: $Radius;   
+        }
+        @mixin Step-Style($BckColor: $BtnBckColor1, $Fontcolor: $BtnFontColor, $FSize: $mainFontS14, $FWeight: $mainFontW500){
+            background-color: $BckColor;
+            color: $Fontcolor;
+            font-size: $FSize;
+            font-weight: $FWeight;
+        } 

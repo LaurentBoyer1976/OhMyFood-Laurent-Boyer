@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <meta name="description" content="Menu du restaurant la palette du goût sur le site Ohmyfood">
         <title>Restaurant la palette du goût</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,12 +17,12 @@
     </head>
     <body>
         <header>
-            <div>
-                <a href="../Accueil.html">
+            <nav class="Navbar">
+                <a class="Navbar__Link"  href="../Accueil.html" aria-label="Retour vers la page d'accueil">
                     <i class="fa-solid fa-arrow-left"></i> 
                 </a>
-                <img src="..\..\IMAGES\Logos\ohmyfood@2x.svg">
-            </div>    
+                <img class="Navbar__Logo" src="..\..\IMAGES\Logos\ohmyfood@2x.svg" alt="Logo Ohmyfood">
+            </nav>    
         </header>
      
             <div class="Main-Container__Menu">
@@ -99,17 +100,17 @@
                 </main>
             </div>
         
-        <footer>
-            <div>
-                <img src="../../IMAGES/Logos/ohmyfood@2x.svg">
-                <ul>
-                    <li><i class="fa-solid fa-utensils"></i>Proposer un restaurant</li>
-                    <li><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</li>
-                    <li>Mentions légales</li>
-                    <li>Contact</li>
-                </ul>
-            </div>
-        </footer>
+            <footer id="Generic__Footer">
+                <div class="Container__List">
+                    <img class="Container__List--logo" src="../IMAGES/Logos/ohmyfood@2xwhite.svg" alt="Logo Ohmyfood">
+                    <ul class="List__Info">
+                        <li class="List__Info--suggest"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</li>
+                        <li class="List__Info--partner"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</li>
+                        <li class="List__Info--legal">Mentions légales</li>
+                        <li class="List__Info--contact"><a class="List__Info--link"href="mailto:ohmyfood@gmail.com">Contact</a></li>
+                    </ul>
+                </div>
+            </footer>
 
     </body>
 </html>
