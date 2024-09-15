@@ -1,85 +1,10 @@
-    /*Variables*/
-        /*color*/
-    $mainColor : #f3f3f3;
-    $bodyColor : #f6f6f6;
-    $geolocColor: #EAEAEA;
-    $BtnFontColor: #FFFFFF;
-    $BtnBckColor1: #9356DC;
-    $BtnBckColor2: #FF79DA;
-    $NewCardColor: #99E2D0;
-    $FontNewCardColor: #008766;
-    $BlackFont: black;
+       
+/*Importation des fichiers styles, variables et mixins*/
 
-    $BtnGradient: linear-gradient(to top, $BtnBckColor1, $BtnBckColor2);
-    $Shadow:0px 4px 10px 0px rgba(0,0,0,0.15);
-    
-        /*Font*/
-    $mainFont : 'Roboto', sans-serif;
-    $brandFont : 'Shrikhand', sans-serif; 
-    $mainFontW300: 300;  
-    $mainFontW500: 500;
-    $mainFontW700: 700;
-    $mainFontS14: 0.875rem;
-    $mainFontS17: 1.0625rem;
-    $mainFontS18: 1.125rem;
-    $mainFontS24: 1.5rem;
+    @import 'Footer';
+    @import 'Var&mixins';
 
-    /*Sizing Width Height Box-Sizing*/
-    $main-MinW: 320px;
-    $main-MaxW: 100%;
-    $main-Bsizing: border-box;
-    $cutoutIMG: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
-
-   
-    /*Mixins*/
-    @mixin Size__Box($MinW: $main-MinW, $MaxW: $main-MaxW, $Sizing:$main-Bsizing){
-        min-width: $MinW;
-        max-width: $MaxW;
-        box-sizing: $Sizing;
-    }
-    @mixin Display__Box($display: flex, $flow: column nowrap, $justifyC: center, $Alignitems: center){
-        display: $display;
-        flex-flow: $flow;
-        justify-content: $justifyC;
-        align-items: $Alignitems;
-    }
-    @mixin mains__title($size: $mainFontS24, $weight: $mainFontW700){
-        font-size: $size;
-        font-weight: $weight;
-    }
-    @mixin mains__Btn--Rounded($weight: $mainFontW500, $FontColor: $BtnFontColor, $Radius:25px, $Padding: 13px 16px, $Gradient: $BtnGradient, $Shadow:0px 4px 10px 0px rgba(0,0,0,0.25), $Border: none){
-        font-weight: $weight;
-        color: $BtnFontColor;
-        border-radius: $Radius;
-        background: $Gradient;        
-        padding: $Padding;
-        box-shadow: $Shadow;
-        border: $Border;
-    }
-    /*mixins Section HowItWorks*/
-    @mixin Display-Step($display:flex, $flow:wrap, $position:relative, $align: center, $justify: center){
-        display: $display;
-        flex-flow: $flow;
-        position: $position;
-        align-content: $align;
-       justify-content: $justify; 
-    }
-    @mixin Position-Step($Zindex:2, $Postop:40px, $PosRight:10px, $WSize:24px, $HSize:24px, $Radius:50%){
-        z-index: $Zindex;
-        top:$Postop;
-        right:$PosRight;                   
-        width: $WSize;
-        height: $HSize;
-        border-radius: $Radius;   
-    }
-    @mixin Step-Style($BckColor: $BtnBckColor1, $Fontcolor: $BtnFontColor, $FSize: $mainFontS14, $FWeight: $mainFontW500){
-        background-color: $BckColor;
-        color: $Fontcolor;
-        font-size: $FSize;
-        font-weight: $FWeight;
-    }             
-
-    /*Général*/
+/*Général*/
     *{
         font-family: $mainFont;        
     }
@@ -126,6 +51,7 @@ body {
             padding: 15.5px 0px; 
             &--sample{
                 font-weight: $mainFontW500;
+                font-size: $mainFontS16;
             }           
         }
     }
@@ -133,20 +59,17 @@ body {
     main{
         @include Display__Box();
         @include Size__Box();
-        border: 2px solid purple;
         background-color: $BtnFontColor;
     }
         /* Explore__section*/
     #Explore{
         @include Display__Box();
         @include Size__Box();
-        padding: 30px 15px;
-        border: 2px dashed red;
+        padding: 30px 15px 55px 15px;
         .C-Explore__Site{
             @include Display__Box();
             @include Size__Box();
-            gap:20px;
-            border: 1px dashed gray;
+            gap:20px;   
             &--title{
                 @include mains__title();
                 align-self: center;
@@ -171,13 +94,11 @@ body {
     /*How It Works Section*/
     #HowItWorks{
         @include Display__Box();
-        @include Size__Box();
-        border: 2px dashed yellow;
+        @include Size__Box();        
         .C-HowItWorks{
             @include Display__Box();
             @include Size__Box();
-            padding: 40px 20px 65px 20px; 
-            border: 2px solid yellowgreen;
+            padding: 40px 20px 65px 20px;             
             .C-HowItWorks__title{
                 @include mains__title();
                 align-self: flex-start;
@@ -249,15 +170,13 @@ body {
                     padding-top: 55px;
                     padding-bottom: 2px;
                     margin:0;
-                }    
-                
+                }                    
             }
             .Show__Restaurant--cards{
                 @include Display__Box();
                 @include Size__Box();
                 max-height: 23.2%;                
-                border-radius: 15px;             
-                
+                border-radius: 15px;                             
             }                                  
             .Show__Restaurant--link{
                 @include Display__Box($justifyC: flex-end, $Alignitems: unset);
@@ -302,15 +221,13 @@ body {
                     padding: 10px 25px 10px 10px;
                     background-color: $BtnFontColor;                    
                     max-height: 30%;
-
                     & img{
                         display: flex;
                         align-self: center;
                         position: relative;
                         height: 21px;
                         width: 22px;
-                        font-size: larger;
-                        left: 10px;
+                        font-size: larger;                                                left: 10px;
                         bottom: 5px;
                         color: $BlackFont;                
                     }             
@@ -331,18 +248,6 @@ body {
                         color: $BlackFont;
                         margin:0;
                     }                     
-                }      
-        
-        /*.Show__Restaurant .Show__Restaurant--cards:nth-of-type(2) .Show__Restaurant--IMG {
-            /* Styles spécifiques pour la deuxième image */
-            /*clip-path: xywh(0 103px 101% 52% round 5% 5% 0 0);
-            
-        }
-        /*.Show__Restaurant .Show__Restaurant--cards:nth-of-type(2) .Show__Restaurant--text {
-            /* Styles spécifiques pour la deuxième image */
-           /*z-index: 2;
-           position: relative;
-           bottom:42px;
-        }*/
-        
+                }
+
 }

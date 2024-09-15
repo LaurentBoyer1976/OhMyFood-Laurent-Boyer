@@ -1,0 +1,42 @@
+/*Footer générique ohmyfood*/
+#Generic__Footer{
+    @include Display__Box($Alignitems: flex-start, $justifyC: unset, $flow: column);
+    @include Size__Box();
+    padding: 22px 25px;
+    width: 100%;
+    background-color: $FooterBCKColor;
+    color: $BtnFontColor;
+}
+    .Container__List{
+        @include Display__Box($Alignitems: unset);
+        gap: 16px;
+        &--logo{
+            width: 139px;
+            height: 27px;
+        }
+
+    }
+    .List__Info{
+        @include Display__Box($Alignitems:unset, $justifyC:unset);
+            font-weight: $mainFontW500;
+            list-style: none;
+            gap:7px;
+            padding: 0;
+            margin:0;
+        &--suggest{
+            display: flex;
+            column-gap: 16px;
+        }
+        &--partner{
+            display: flex;
+            column-gap: 10px;
+        }
+        &--legal{
+            font-weight: $mainFontW400;
+        }
+        &--link{
+            text-decoration: none;
+            color: $BtnFontColor;
+        }
+
+    }
