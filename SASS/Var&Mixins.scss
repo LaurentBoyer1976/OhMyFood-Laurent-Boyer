@@ -9,12 +9,11 @@
         $NewCardColor: #99E2D0;
         $FooterBCKColor: #353535;
         $FontNewCardColor: #008766;
-        $BlackFont: black;
-    
+        $BlackFont: black;    
         $BtnGradient: linear-gradient(to top, $BtnBckColor1, $BtnBckColor2);
         $Shadow:0px 4px 10px 0px rgba(0,0,0,0.15);
         
-            /*Font*/
+        /*Font*/
         $mainFont : 'Roboto', sans-serif;
         $brandFont : 'Shrikhand', sans-serif; 
         $mainFontW300: 300;
@@ -32,9 +31,12 @@
         $main-MaxW: 100%;
         $main-Bsizing: border-box;
         $cutoutIMG: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+
+        /*rendre visible ou caché un élément*/
+        $Advertise: hidden;
     
        
-        /*Mixins*/
+        /*Mixins générales*/
         @mixin Size__Box($MinW: $main-MinW, $MaxW: $main-MaxW, $Sizing:$main-Bsizing){
             min-width: $MinW;
             max-width: $MaxW;
@@ -59,7 +61,26 @@
             box-shadow: $Shadow;
             border: $Border;
         }
+        /*Mixins Navbar*/
+        @mixin NavbarStyle($display: flex, $flow: column nowrap, $justifyC: center, $Alignitems: center, $B-Sizing: border-box){
+            display: $display;
+            flex-flow: $flow;
+            justify-content: $justifyC;
+            align-items: $Alignitems;
+            box-sizing: $B-Sizing;  
+        }
         /*mixins Section HowItWorks*/
+        @mixin HowItWorksBTN($display: flex, $flow: wrap, $position: relative, $Alignitems: center, $justifyC: center, $Lmargin: 5px, $Padding: 20px 10px 20px 0px, $Radius: 20px, $FontSize: 1rem, $Width: 85%, $FontWeight: $mainFontW500, $BCKGroundColor: $bodyColor, $Border: none, $BShadow: $Shadow) {
+            @include Display-Step($display, $flow, $position, $Alignitems, $justifyC);
+            margin: $Lmargin;
+            padding: $Padding;
+            width: $Width;
+            font-weight: $FontWeight;
+            background-color: $BCKGroundColor;
+            border: $Border;
+            border-radius: $Radius;
+            box-shadow: $Shadow;
+          }
         @mixin Display-Step($display:flex, $flow:wrap, $position:relative, $align: center, $justify: center){
             display: $display;
             flex-flow: $flow;
@@ -80,4 +101,28 @@
             color: $Fontcolor;
             font-size: $FSize;
             font-weight: $FWeight;
+        }
+        /*mixins section cards restaurant*/
+        @mixin BoxNew--position($display: flex, $position: relative, $justifyC: center, $Alignitems: center, $Zindex: 2, $left: 240px, $top: 90px){
+            position: $position;
+            display: $display;
+            justify-content: $justifyC;
+            align-items: $Alignitems;
+            z-index: $Zindex;
+            left: $left;
+            top: $top;
+        }
+        @mixin BoxNew--color($BCKGroundColor: $NewCardColor, $Color: $FontNewCardColor){
+            background-color: $BCKGroundColor;
+            color: $Color;
+         }
+         @mixin BoxNew--Size($Width: 80px, $Height: 29px, $Padding: 5px 0px, $Radius: 2px){
+            width: $Width;
+            height: $Height;
+            padding: $Padding;
+            border-radius: $Radius;
         } 
+        @mixin BoxNew--Fontsize($FontSize: $mainFontS14, $FontWeight: $mainFontW500){
+            font-size: $FontSize;
+            font-weight: $FontWeight; 
+        }
