@@ -32,7 +32,9 @@
             @include Size__Box();
         }
         .Navbar{
-            @include NavbarStyle();                    
+            @include NavbarStyle();
+            padding-bottom: 9px;
+        }                    
             .Navbar__Title{
                 padding: 14px 89px 13px 89px;
             }        
@@ -41,14 +43,14 @@
                 background-color: $geolocColor;
                 gap: 17px;
                 width: 100%;
-                padding: 15.5px 0px;
+                padding: 15.5px 0;
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
                 &--sample{
                     font-weight: $mainFontW500;
                     font-size: $mainFontS16;
                 }           
             }
-        }
+        
         /*Main*/
         main{
             @include Display__Box();
