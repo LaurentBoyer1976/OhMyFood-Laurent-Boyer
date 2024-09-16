@@ -1,3 +1,5 @@
+@import 'Var&Mixins';
+
 /*Footer générique ohmyfood*/
 #Generic__Footer{
     @include Display__Box($Alignitems: flex-start, $justifyC: unset, $flow: column);
@@ -14,7 +16,6 @@
             width: 139px;
             height: 27px;
         }
-
     }
     .List__Info{
         @include Display__Box($Alignitems:unset, $justifyC:unset);
@@ -38,5 +39,4 @@
             text-decoration: none;
             color: $BtnFontColor;
         }
-
     }

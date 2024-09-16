@@ -1,10 +1,79 @@
 @charset "UTF-8";
+/*Importation des fichiers styles, variables et mixins*/
 /*Variables*/
 /*color*/
 /*Font*/
 /*Sizing Width Height Box-Sizing*/
-/*Mixins*/
+/*rendre visible ou caché un élément*/
+/*Mixins générales*/
+/*Mixins Navbar*/
 /*mixins Section HowItWorks*/
+/*mixins section cards restaurant*/
+/*Footer générique ohmyfood*/
+#Generic__Footer {
+  display: flex;
+  flex-flow: column;
+  justify-content: unset;
+  align-items: flex-start;
+  min-width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 22px 25px;
+  width: 100%;
+  background-color: #353535;
+  color: #FFFFFF;
+}
+
+.Container__List {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: unset;
+  gap: 16px;
+}
+.Container__List--logo {
+  width: 139px;
+  height: 27px;
+}
+
+.List__Info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: unset;
+  align-items: unset;
+  font-weight: 500;
+  list-style: none;
+  gap: 7px;
+  padding: 0;
+  margin: 0;
+}
+.List__Info--suggest {
+  display: flex;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+}
+.List__Info--partner {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.List__Info--legal {
+  font-weight: 400;
+}
+.List__Info--link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+/*Variables*/
+/*color*/
+/*Font*/
+/*Sizing Width Height Box-Sizing*/
+/*rendre visible ou caché un élément*/
+/*Mixins générales*/
+/*Mixins Navbar*/
+/*mixins Section HowItWorks*/
+/*mixins section cards restaurant*/
 /*Général*/
 * {
   font-family: "Roboto", sans-serif;
@@ -53,12 +122,15 @@
   }
   .Navbar .Navbar__GeoLoc {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
     background-color: #EAEAEA;
     gap: 17px;
     width: 100%;
     padding: 15.5px 0px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
   .Navbar .Navbar__GeoLoc--sample {
     font-weight: 500;
@@ -73,7 +145,6 @@
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
-    border: 2px solid purple;
     background-color: #FFFFFF;
   }
   /* Explore__section*/
@@ -85,8 +156,8 @@
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
+    background-color: #f6f6f6;
     padding: 30px 15px 55px 15px;
-    border: 2px dashed red;
   }
   #Explore .C-Explore__Site {
     display: flex;
@@ -97,7 +168,6 @@
     max-width: 100%;
     box-sizing: border-box;
     gap: 20px;
-    border: 1px dashed gray;
   }
   #Explore .C-Explore__Site--title {
     font-size: 1.5rem;
@@ -134,7 +204,6 @@
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
-    border: 2px dashed yellow;
   }
   #HowItWorks .C-HowItWorks {
     display: flex;
@@ -145,7 +214,6 @@
     max-width: 100%;
     box-sizing: border-box;
     padding: 40px 20px 65px 20px;
-    border: 2px solid yellowgreen;
   }
   #HowItWorks .C-HowItWorks .C-HowItWorks__title {
     font-size: 1.5rem;
@@ -181,17 +249,18 @@
   }
   #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--Btn {
     display: flex;
+    flex-flow: wrap;
     position: relative;
-    align-items: center;
-    font-size: 1rem;
+    align-content: center;
+    justify-content: center;
+    margin: 5px;
+    padding: 20px 10px 20px 0px;
     width: 85%;
     font-weight: 500;
     background-color: #f6f6f6;
     border: none;
     border-radius: 20px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
-    padding: 20px 10px 20px 0px;
-    margin-left: 5px;
   }
   #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--Btn i {
     display: flex;
@@ -237,7 +306,7 @@
     border-radius: 15px;
     gap: 18px;
   }
-  .Cards__Container h1 {
+  .Cards__Container--title {
     font-size: 1.5rem;
     font-weight: 700;
     align-self: flex-start;
@@ -245,7 +314,7 @@
     padding-bottom: 2px;
     margin: 0;
   }
-  .Show__Restaurant--cards {
+  .Restaurant__cards {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -256,7 +325,7 @@
     max-height: 23.2%;
     border-radius: 15px;
   }
-  .Show__Restaurant--link {
+  .Restaurant__cards--link {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-end;
@@ -283,26 +352,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #99E2D0;
-    color: #008766;
     z-index: 2;
-    width: 80px;
-    height: 29px;
     left: 240px;
     top: 90px;
-    padding: 5px 0;
+    background-color: #99E2D0;
+    color: #008766;
+    width: 80px;
+    height: 29px;
+    padding: 5px 0px;
     border-radius: 2px;
     font-size: 0.875rem;
     font-weight: 500;
   }
-  .Picture__Box img {
+  .Picture__Box--IMG {
     display: flex;
     -webkit-clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
             clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .Show__Restaurant--text {
+  .Cards__Container .Restaurant__cards:nth-child(4) .Picture__Box--new:first-child {
+    visibility: hidden;
+  }
+  .Cards__Container .Restaurant__cards:nth-child(5) .Picture__Box--new:first-child {
+    visibility: hidden;
+  }
+  .Restaurant__info {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -312,85 +387,32 @@
     background-color: #FFFFFF;
     max-height: 30%;
   }
-  .Show__Restaurant--text img {
+  .Restaurant__info i {
     display: flex;
     align-self: center;
     position: relative;
     height: 21px;
     width: 22px;
-    font-size: larger;
     left: 10px;
+    font-size: larger;
     bottom: 5px;
     color: black;
   }
-  .Show__Restaurant--info {
+  .Restaurant__info .Information__text {
     display: flex;
     flex-flow: column wrap;
     gap: 5px;
   }
-  .Show__Restaurant--info h2 {
+  .Restaurant__info .Information__text--name {
     font-weight: 700;
     font-size: 1.125rem;
     color: black;
     margin: 0;
   }
-  .Show__Restaurant--info h3 {
+  .Restaurant__info .Information__text--district {
     font-weight: 300;
     font-size: 1.0625rem;
     color: black;
     margin: 0;
-  }
-  /*Footer générique ohmyfood*/
-  #Generic__Footer {
-    display: flex;
-    flex-flow: column;
-    justify-content: unset;
-    align-items: flex-start;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 22px 25px;
-    width: 100%;
-    background-color: #353535;
-    color: #FFFFFF;
-  }
-  .Container__List {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: unset;
-    gap: 16px;
-  }
-  .Container__List--logo {
-    width: 139px;
-    height: 27px;
-  }
-  .List__Info {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: unset;
-    align-items: unset;
-    font-weight: 500;
-    list-style: none;
-    gap: 7px;
-    padding: 0;
-    margin: 0;
-  }
-  .List__Info--suggest {
-    display: flex;
-    -moz-column-gap: 16px;
-         column-gap: 16px;
-  }
-  .List__Info--partner {
-    display: flex;
-    -moz-column-gap: 10px;
-         column-gap: 10px;
-  }
-  .List__Info--legal {
-    font-weight: 400;
-  }
-  .List__Info--link {
-    text-decoration: none;
-    color: #FFFFFF;
   }
 }/*# sourceMappingURL=Accueil-Mobile.css.map */
