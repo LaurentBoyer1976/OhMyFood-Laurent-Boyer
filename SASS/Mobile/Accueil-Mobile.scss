@@ -24,11 +24,9 @@
             @include Size__Box();
         } 
         /*Header*/
-        header{
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
+        
+        #Head__site{
+            @include HeaderPosition();            
             @include Size__Box();
         }
         .Navbar{
