@@ -8,148 +8,41 @@
     font-family: $mainFont;        
 }
 
-/*body & Main-container*/
+/*body*/
 body {
     display: grid;
     grid-template-columns: 1fr;
-    background-color: #1fe0;
+    background-color: $bodyColor;
     margin:0;
     @include Size__Box();            
-    }
-    .Main-Container{
-        @include Display__Box($flow:column wrap);
-        @include Size__Box();
-        background-color: #1fe0;
-        margin: 0;
-    }     
+    }    
 
     /*header et navbar styles*/
-    #Head__site{        
-        @include HeaderPosition();                            
+    #Head__Site{        
+        @include HeaderPosition();            
         @include Size__Box();
-        width: 100%;  
-
     }
     .Navbar{
-    @include NavbarStyle($flow:row, $justifyC: unset);
-        gap: 40px;    
-        min-width: 320px;
-        width: 100%;
-        max-width: 780px;
-        padding: 12.5px 0;
+    @include NavbarStyle($flow:row);
+    gap: 40px;
     }
     .Navbar__Title{
-        display: flex;      
-    
-    }    
-     .Navbar__Link{
+    padding: 14px 89px 13px 49px;
+    }
+    .fa-solid{
         display: flex;
+        align-items: baseline;
+        width: 60px;
+        height: 60px;
+    
+    }
+     .Navbar__Link{
         font-weight: 500;
         width: 30px;
         height: 30px;
-        text-decoration: none;
-        align-items: center;
-        justify-content: flex-start;      
-        & i{        
-                width: 17px;
-                color: $ArrowLcolor;
-                margin-left: 17px;    
-            }       
-    }
-     /*Main et Menu et card menu*/
-     main{
-       background-color: #1fe0;
-    }      
-    .Background__Menu{
-        @include Display__Box;
-        @include Size__Box;
-        &--IMG{
-            @include BckImgMenu();         
-        }
-    }
-    #Main__Article{
-        @include Display__Box;
-        padding: 0 13px;
-        gap: 40px;
-        border-radius: 40px 40px 0 0;
-        background-color: $bodyColor;
-        padding-bottom: 40px;
-    }
-    .Restaurant__Presentation{
-        @include Restaurant__present();      
+    }        
 
-        &--title{
-            font-family: $brandFont;
-            font-size: $mainFontS28;
-            margin: 31px 0 0 0;            
-        }
-        & i{
-            width: 21px;
-            height: 21px;
-            position: relative;
-            bottom: 5px;
-            align-self: end;
-            text-align: center;
-        }
-    }
-    .Menu{
-        @include Display__Box();
-        @include Size__Box();
-        width: 100%;
-        gap:40px;
-    }
-    .Menu__Starter, .Menu__Maincourse, .Menu__Dessert{
-        @include Display__Box($Alignitems: unset);
-        @include Size__Box();
-        gap: 12px;
-        width: 100%;
-        &--title{
-            @include Menu__Title();
-            margin: 0;                                
-        }
-        &--title::after{
-            content:"";
-            display: block;
-            margin-top: 5px;
-            width: 40px;
-            height: 3px;
-            background-color:$NewCardColor;
-        }        
-    }
-    .Menu__Btn{
-        @include Display__Box($flow: row);
-        width: 100%; 
-        border: none;
-        background-color: $BtnFontColor;
-        border-radius: 15px;
-        padding: 13.5px 15px;
-        box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
-        &--price{
-            align-self: end;
-            font-weight: $mainFontW700;
-            font-size: $mainFontS15;
 
-        }         
-    }
-    .Menu__Select{
-        @include Display__Box($flow: column wrap, $Alignitems: flex-start);
-        width: 100%;
-        gap: 5px;        
-        &--dishe{
-            font-size: $mainFontS18;
-            font-weight: $mainFontW500;
-            margin: 0;
-        }
-        &--info{
-            font-weight: $mainFontW300;
-            font-size: $mainFontS16;
-            align-self: flex-start;
-            margin: 0;
-        }       
-    }
-    .Menu__CommandBTN{
-        @include mains__Btn--Rounded();
-        width: 50%;
-    }
+
     
 }

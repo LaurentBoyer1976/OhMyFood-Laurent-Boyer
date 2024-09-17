@@ -101,7 +101,7 @@
     box-sizing: border-box;
   }
   /*Header*/
-  header {
+  #Head__site {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
