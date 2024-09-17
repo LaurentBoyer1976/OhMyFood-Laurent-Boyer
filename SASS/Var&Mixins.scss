@@ -62,6 +62,12 @@
             border: $Border;
         }
         /*Mixins Navbar*/
+        @mixin HeaderPosition($display:flex, $flow: column nowrap, $justifyC: center, $Alignitems:center){
+            display: $display;
+            flex-flow: $flow;
+            justify-content: $justifyC;
+            align-items: $Alignitems;
+        }
         @mixin NavbarStyle($display: flex, $flow: column nowrap, $justifyC: center, $Alignitems: center, $B-Sizing: border-box){
             display: $display;
             flex-flow: $flow;
