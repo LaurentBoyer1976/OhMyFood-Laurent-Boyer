@@ -8,6 +8,7 @@
         $BtnBckColor2: #FF79DA;
         $NewCardColor: #99E2D0;
         $FooterBCKColor: #353535;
+        $ArrowLcolor: #353535;
         $FontNewCardColor: #008766;
         $BlackFont: black;    
         $BtnGradient: linear-gradient(to top, $BtnBckColor1, $BtnBckColor2);
@@ -21,10 +22,13 @@
         $mainFontW500: 500;
         $mainFontW700: 700;
         $mainFontS14: 0.875rem;
+        $mainFontS15: 0,9375rem;
         $mainFontS16: 1rem;
         $mainFontS17: 1.0625rem;
         $mainFontS18: 1.125rem;
         $mainFontS24: 1.5rem;
+        $mainFontS28: 1.75rem;
+        $FontStyleItal: italic;
     
         /*Sizing Width Height Box-Sizing*/
         $main-MinW: 320px;
@@ -60,6 +64,11 @@
             padding: $Padding;
             box-shadow: $Shadow;
             border: $Border;
+        }
+        @mixin Menu__Title($alignS: self-start, $FontWeight: $mainFontW300, $FontSize: $mainFontS16){
+            align-self: $alignS;
+            font-weight: $FontWeight;
+            font-size: $FontSize;
         }
         /*Mixins Navbar*/
         @mixin HeaderPosition($display:flex, $flow: column nowrap, $justifyC: center, $Alignitems:center){
@@ -131,4 +140,22 @@
         @mixin BoxNew--Fontsize($FontSize: $mainFontS14, $FontWeight: $mainFontW500){
             font-size: $FontSize;
             font-weight: $FontWeight; 
+        }
+        /*Mixin page menu*/
+        @mixin BckImgMenu($MinW: $main-MinW, $MaxW: $main-MaxW, $Width: 100%, $Height: 275px, $Obj-Fit: cover){
+            min-width: $MinW;                
+            max-width: $MaxW;
+            width: $Width;
+            height: $Height;
+            object-fit: $Obj-Fit;
+        }
+        @mixin Restaurant__present($display:flex, $flow: row, $justifyC: space-between, $Alignitems: center, $PaddingR: 17px, $Width: 100%, $B-Sizing: border-box, $Radius: 40px 40px 0 0){
+            display: $display;
+            flex-flow: $flow;
+            justify-content:$justifyC;
+            align-items:$Alignitems;
+            padding-right:$PaddingR;
+            width:$Width;
+            box-sizing:$B-Sizing;
+            border-radius:$Radius;
         }
