@@ -1,15 +1,23 @@
-La palette du goût
 
-Entrées
-Fricassée d'escargots
-Au piment d'Espelette 
-25€
+$Price18:18€;
+$Price20:20€;
+$Price22:22€;
+$Price23:23€;
+$Price25:25€;
+$Price35:35€;
+$Price40:40€;
+$Price44:44€;
 
-Foie gras de canard mi-cuit
-Et ses copeaux de truffe noire
+$gout:La palette du goût;
+/*Entrées*/
+$Starter1:"Fricassée d'escargots";
+$Starter1Info:"Au piment d'Espelette"; 
+/*25*/
+$Starter2:Foie gras de canard mi-cuit
+$Starter2Info:Et ses copeaux de truffe noire
 35€
 
-Œuf au plat
+$Starter1:Œuf au plat
 Assaisonné à la truffe sur lit de caviar
 20€
 
@@ -45,15 +53,15 @@ Au piment d'Espelette et à la truffe noire
 Le délice des sens
 
 Entrées
-Tartare de thon
+$Starter1:Tartare de thon
 Assaisonné au yuzu
 25€
 
-Bouchée de homard croustillant 
+$Starter1:Bouchée de homard croustillant 
 Et sa farandole de petits légumes
 35€
 
-Velouté de cèpes 
+$Starter1:Velouté de cèpes 
 Aux truffes
 20€
         
@@ -88,19 +96,19 @@ Tiramisu
 La note enchantée
 
 Entrées
-Ravioles de foie gras 
+$Starter1:Ravioles de foie gras 
 Accompagnées de leur crème à la truffe
 25€
 
-Caviar osciètre 
+$Starter1:Caviar osciètre 
 Sur blini à la farine de blé noir
 35€
 
-Homard et espuma de potiron
+$Starter1:Homard et espuma de potiron
 Marinés aux zestes d'orange
 20€
 
-Foie gras de canard cuit entier
+$Starter1:Foie gras de canard cuit entier
 Confiture de figue et pain toasté
 35€
         
@@ -135,15 +143,15 @@ Déstructurée
 À la française
 
 Entrées
-Tartare de poulpe acidulé
+$Starter1:Tartare de poulpe acidulé
 Aux zestes d'orange
 25€
 
-Velouté de légumes d'antan
+$Starter1:Velouté de légumes d'antan
 Carotte, panais, topinambour
 35€
 
-Soupe à l'oignon
+$Starter1:Soupe à l'oignon
 Revisitée
 20€
 
