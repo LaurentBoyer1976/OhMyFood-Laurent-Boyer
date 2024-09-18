@@ -270,7 +270,7 @@
   }
   .Menu__Select--info {
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 0, 9375rem;
     align-self: flex-start;
     margin: 0;
   }
