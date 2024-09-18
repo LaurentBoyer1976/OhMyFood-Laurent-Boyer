@@ -58,22 +58,28 @@ body {
     }
      /*Main et Menu et card menu*/
      main{
-       background-color: #1fe0;
+        background-color: $bodyColor;
+       position: relative;
     }      
     .Background__Menu{
         @include Display__Box;
-        @include Size__Box;
+        @include Size__Box;        
+        width: 375px;
+        height: 275px;
+        background-size: cover;
+        z-index: -1;
         &--IMG{
             @include BckImgMenu();         
         }
     }
     #Main__Article{
         @include Display__Box;
+        position: relative;
+        top: -55px;
         padding: 0 13px;
         gap: 40px;
         border-radius: 40px 40px 0 0;
         background-color: $bodyColor;
-        padding-bottom: 40px;
     }
     .Restaurant__Presentation{
         @include Restaurant__present();      
