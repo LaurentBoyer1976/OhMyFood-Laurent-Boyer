@@ -22,6 +22,7 @@
   width: 100%;
   background-color: #353535;
   color: #FFFFFF;
+  height: 8%;
 }
 
 .Container__List {
@@ -253,7 +254,7 @@
   .Menu__Btn--price {
     align-self: end;
     font-weight: 700;
-    font-size: 0, 9375rem;
+    font-size: 0.9375rem;
   }
   .Menu__Select {
     display: flex;
@@ -270,7 +271,7 @@
   }
   .Menu__Select--info {
     font-weight: 300;
-    font-size: 0, 9375rem;
+    font-size: 0.9375rem;
     align-self: flex-start;
     margin: 0;
   }
