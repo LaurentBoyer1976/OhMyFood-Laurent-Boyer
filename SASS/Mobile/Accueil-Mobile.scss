@@ -28,6 +28,8 @@
         #Head__site{
             @include HeaderPosition();            
             @include Size__Box();
+            height: 5%;
+            width: 100%;
         }
         .Navbar{
             @include NavbarStyle();
@@ -54,112 +56,124 @@
             @include Display__Box();
             @include Size__Box();
             background-color: $BtnFontColor;
+            height: 87%;
         }
             /* Explore__section*/
         #Explore{
-            @include Display__Box();
+            @include Display__Box($justifyC: unset);
             @include Size__Box();
             background-color: $bodyColor;
             padding: 30px 15px 55px 15px;
+            height: 15%;
+            .C-Explore__Container{
+                height: 100%;
+            }
             .C-Explore__Site{
                 @include Display__Box();
                 @include Size__Box();
-                gap:20px;   
+                gap:20px;
+                height: 100%;   
                 &--title{
-                    @include mains__title();
-                    align-self: center;
+                    @include mains__title();                    
                     text-align: center;
-                    max-width: 74%;
+                    max-width: 100%;
                     margin: 0;
                 }
                 &--text{
                     font-size: $mainFontS18;
                     font-weight: $mainFontW300;
-                    align-self: center;
-                    width: 315px;
+                    min-width: 315px;
                     margin: 0px;
                     text-align: center;
                 }
                 &--Btn{
-                    @include mains__Btn--Rounded();
-                    align-self: center;    
+                    @include mains__Btn--Rounded();                        
                 }            
             }
         }
         /*How It Works Section*/
         #HowItWorks{
-            @include Display__Box();
-            @include Size__Box();        
-            .C-HowItWorks{
-                @include Display__Box();
-                @include Size__Box();
-                padding: 40px 20px 65px 20px;             
-                .C-HowItWorks__title{
-                    @include mains__title();
-                    align-self: flex-start;
-                    margin: 0;
-                }
-                .C-HowItWorks__Container{
-                    @include Size__Box();
-                    margin-left: 15px;                                                           
-                }                               
-                .C-HowItWorks__BlockStep{
-                    &--NumberContainer{
-                        display: flex;                    
-                    }                
-                    &--Nbr{
-                        @include Display-Step();                   
-                        @include Position-Step();
-                        @include Step-Style();                          
-                    }                               
-                    &--Btn{ 
-                        @include HowItWorksBTN;                                                                               
-                    }
-                    &--Btn i{ 
-                        display: flex;
-                        align-self: flex-end;                                                                   
-                        margin: auto 15px auto 25px;
-                        color: #7e7e7e;                                                                    
-                    }
-                    &--Btn .fa-store{
-                        color: $BtnBckColor1;
-                    }
-                }    
-            }
-                        
-        }
+            @include Display__Box($justifyC: unset, $Alignitems:unset);
+            @include Size__Box();
+            padding: 40px 20px 65px 20px;
+            height: 22%;
+        }        
+                .C-HowItWorks{
+                    @include Display__Box($justifyC: unset, $Alignitems:unset);
+                    @include Size__Box();                    
+                    height: 100%;
+                }                         
+                        .C-HowItWorks__Container{
+                            @include Display__Box($Alignitems:unset);
+                            @include Size__Box();
+                            
+                            &--title{
+                                @include mains__title();
+                                align-self: flex-start;
+                                margin: 0;
+                            }                                                           
+                        }                               
+                        .C-HowItWorks__BlockStep{
+                            &--NumberContainer{
+                                display: flex;
+                                                    
+                            }                
+                            &--Nbr{
+                                @include Display-Step();                   
+                                @include Position-Step();
+                                @include Step-Style();                          
+                            }                               
+                            &--Btn{ 
+                                @include HowItWorksBTN($justify:unset, $align:unset );                                                                               
+                                font-size: $mainFontS16;
+                            }
+                            &--Btn i{ 
+                                display: flex;                                                                                                   
+                                margin: auto 15px auto 25px;
+                                color: #7e7e7e;                                                                    
+                            }
+                            &--Btn .fa-store{
+                                color: $BtnBckColor1;
+                            }
+                        }    
+                                            
+        
             /*Main-Article, restaurant lien et carte de présentation*/
             #Main__Article{
                 @include Display__Box($justifyC: unset, $Alignitems: unset);
                 @include Size__Box();
                 background-color: $bodyColor;
-                padding: 0 18px 0 17px;
-                max-height: 1230px;
+                padding: 55px 18px 60px 17px;
+                width: 100%;
+                height: 62%;
             }
             .Show__Restaurant{
                 @include Display__Box($justifyC: unset);
                 @include Size__Box();
-                max-height: 100%;           
+                height: 100%;                
+                           
             }
             .Cards__Container{
-                @include Display__Box($justifyC: unset);
+                @include Display__Box($justifyC: unset, $Alignitems:unset);
                 @include Size__Box();
-                max-height: 85%;
+                max-height: 100%;
                 border-radius: 15px;
-                gap: 18px;
+                gap:5%;
+                
+                
                 &--title {
                     font-size: $mainFontS24;
                     font-weight: $mainFontW700;
-                    align-self: flex-start;
-                    padding-top: 55px;
+                    align-self: flex-start;                    
                     padding-bottom: 2px;
                     margin:0;
+                    height: 5%;
                 }                    
             }
             .Restaurant__cards{
                 @include Display__Box();
                 @include Size__Box();
-                max-height: 23.2%;                
+                height: 22.5%;                
                 border-radius: 15px;
                 &--link{
                     @include Display__Box($justifyC: flex-end, $Alignitems: unset);
@@ -171,8 +185,7 @@
             }                                  
             .Picture__Box{
                 @include Display__Box($Alignitems:unset, $justifyC: flex-end);
-                @include Size__Box();
-                max-height: 70%;                 
+                @include Size__Box();                                 
                     &--new{
                         @include BoxNew--position;
                         @include BoxNew--color;
@@ -199,7 +212,7 @@
                         border-bottom-right-radius: 15px ;
                         padding: 10px 25px 10px 10px;
                         background-color: $BtnFontColor;                    
-                        max-height: 30%;
+                        height: 30%;
                         & i{
                             display: flex;
                             align-self: center;

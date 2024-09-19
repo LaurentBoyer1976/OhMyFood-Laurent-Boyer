@@ -85,8 +85,8 @@
             box-sizing: $B-Sizing;  
         }
         /*mixins Section HowItWorks*/
-        @mixin HowItWorksBTN($display: flex, $flow: wrap, $position: relative, $Alignitems: center, $justifyC: center, $Lmargin: 5px, $Padding: 20px 10px 20px 0px, $Radius: 20px, $FontSize: 1rem, $Width: 85%, $FontWeight: $mainFontW500, $BCKGroundColor: $bodyColor, $Border: none, $BShadow: $Shadow) {
-            @include Display-Step($display, $flow, $position, $Alignitems, $justifyC);
+        @mixin HowItWorksBTN($display: flex, $flow: wrap, $position: relative, $alignC: center, $justifyC: center, $Lmargin: 5px, $Padding: 30px 10px 30px 0px, $Radius: 20px, $FontSize: 1rem, $Width: 100%, $FontWeight: $mainFontW500, $BCKGroundColor: $bodyColor, $Border: none, $BShadow: $Shadow) {
+            @include Display-Step($display, $flow, $position, $alignC, $justifyC);
             margin: $Lmargin;
             padding: $Padding;
             width: $Width;
@@ -96,14 +96,14 @@
             border-radius: $Radius;
             box-shadow: $Shadow;
           }
-        @mixin Display-Step($display:flex, $flow:wrap, $position:relative, $align: center, $justify: center){
+        @mixin Display-Step($display:flex, $flow:wrap, $position:relative, $alignC: center, $justifyC: center){
             display: $display;
             flex-flow: $flow;
             position: $position;
-            align-content: $align;
-           justify-content: $justify; 
+            align-content: $alignC;
+           justify-content: $justifyC; 
         }
-        @mixin Position-Step($Zindex:2, $Postop:40px, $PosRight:10px, $WSize:24px, $HSize:24px, $Radius:50%){
+        @mixin Position-Step($Zindex:2, $Postop:55px, $PosRight:10px, $WSize:24px, $HSize:24px, $Radius:50%){
             z-index: $Zindex;
             top:$Postop;
             right:$PosRight;                   

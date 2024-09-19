@@ -9,6 +9,7 @@
 /*Mixins Navbar*/
 /*mixins Section HowItWorks*/
 /*mixins section cards restaurant*/
+/*Mixin page menu*/
 /*Footer générique ohmyfood*/
 #Generic__Footer {
   display: flex;
@@ -74,6 +75,7 @@
 /*Mixins Navbar*/
 /*mixins Section HowItWorks*/
 /*mixins section cards restaurant*/
+/*Mixin page menu*/
 /*Général*/
 * {
   font-family: "Roboto", sans-serif;
@@ -152,13 +154,17 @@
   #Explore {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: unset;
     align-items: center;
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
     background-color: #f6f6f6;
     padding: 30px 15px 55px 15px;
+    height: 15%;
+  }
+  #Explore .C-Explore__Container {
+    height: 100%;
   }
   #Explore .C-Explore__Site {
     display: flex;
@@ -169,20 +175,19 @@
     max-width: 100%;
     box-sizing: border-box;
     gap: 20px;
+    height: 100%;
   }
   #Explore .C-Explore__Site--title {
     font-size: 1.5rem;
     font-weight: 700;
-    align-self: center;
     text-align: center;
-    max-width: 74%;
+    max-width: 100%;
     margin: 0;
   }
   #Explore .C-Explore__Site--text {
     font-size: 1.125rem;
     font-weight: 300;
-    align-self: center;
-    width: 315px;
+    min-width: 315px;
     margin: 0px;
     text-align: center;
   }
@@ -194,51 +199,55 @@
     padding: 13px 16px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     border: none;
-    align-self: center;
   }
   /*How It Works Section*/
   #HowItWorks {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  #HowItWorks .C-HowItWorks {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: unset;
+    align-items: unset;
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
     padding: 40px 20px 65px 20px;
+    height: 22%;
   }
-  #HowItWorks .C-HowItWorks .C-HowItWorks__title {
+  .C-HowItWorks {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: unset;
+    align-items: unset;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  .C-HowItWorks__Container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: unset;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .C-HowItWorks__Container--title {
     font-size: 1.5rem;
     font-weight: 700;
     align-self: flex-start;
     margin: 0;
   }
-  #HowItWorks .C-HowItWorks .C-HowItWorks__Container {
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin-left: 15px;
-  }
-  #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--NumberContainer {
+  .C-HowItWorks__BlockStep--NumberContainer {
     display: flex;
   }
-  #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--Nbr {
+  .C-HowItWorks__BlockStep--Nbr {
     display: flex;
     flex-flow: wrap;
     position: relative;
     align-content: center;
     justify-content: center;
     z-index: 2;
-    top: 40px;
+    top: 55px;
     right: 10px;
     width: 24px;
     height: 24px;
@@ -248,28 +257,29 @@
     font-size: 0.875rem;
     font-weight: 500;
   }
-  #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--Btn {
+  .C-HowItWorks__BlockStep--Btn {
     display: flex;
     flex-flow: wrap;
     position: relative;
     align-content: center;
-    justify-content: center;
+    justify-content: unset;
     margin: 5px;
-    padding: 20px 10px 20px 0px;
-    width: 85%;
+    padding: 30px 10px 30px 0px;
+    width: 100%;
     font-weight: 500;
     background-color: #f6f6f6;
     border: none;
     border-radius: 20px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
   }
-  #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--Btn i {
+  .C-HowItWorks__BlockStep--Btn i {
     display: flex;
     align-self: flex-end;
     margin: auto 15px auto 25px;
     color: #7e7e7e;
   }
-  #HowItWorks .C-HowItWorks .C-HowItWorks__BlockStep--Btn .fa-store {
+  .C-HowItWorks__BlockStep--Btn .fa-store {
     color: #9356DC;
   }
   /*Main-Article, restaurant lien et carte de présentation*/
@@ -282,8 +292,9 @@
     max-width: 100%;
     box-sizing: border-box;
     background-color: #f6f6f6;
-    padding: 0 18px 0 17px;
-    max-height: 1230px;
+    padding: 0 18px 0px 17px;
+    width: 100%;
+    height: 100%;
   }
   .Show__Restaurant {
     display: flex;
@@ -293,7 +304,8 @@
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
-    max-height: 100%;
+    height: 100%;
+    padding-bottom: 60px;
   }
   .Cards__Container {
     display: flex;
@@ -303,15 +315,14 @@
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
-    max-height: 85%;
+    max-height: 100%;
     border-radius: 15px;
-    gap: 18px;
+    padding-top: 55px;
   }
   .Cards__Container--title {
     font-size: 1.5rem;
     font-weight: 700;
     align-self: flex-start;
-    padding-top: 55px;
     padding-bottom: 2px;
     margin: 0;
   }
@@ -323,7 +334,7 @@
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
-    max-height: 23.2%;
+    max-height: 25%;
     border-radius: 15px;
   }
   .Restaurant__cards--link {
