@@ -28,12 +28,13 @@
         #Head__site{
             @include HeaderPosition();            
             @include Size__Box();
-            height: 5%;
-            width: 100%;
+            
+            width:100%;
         }
         .Navbar{
             @include NavbarStyle();
-            padding-bottom: 9px;
+            
+            width: 100%;
         }                    
             .Navbar__Title{
                 padding: 14px 89px 13px 89px;
@@ -56,23 +57,22 @@
             @include Display__Box();
             @include Size__Box();
             background-color: $BtnFontColor;
-            height: 87%;
+            
         }
             /* Explore__section*/
         #Explore{
-            @include Display__Box($justifyC: unset);
+            @include Display__Box($justifyC: normal);
             @include Size__Box();
             background-color: $bodyColor;
-            padding: 30px 15px 55px 15px;
-            height: 15%;
+            padding: 35px 15px 55px 15px;
+            width:100%;            
             .C-Explore__Container{
                 height: 100%;
             }
             .C-Explore__Site{
-                @include Display__Box();
+                @include Display__Box($justifyC: normal);
                 @include Size__Box();
-                gap:20px;
-                height: 100%;   
+                gap:20px;                   
                 &--title{
                     @include mains__title();                    
                     text-align: center;
@@ -96,7 +96,8 @@
             @include Display__Box($justifyC: unset, $Alignitems:unset);
             @include Size__Box();
             padding: 40px 20px 65px 20px;
-            height: 22%;
+            width: 100%;
+            
         }        
                 .C-HowItWorks{
                     @include Display__Box($justifyC: unset, $Alignitems:unset);
@@ -124,7 +125,7 @@
                                 @include Step-Style();                          
                             }                               
                             &--Btn{ 
-                                @include HowItWorksBTN($justify:unset, $align:unset );                                                                               
+                                @include HowItWorksBTN($justifyC:unset, $alignC:unset );                                                                               
                                 font-size: $mainFontS16;
                             }
                             &--Btn i{ 
@@ -140,52 +141,56 @@
         
             /*Main-Article, restaurant lien et carte de présentation*/
             #Main__Article{
-                @include Display__Box($justifyC: unset, $Alignitems: unset);
-                @include Size__Box();
+                display: flex;
+                flex-flow: column;                
                 background-color: $bodyColor;
-                padding: 55px 18px 60px 17px;
                 width: 100%;
-                height: 62%;
             }
             .Show__Restaurant{
-                @include Display__Box($justifyC: unset);
-                @include Size__Box();
-                height: 100%;                
-                           
+                display: flex   ;
+                flex-flow: column;                
+                padding: 55px 18px 0px 17px;
+                                
             }
             .Cards__Container{
-                @include Display__Box($justifyC: unset, $Alignitems:unset);
-                @include Size__Box();
-                max-height: 100%;
-                border-radius: 15px;
-                gap:5%;
-                
-                
+                display: flex;
+                flex-flow: column;
                 &--title {
                     font-size: $mainFontS24;
                     font-weight: $mainFontW700;
                     align-self: flex-start;                    
                     padding-bottom: 2px;
                     margin:0;
-                    height: 5%;
                 }                    
-            }
+            }         
             .Restaurant__cards{
-                @include Display__Box();
-                @include Size__Box();
-                height: 22.5%;                
+                display: flex;
+                flex-flow: column;
+                min-height: 251px;                                
                 border-radius: 15px;
+                position: relative;
                 &--link{
-                    @include Display__Box($justifyC: flex-end, $Alignitems: unset);
-                    @include Size__Box();                
-                    height: 100%;
+                    display: flex;
+                    flex-flow: column;            
                     text-decoration: none;
-                    border-radius: 15px;
-                }                             
-            }                                  
+                    border-radius: 15px;                             
+                }
+                
+            }                             
+            .Card__Box{
+                display:flex;
+                flex-flow: column;                
+                flex-grow: 1;
+                height: 100%;
+                box-sizing: border-box;                
+            }                                                                    
             .Picture__Box{
-                @include Display__Box($Alignitems:unset, $justifyC: flex-end);
-                @include Size__Box();                                 
+                display: flex;
+                flex-flow: column;
+                height: 69%;
+                box-sizing: border-box;
+                position: relative;                        
+                top:-20%;
                     &--new{
                         @include BoxNew--position;
                         @include BoxNew--color;
@@ -195,8 +200,24 @@
                     &--IMG{
                         display: flex;                                    
                         clip-path: $cutoutIMG;
-                        object-fit: cover;
+                        object-fit: cover;                      
+                        box-sizing: border-box;                      
                         }
+                }
+                .Cards__Container .Restaurant__cards:nth-child(2){
+                    z-index: 1;
+                }
+                .Cards__Container .Restaurant__cards:nth-child(3){
+                    z-index: 2;
+                    top: -5%;
+                }
+                .Cards__Container .Restaurant__cards:nth-child(4){
+                    z-index: 3;
+                    top:-10%;
+                }
+                .Cards__Container .Restaurant__cards:nth-child(5){
+                    z-index: 4;
+                    top:-15%;
                 }
                 .Cards__Container .Restaurant__cards:nth-child(4) .Picture__Box--new:first-child {
                     visibility: $Advertise;
@@ -210,9 +231,10 @@
                         justify-content: space-between;
                         border-bottom-left-radius: 15px;
                         border-bottom-right-radius: 15px ;
-                        padding: 10px 25px 10px 10px;
+                        padding: 15px 25px 15px 10px;
                         background-color: $BtnFontColor;                    
-                        height: 30%;
+                        position: relative;
+                        top: -17%;
                         & i{
                             display: flex;
                             align-self: center;
@@ -224,24 +246,24 @@
                             bottom: 5px;
                             color: $BlackFont;                
                         }
-                        .Information__text{
-                            display: flex;
-                            flex-flow: column wrap; 
-                            gap:5px;
-                            &--name{
-                                font-weight: $mainFontW700;
-                                font-size: $mainFontS18;
-                                color: $BlackFont;
-                                margin:0;
-                            }
-                            &--district{
-                                font-weight: $mainFontW300;
-                                font-size: $mainFontS17;
-                                color: $BlackFont;
-                                margin:0;
-                            }                     
-                        }             
                     }
+                    .Information__text{
+                        display: flex;
+                        flex-flow: column wrap; 
+                        gap:5px;
+                        &--name{
+                            font-weight: $mainFontW700;
+                            font-size: $mainFontS18;
+                            color: $BlackFont;
+                            margin:0;
+                        }
+                        &--district{
+                            font-weight: $mainFontW300;
+                            font-size: $mainFontS17;
+                            color: $BlackFont;
+                            margin:0;
+                        }                     
+                    }             
                     
 
 }

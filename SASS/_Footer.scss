@@ -8,7 +8,7 @@
     width: 100%;
     background-color: $FooterBCKColor;
     color: $BtnFontColor;
-    height: 8%;
+    
 }
     .Container__List{
         @include Display__Box($Alignitems: unset);

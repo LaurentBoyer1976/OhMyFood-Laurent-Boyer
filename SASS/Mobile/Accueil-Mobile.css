@@ -111,6 +111,7 @@
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
+    width: 100%;
   }
   .Navbar {
     display: flex;
@@ -118,7 +119,7 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding-bottom: 9px;
+    width: 100%;
   }
   .Navbar__Title {
     padding: 14px 89px 13px 89px;
@@ -154,14 +155,14 @@
   #Explore {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: unset;
+    justify-content: normal;
     align-items: center;
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
     background-color: #f6f6f6;
-    padding: 30px 15px 55px 15px;
-    height: 15%;
+    padding: 35px 15px 55px 15px;
+    width: 100%;
   }
   #Explore .C-Explore__Container {
     height: 100%;
@@ -169,13 +170,12 @@
   #Explore .C-Explore__Site {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: normal;
     align-items: center;
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
     gap: 20px;
-    height: 100%;
   }
   #Explore .C-Explore__Site--title {
     font-size: 1.5rem;
@@ -210,7 +210,7 @@
     max-width: 100%;
     box-sizing: border-box;
     padding: 40px 20px 65px 20px;
-    height: 22%;
+    width: 100%;
   }
   .C-HowItWorks {
     display: flex;
@@ -261,7 +261,7 @@
     display: flex;
     flex-flow: wrap;
     position: relative;
-    align-content: center;
+    align-content: unset;
     justify-content: unset;
     margin: 5px;
     padding: 30px 10px 30px 0px;
@@ -275,7 +275,6 @@
   }
   .C-HowItWorks__BlockStep--Btn i {
     display: flex;
-    align-self: flex-end;
     margin: auto 15px auto 25px;
     color: #7e7e7e;
   }
@@ -285,39 +284,18 @@
   /*Main-Article, restaurant lien et carte de présentation*/
   #Main__Article {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: unset;
-    align-items: unset;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
+    flex-flow: column;
     background-color: #f6f6f6;
-    padding: 0 18px 0px 17px;
     width: 100%;
-    height: 100%;
   }
   .Show__Restaurant {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: unset;
-    align-items: center;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    height: 100%;
-    padding-bottom: 60px;
+    flex-flow: column;
+    padding: 55px 18px 0px 17px;
   }
   .Cards__Container {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: unset;
-    align-items: center;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    max-height: 100%;
-    border-radius: 15px;
-    padding-top: 55px;
+    flex-flow: column;
   }
   .Cards__Container--title {
     font-size: 1.5rem;
@@ -328,36 +306,31 @@
   }
   .Restaurant__cards {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    max-height: 25%;
+    flex-flow: column;
+    min-height: 251px;
     border-radius: 15px;
+    position: relative;
   }
   .Restaurant__cards--link {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-end;
-    align-items: unset;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    height: 100%;
+    flex-flow: column;
     text-decoration: none;
     border-radius: 15px;
   }
+  .Card__Box {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    height: 100%;
+    box-sizing: border-box;
+  }
   .Picture__Box {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-end;
-    align-items: unset;
-    min-width: 320px;
-    max-width: 100%;
+    flex-flow: column;
+    height: 69%;
     box-sizing: border-box;
-    max-height: 70%;
+    position: relative;
+    top: -20%;
   }
   .Picture__Box--new {
     position: relative;
@@ -382,6 +355,22 @@
             clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
     -o-object-fit: cover;
        object-fit: cover;
+    box-sizing: border-box;
+  }
+  .Cards__Container .Restaurant__cards:nth-child(2) {
+    z-index: 1;
+  }
+  .Cards__Container .Restaurant__cards:nth-child(3) {
+    z-index: 2;
+    top: -5%;
+  }
+  .Cards__Container .Restaurant__cards:nth-child(4) {
+    z-index: 3;
+    top: -10%;
+  }
+  .Cards__Container .Restaurant__cards:nth-child(5) {
+    z-index: 4;
+    top: -15%;
   }
   .Cards__Container .Restaurant__cards:nth-child(4) .Picture__Box--new:first-child {
     visibility: hidden;
@@ -395,9 +384,10 @@
     justify-content: space-between;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding: 10px 25px 10px 10px;
+    padding: 15px 25px 15px 10px;
     background-color: #FFFFFF;
-    max-height: 30%;
+    position: relative;
+    top: -17%;
   }
   .Restaurant__info i {
     display: flex;
@@ -410,18 +400,18 @@
     bottom: 5px;
     color: black;
   }
-  .Restaurant__info .Information__text {
+  .Information__text {
     display: flex;
     flex-flow: column wrap;
     gap: 5px;
   }
-  .Restaurant__info .Information__text--name {
+  .Information__text--name {
     font-weight: 700;
     font-size: 1.125rem;
     color: black;
     margin: 0;
   }
-  .Restaurant__info .Information__text--district {
+  .Information__text--district {
     font-weight: 300;
     font-size: 1.0625rem;
     color: black;
