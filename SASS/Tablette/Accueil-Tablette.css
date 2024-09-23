@@ -1,1 +1,8 @@
-/*# sourceMappingURL=Accueil-Tablette.css.map */
+@media screen and (min-width: 780.1px) and (max-width: 1101.9px) {
+  C-HowItWorks__Step {
+    display: flex;
+    flex-flow: column;
+    gap: 24px;
+    margin: 0 14% 0 12.5%;
+  }
+}/*# sourceMappingURL=Accueil-Tablette.css.map */

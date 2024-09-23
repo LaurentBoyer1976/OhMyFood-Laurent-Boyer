@@ -1,0 +1,247 @@
+@media screen and (min-width : 780.1px) and (max-width : 1980px){
+
+    /*Importation des fichiers styles, variables et mixins*/
+
+    @import '../Footer';
+    @import '../Var&Mixins.scss';
+    
+
+    /*Général*/
+    *{
+        font-family: $mainFont;                
+     }
+    body{
+        width: 100%; 
+        margin: 0;    
+    }
+       /*Main-Container*/
+
+       .Main-Container{
+        @include Display__Box($flow: column wrap);
+        @include Size__Box($MinW: 780.1px);
+        } 
+          
+        /*Header*/        
+    
+        #Head__site{
+            @include HeaderPosition($flow: row wrap);            
+            @include Size__Box($MinW: 780.1px);                
+            width: $main-Width;
+            z-index: 2;
+        }
+        .Navbar{
+            @include NavbarStyle();                
+            width: $main-Width;
+        }                    
+            .Navbar__Title{
+                padding: 30px 89px;
+            }        
+            .Navbar__GeoLoc{
+                @include NavbarStyle($flow: row wrap);                
+                background-color: $geolocColor;
+                gap: 17px;
+                width: 100%;
+                padding: 15.5px 0;
+                /*box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);*/
+                &--sample{
+                    font-weight: $mainFontW500;
+                    font-size: $mainFontS16;
+                }           
+            }
+        
+        /*Main*/
+        main{
+            @include Display__Box();
+            @include Size__Box();
+            background-color: $BtnFontColor;
+            
+        }
+            /* Explore__section*/
+        #Explore{
+            @include Display__Box($justifyC: normal);
+            @include Size__Box();
+            background-color: $bodyColor;
+            padding: 35px 0 30px 0;
+            width: $main-Width;
+                       
+            .C-Explore__Container{
+                height: 100%;
+            }
+            .C-Explore__Site{
+                @include Display__Box($justifyC: normal);
+                @include Size__Box();
+                gap:20px;                   
+                &--title{
+                    @include mains__title($size:$mainFontS40);                    
+                    text-align: center;
+                    max-width: 100%;
+                    margin: 0;
+                }
+                &--text{
+                    font-size: $mainFontS18;
+                    font-weight: $mainFontW300;
+                    min-width: 315px;
+                    margin: 0px;
+                    text-align: center;
+                }
+                &--Btn{
+                    @include mains__Btn--Rounded;
+                    font-size: $mainFontS16;                       
+                                            
+                }            
+            }
+        }
+        /*How It Works Section*/
+        #HowItWorks{
+            @include Display__Box($justifyC: unset, $Alignitems:unset);
+            @include Size__Box();
+            padding: 40px 20px 65px 20px;
+            width: 100%;
+        }        
+                .C-HowItWorks{
+                    @include Display__Box($justifyC: unset, $Alignitems:unset);
+                    @include Size__Box();                    
+                    height: 100%;
+                }                         
+                        .C-HowItWorks__Container{
+                            @include Display__Box($Alignitems:unset);
+                            @include Size__Box();
+                                                        
+                            &--title{
+                                @include mains__title();
+                                align-self: flex-start;
+                                margin: 0 0 0 12.5%;
+                            }                                                           
+                        } 
+                        .C-HowItWorks__Step{
+                            display: flex;
+                            gap: 24px;
+                            margin: 0 14% 0 12.5%;
+                        }                              
+                        .C-HowItWorks__BlockStep{
+                            display: flex;
+                            flex-flow: wrap;
+                            align-content: flex-start;
+                            flex-grow: 1;                            
+                            &--NumberContainer{
+                                display: flex;
+                                
+                            }                
+                            &--Nbr{
+                                @include Display-Step();                   
+                                @include Position-Step();
+                                @include Step-Style();                          
+                            }                               
+                            &--Btn{ 
+                                @include HowItWorksBTN($justifyC:normal, $alignC:normal, $flow: nowrap);                                                                               
+                                font-size: $mainFontS16;                                
+                            }
+                            &--Btn i{ 
+                                display: flex;                                                                                                   
+                                margin: auto 15px auto 25px;
+                                color: #7e7e7e;                                                                    
+                            }
+                            &--Btn .fa-store{
+                                color: $BtnBckColor1;
+                            }
+                        }            
+        /*Main-Article, restaurant lien et carte de présentation*/
+        #Main__Article{
+            display: grid;                                
+            background-color: $bodyColor;
+            width: $main-Width;
+                                           
+        }            
+            .Cards__Container{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(5, 1fr);                    
+                box-sizing: $main-Bsizing;
+                padding:0 18px 55px 18px;
+                width: $main-Width;
+                &--title {
+                    grid-area: 1/1/2/5;                                                                       
+                    font-size: $mainFontS24;
+                    font-weight: $mainFontW700;
+                    justify-self: left;                    
+                    margin:10% 0 -10% 0;                                                                                                  
+                }
+            }
+            .Restaurant__link{
+                display: grid;                                                 
+                border-radius: 15px;                
+                text-decoration: none;                                                
+            }                          
+            .Restaurant__link:nth-of-type(1){
+                grid-area: 2/1/4/3;                                                                                     
+            }
+            .Restaurant__link:nth-of-type(2){
+                grid-area: 2/3/4/5;
+                                                                                                        
+            }          
+            .Restaurant__link:nth-of-type(3){
+                grid-area: 6/1/8/4;
+                margin-top: -20%;                                                                                        
+            }          
+            .Restaurant__link:nth-of-type(4){
+                grid-area: 8/1/10/4;
+                margin-top: -20%;                                                                                        
+            }                                      
+            .Card__Box{
+                display: grid;
+                min-height: 150px;
+                grid-template-columns: repeat(10, 1fr);
+                grid-template-rows: repeat(10, 1fr);                                                  
+                border-radius: 15px;                    
+                &--IMG{
+                    grid-area: 1/1/8/11;
+                    clip-path: $cutoutIMG;
+                    box-sizing: border-box;
+                    object-fit: cover;
+                    width: 100%;
+                    max-height: 231px;                                                                                                                 
+                }
+                &--new{                    
+                    grid-area: 3/9/4/11;
+                    @include BoxNew--color;
+                    @include BoxNew--Size;
+                    @include BoxNew--Fontsize;
+                    @include BoxNew--position;                        
+                }   
+            }                                            
+            .Information__Box{
+                    grid-area: 8/1/11/11;
+                    @include Display__Box($flow:row, $justifyC: space-between);
+                    height: 30%;
+                    padding: 15px 25px 15px 15px;
+                    background-color: $InfoBoxBCkcolor;
+                    border-radius: 0 0 15px 15px;
+                    color: $BlackFont;                                                        
+                    & i{                       
+                        font-size: 30px;
+                    }                                                       
+            }                                                                                
+            .Description__text{
+                display: flex;
+                flex-flow: column;
+                gap: 5px;                    
+                &--name{
+                    margin: 0;
+                    font-size: $mainFontS18;
+                    font-weight: $mainFontW700;
+                }
+                &--district{
+                    margin: 0;
+                    font-size: $mainFontS17;
+                    font-weight: $mainFontW300;
+                }
+            }                                                                           
+            .Cards__Container .Restaurant__link:nth-child(4) .Card__Box--new:first-child {
+                visibility: $Advertise;
+            }
+            .Cards__Container .Restaurant__link:nth-child(5) .Card__Box--new:first-child {
+                visibility: $Advertise;
+            }                                         
+}
+
+
