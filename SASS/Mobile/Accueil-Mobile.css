@@ -340,19 +340,16 @@
     grid-area: 3/9/4/11;
     background-color: #99E2D0;
     color: #008766;
-    width: 80px;
-    height: 29px;
+    width: 90%;
+    height: 45%;
     padding: 5px 0px;
     border-radius: 2px;
     font-size: 0.875rem;
     font-weight: 500;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    left: 76%;
-    top: -310px;
   }
   .Information__Box {
     grid-area: 8/1/11/11;

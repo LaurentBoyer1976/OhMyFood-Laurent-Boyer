@@ -6,7 +6,8 @@
 
 /*Général*/
     *{
-        font-family: $mainFont;        
+        font-family: $mainFont;
+                
     }
 
 @media screen and (min-width : 320px) and (max-width : 780px){
@@ -232,4 +233,4 @@
                 .Cards__Container .Restaurant__link:nth-child(5) .Card__Box--new:first-child {
                     visibility: $Advertise;
                 }                                         
-}
+            }
