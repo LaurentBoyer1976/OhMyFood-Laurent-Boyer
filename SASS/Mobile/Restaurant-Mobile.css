@@ -13,7 +13,7 @@
 #Generic__Footer {
   display: flex;
   flex-flow: column;
-  justify-content: unset;
+  justify-content: normal;
   align-items: flex-start;
   min-width: 320px;
   max-width: 100%;

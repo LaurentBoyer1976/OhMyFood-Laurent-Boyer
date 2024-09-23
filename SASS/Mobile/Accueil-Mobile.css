@@ -14,7 +14,7 @@
 #Generic__Footer {
   display: flex;
   flex-flow: column;
-  justify-content: unset;
+  justify-content: normal;
   align-items: flex-start;
   min-width: 320px;
   max-width: 100%;
@@ -84,13 +84,8 @@
 @media screen and (min-width: 320px) and (max-width: 780px) {
   /*BODY*/
   body {
-    display: grid;
-    grid-template-columns: 1fr;
-    background-color: #f6f6f6;
+    width: 100%;
     margin: 0;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
   }
   /*Main-Container*/
   .Main-Container {
@@ -103,6 +98,8 @@
     box-sizing: border-box;
   }
   /*Header*/
+  /*Header*/
+  /*Header*/
   #Head__site {
     display: flex;
     flex-flow: column nowrap;
@@ -112,6 +109,7 @@
     max-width: 100%;
     box-sizing: border-box;
     width: 100%;
+    z-index: 2;
   }
   .Navbar {
     display: flex;
@@ -134,7 +132,7 @@
     gap: 17px;
     width: 100%;
     padding: 15.5px 0;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   .Navbar__GeoLoc--sample {
     font-weight: 500;
@@ -161,7 +159,7 @@
     max-width: 100%;
     box-sizing: border-box;
     background-color: #f6f6f6;
-    padding: 35px 15px 55px 15px;
+    padding: 35px 0 55px 0;
     width: 100%;
   }
   #Explore .C-Explore__Container {
@@ -283,63 +281,63 @@
   }
   /*Main-Article, restaurant lien et carte de présentation*/
   #Main__Article {
-    display: flex;
-    flex-flow: column;
+    display: grid;
     background-color: #f6f6f6;
     width: 100%;
   }
-  .Show__Restaurant {
-    display: flex;
-    flex-flow: column;
-    padding: 55px 18px 0px 17px;
-  }
   .Cards__Container {
-    display: flex;
-    flex-flow: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    box-sizing: border-box;
+    padding: 0 18px 55px 18px;
+    width: 100%;
   }
   .Cards__Container--title {
+    grid-area: 1/1/3/2;
     font-size: 1.5rem;
     font-weight: 700;
-    align-self: flex-start;
-    padding-bottom: 2px;
-    margin: 0;
+    justify-self: left;
+    margin: 43% 0 -10% 0;
   }
-  .Restaurant__cards {
-    display: flex;
-    flex-flow: column;
-    min-height: 251px;
+  .Restaurant__link {
+    display: grid;
     border-radius: 15px;
-    position: relative;
-  }
-  .Restaurant__cards--link {
-    display: flex;
-    flex-flow: column;
     text-decoration: none;
-    border-radius: 15px;
+  }
+  .Restaurant__link:nth-of-type(1) {
+    grid-area: 2/1/4/4;
+  }
+  .Restaurant__link:nth-of-type(2) {
+    grid-area: 4/1/6/4;
+    margin-top: -20%;
+  }
+  .Restaurant__link:nth-of-type(3) {
+    grid-area: 6/1/8/4;
+    margin-top: -20%;
+  }
+  .Restaurant__link:nth-of-type(4) {
+    grid-area: 8/1/10/4;
+    margin-top: -20%;
   }
   .Card__Box {
-    display: flex;
-    flex-flow: column;
-    flex-grow: 1;
-    height: 100%;
-    box-sizing: border-box;
+    display: grid;
+    min-height: 150px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border-radius: 15px;
   }
-  .Picture__Box {
-    display: flex;
-    flex-flow: column;
-    height: 69%;
+  .Card__Box--IMG {
+    grid-area: 1/1/8/11;
+    -webkit-clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+            clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
     box-sizing: border-box;
-    position: relative;
-    top: -20%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    max-width: 100%;
   }
-  .Picture__Box--new {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    left: 240px;
-    top: 90px;
+  .Card__Box--new {
+    grid-area: 3/9/4/11;
     background-color: #99E2D0;
     color: #008766;
     width: 80px;
@@ -348,73 +346,48 @@
     border-radius: 2px;
     font-size: 0.875rem;
     font-weight: 500;
-  }
-  .Picture__Box--IMG {
+    position: relative;
     display: flex;
-    -webkit-clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
-            clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
-    -o-object-fit: cover;
-       object-fit: cover;
-    box-sizing: border-box;
-  }
-  .Cards__Container .Restaurant__cards:nth-child(2) {
-    z-index: 1;
-  }
-  .Cards__Container .Restaurant__cards:nth-child(3) {
+    justify-content: center;
+    align-items: center;
     z-index: 2;
-    top: -5%;
+    left: 76%;
+    top: -310px;
   }
-  .Cards__Container .Restaurant__cards:nth-child(4) {
-    z-index: 3;
-    top: -10%;
-  }
-  .Cards__Container .Restaurant__cards:nth-child(5) {
-    z-index: 4;
-    top: -15%;
-  }
-  .Cards__Container .Restaurant__cards:nth-child(4) .Picture__Box--new:first-child {
-    visibility: hidden;
-  }
-  .Cards__Container .Restaurant__cards:nth-child(5) .Picture__Box--new:first-child {
-    visibility: hidden;
-  }
-  .Restaurant__info {
+  .Information__Box {
+    grid-area: 8/1/11/11;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 15px 25px 15px 10px;
-    background-color: #FFFFFF;
-    position: relative;
-    top: -17%;
-  }
-  .Restaurant__info i {
-    display: flex;
-    align-self: center;
-    position: relative;
-    height: 21px;
-    width: 22px;
-    left: 10px;
-    font-size: larger;
-    bottom: 5px;
+    align-items: center;
+    height: 30%;
+    padding: 15px 25px 15px 15px;
+    background-color: #ffffff;
+    border-radius: 0 0 15px 15px;
     color: black;
   }
-  .Information__text {
+  .Information__Box i {
+    font-size: 30px;
+  }
+  .Description__text {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     gap: 5px;
   }
-  .Information__text--name {
-    font-weight: 700;
+  .Description__text--name {
+    margin: 0;
     font-size: 1.125rem;
-    color: black;
-    margin: 0;
+    font-weight: 700;
   }
-  .Information__text--district {
-    font-weight: 300;
-    font-size: 1.0625rem;
-    color: black;
+  .Description__text--district {
     margin: 0;
+    font-size: 1.0625rem;
+    font-weight: 300;
+  }
+  .Cards__Container .Restaurant__link:nth-child(4) .Card__Box--new:first-child {
+    visibility: hidden;
+  }
+  .Cards__Container .Restaurant__link:nth-child(5) .Card__Box--new:first-child {
+    visibility: hidden;
   }
 }/*# sourceMappingURL=Accueil-Mobile.css.map */

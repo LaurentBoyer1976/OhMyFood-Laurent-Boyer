@@ -3,6 +3,7 @@
         $mainColor : #f3f3f3;
         $bodyColor : #f6f6f6;
         $geolocColor: #EAEAEA;
+        $InfoBoxBCkcolor: #ffffff;
         $BtnFontColor: #FFFFFF;
         $BtnBckColor1: #9356DC;
         $BtnBckColor2: #FF79DA;
@@ -31,6 +32,7 @@
         $FontStyleItal: italic;
     
         /*Sizing Width Height Box-Sizing*/
+        $main-Width:100%;
         $main-MinW: 320px;
         $main-MaxW: 100%;
         $main-Bsizing: border-box;
@@ -81,7 +83,7 @@
             display: $display;
             flex-flow: $flow;
             justify-content: $justifyC;
-            align-items: $Alignitems;
+            align-items: $Alignitems;            
             box-sizing: $B-Sizing;  
         }
         /*mixins Section HowItWorks*/
@@ -118,20 +120,17 @@
             font-weight: $FWeight;
         }
         /*mixins section cards restaurant*/
-        @mixin BoxNew--position($display: flex, $position: relative, $justifyC: center, $Alignitems: center, $Zindex: 2, $left: 240px, $top: 90px){
-            position: $position;
+        @mixin BoxNew--position($display: flex, $justifyC: center, $Alignitems: center, $Zindex: 2){       
             display: $display;
             justify-content: $justifyC;
             align-items: $Alignitems;
-            z-index: $Zindex;
-            left: $left;
-            top: $top;
+            z-index: $Zindex;    
         }
         @mixin BoxNew--color($BCKGroundColor: $NewCardColor, $Color: $FontNewCardColor){
             background-color: $BCKGroundColor;
             color: $Color;
          }
-         @mixin BoxNew--Size($Width: 80px, $Height: 29px, $Padding: 5px 0px, $Radius: 2px){
+         @mixin BoxNew--Size($Width: 90%, $Height: 45%, $Padding: 5px 0px, $Radius: 2px){
             width: $Width;
             height: $Height;
             padding: $Padding;

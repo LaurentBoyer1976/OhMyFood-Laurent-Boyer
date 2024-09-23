@@ -2,7 +2,7 @@
 
 /*Footer générique ohmyfood*/
 #Generic__Footer{
-    @include Display__Box($Alignitems: flex-start, $justifyC: unset, $flow: column);
+    @include Display__Box($Alignitems: flex-start, $justifyC: normal, $flow: column);
     @include Size__Box();
     padding: 22px 25px;
     width: 100%;
