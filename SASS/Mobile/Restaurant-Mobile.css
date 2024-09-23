@@ -114,27 +114,29 @@
   }
   .Navbar {
     display: flex;
-    flex-flow: row;
-    justify-content: unset;
-    align-items: center;
+    flex-flow: normal;
+    justify-content: normal;
+    align-items: normal;
     box-sizing: border-box;
-    gap: 40px;
     min-width: 320px;
     width: 100%;
-    max-width: 780px;
-    padding: 12.5px 0;
+    max-width: 100%;
+    padding: 12.5px 25%;
+    margin: 0;
   }
   .Navbar__Title {
     display: flex;
   }
+  .Navbar__Title--Logo {
+    width: 100%;
+  }
   .Navbar__Link {
     display: flex;
-    font-weight: 500;
+    font-size: x-large;
     width: 30px;
     height: 30px;
     text-decoration: none;
     align-items: center;
-    justify-content: flex-start;
   }
   .Navbar__Link i {
     width: 17px;
@@ -144,7 +146,7 @@
   /*Main et Menu et card menu*/
   main {
     background-color: #f6f6f6;
-    position: relative;
+    width: 100%;
   }
   .Background__Menu {
     display: flex;
@@ -154,7 +156,7 @@
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
-    width: 375px;
+    width: 100% px;
     height: 275px;
     background-size: cover;
     z-index: -1;
@@ -195,12 +197,14 @@
     margin: 31px 0 0 0;
   }
   .Restaurant__Presentation i {
+    font-size: x-large;
     width: 21px;
     height: 21px;
     position: relative;
-    bottom: 5px;
+    bottom: 10px;
     align-self: end;
     text-align: center;
+    margin-right: 10px;
   }
   .Menu {
     display: flex;

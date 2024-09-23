@@ -31,25 +31,27 @@ body {
 
     }
     .Navbar{
-    @include NavbarStyle($flow:row, $justifyC: unset);
-        gap: 40px;    
+    @include NavbarStyle($flow:normal, $justifyC: normal, $Alignitems:normal);
         min-width: 320px;
         width: 100%;
-        max-width: 780px;
-        padding: 12.5px 0;
+        max-width: 100%;
+        padding: 12.5px 25%;
+        margin: 0;
     }
     .Navbar__Title{
-        display: flex;      
+        display: flex;
+        &--Logo{
+            width:100%;
+        }      
     
     }    
      .Navbar__Link{
         display: flex;
-        font-weight: 500;
+        font-size: x-large;
         width: 30px;
         height: 30px;
         text-decoration: none;
-        align-items: center;
-        justify-content: flex-start;      
+        align-items: center;              
         & i{        
                 width: 17px;
                 color: $ArrowLcolor;
@@ -59,12 +61,12 @@ body {
      /*Main et Menu et card menu*/
      main{
         background-color: $bodyColor;
-       position: relative;
+        width: 100%;
     }      
     .Background__Menu{
         @include Display__Box;
         @include Size__Box;        
-        width: 375px;
+        width: 100%px;
         height: 275px;
         background-size: cover;
         z-index: -1;
@@ -90,12 +92,14 @@ body {
             margin: 31px 0 0 0;            
         }
         & i{
+            font-size: x-large;
             width: 21px;
             height: 21px;
             position: relative;
-            bottom: 5px;
+            bottom: 10px;
             align-self: end;
             text-align: center;
+            margin-right: 10px;
         }
     }
     .Menu{
