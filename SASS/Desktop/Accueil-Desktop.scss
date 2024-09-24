@@ -1,4 +1,4 @@
-@media screen and (min-width : 780.1px) and (max-width : 1980px){
+@media screen and (min-width : 1024px) and (max-width : 1980px){
 
     /*Importation des fichiers styles, variables et mixins*/
 
@@ -54,6 +54,7 @@
             @include Display__Box();
             @include Size__Box();
             background-color: $BtnFontColor;
+            width: 100%;
             
         }
             /* Explore__section*/
@@ -63,6 +64,7 @@
             background-color: $bodyColor;
             padding: 35px 0 30px 0;
             width: $main-Width;
+        }
                        
             .C-Explore__Container{
                 height: 100%;
@@ -90,33 +92,34 @@
                                             
                 }            
             }
-        }
+        
         /*How It Works Section*/
         #HowItWorks{
-            @include Display__Box($justifyC: unset, $Alignitems:unset);
+            @include Display__Box($justifyC: normal, $Alignitems:normal);
             @include Size__Box();
-            padding: 40px 20px 65px 20px;
+            padding: 40px 20px 65px 0;
             width: 100%;
         }        
                 .C-HowItWorks{
-                    @include Display__Box($justifyC: unset, $Alignitems:unset);
+                    @include Display__Box($justifyC: normal, $Alignitems:normal);
                     @include Size__Box();                    
                     height: 100%;
                 }                         
                         .C-HowItWorks__Container{
-                            @include Display__Box($Alignitems:unset);
+                            @include Display__Box($Alignitems:normal);
                             @include Size__Box();
+                            margin: 0 0 0 12.5%;
                                                         
                             &--title{
                                 @include mains__title();
                                 align-self: flex-start;
-                                margin: 0 0 0 12.5%;
+                                
                             }                                                           
                         } 
                         .C-HowItWorks__Step{
                             display: flex;
                             gap: 24px;
-                            margin: 0 14% 0 12.5%;
+                            
                         }                              
                         .C-HowItWorks__BlockStep{
                             display: flex;
@@ -147,24 +150,31 @@
                         }            
         /*Main-Article, restaurant lien et carte de présentation*/
         #Main__Article{
-            display: grid;                                
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);                               
             background-color: $bodyColor;
-            width: $main-Width;
-                                           
+            width: $main-Width;                                           
+        }
+        .Show__Restaurant{
+            display: grid;
+            grid-column-start: 1;
+            grid-column-end: 6;
+            width:100%;
         }            
             .Cards__Container{
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: repeat(5, 1fr);                    
+                grid-template-columns: repeat(10, 1fr);
+                grid-template-rows: 0.1fr repeat(4, 1fr);                    
                 box-sizing: $main-Bsizing;
-                padding:0 18px 55px 18px;
+                padding:30px 18px 0px 18px;
                 width: $main-Width;
+                height: 608px;
+                gap:6%;
                 &--title {
-                    grid-area: 1/1/2/5;                                                                       
+                    grid-area: 1/2/1/4;                                                                       
                     font-size: $mainFontS24;
-                    font-weight: $mainFontW700;
-                    justify-self: left;                    
-                    margin:10% 0 -10% 0;                                                                                                  
+                    font-weight: $mainFontW700;                                        
+                    margin:0 0 -20% 0;                                                                                                  
                 }
             }
             .Restaurant__link{
@@ -173,19 +183,19 @@
                 text-decoration: none;                                                
             }                          
             .Restaurant__link:nth-of-type(1){
-                grid-area: 2/1/4/3;                                                                                     
+                grid-area: 1/2/4/6;                                                                                     
             }
             .Restaurant__link:nth-of-type(2){
-                grid-area: 2/3/4/5;
+                grid-area: 1/6/4/10;
                                                                                                         
             }          
             .Restaurant__link:nth-of-type(3){
-                grid-area: 6/1/8/4;
-                margin-top: -20%;                                                                                        
+                grid-area: 4/2/6/6;
+                margin-top: -10%;                                                                                        
             }          
             .Restaurant__link:nth-of-type(4){
-                grid-area: 8/1/10/4;
-                margin-top: -20%;                                                                                        
+                grid-area: 4/6/6/10;
+                margin-top: -10%;                                                                                        
             }                                      
             .Card__Box{
                 display: grid;
@@ -194,12 +204,13 @@
                 grid-template-rows: repeat(10, 1fr);                                                  
                 border-radius: 15px;                    
                 &--IMG{
-                    grid-area: 1/1/8/11;
+                    grid-area: 1/1/7/11;
                     clip-path: $cutoutIMG;
                     box-sizing: border-box;
                     object-fit: cover;
                     width: 100%;
-                    max-height: 231px;                                                                                                                 
+                    max-height: 231px;
+                    margin-top: -4%;                                                                                                                 
                 }
                 &--new{                    
                     grid-area: 3/9/4/11;
@@ -207,7 +218,8 @@
                     @include BoxNew--Size;
                     @include BoxNew--Fontsize;
                     @include BoxNew--position;                        
-                }   
+                }
+                 
             }                                            
             .Information__Box{
                     grid-area: 8/1/11/11;
@@ -216,11 +228,13 @@
                     padding: 15px 25px 15px 15px;
                     background-color: $InfoBoxBCkcolor;
                     border-radius: 0 0 15px 15px;
-                    color: $BlackFont;                                                        
+                    color: $BlackFont;
+                    margin-top: 1%;                                                        
                     & i{                       
                         font-size: 30px;
                     }                                                       
-            }                                                                                
+            }
+            
             .Description__text{
                 display: flex;
                 flex-flow: column;
@@ -239,8 +253,16 @@
             .Cards__Container .Restaurant__link:nth-child(4) .Card__Box--new:first-child {
                 visibility: $Advertise;
             }
+            .Cards__Container .Restaurant__link:nth-child(4) .Card__Box .Information__Box {
+                grid-area: 8/1/10/11;
+                margin-top: -2.5%;
+            }           
             .Cards__Container .Restaurant__link:nth-child(5) .Card__Box--new:first-child {
                 visibility: $Advertise;
+            }
+            .Cards__Container .Restaurant__link:nth-child(5) .Card__Box .Information__Box {
+                grid-area: 8/1/10/11;
+                margin-top: -2.5%;
             }                                         
 }
 

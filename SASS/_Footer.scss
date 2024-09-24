@@ -25,19 +25,34 @@
             gap:7px;
             padding: 0;
             margin:0;
+            color: $BtnFontColor;
         &--suggest{
             display: flex;
             column-gap: 16px;
+            color: $BtnFontColor;
         }
         &--partner{
             display: flex;
             column-gap: 10px;
+            color: $BtnFontColor;
         }
         &--legal{
             font-weight: $mainFontW400;
+            color: $BtnFontColor;
         }
         &--link{
             text-decoration: none;
             color: $BtnFontColor;
+        }
+    }
+    @media screen and (min-width : 1024px) and (max-width : 1980px){
+        .Container__List{
+            display: flex;
+            flex-flow: row;
+        }        
+        ul li {    
+            display: inline;
+            
+
         }
     }
