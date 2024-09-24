@@ -98,6 +98,8 @@
     box-sizing: border-box;
   }
   /*Header*/
+  /*Header*/
+  /*Header*/
   #Head__site {
     display: flex;
     flex-flow: column nowrap;
@@ -332,8 +334,7 @@
     box-sizing: border-box;
     -o-object-fit: cover;
        object-fit: cover;
-    width: 100%;
-    max-height: 231px;
+    max-width: 100%;
   }
   .Card__Box--new {
     grid-area: 3/9/4/11;
