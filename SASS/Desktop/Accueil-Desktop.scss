@@ -1,4 +1,4 @@
-@media screen and (min-width : 1024px) and (max-width : 1980px){
+@media screen and (min-width : 1024px) and (max-width : 2500px){
 
     /*Importation des fichiers styles, variables et mixins*/
 
@@ -15,27 +15,24 @@
         margin: 0;    
     }
        /*Main-Container*/
-
        .Main-Container{
         @include Display__Box($flow: column wrap);
         @include Size__Box($MinW: 780.1px);
-        } 
-          
-        /*Header*/        
-    
+        }           
+        /*Header*/            
         #Head__site{
             @include HeaderPosition($flow: row wrap);            
             @include Size__Box($MinW: 780.1px);                
             width: $main-Width;
             z-index: 2;
-        }
+            }
         .Navbar{
             @include NavbarStyle();                
             width: $main-Width;
-        }                    
+            }                    
             .Navbar__Title{
                 padding: 30px 89px;
-            }        
+                }        
             .Navbar__GeoLoc{
                 @include NavbarStyle($flow: row wrap);                
                 background-color: $geolocColor;
@@ -46,106 +43,98 @@
                 &--sample{
                     font-weight: $mainFontW500;
                     font-size: $mainFontS16;
-                }           
-            }
-        
+                    }           
+                }        
         /*Main*/
         main{
             @include Display__Box();
             @include Size__Box();
             background-color: $BtnFontColor;
-            width: 100%;
-            
-        }
-            /* Explore__section*/
+            width: 100%;            
+            }
+        /* Explore__section*/
         #Explore{
             @include Display__Box($justifyC: normal);
             @include Size__Box();
             background-color: $bodyColor;
             padding: 35px 0 30px 0;
             width: $main-Width;
-        }
-                       
+            }                       
             .C-Explore__Container{
                 height: 100%;
-            }
-            .C-Explore__Site{
-                @include Display__Box($justifyC: normal);
-                @include Size__Box();
-                gap:20px;                   
-                &--title{
-                    @include mains__title($size:$mainFontS40);                    
-                    text-align: center;
-                    max-width: 100%;
-                    margin: 0;
                 }
-                &--text{
-                    font-size: $mainFontS18;
-                    font-weight: $mainFontW300;
-                    min-width: 315px;
-                    margin: 0px;
-                    text-align: center;
-                }
-                &--Btn{
-                    @include mains__Btn--Rounded;
-                    font-size: $mainFontS16;                       
-                                            
-                }            
-            }
-        
+                .C-Explore__Site{
+                    @include Display__Box($justifyC: normal);
+                    @include Size__Box();
+                    gap:20px;                   
+                    &--title{
+                        @include mains__title($size:$mainFontS40);                    
+                        text-align: center;
+                        max-width: 100%;
+                        margin: 0;
+                        }
+                    &--text{
+                        font-size: $mainFontS18;
+                        font-weight: $mainFontW300;
+                        min-width: 315px;
+                        margin: 0px;
+                        text-align: center;
+                        }
+                    &--Btn{
+                        @include mains__Btn--Rounded;
+                        font-size: $mainFontS16;                                                                   
+                        }            
+                    }        
         /*How It Works Section*/
         #HowItWorks{
             @include Display__Box($justifyC: normal, $Alignitems:normal);
             @include Size__Box();
             padding: 40px 20px 65px 0;
             width: 100%;
-        }        
+            }        
                 .C-HowItWorks{
                     @include Display__Box($justifyC: normal, $Alignitems:normal);
                     @include Size__Box();                    
                     height: 100%;
-                }                         
-                        .C-HowItWorks__Container{
-                            @include Display__Box($Alignitems:normal);
-                            @include Size__Box();
-                            margin: 0 0 0 12.5%;
-                                                        
-                            &--title{
-                                @include mains__title();
-                                align-self: flex-start;
-                                
-                            }                                                           
+                    }                         
+                    .C-HowItWorks__Container{
+                        @include Display__Box($Alignitems:normal);
+                        @include Size__Box();
+                        padding: 0 10.85% 0 12.5%;                                                    
+                        &--title{
+                            @include mains__title();
+                            align-self: flex-start;                            
+                        }                                                           
                         } 
-                        .C-HowItWorks__Step{
-                            display: flex;
-                            gap: 24px;
-                            
+                    .C-HowItWorks__Step{
+                        display: flex;
+                        gap: 24px;                                
                         }                              
-                        .C-HowItWorks__BlockStep{
-                            display: flex;
-                            flex-flow: wrap;
-                            align-content: flex-start;
-                            flex-grow: 1;                            
-                            &--NumberContainer{
-                                display: flex;
-                                
+                    .C-HowItWorks__BlockStep{
+                        display: flex;
+                        flex-flow: wrap;
+                        align-content: flex-start;
+                        flex-grow: 1;                            
+                        &--NumberContainer{
+                            display: flex;                            
                             }                
-                            &--Nbr{
-                                @include Display-Step();                   
-                                @include Position-Step();
-                                @include Step-Style();                          
+                        &--Nbr{
+                            @include Display-Step();                   
+                            @include Position-Step();
+                            @include Step-Style();                          
                             }                               
-                            &--Btn{ 
-                                @include HowItWorksBTN($justifyC:normal, $alignC:normal, $flow: nowrap);                                                                               
-                                font-size: $mainFontS16;                                
+                        &--Btn{ 
+                            @include HowItWorksBTN($justifyC:normal, $alignC:unset, $flow: nowrap);                                                                               
+                            font-size: $mainFontS16;
+                            width: 95%;                                
                             }
-                            &--Btn i{ 
-                                display: flex;                                                                                                   
-                                margin: auto 15px auto 25px;
-                                color: #7e7e7e;                                                                    
+                        &--Btn i{ 
+                            display: flex;                                                                                                   
+                            margin: auto 15px auto 25px;
+                            color: #7e7e7e;                                                                    
                             }
-                            &--Btn .fa-store{
-                                color: $BtnBckColor1;
+                        &--Btn .fa-store{
+                            color: $BtnBckColor1;
                             }
                         }            
         /*Main-Article, restaurant lien et carte de présentation*/
@@ -153,74 +142,83 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);                               
             background-color: $bodyColor;
-            width: $main-Width;                                           
-        }
+            width: $main-Width;
+            height: 668px;                                           
+            }
         .Show__Restaurant{
             display: grid;
             grid-column-start: 1;
             grid-column-end: 6;
-            width:100%;
-        }            
+            padding: 30px 12.5%;           
+            height: 91%;
+            }            
             .Cards__Container{
                 display: grid;
-                grid-template-columns: repeat(10, 1fr);
-                grid-template-rows: 0.1fr repeat(4, 1fr);                    
-                box-sizing: $main-Bsizing;
-                padding:30px 18px 0px 18px;
-                width: $main-Width;
+                grid-template-columns: repeat(auto-fit, minmax(251px, 1fr));
+                box-sizing: $main-Bsizing;                                            
                 height: 608px;
-                gap:6%;
+                position: relative;                
                 &--title {
-                    grid-area: 1/2/1/4;                                                                       
+                    grid-area: 1/1/1/4;                                                                       
                     font-size: $mainFontS24;
                     font-weight: $mainFontW700;                                        
-                    margin:0 0 -20% 0;                                                                                                  
+                    position: absolute;
+                    top: -20px;                                                                                                  
+                    }
                 }
-            }
             .Restaurant__link{
-                display: grid;                                                 
+                display: grid;
+                grid-column: span 2;                                                 
                 border-radius: 15px;                
-                text-decoration: none;                                                
-            }                          
-            .Restaurant__link:nth-of-type(1){
-                grid-area: 1/2/4/6;                                                                                     
-            }
-            .Restaurant__link:nth-of-type(2){
-                grid-area: 1/6/4/10;
-                                                                                                        
-            }          
+                text-decoration: none;                                                              
+                min-height: 251px;
+                height: 55%;               
+                width: 45%;
+                box-sizing: border-box;               
+                }                          
+            .Restaurant__link:nth-of-type(1){                
+                position: absolute;                                                                                                               
+                }
+            .Restaurant__link:nth-of-type(2){                
+                position: absolute;
+                right: 0%;                                                                                                    
+                }          
             .Restaurant__link:nth-of-type(3){
-                grid-area: 4/2/6/6;
-                margin-top: -10%;                                                                                        
-            }          
-            .Restaurant__link:nth-of-type(4){
-                grid-area: 4/6/6/10;
-                margin-top: -10%;                                                                                        
-            }                                      
+                position: absolute;
+                top: 45%;                                                                                                                                                   
+                }          
+            .Restaurant__link:nth-of-type(4){               
+                position: absolute;
+                top: 45%;
+                right: 0%;                                                                                                                        
+                }                                      
             .Card__Box{
                 display: grid;
+                display: grid;
+                min-height: 150px;
+                display: grid;                                
                 min-height: 150px;
                 grid-template-columns: repeat(10, 1fr);
                 grid-template-rows: repeat(10, 1fr);                                                  
-                border-radius: 15px;                    
+                border-radius: 15px;
+                position: relative;                                        
                 &--IMG{
                     grid-area: 1/1/7/11;
                     clip-path: $cutoutIMG;
                     box-sizing: border-box;
                     object-fit: cover;
                     width: 100%;
-                    max-height: 231px;
-                    margin-top: -4%;                                                                                                                 
-                }
+                    max-height: 231px;                                                            
+                    }
                 &--new{                    
                     grid-area: 3/9/4/11;
                     @include BoxNew--color;
                     @include BoxNew--Size;
                     @include BoxNew--Fontsize;
                     @include BoxNew--position;                        
-                }
+                    }
                  
-            }                                            
+                }                                            
             .Information__Box{
                     grid-area: 8/1/11/11;
                     @include Display__Box($flow:row, $justifyC: space-between);
@@ -229,12 +227,15 @@
                     background-color: $InfoBoxBCkcolor;
                     border-radius: 0 0 15px 15px;
                     color: $BlackFont;
-                    margin-top: 1%;                                                        
+                    position: absolute;
+                    width: 100%;
+                    box-sizing: border-box;
+                    min-height: fit-content;
+                    top: -35%;                                                                           
                     & i{                       
                         font-size: 30px;
-                    }                                                       
-            }
-            
+                        }                                                       
+                    }                                         
             .Description__text{
                 display: flex;
                 flex-flow: column;
@@ -243,27 +244,28 @@
                     margin: 0;
                     font-size: $mainFontS18;
                     font-weight: $mainFontW700;
-                }
+                    }
                 &--district{
                     margin: 0;
                     font-size: $mainFontS17;
                     font-weight: $mainFontW300;
-                }
-            }                                                                           
+                    }
+                }                                                                           
             .Cards__Container .Restaurant__link:nth-child(4) .Card__Box--new:first-child {
                 visibility: $Advertise;
-            }
+                }
             .Cards__Container .Restaurant__link:nth-child(4) .Card__Box .Information__Box {
                 grid-area: 8/1/10/11;
-                margin-top: -2.5%;
-            }           
+                top: -51%;                
+                }           
             .Cards__Container .Restaurant__link:nth-child(5) .Card__Box--new:first-child {
                 visibility: $Advertise;
-            }
+                }
             .Cards__Container .Restaurant__link:nth-child(5) .Card__Box .Information__Box {
                 grid-area: 8/1/10/11;
-                margin-top: -2.5%;
-            }                                         
-}
+                top: -51%;
+                }
+}                                         
+
 
 

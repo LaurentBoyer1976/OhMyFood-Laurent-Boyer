@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@media screen and (min-width: 1024px) and (max-width: 1980px) {
+@media screen and (min-width: 1024px) and (max-width: 2500px) {
   /*Importation des fichiers styles, variables et mixins*/
   /*Variables*/
   /*color*/
@@ -86,16 +86,36 @@
   /*How It Works Section*/
   /*Main-Article, restaurant lien et carte de présentation*/
 }
-@media screen and (min-width: 1024px) and (max-width: 1980px) and (min-width: 1024px) and (max-width: 1980px) {
-  .Container__List {
-    display: flex;
-    flex-flow: row;
+@media screen and (min-width: 1024px) and (max-width: 2500px) and (min-width: 1024px) and (max-width: 2500px) {
+  #Generic__Footer {
+    flex-flow: row-reverse;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    min-height: 114px;
   }
-  ul li {
-    display: inline;
+  .Container__List {
+    flex-flow: row-reverse;
+    align-items: flex-end;
+    padding-right: 3%;
+    gap: 75px;
+  }
+  .List__Info {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .List__Info--suggest {
+    gap: 11px;
+  }
+  .List__Info--partner {
+    gap: 10px;
+  }
+  .List__Info--legal {
+    margin-left: 20px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1980px) {
+@media screen and (min-width: 1024px) and (max-width: 2500px) {
   * {
     font-family: "Roboto", sans-serif;
   }
@@ -239,7 +259,7 @@
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
-    margin: 0 0 0 12.5%;
+    padding: 0 10.85% 0 12.5%;
   }
   .C-HowItWorks__Container--title {
     font-size: 1.5rem;
@@ -280,7 +300,7 @@
     display: flex;
     flex-flow: nowrap;
     position: relative;
-    align-content: normal;
+    align-content: unset;
     justify-content: normal;
     margin: 5px;
     padding: 30px 10px 30px 0px;
@@ -291,6 +311,7 @@
     border-radius: 20px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     font-size: 1rem;
+    width: 95%;
   }
   .C-HowItWorks__BlockStep--Btn i {
     display: flex;
@@ -305,54 +326,65 @@
     grid-template-columns: repeat(5, 1fr);
     background-color: #f6f6f6;
     width: 100%;
+    height: 668px;
   }
   .Show__Restaurant {
     display: grid;
     grid-column-start: 1;
     grid-column-end: 6;
-    width: 100%;
+    padding: 30px 12.5%;
+    height: 91%;
   }
   .Cards__Container {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 0.1fr repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(251px, 1fr));
     box-sizing: border-box;
-    padding: 30px 18px 0px 18px;
-    width: 100%;
     height: 608px;
-    gap: 6%;
+    position: relative;
   }
   .Cards__Container--title {
-    grid-area: 1/2/1/4;
+    grid-area: 1/1/1/4;
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 0 0 -20% 0;
+    position: absolute;
+    top: -20px;
   }
   .Restaurant__link {
     display: grid;
+    grid-column: span 2;
     border-radius: 15px;
     text-decoration: none;
+    min-height: 251px;
+    height: 55%;
+    width: 45%;
+    box-sizing: border-box;
   }
   .Restaurant__link:nth-of-type(1) {
-    grid-area: 1/2/4/6;
+    position: absolute;
   }
   .Restaurant__link:nth-of-type(2) {
-    grid-area: 1/6/4/10;
+    position: absolute;
+    right: 0%;
   }
   .Restaurant__link:nth-of-type(3) {
-    grid-area: 4/2/6/6;
-    margin-top: -10%;
+    position: absolute;
+    top: 45%;
   }
   .Restaurant__link:nth-of-type(4) {
-    grid-area: 4/6/6/10;
-    margin-top: -10%;
+    position: absolute;
+    top: 45%;
+    right: 0%;
   }
   .Card__Box {
+    display: grid;
+    display: grid;
+    min-height: 150px;
     display: grid;
     min-height: 150px;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
     border-radius: 15px;
+    position: relative;
   }
   .Card__Box--IMG {
     grid-area: 1/1/7/11;
@@ -363,7 +395,6 @@
        object-fit: cover;
     width: 100%;
     max-height: 231px;
-    margin-top: -4%;
   }
   .Card__Box--new {
     grid-area: 3/9/4/11;
@@ -391,7 +422,12 @@
     background-color: #ffffff;
     border-radius: 0 0 15px 15px;
     color: black;
-    margin-top: 1%;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    top: -35%;
   }
   .Information__Box i {
     font-size: 30px;
@@ -416,13 +452,13 @@
   }
   .Cards__Container .Restaurant__link:nth-child(4) .Card__Box .Information__Box {
     grid-area: 8/1/10/11;
-    margin-top: -2.5%;
+    top: -51%;
   }
   .Cards__Container .Restaurant__link:nth-child(5) .Card__Box--new:first-child {
     visibility: hidden;
   }
   .Cards__Container .Restaurant__link:nth-child(5) .Card__Box .Information__Box {
     grid-area: 8/1/10/11;
-    margin-top: -2.5%;
+    top: -51%;
   }
 }/*# sourceMappingURL=Accueil-Desktop.css.map */

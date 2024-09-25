@@ -69,13 +69,33 @@
   color: #FFFFFF;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1980px) {
-  .Container__List {
-    display: flex;
-    flex-flow: row;
+@media screen and (min-width: 1024px) and (max-width: 2500px) {
+  #Generic__Footer {
+    flex-flow: row-reverse;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    min-height: 114px;
   }
-  ul li {
-    display: inline;
+  .Container__List {
+    flex-flow: row-reverse;
+    align-items: flex-end;
+    padding-right: 3%;
+    gap: 75px;
+  }
+  .List__Info {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .List__Info--suggest {
+    gap: 11px;
+  }
+  .List__Info--partner {
+    gap: 10px;
+  }
+  .List__Info--legal {
+    margin-left: 20px;
   }
 }
 /*Variables*/
