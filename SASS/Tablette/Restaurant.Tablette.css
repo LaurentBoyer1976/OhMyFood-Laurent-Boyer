@@ -1,1 +1,326 @@
-/*# sourceMappingURL=Restaurant.Tablette.css.map */
+@charset "UTF-8";
+@media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
+  /*Importation des fichiers styles, variables et mixins*/
+  /*Variables*/
+  /*color*/
+  /*Font*/
+  /*Sizing Width Height Box-Sizing*/
+  /*rendre visible ou caché un élément*/
+  /*Mixins générales*/
+  /*Mixins Navbar*/
+  /*mixins Section HowItWorks*/
+  /*mixins section cards restaurant*/
+  /*Mixin page menu*/
+  /*Footer générique ohmyfood*/
+  #Generic__Footer {
+    display: flex;
+    flex-flow: column;
+    justify-content: normal;
+    align-items: flex-start;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 22px 25px;
+    width: 100%;
+    background-color: #353535;
+    color: #FFFFFF;
+  }
+  .Container__List {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: unset;
+    gap: 16px;
+  }
+  .Container__List--logo {
+    width: 139px;
+    height: 27px;
+  }
+  .List__Info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: unset;
+    align-items: unset;
+    font-weight: 500;
+    list-style: none;
+    gap: 7px;
+    padding: 0;
+    margin: 0;
+    color: #FFFFFF;
+  }
+  .List__Info--suggest {
+    display: flex;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    color: #FFFFFF;
+  }
+  .List__Info--partner {
+    display: flex;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    color: #FFFFFF;
+  }
+  .List__Info--legal {
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+  .List__Info--link {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  /*Variables*/
+  /*color*/
+  /*Font*/
+  /*Sizing Width Height Box-Sizing*/
+  /*rendre visible ou caché un élément*/
+  /*Mixins générales*/
+  /*Mixins Navbar*/
+  /*mixins Section HowItWorks*/
+  /*mixins section cards restaurant*/
+  /*Mixin page menu*/
+  /*Général*/
+  /*body & Main-container*/
+  /*header et navbar styles*/
+  /*Main et Menu et card menu*/
+}
+@media screen and (min-width: 780.1px) and (max-width: 1023.9px) and (min-width: 1024px) and (max-width: 2500px) {
+  #Generic__Footer {
+    flex-flow: row-reverse;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    min-height: 114px;
+  }
+  .Container__List {
+    flex-flow: row-reverse;
+    align-items: flex-end;
+    padding-right: 3%;
+    gap: 75px;
+  }
+  .List__Info {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .List__Info--suggest {
+    gap: 11px;
+  }
+  .List__Info--partner {
+    gap: 10px;
+  }
+  .List__Info--legal {
+    margin-left: 20px;
+  }
+}
+@media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
+  * {
+    font-family: "Roboto", sans-serif;
+  }
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: rgba(17, 255, 238, 0);
+    margin: 0;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .Main-Container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+  #Head__site {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 96px;
+  }
+  .Navbar {
+    display: flex;
+    flex-flow: row;
+    justify-content: normal;
+    align-items: center;
+    box-sizing: border-box;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    padding: 12.5px 1%;
+    margin: 0;
+  }
+  .Navbar__Title {
+    display: flex;
+    margin-left: 38%;
+  }
+  .Navbar__Title--Logo {
+    width: 100%;
+  }
+  .Navbar__Link {
+    display: flex;
+    font-size: x-large;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    align-items: center;
+  }
+  .Navbar__Link i {
+    width: 17px;
+    color: #353535;
+    margin-left: 17px;
+  }
+  .Main-Container__Menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    background-color: #FFFFFF;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    gap: 0px 0px;
+    grid-area: 2/1/4/2;
+    background-color: #FFFFFF;
+    width: 100%;
+  }
+  .Background__Menu {
+    grid-area: 1/1/5/4;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    height: 373px;
+    background-size: cover;
+  }
+  .Background__Menu--IMG {
+    min-width: 320px;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #Main__Article {
+    grid-area: 4/2/15/3;
+    border-radius: 40px 40px 0 0;
+    background-color: #f6f6f6;
+    height: 115%;
+  }
+  .Restaurant__Presentation {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 17px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 40px 40px 0 0;
+    gap: 24px;
+  }
+  .Restaurant__Presentation--title {
+    font-family: "Shrikhand", sans-serif;
+    font-size: 1.75rem;
+    margin: 31px 0 0 0;
+  }
+  .Restaurant__Presentation i {
+    font-size: x-large;
+    width: 21px;
+    height: 21px;
+    position: relative;
+    bottom: 10px;
+    align-self: end;
+    text-align: center;
+    margin-right: 10px;
+  }
+  .Menu {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: unset;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 20%;
+    width: 100%;
+    height: 95%;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+  .Menu__Starter, .Menu__Maincourse, .Menu__Dessert {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: unset;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    gap: 12px;
+    width: 100%;
+  }
+  .Menu__Starter--title, .Menu__Maincourse--title, .Menu__Dessert--title {
+    align-self: self-start;
+    font-weight: 300;
+    font-size: 1rem;
+    margin: 0;
+  }
+  .Menu__Starter--title::after, .Menu__Maincourse--title::after, .Menu__Dessert--title::after {
+    content: "";
+    display: block;
+    margin-top: 5px;
+    width: 40px;
+    height: 3px;
+    background-color: #99E2D0;
+  }
+  .Menu__Btn {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 13.5px 15px;
+    box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
+  }
+  .Menu__Btn--price {
+    align-self: end;
+    font-weight: 700;
+    font-size: 0.9375rem;
+  }
+  .Menu__Select {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-height: 69px;
+    gap: 5px;
+  }
+  .Menu__Select--dishe {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  .Menu__Select--info {
+    font-weight: 300;
+    font-size: 0.9375rem;
+    align-self: flex-start;
+    margin: 0;
+  }
+  .Menu__CommandBTN {
+    font-weight: 500;
+    color: #FFFFFF;
+    border-radius: 25px;
+    background: linear-gradient(to top, #9356DC, #FF79DA);
+    padding: 13px 16px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    width: 34%;
+  }
+  #Generic__Footer {
+    grid-area: 4/1/4/2;
+  }
+}/*# sourceMappingURL=Restaurant.Tablette.css.map */

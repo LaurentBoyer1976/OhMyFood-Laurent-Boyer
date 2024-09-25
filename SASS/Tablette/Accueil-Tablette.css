@@ -1,8 +1,475 @@
+@charset "UTF-8";
 @media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
-  C-HowItWorks__Step {
+  /*Importation des fichiers styles, variables et mixins*/
+  /*Variables*/
+  /*color*/
+  /*Font*/
+  /*Sizing Width Height Box-Sizing*/
+  /*rendre visible ou caché un élément*/
+  /*Mixins générales*/
+  /*Mixins Navbar*/
+  /*mixins Section HowItWorks*/
+  /*mixins section cards restaurant*/
+  /*Mixin page menu*/
+  /*Footer générique ohmyfood*/
+  #Generic__Footer {
     display: flex;
     flex-flow: column;
+    justify-content: normal;
+    align-items: flex-start;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 22px 25px;
+    width: 100%;
+    background-color: #353535;
+    color: #FFFFFF;
+  }
+  .Container__List {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: unset;
+    gap: 16px;
+  }
+  .Container__List--logo {
+    width: 139px;
+    height: 27px;
+  }
+  .List__Info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: unset;
+    align-items: unset;
+    font-weight: 500;
+    list-style: none;
+    gap: 7px;
+    padding: 0;
+    margin: 0;
+    color: #FFFFFF;
+  }
+  .List__Info--suggest {
+    display: flex;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    color: #FFFFFF;
+  }
+  .List__Info--partner {
+    display: flex;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    color: #FFFFFF;
+  }
+  .List__Info--legal {
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+  .List__Info--link {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  /*Variables*/
+  /*color*/
+  /*Font*/
+  /*Sizing Width Height Box-Sizing*/
+  /*rendre visible ou caché un élément*/
+  /*Mixins générales*/
+  /*Mixins Navbar*/
+  /*mixins Section HowItWorks*/
+  /*mixins section cards restaurant*/
+  /*Mixin page menu*/
+  /*Général*/
+  /*Main-Container*/
+  /*Header*/
+  /*Main*/
+  /* Explore__section*/
+  /*How It Works Section*/
+  /*Main-Article, restaurant lien et carte de présentation*/
+}
+@media screen and (min-width: 780.1px) and (max-width: 1023.9px) and (min-width: 1024px) and (max-width: 2500px) {
+  #Generic__Footer {
+    flex-flow: row-reverse;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    min-height: 114px;
+  }
+  .Container__List {
+    flex-flow: row-reverse;
+    align-items: flex-end;
+    padding-right: 3%;
+    gap: 75px;
+  }
+  .List__Info {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .List__Info--suggest {
+    gap: 11px;
+  }
+  .List__Info--partner {
+    gap: 10px;
+  }
+  .List__Info--legal {
+    margin-left: 20px;
+  }
+}
+@media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
+  * {
+    font-family: "Roboto", sans-serif;
+  }
+  body {
+    width: 100%;
+    margin: 0;
+  }
+  .Main-Container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 780.1px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  #Head__site {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 780.1px;
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 2;
+  }
+  .Navbar {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .Navbar__Title {
+    padding: 30px 89px;
+  }
+  .Navbar__GeoLoc {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #EAEAEA;
+    gap: 17px;
+    width: 100%;
+    padding: 15.5px 0;
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .Navbar__GeoLoc--sample {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    width: 100%;
+  }
+  #Explore {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: normal;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    background-color: #f6f6f6;
+    padding: 35px 0 30px 0;
+    width: 100%;
+  }
+  .C-Explore__Container {
+    height: 100%;
+  }
+  .C-Explore__Site {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: normal;
+    align-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    gap: 20px;
+  }
+  .C-Explore__Site--title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    max-width: 100%;
+    margin: 0;
+  }
+  .C-Explore__Site--text {
+    font-size: 1.125rem;
+    font-weight: 300;
+    min-width: 315px;
+    margin: 0px;
+    text-align: center;
+  }
+  .C-Explore__Site--Btn {
+    font-weight: 500;
+    color: #FFFFFF;
+    border-radius: 25px;
+    background: linear-gradient(to top, #9356DC, #FF79DA);
+    padding: 13px 16px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    font-size: 1rem;
+  }
+  #HowItWorks {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: normal;
+    align-items: normal;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 40px 20px 65px 0;
+    width: 100%;
+  }
+  .C-HowItWorks {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: normal;
+    align-items: normal;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  .C-HowItWorks__Container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: normal;
+    min-width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10.85% 0 12.5%;
+  }
+  .C-HowItWorks__Container--title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    align-self: start;
+  }
+  .C-HowItWorks__Step {
+    display: flex;
+    flex-direction: column;
     gap: 24px;
-    margin: 0 14% 0 12.5%;
+  }
+  .C-HowItWorks__BlockStep {
+    display: flex;
+    flex-flow: wrap;
+    align-content: flex-start;
+    flex-grow: 1;
+    width: 60%;
+  }
+  .C-HowItWorks__BlockStep--NumberContainer {
+    display: flex;
+  }
+  .C-HowItWorks__BlockStep--Nbr {
+    display: flex;
+    flex-flow: wrap;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+    z-index: 2;
+    top: 55px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #9356DC;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .C-HowItWorks__BlockStep--Btn {
+    display: flex;
+    flex-flow: nowrap;
+    position: relative;
+    align-content: unset;
+    justify-content: normal;
+    margin: 5px;
+    padding: 30px 10px 30px 0px;
+    width: 100%;
+    font-weight: 500;
+    background-color: #f6f6f6;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
+    width: 95%;
+  }
+  .C-HowItWorks__BlockStep--Btn i {
+    display: flex;
+    margin: auto 15px auto 25px;
+    color: #7e7e7e;
+  }
+  .C-HowItWorks__BlockStep--Btn .fa-store {
+    color: #9356DC;
+  }
+  .C-HowItWorks__Container .C-HowItWorks__BlockStep:nth-of-type(1) {
+    align-self: start;
+  }
+  .C-HowItWorks__Container .C-HowItWorks__BlockStep:nth-of-type(2) {
+    align-self: center;
+  }
+  .C-HowItWorks__Container .C-HowItWorks__BlockStep:nth-of-type(3) {
+    align-self: end;
+  }
+  #Main__Article {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: #f6f6f6;
+    width: 100%;
+    height: 668px;
+  }
+  .Show__Restaurant {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    padding: 30px 12.5%;
+    height: 91%;
+  }
+  .Cards__Container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(251px, 1fr));
+    box-sizing: border-box;
+    height: 608px;
+    position: relative;
+  }
+  .Cards__Container--title {
+    grid-area: 1/1/1/4;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: absolute;
+    top: -20px;
+  }
+  .Restaurant__link {
+    display: grid;
+    grid-column: span 2;
+    border-radius: 15px;
+    text-decoration: none;
+    min-height: 251px;
+    height: 55%;
+    width: 45%;
+    box-sizing: border-box;
+  }
+  .Restaurant__link:nth-of-type(1) {
+    position: absolute;
+  }
+  .Restaurant__link:nth-of-type(2) {
+    position: absolute;
+    right: 0%;
+  }
+  .Restaurant__link:nth-of-type(3) {
+    position: absolute;
+    top: 45%;
+  }
+  .Restaurant__link:nth-of-type(4) {
+    position: absolute;
+    top: 45%;
+    right: 0%;
+  }
+  .Card__Box {
+    display: grid;
+    display: grid;
+    min-height: 150px;
+    display: grid;
+    min-height: 150px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border-radius: 15px;
+    position: relative;
+  }
+  .Card__Box--IMG {
+    grid-area: 1/1/7/11;
+    -webkit-clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+            clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+    box-sizing: border-box;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    max-height: 231px;
+  }
+  .Card__Box--new {
+    grid-area: 3/9/4/11;
+    background-color: #99E2D0;
+    color: #008766;
+    width: 90%;
+    height: 45%;
+    padding: 5px 0px;
+    border-radius: 2px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  .Information__Box {
+    grid-area: 8/1/11/11;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+    padding: 15px 25px 15px 15px;
+    background-color: #ffffff;
+    border-radius: 0 0 15px 15px;
+    color: black;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    top: -35%;
+  }
+  .Information__Box i {
+    font-size: 30px;
+  }
+  .Description__text {
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
+  }
+  .Description__text--name {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+  .Description__text--district {
+    margin: 0;
+    font-size: 1.0625rem;
+    font-weight: 300;
+  }
+  .Cards__Container .Restaurant__link:nth-child(4) .Card__Box--new:first-child {
+    visibility: hidden;
+  }
+  .Cards__Container .Restaurant__link:nth-child(4) .Card__Box .Information__Box {
+    grid-area: 8/1/10/11;
+    top: -51%;
+  }
+  .Cards__Container .Restaurant__link:nth-child(5) .Card__Box--new:first-child {
+    visibility: hidden;
+  }
+  .Cards__Container .Restaurant__link:nth-child(5) .Card__Box .Information__Box {
+    grid-area: 8/1/10/11;
+    top: -51%;
   }
 }/*# sourceMappingURL=Accueil-Tablette.css.map */
