@@ -126,14 +126,8 @@
     box-sizing: border-box;
   }
   .Main-Container {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    background-color: rgba(17, 255, 238, 0);
+    display: grid;
+    grid-template-columns: 1fr;
     margin: 0;
   }
   #Head__site {
@@ -141,25 +135,24 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
     width: 100%;
+    min-height: 96px;
   }
   .Navbar {
     display: flex;
-    flex-flow: normal;
+    flex-flow: row;
     justify-content: normal;
     align-items: normal;
     box-sizing: border-box;
-    min-width: 320px;
+    min-width: 100%;
     width: 100%;
-    max-width: 100%;
-    padding: 12.5px 25%;
+    height: 100%;
+    padding: 12.5px 1%;
     margin: 0;
   }
   .Navbar__Title {
     display: flex;
+    margin-left: 45%;
   }
   .Navbar__Title--Logo {
     width: 100%;
@@ -177,22 +170,28 @@
     color: #353535;
     margin-left: 17px;
   }
+  .Main-Container__Menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
   main {
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    gap: 0px 0px;
+    grid-area: 2/1/4/2;
     background-color: #f6f6f6;
     width: 100%;
   }
   .Background__Menu {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    grid-area: 1/1/5/4;
     min-width: 320px;
     max-width: 100%;
     box-sizing: border-box;
-    width: 100% px;
-    height: 275px;
+    width: 100%;
+    height: 373px;
     background-size: cover;
-    z-index: -1;
   }
   .Background__Menu--IMG {
     min-width: 320px;
@@ -203,14 +202,7 @@
        object-fit: cover;
   }
   #Main__Article {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -55px;
-    padding: 0 13px;
-    gap: 40px;
+    grid-area: 4/2/14/3;
     border-radius: 40px 40px 0 0;
     background-color: #f6f6f6;
   }
@@ -320,5 +312,8 @@
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     border: none;
     width: 50%;
+  }
+  #Generic__Footer {
+    grid-area: 3/1/4/2;
   }
 }/*# sourceMappingURL=Restaurant-Desktop.css.map */
