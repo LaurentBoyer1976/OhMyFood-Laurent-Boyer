@@ -81,10 +81,15 @@
                         text-align: center;
                         }
                     &--Btn{
-                        @include mains__Btn--Rounded;
-                        font-size: $mainFontS16;                                                                   
-                        }            
-                    }        
+                        @include mains__Btn--Rounded;                                              
+                        font-size: $mainFontS16;
+                            &:hover{
+                            @include mains__Btn--RoundedLighter();
+                            }                                                                   
+                        }                    
+                    }
+                   
+                           
         /*How It Works Section*/
         #HowItWorks{
             @include Display__Box($justifyC: normal, $Alignitems:normal);

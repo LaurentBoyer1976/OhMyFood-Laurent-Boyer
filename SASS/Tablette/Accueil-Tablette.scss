@@ -81,6 +81,7 @@
                      }
                  &--Btn{
                      @include mains__Btn--Rounded;
+                     @include Hover-Gradient-Lighter($BtnGradient);
                      font-size: $mainFontS16;                                                                   
                      }            
                  }        

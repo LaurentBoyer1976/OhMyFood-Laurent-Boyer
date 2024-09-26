@@ -87,7 +87,8 @@
                         text-align: center;
                     }
                     &--Btn{
-                        @include mains__Btn--Rounded();                        
+                        @include mains__Btn--Rounded();
+                        @include Hover-Gradient-Lighter($BtnGradient);
                     }            
                 }
             }
