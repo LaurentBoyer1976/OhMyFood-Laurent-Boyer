@@ -140,6 +140,9 @@
     justify-self: start;
     grid-area: 1/5/1/6;
   }
+  .List__Info--contact {
+    grid-area: contact;
+  }
 }
 @media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
   * {
