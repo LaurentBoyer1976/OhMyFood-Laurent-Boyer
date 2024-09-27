@@ -6,6 +6,7 @@
   /*Font*/
   /*Sizing Width Height Box-Sizing*/
   /*rendre visible ou caché un élément*/
+  /*Animations, Transition*/
   /*Mixins générales*/
   /*Mixins Navbar*/
   /*mixins Section HowItWorks*/
@@ -73,6 +74,7 @@
   /*Font*/
   /*Sizing Width Height Box-Sizing*/
   /*rendre visible ou caché un élément*/
+  /*Animations, Transition*/
   /*Mixins générales*/
   /*Mixins Navbar*/
   /*mixins Section HowItWorks*/
@@ -85,31 +87,43 @@
 }
 @media screen and (min-width: 780.1px) and (max-width: 1023.9px) and (min-width: 1024px) and (max-width: 2500px) {
   #Generic__Footer {
-    flex-flow: row-reverse;
-    align-items: center;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    min-height: 114px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "Container__List";
+    max-height: 114px;
   }
   .Container__List {
-    flex-flow: row-reverse;
+    grid-area: Container__List;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "List" "Logo";
     align-items: flex-end;
     padding-right: 3%;
-    gap: 75px;
   }
   .List__Info {
-    display: inline-flex;
-    flex-direction: row;
+    grid-area: List;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "suggest" "partner" "legal" "contact";
     gap: 15px;
   }
   .List__Info--suggest {
+    grid-area: suggest;
     gap: 11px;
   }
   .List__Info--partner {
+    grid-area: partner;
     gap: 10px;
   }
   .List__Info--legal {
+    grid-area: legal;
     margin-left: 20px;
+  }
+  .List__Info--contact {
+    grid-area: contact;
   }
 }
 @media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
@@ -314,10 +328,11 @@
     font-weight: 500;
     color: #FFFFFF;
     border-radius: 25px;
-    background: linear-gradient(to top, #9356DC, #FF79DA);
+    background: linear-gradient(to top, #9356dc 40%, #ff79da);
     padding: 13px 16px;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     border: none;
+    transition: 0.3s ease-in-out;
     width: 34%;
   }
   #Generic__Footer {

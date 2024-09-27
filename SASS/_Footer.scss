@@ -47,30 +47,43 @@
     }
     @media screen and (min-width : 1024px) and (max-width : 2500px){
         #Generic__Footer{
-            flex-flow: row-reverse;
-            align-items: center;
-            padding-bottom: 30px;
-            padding-top: 30px;
-            min-height: 114px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: "Container__List" ;          
+            max-height: 114px;
         }
         .Container__List{
-            flex-flow: row-reverse;
+            grid-area: Container__List;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: "List" "Logo";            
             align-items: flex-end;
             padding-right: 3%;
-            gap: 75px;                                     
+                                                 
         }
         .List__Info{
-            display: inline-flex;
-            flex-direction: row;
+            grid-area: List;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas:"suggest" "partner" "legal" "contact";
             gap:15px;            
             &--suggest{
+                grid-area: suggest;
                 gap: 11px;
             }
             &--partner{
+                grid-area: partner;
                 gap: 10px;
             }           
             &--legal{
+                grid-area: legal;
                 margin-left: 20px;
+            }
+            &--contact{
+                grid-area: contact;
             }
 
         }        
