@@ -11,39 +11,11 @@
   }
  body{
      width: 100%; 
-     margin: 0;    
- }
-    /*Main-Container*/
-    .Main-Container{
-     @include Display__Box($flow: column wrap);
-     @include Size__Box($MinW: 780.1px);
-     }           
-     /*Header*/            
-     #Head__site{
-         @include HeaderPosition($flow: row wrap);            
-         @include Size__Box($MinW: 780.1px);                
-         width: $main-Width;
-         z-index: 2;
-         }
-     .Navbar{
-         @include NavbarStyle();                
-         width: $main-Width;
-         }                    
-         .Navbar__Title{
-             padding: 30px 89px;
-             }        
-         .Navbar__GeoLoc{
-             @include NavbarStyle($flow: row wrap);                
-             background-color: $geolocColor;
-             gap: 17px;
-             width: 100%;
-             padding: 15.5px 0;
-             box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
-             &--sample{
-                 font-weight: $mainFontW500;
-                 font-size: $mainFontS16;
-                 }           
-             }        
+     margin: 0;
+     padding: 0;    
+    }
+               
+     
      /*Main*/
      main{
          @include Display__Box();
@@ -51,6 +23,34 @@
          background-color: $BtnFontColor;
          width: 100%;            
          }
+
+/*Header*/            
+#Head__site{
+    @include HeaderPosition($flow: row wrap);            
+    @include Size__Box($MinW: 780.1px);                
+    width: $main-Width;
+    z-index: 2;
+    }
+.Navbar{
+    @include NavbarStyle();                
+    width: $main-Width;
+    }                    
+    .Navbar__Title{
+        padding: 30px 89px;
+        }        
+    .Navbar__GeoLoc{
+        @include NavbarStyle($flow: row wrap);                
+        background-color: $geolocColor;
+        gap: 17px;
+        width: 100%;
+        padding: 15.5px 0;
+        box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
+        &--sample{
+            font-weight: $mainFontW500;
+            font-size: $mainFontS16;
+            }           
+        }        
+
      /* Explore__section*/
      #Explore{
          @include Display__Box($justifyC: normal);
@@ -80,9 +80,11 @@
                      text-align: center;
                      }
                  &--Btn{
-                     @include mains__Btn--Rounded;
-                     @include Hover-Gradient-Lighter($BtnGradient);
-                     font-size: $mainFontS16;                                                                   
+                     @include mains__Btn--Rounded;                     
+                     font-size: $mainFontS16;
+                     &:hover{
+                        @include mains__Btn--RoundedLighter();
+                        }                                                                   
                      }            
                  }        
      /*How It Works Section*/
@@ -156,20 +158,15 @@
          background-color: $bodyColor;
          width: $main-Width;
          height: 668px;                                           
-         }
-     .Show__Restaurant{
-         display: grid;
-         grid-column-start: 1;
-         grid-column-end: 6;
-         padding: 30px 12.5%;           
-         height: 91%;
-         }            
+         }                 
          .Cards__Container{
-             display: grid;
-             grid-template-columns: repeat(auto-fit, minmax(251px, 1fr));
-             box-sizing: $main-Bsizing;                                            
-             height: 608px;
-             position: relative;                
+            display: grid;
+            grid-column-start: 1;
+            grid-column-end: 6;
+            padding: 0px 12.5%;           
+            height: 91%;                                
+            box-sizing: $main-Bsizing;                                                            
+            position: relative;                 
              &--title {
                  grid-area: 1/1/1/4;                                                                       
                  font-size: $mainFontS24;
@@ -177,7 +174,7 @@
                  position: absolute;
                  top: -20px;                                                                                                  
                  }
-             }
+            }
          .Restaurant__link{
              display: grid;
              grid-column: span 2;                                                 

@@ -150,7 +150,7 @@
             background-color: $BCKGroundColor;
             color: $Color;
          }
-         @mixin BoxNew--Size($Width: 90%, $Height: 45%, $Padding: 5px 0px, $Radius: 2px){
+         @mixin BoxNew--Size($Width: 90%, $Height: 45%, $Padding: 10px 0px, $Radius: 2px){
             width: $Width;
             height: $Height;
             padding: $Padding;
