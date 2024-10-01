@@ -15,6 +15,7 @@
         $FontNewCardColor: #008766;
         $BlackFont: black;    
         $BtnGradient: linear-gradient(to top, $BtnBckColor1 40%, $BtnBckColor2);
+        $HeartGradient: linear-gradient(to top, $BtnBckColor2 40%, $BtnBckColor1);
         $BtnGradientLighter: linear-gradient(to top, $LightBtnBckColor1 40%, $LightBtnBckColor2);
         $Shadow:0px 4px 10px 0px rgba(0,0,0,0.15);
         $ShadowHover:0px 4px 15px 0px rgba(0,0,0,0.35);
@@ -48,7 +49,12 @@
         $Advertise: hidden;
     
         /*Animations, Transition*/
-        $TransHover: 0.3s ease-in-out; 
+        $TransHover: 0.3s ease-in-out;
+        @mixin HeartSize($Width:30px, $Height:30px, $FontS: 30px){
+            width: $Width;
+            height: $Height;
+            font-size: $FontS;
+        } 
 
        
         /*Mixins générales*/

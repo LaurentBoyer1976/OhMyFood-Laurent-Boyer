@@ -271,15 +271,22 @@
                         font-size: 30px;
                         color:black;                                                                                   
                         }
-                        /*.bi-heart-fill{
-                        visibility: hidden;
+                        .bi-heart-fill{
+                        //visibility: hidden;
                         display: grid;
-                        grid-area: 2/8/3/9;                
+                        grid-area: 2/7/3/9;                
                         cursor: pointer;                                                       
                         align-self: flex-start;                    
                         font-size: 30px;
-                        fill: linear-gradient(to top, $BtnBckColor1 40%, $BtnBckColor2);                                                                              
-                        }  */                                                                                                                                                                                                                                                                          
+                        background: $HeartGradient; 
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        //:hover transition d'affichage du bas vers le haut l'état initial du coeur est 
+                        //rempli l'apparition se fait par une animation partant du bas et allant vers le haut au survol et au click.
+                        //créer une mixin pour gérer l'affichage du coeur
+                                  
+                        }                                                                                                                                                                                                                                                                           
                     .Description__text{
                         display: grid;
                         grid-template-columns: 1fr;

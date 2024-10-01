@@ -85,15 +85,6 @@
   /*Header*/
   /* Explore__section*/
   /*How It Works Section*/
-  /*.bi-heart-fill{
-  visibility: hidden;
-  display: grid;
-  grid-area: 2/8/3/9;                
-  cursor: pointer;                                                       
-  align-self: flex-start;                    
-  font-size: 30px;
-  fill: linear-gradient(to top, $BtnBckColor1 40%, $BtnBckColor2);                                                                              
-  }  */
 }
 @media screen and (min-width: 780.1px) and (max-width: 1023.9px) and (min-width: 1024px) and (max-width: 2500px) {
   #Generic__Footer {
@@ -490,6 +481,17 @@
     font-weight: 100;
     font-size: 30px;
     color: black;
+  }
+  .bi-heart-fill {
+    display: grid;
+    grid-area: 2/7/3/9;
+    cursor: pointer;
+    align-self: flex-start;
+    font-size: 30px;
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .Description__text {
     display: grid;
