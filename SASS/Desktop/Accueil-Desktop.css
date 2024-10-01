@@ -87,6 +87,15 @@
   /* Explore__section*/
   /*How It Works Section*/
   /*Main-Article, restaurant lien et carte de présentation*/
+  /*.bi-heart-fill{
+  visibility: hidden;
+  display: grid;
+  grid-area: 2/8/3/9;                
+  cursor: pointer;                                                       
+  align-self: flex-start;                    
+  font-size: 30px;
+  fill: linear-gradient(to top, $BtnBckColor1 40%, $BtnBckColor2);                                                                              
+  }  */
 }
 @media screen and (min-width: 1024px) and (max-width: 2500px) and (min-width: 1024px) and (max-width: 2500px) {
   #Generic__Footer {
@@ -143,7 +152,9 @@
     grid-area: 1/5/1/6;
   }
   .List__Info--contact {
-    grid-area: contact;
+    display: inline-block;
+    justify-self: start;
+    grid-area: 1/5/1/6;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 2500px) {
