@@ -5,15 +5,19 @@
         $geolocColor: #EAEAEA;
         $InfoBoxBCkcolor: #ffffff;
         $BtnFontColor: #FFFFFF;
-        $BtnBckColor1: #9356DC;
-        $BtnBckColor2: #FF79DA;
+        $BtnBckColor1:  #9356dc;
+        $LightBtnBckColor1: lighten($BtnBckColor1, 5%);
+        $BtnBckColor2:  #ff79da;
+        $LightBtnBckColor2: lighten($BtnBckColor2, 1%);
         $NewCardColor: #99E2D0;
         $FooterBCKColor: #353535;
         $ArrowLcolor: #353535;
         $FontNewCardColor: #008766;
         $BlackFont: black;    
-        $BtnGradient: linear-gradient(to top, $BtnBckColor1, $BtnBckColor2);
+        $BtnGradient: linear-gradient(to top, $BtnBckColor1 40%, $BtnBckColor2);
+        $BtnGradientLighter: linear-gradient(to top, $LightBtnBckColor1 40%, $LightBtnBckColor2);
         $Shadow:0px 4px 10px 0px rgba(0,0,0,0.15);
+        $ShadowHover:0px 4px 15px 0px rgba(0,0,0,0.35);
         
         /*Font*/
         $mainFont : 'Roboto', sans-serif;
@@ -40,8 +44,12 @@
         $cutoutIMG: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
 
         /*rendre visible ou caché un élément*/
+        
         $Advertise: hidden;
     
+        /*Animations, Transition*/
+        $TransHover: 0.3s ease-in-out; 
+
        
         /*Mixins générales*/
         @mixin Size__Box($MinW: $main-MinW, $MaxW: $main-MaxW, $Sizing:$main-Bsizing){
@@ -59,15 +67,26 @@
             font-size: $size;
             font-weight: $weight;
         }
-        @mixin mains__Btn--Rounded($weight: $mainFontW500, $FontColor: $BtnFontColor, $Radius:25px, $Padding: 13px 16px, $Gradient: $BtnGradient, $Shadow:0px 4px 10px 0px rgba(0,0,0,0.25), $Border: none){
+        @mixin mains__Btn--Rounded($weight: $mainFontW500, $FontColor: $BtnFontColor, $Radius:25px, $Padding: 13px 16px, $Gradient: $BtnGradient, $BtnShadow: $Shadow, $Border: none, $TransBtnH: $TransHover){
             font-weight: $weight;
             color: $BtnFontColor;
             border-radius: $Radius;
             background: $Gradient;        
             padding: $Padding;
-            box-shadow: $Shadow;
+            box-shadow: $BtnShadow;
+            border: $Border;
+            transition: $TransBtnH;
+        }
+        @mixin mains__Btn--RoundedLighter($weight: $mainFontW500, $FontColor: $BtnFontColor, $Radius:25px, $Padding: 13px 16px, $Gradient: $BtnGradientLighter, $BtnShadow: $ShadowHover, $Border: none){
+            font-weight: $weight;
+            color: $BtnFontColor;
+            border-radius: $Radius;
+            background: $Gradient;        
+            padding: $Padding;
+            box-shadow: $BtnShadow;
             border: $Border;
         }
+      
         @mixin Menu__Title($alignS: self-start, $FontWeight: $mainFontW300, $FontSize: $mainFontS16){
             align-self: $alignS;
             font-weight: $FontWeight;
@@ -131,7 +150,7 @@
             background-color: $BCKGroundColor;
             color: $Color;
          }
-         @mixin BoxNew--Size($Width: 90%, $Height: 45%, $Padding: 5px 0px, $Radius: 2px){
+         @mixin BoxNew--Size($Width: 90%, $Height: 45%, $Padding: 10px 0px, $Radius: 2px){
             width: $Width;
             height: $Height;
             padding: $Padding;

@@ -13,18 +13,16 @@
 /*BODY*/
     body {
          width: 100%; 
-         margin: 0;    
-        }    
-        /*Main-Container*/
-        .Main-Container{
+         margin: 0;
+         padding: 0;    
+        }                                      
+    /*Main*/
+        main{
             @include Display__Box();
             @include Size__Box();
-        } 
-        /*Header*/
-        /*Header*/
-        
-            /*Header*/        
-        
+            background-color: $BtnFontColor;                
+        }
+        /*Header*/                                 
             #Head__site{
                 @include HeaderPosition();            
                 @include Size__Box();                
@@ -50,14 +48,6 @@
                         font-size: $mainFontS16;
                     }           
                 }
-            
-            /*Main*/
-            main{
-                @include Display__Box();
-                @include Size__Box();
-                background-color: $BtnFontColor;
-                
-            }
                 /* Explore__section*/
             #Explore{
                 @include Display__Box($justifyC: normal);
@@ -87,7 +77,8 @@
                         text-align: center;
                     }
                     &--Btn{
-                        @include mains__Btn--Rounded();                        
+                        @include mains__Btn--Rounded();
+                        @include Hover-Gradient-Lighter($BtnGradient);
                     }            
                 }
             }

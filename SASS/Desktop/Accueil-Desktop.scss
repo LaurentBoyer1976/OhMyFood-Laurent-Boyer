@@ -8,72 +8,112 @@
 
     /*Général*/
     *{
-        font-family: $mainFont;                
+        font-family: $mainFont;
+        margin: 0;
+        padding: 0;               
      }
     body{
-        width: 100%; 
-        margin: 0;    
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 92% 8%;
+        grid-auto-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "main"
+            "Generic__Footer";
+            
     }
-       /*Main-Container*/
-       .Main-Container{
-        @include Display__Box($flow: column wrap);
-        @include Size__Box($MinW: 780.1px);
-        }           
-        /*Header*/            
-        #Head__site{
-            @include HeaderPosition($flow: row wrap);            
-            @include Size__Box($MinW: 780.1px);                
-            width: $main-Width;
-            z-index: 2;
+         
+       
+        /*Main*/
+        main{
+            grid-area: main;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 11% 18% 17% 54%;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:"Head__site" 
+                                "Explore"
+                                "HowItWorks"
+                                "Main__Article";              
             }
-        .Navbar{
-            @include NavbarStyle();                
-            width: $main-Width;
-            }                    
+             /*Header*/
+             #Head__site{
+            grid-area: Head__site;            
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px 0px;                         
+            grid-template-areas:"Navbar";
+            min-height: 11%;           
+            }
+            .Navbar{
+                grid-area: Navbar;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 0px 0px;
+                grid-auto-flow: row;  
+                position: relative;
+            }                          
             .Navbar__Title{
-                padding: 30px 89px;
+                display: grid;
+                grid-area: 1/1/2/6;
+                grid-template-columns: repeat(20, 1fr);
+                justify-self: center;
+                align-self: center;                                         
+                & img{
+                    grid-area: 1/9/2/11;                  
+                }                                             
                 }        
             .Navbar__GeoLoc{
-                @include NavbarStyle($flow: row wrap);                
-                background-color: $geolocColor;
-                gap: 17px;
-                width: 100%;
-                padding: 15.5px 0;
-                /*box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);*/
+                display: grid;
+                grid-template-columns: repeat(20, 1fr);
+                grid-area: 2/1/3/6;                
+                background-color: $geolocColor;              
+                padding: 15.5px 0;                                              
                 &--sample{
                     font-weight: $mainFontW500;
                     font-size: $mainFontS16;
+                    grid-area: 2/10/2/13;                                    
+                    }
+                    & i{
+                    grid-area: 2/9/2/10;
+                    justify-self: center;
                     }           
                 }        
-        /*Main*/
-        main{
-            @include Display__Box();
-            @include Size__Box();
-            background-color: $BtnFontColor;
-            width: 100%;            
-            }
         /* Explore__section*/
         #Explore{
-            @include Display__Box($justifyC: normal);
-            @include Size__Box();
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr ;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:"C-Explore__Site";            
+            grid-area: Explore;
+            min-height: 239px;
             background-color: $bodyColor;
-            padding: 35px 0 30px 0;
-            width: $main-Width;
-            }                       
-            .C-Explore__Container{
-                height: 100%;
-                }
-                .C-Explore__Site{
-                    @include Display__Box($justifyC: normal);
-                    @include Size__Box();
-                    gap:20px;                   
+            padding-top: 2%;
+            justify-items: center;
+            }                                   
+            .C-Explore__Site{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr) 0.5fr 0.5fr 0.5fr repeat(2, 1fr);
+                grid-template-rows:  33% 33% 50px;
+                width: 100%;
+                              
+                grid-area: C-Explore__Site;                  
                     &--title{
+                        grid-area: 1/1/2/8;
                         @include mains__title($size:$mainFontS40);                    
                         text-align: center;
                         max-width: 100%;
                         margin: 0;
                         }
                     &--text{
+                        grid-area: 2/1/3/8;
                         font-size: $mainFontS18;
                         font-weight: $mainFontW300;
                         min-width: 315px;
@@ -81,52 +121,79 @@
                         text-align: center;
                         }
                     &--Btn{
-                        @include mains__Btn--Rounded;
-                        font-size: $mainFontS16;                                                                   
-                        }            
-                    }        
+                        grid-area: 3/3/4/6;
+                        max-width: 77%;
+                        min-width: 65%;
+                        justify-self: center; 
+                        @include mains__Btn--Rounded;                                              
+                        font-size: $mainFontS16;
+                            &:hover{
+                            @include mains__Btn--RoundedLighter();
+                            }                                                                   
+                        }                    
+                    }                                              
         /*How It Works Section*/
         #HowItWorks{
-            @include Display__Box($justifyC: normal, $Alignitems:normal);
-            @include Size__Box();
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr ;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:"C-HowItWorks__Container";            
+            grid-area: HowItWorks;
             padding: 40px 20px 65px 0;
             width: 100%;
-            }        
-                .C-HowItWorks{
-                    @include Display__Box($justifyC: normal, $Alignitems:normal);
-                    @include Size__Box();                    
-                    height: 100%;
-                    }                         
+            min-height: 229px;
+            }       
+                                         
                     .C-HowItWorks__Container{
-                        @include Display__Box($Alignitems:normal);
-                        @include Size__Box();
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: 0.5fr 1fr 0.5fr ;
+                        gap: 0px 0px;                                                         
+                        grid-area: C-HowItWorks__Container;
                         padding: 0 10.85% 0 12.5%;                                                    
                         &--title{
-                            @include mains__title();
-                            align-self: flex-start;                            
+                            display: grid;
+                            align-items: center;
+                            padding-left: 6%;
+                            grid-area: 1/1/2/4;
+                            @include mains__title();                                                        
                         }                                                           
                         } 
                     .C-HowItWorks__Step{
-                        display: flex;
-                        gap: 24px;                                
+                        grid-area: 2/1/3/4;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr) ;
+                        grid-template-rows: 0.5fr;
+                        gap: 0;
+                        grid-auto-flow: row;
+                        grid-template-areas:"Step1 Step2 Step3";                        
+                                                        
                         }                              
                     .C-HowItWorks__BlockStep{
-                        display: flex;
-                        flex-flow: wrap;
-                        align-content: flex-start;
-                        flex-grow: 1;                            
+                        display: grid;
+                        grid-template-columns: 0.5fr 1fr 1fr 1fr;
+                        grid-template-rows: 1fr;
+                        grid-template-areas:"NumberContainer Btn Btn Btn";
+                        position: relative;
+                        
+                                                    
                         &--NumberContainer{
-                            display: flex;                            
+                            grid-area: NumberContainer;
+                            position: relative;
+                            top: -27%;
+                            right: -30%;                            
                             }                
                         &--Nbr{
-                            @include Display-Step();                   
-                            @include Position-Step();
+                            @include Display-Step($position: absolute);                   
+                            @include Position-Step( $Postop: 62%, $PosRight: 3%);
                             @include Step-Style();                          
                             }                               
-                        &--Btn{ 
+                        &--Btn{
+                            grid-area: Btn; 
                             @include HowItWorksBTN($justifyC:normal, $alignC:unset, $flow: nowrap);                                                                               
-                            font-size: $mainFontS16;
-                            width: 95%;                                
+                            font-size: $mainFontS16;                                                           
                             }
                         &--Btn i{ 
                             display: flex;                                                                                                   
@@ -136,68 +203,91 @@
                         &--Btn .fa-store{
                             color: $BtnBckColor1;
                             }
-                        }            
+                        }
+                    .C-HowItWorks__BlockStep:nth-of-type(1){
+                        grid-area: Step1;
+                    }
+                    .C-HowItWorks__BlockStep:nth-of-type(2){
+                        grid-area: Step2;
+                    }
+                    .C-HowItWorks__BlockStep:nth-of-type(3){
+                        grid-area: Step3;
+                    }
         /*Main-Article, restaurant lien et carte de présentation*/
-        #Main__Article{
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);                               
-            background-color: $bodyColor;
-            width: $main-Width;
-            height: 668px;                                           
-            }
-        .Show__Restaurant{
-            display: grid;
-            grid-column-start: 1;
-            grid-column-end: 6;
-            padding: 30px 12.5%;           
-            height: 91%;
-            }            
-            .Cards__Container{
+            #Main__Article{
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(251px, 1fr));
-                box-sizing: $main-Bsizing;                                            
-                height: 608px;
-                position: relative;                
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+                grid-template-areas: "Cards__Container";                               
+                background-color: $bodyColor;
+                width: $main-Width;
+                min-height: 668px;
+                }                  
+                .Cards__Container{
+                grid-area: Cards__Container;
+                display: grid;
+                grid-template-columns: 0.5fr 1fr 0.5fr 1fr 0.5fr; 
+                grid-template-rows: 0.5fr 1fr 0.5fr 1fr 0.5fr;
+                grid-template-areas: 
+                    ". Cards__Container--title Cards__Container--title Cards__Container--title Cards__Container--title"
+                    " . link1 . link2 ."
+                    ". . . . ."
+                    ". link3 . link4 ."
+                    ". . . . .";                            
+                height: 82%;
+                width: 75%;                                
+                box-sizing: $main-Bsizing;                                                            
+                position: relative;
+                justify-items: center;
+                justify-self: center;                               
                 &--title {
-                    grid-area: 1/1/1/4;                                                                       
+                    grid-area: Cards__Container--title;                                                                       
                     font-size: $mainFontS24;
-                    font-weight: $mainFontW700;                                        
-                    position: absolute;
-                    top: -20px;                                                                                                  
+                    font-weight: $mainFontW700;
+                    align-self: center;
+                    justify-self: start;                                                            
+                    position: absolute; 
+                    left: -11%;                                                                                                                     
                     }
                 }
             .Restaurant__link{
                 display: grid;
-                grid-column: span 2;                                                 
+                grid-template-columns: repeat(3, 1fr); 
+                grid-template-rows: 0.5fr 1fr 0.5fr;                                                  
                 border-radius: 15px;                
                 text-decoration: none;                                                              
-                min-height: 251px;
-                height: 55%;               
-                width: 45%;
+                height: 251px;
+                width: 160%;
+                max-width: 490px;
                 box-sizing: border-box;               
                 }                          
-            .Restaurant__link:nth-of-type(1){                
-                position: absolute;                                                                                                               
-                }
-            .Restaurant__link:nth-of-type(2){                
+            .Restaurant__link:nth-of-type(1){
+                grid-area: link1;                
                 position: absolute;
-                right: 0%;                                                                                                    
+                top: -35%;
+                left: -35%;
+                }
+            .Restaurant__link:nth-of-type(2){
+                grid-area: link2;                
+                position: absolute;
+                top: -35%;
+                right: -62%;
+                                                                                                                   
                 }          
             .Restaurant__link:nth-of-type(3){
+                grid-area: link3;
                 position: absolute;
-                top: 45%;                                                                                                                                                   
+                left: -35%;                                                                                                                                                   
                 }          
-            .Restaurant__link:nth-of-type(4){               
+            .Restaurant__link:nth-of-type(4){
+                grid-area: link4;               
                 position: absolute;
-                top: 45%;
-                right: 0%;                                                                                                                        
+                right: -62%;              
+                                                                                                                                        
                 }                                      
             .Card__Box{
                 display: grid;
-                display: grid;
-                min-height: 150px;
-                display: grid;                                
-                min-height: 150px;
+                grid-area: 1/1/4/4;                                                                              
                 grid-template-columns: repeat(10, 1fr);
                 grid-template-rows: repeat(10, 1fr);                                                  
                 border-radius: 15px;
@@ -211,41 +301,62 @@
                     max-height: 231px;                                                            
                     }
                 &--new{                    
-                    grid-area: 3/9/4/11;
+                    grid-area: 4/9/5/11;
                     @include BoxNew--color;
-                    @include BoxNew--Size;
+                    @include BoxNew--Size($Padding: 9px 0);
                     @include BoxNew--Fontsize;
-                    @include BoxNew--position;                        
+                    @include BoxNew--position($display:grid, $Alignitems: normal);
+                    position: absolute;
+                    top: -28%;
                     }
                  
                 }                                            
             .Information__Box{
-                    grid-area: 8/1/11/11;
-                    @include Display__Box($flow:row, $justifyC: space-between);
-                    height: 30%;
-                    padding: 15px 25px 15px 15px;
+                    display: grid;
+                    grid-area: 10/1/11/11;
+                    grid-template-columns: 0.5fr repeat(5, 1fr) 0.5fr; 
+                    grid-template-rows: 0.5fr 1fr 0.5fr;                                        
                     background-color: $InfoBoxBCkcolor;
                     border-radius: 0 0 15px 15px;
                     color: $BlackFont;
                     position: absolute;
                     width: 100%;
                     box-sizing: border-box;
-                    min-height: fit-content;
-                    top: -35%;                                                                           
-                    & i{                       
-                        font-size: 30px;
-                        }                                                       
-                    }                                         
+                    max-height: 77px;
+                    padding-right: 5%;                                                                                                                                                                                                                                                                      
+                }                                                                
+                .bi-heart{
+                display: grid;
+                grid-area: 2/7/3/8;                
+                cursor: pointer;    
+                font-weight: 100;
+                font-size: 30px;
+                color:black;                                                                                   
+                }
+                /*.bi-heart-fill{
+                visibility: hidden;
+                display: grid;
+                grid-area: 2/8/3/9;                
+                cursor: pointer;                                                       
+                align-self: flex-start;                    
+                font-size: 30px;
+                fill: linear-gradient(to top, $BtnBckColor1 40%, $BtnBckColor2);                                                                              
+                }  */                                                                                                                                                                                                                                                                          
             .Description__text{
-                display: flex;
-                flex-flow: column;
-                gap: 5px;                    
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-area: 2/1/3/8;                
+                gap: 5px;
+                padding-left: 4%;                    
                 &--name{
+                    grid-area: 1/1/1/2;
                     margin: 0;
                     font-size: $mainFontS18;
                     font-weight: $mainFontW700;
                     }
                 &--district{
+                    grid-area: 2/1/3/2;
                     margin: 0;
                     font-size: $mainFontS17;
                     font-weight: $mainFontW300;
@@ -253,18 +364,11 @@
                 }                                                                           
             .Cards__Container .Restaurant__link:nth-child(4) .Card__Box--new:first-child {
                 visibility: $Advertise;
-                }
-            .Cards__Container .Restaurant__link:nth-child(4) .Card__Box .Information__Box {
-                grid-area: 8/1/10/11;
-                top: -51%;                
-                }           
+                }            
             .Cards__Container .Restaurant__link:nth-child(5) .Card__Box--new:first-child {
                 visibility: $Advertise;
                 }
-            .Cards__Container .Restaurant__link:nth-child(5) .Card__Box .Information__Box {
-                grid-area: 8/1/10/11;
-                top: -51%;
-                }
+            
 }                                         
 
 

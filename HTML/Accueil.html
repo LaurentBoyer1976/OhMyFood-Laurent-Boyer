@@ -11,148 +11,141 @@
         <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" media="screen and (min-width: 320px) and (max-width: 780px)" href="../SASS/Mobile/Accueil-Mobile.css" type="text/css">
         <link rel="stylesheet" media="screen and (min-width : 1024px) and (max-width : 2500px)" href="../SASS/Desktop/Accueil-Desktop.css" type="text/css">
         <link rel="stylesheet" media="screen and (min-width : 780.1px) and (max-width : 1023.9px)" href="../SASS/Tablette/Accueil-Tablette.css" type="text/css">
-    </head>
-    
-    <body>        
-        <div class="Main-Container">            
-            <main>
-                <header id="Head__site">
-                    <nav class="Navbar">
-                        <div class="Navbar__Title">
-                            <img class="Navbar__Title--Logo" src="../IMAGES/Logos/ohmyfood@2x.svg"  alt="Logo Ohmyfood">
-                        </div>                    
-                        <div class="Navbar__GeoLoc">                
-                            <i class="fa-solid fa-location-dot"></i><div class="Navbar__GeoLoc--sample">Paris, Belleville</div>    
-                        </div>
-                    </nav>    
-                </header>
-                <section id="Explore">
-                    <div class="C-Explore__Container">
-                        <div class="C-Explore__Site">
-                            <h2 class="C-Explore__Site--title">Réservez le menu qui vous convient</h2>
-                            <p class="C-Explore__Site--text">Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
-                            <button class="C-Explore__Site--Btn" >Explorer nos restaurants</button>
-                        </div>            
-                    </div>                            
-                </section>
-                <section id="HowItWorks">
-                    <div class="C-HowItWorks">                        
-                        <div class="C-HowItWorks__Container">
-                            <h2 class="C-HowItWorks__Container--title">Fonctionnement</h2>
-                            <div class="C-HowItWorks__Step">
-                                <div class="C-HowItWorks__BlockStep">
-                                    <div class="C-HowItWorks__BlockStep--NumberContainer">
-                                        <div class="C-HowItWorks__BlockStep--Nbr">1</div>
-                                    </div>                                    
-                                    <button class="C-HowItWorks__BlockStep--Btn" >                                    
-                                    <i class="fa-solid fa-mobile-screen-button"></i>
-                                    Choisissez un restaurant</button>
-                                </div>
-                                <div class="C-HowItWorks__BlockStep">
-                                    <div class="C-HowItWorks__BlockStep--NumberContainer">
-                                        <div class="C-HowItWorks__BlockStep--Nbr">2</div>
-                                    </div> 
-                                    <button class="C-HowItWorks__BlockStep--Btn" >                                    
-                                    <i class="fa-solid fa-list"></i>
-                                    Composez votre menu</button>
-                                </div>                                
-                                <div class="C-HowItWorks__BlockStep">
-                                    <div class="C-HowItWorks__BlockStep--NumberContainer">
-                                        <div class="C-HowItWorks__BlockStep--Nbr">3</div>
-                                    </div> 
-                                    <button class="C-HowItWorks__BlockStep--Btn" >                                    
-                                    <i class="fa-solid fa-store"></i>Dégustez au restaurant</button>
-                                </div>                                    
-                            </div>     
-                        </div>                                 
+    </head>                 
+    <body>
+        <main>
+            <header id="Head__site">
+                <nav class="Navbar">
+                    <div class="Navbar__Title">
+                        <img class="Navbar__Title--Logo" src="../IMAGES/Logos/ohmyfood@2x.svg"  alt="Logo Ohmyfood">
                     </div>                    
-                </section>
-                <article id="Main__Article">
-                    <section class="Show__Restaurant">
-                        <div class="Cards__Container">
-                            <h1 class="Cards__Container--title">Restaurants</h1>                               
-                                        <a class="Restaurant__link" href="Restaurants/Menu_La_palette_du_goût.html" aria-label="Menu du restaurant la palette du goût">
-                                            <div class="Card__Box">                                                        
-                                                    <span class="Card__Box--new">Nouveau</span>                                                                                                                                          
-                                                    <img class="Card__Box--IMG" src="../IMAGES/Photos/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Assiette blanche avec du poisson et de la salade">                                                                                                                                                                                                               
-                                                <div class="Information__Box">
-                                                    <div class="Description__text">
-                                                        <h2 class="Description__text--name">La palette du goût</h2>
-                                                        <h3 class="Description__text--district">Ménilmontant</h3>
-                                                    </div>                                        
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </div>                                                                                
-                                            </div>                                       
-                                        </a>                                                                                               
-                                        <a class="Restaurant__link" href="Restaurants/Menu_La_note_enchantée.html" aria-label="Menu du restaurant la note enchantée">                                                    
-                                            <div class="Card__Box">
-                                                <span class="Card__Box--new">Nouveau</span>                                            
-                                                <img class="Card__Box--IMG" src="../IMAGES/Photos/La_note_enchantée.jpg" alt="Verre d'Apérol avec un plat d'arancini, une salade tomate mozzarella">                                                                                                                              
-                                                    <div class="Information__Box">
-                                                        <div class="Description__text">
-                                                            <h2 class="Description__text--name">La note enchantée</h2>
-                                                            <h3 class="Description__text--district">Charonne</h3>
-                                                        </div>
-                                                        <i class="fa-regular fa-heart"></i>                                        
-                                                    </div>                                                                            
-                                            </div>                
-                                        </a>                                                                         
-                                        <a class="Restaurant__link" href="Restaurants/Menu_A_la_française.html" aria-label="Menu du restaurant à la française">                           
-                                            <div class="Card__Box">
-                                                <span class="Card__Box--new">Nouveau</span>                                           
-                                                <img class="Card__Box--IMG" src="../IMAGES/Photos/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="oeufs pochés sur lit d'épinard et tranche de pain">                                                                                                                               
-                                                    <div class="Information__Box">
-                                                        <div class="Description__text">
-                                                            <h2 class="Description__text--name">À la française</h2>
-                                                            <h3 class="Description__text--district">Cité Rouge</h3>
-                                                        </div>
-                                                        <i class="fa-regular fa-heart"></i>    
-                                                    </div>                                                                           
-                                            </div>                                        
-                                        </a>                                
-                                        <a class="Restaurant__link" href="Restaurants/Menu_le_délice_des_sens.html" aria-label="Menu du restaurant le délice des sens">
-                                            <div class="Card__Box">
-                                                <span class="Card__Box--new">Nouveau</span>                                      
-                                                <img class="Card__Box--IMG" src="../IMAGES/Photos/le_délice_des_sens.jpg" alt="Filet de poisson avec jus de cuisson et panier de riz vapeur.">                                                                                                                          
-                                                    <div class="Information__Box">
-                                                        <div class="Description__text">  
-                                                            <h2 class="Description__text--name">Le délice des sens</h2>
-                                                            <h3 class="Description__text--district">Folie-Méricourt</h3>
-                                                        </div>
-                                                        <i class="fa-regular fa-heart"></i>
-                                                    </div>
-                                            </div>
-                                        </a>
-                        </div>
-                    </section>
-                </article>
-                    
-                        
-                                            
-                                            
+                    <div class="Navbar__GeoLoc">                
+                        <i class="fa-solid fa-location-dot"></i><div class="Navbar__GeoLoc--sample">Paris, Belleville</div>    
+                    </div>
+                </nav>    
+            </header>
+            <section id="Explore">                
+                    <div class="C-Explore__Site">
+                        <h2 class="C-Explore__Site--title">Réservez le menu qui vous convient</h2>
+                        <p class="C-Explore__Site--text">Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>                           
+                        <button class="C-Explore__Site--Btn">Explorer nos restaurants</button>                          
+                    </div>                                                       
+            </section>
+            <section id="HowItWorks">                    
+                    <div class="C-HowItWorks__Container">
+                        <h2 class="C-HowItWorks__Container--title">Fonctionnement</h2>
+                        <div class="C-HowItWorks__Step">
+                            <div class="C-HowItWorks__BlockStep">
+                                <div class="C-HowItWorks__BlockStep--NumberContainer">
+                                    <div class="C-HowItWorks__BlockStep--Nbr">1</div>
+                                </div>                                    
+                                <button class="C-HowItWorks__BlockStep--Btn" >                                    
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                                Choisissez un restaurant</button>
+                            </div>
+                            <div class="C-HowItWorks__BlockStep">
+                                <div class="C-HowItWorks__BlockStep--NumberContainer">
+                                    <div class="C-HowItWorks__BlockStep--Nbr">2</div>
+                                </div> 
+                                <button class="C-HowItWorks__BlockStep--Btn" >                                    
+                                <i class="fa-solid fa-list"></i>
+                                Composez votre menu</button>
+                            </div>                                
+                            <div class="C-HowItWorks__BlockStep">
+                                <div class="C-HowItWorks__BlockStep--NumberContainer">
+                                    <div class="C-HowItWorks__BlockStep--Nbr">3</div>
+                                </div> 
+                                <button class="C-HowItWorks__BlockStep--Btn" >                                    
+                                <i class="fa-solid fa-store"></i>Dégustez au restaurant</button>
+                            </div>                                    
+                        </div>     
+                    </div>                                 
                                     
+            </section>
+            <article id="Main__Article">                
+                    <div class="Cards__Container">
+                        <h1 class="Cards__Container--title">Restaurants</h1>                               
+                            <a class="Restaurant__link" href="Restaurants/Menu_La_palette_du_goût.html" aria-label="Menu du restaurant la palette du goût">
+                                <div class="Card__Box">                                                        
+                                        <span class="Card__Box--new">Nouveau</span>                                                                                                                                          
+                                        <img class="Card__Box--IMG" src="../IMAGES/Photos/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Assiette blanche avec du poisson et de la salade">                                                                                                                                                                                                               
+                                    <div class="Information__Box">
+                                        <div class="Description__text">
+                                            <h2 class="Description__text--name">La palette du goût</h2>
+                                            <h3 class="Description__text--district">Ménilmontant</h3>
+                                        </div>                                        
+                                            <i class="bi bi-heart"></i>                                                                                                
+                                            <!--<i class="bi bi-heart-fill"></i>-->                                                                                                                                   
+                                    </div>                                                                                
+                                </div>                                       
+                            </a>                                                                                               
+                            <a class="Restaurant__link" href="Restaurants/Menu_La_note_enchantée.html" aria-label="Menu du restaurant la note enchantée">                                                    
+                                <div class="Card__Box">
+                                    <span class="Card__Box--new">Nouveau</span>                                            
+                                    <img class="Card__Box--IMG" src="../IMAGES/Photos/La_note_enchantée.jpg" alt="Verre d'Apérol avec un plat d'arancini, une salade tomate mozzarella">                                                                                                                              
+                                        <div class="Information__Box">
+                                            <div class="Description__text">
+                                                <h2 class="Description__text--name">La note enchantée</h2>
+                                                <h3 class="Description__text--district">Charonne</h3>
+                                            </div>
+                                            <i class="bi bi-heart"></i>                                        
+                                        </div>                                                                            
+                                </div>                
+                            </a>                                                                         
+                            <a class="Restaurant__link" href="Restaurants/Menu_A_la_française.html" aria-label="Menu du restaurant à la française">                           
+                                <div class="Card__Box">
+                                    <span class="Card__Box--new">Nouveau</span>                                           
+                                    <img class="Card__Box--IMG" src="../IMAGES/Photos/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="oeufs pochés sur lit d'épinard et tranche de pain">                                                                                                                               
+                                        <div class="Information__Box">
+                                            <div class="Description__text">
+                                                <h2 class="Description__text--name">À la française</h2>
+                                                <h3 class="Description__text--district">Cité Rouge</h3>
+                                            </div>
+                                            <i class="bi bi-heart"></i>    
+                                        </div>                                                                           
+                                </div>                                        
+                            </a>                                
+                            <a class="Restaurant__link" href="Restaurants/Menu_le_délice_des_sens.html" aria-label="Menu du restaurant le délice des sens">
+                                <div class="Card__Box">
+                                    <span class="Card__Box--new">Nouveau</span>                                      
+                                    <img class="Card__Box--IMG" src="../IMAGES/Photos/le_délice_des_sens.jpg" alt="Filet de poisson avec jus de cuisson et panier de riz vapeur.">                                                                                                                          
+                                        <div class="Information__Box">
+                                            <div class="Description__text">  
+                                                <h2 class="Description__text--name">Le délice des sens</h2>
+                                                <h3 class="Description__text--district">Folie-Méricourt</h3>
+                                            </div>
+                                            <i class="bi bi-heart"></i>
+                                        </div>
+                                </div>
+                            </a>
+                    </div>                
+            </article>   
+        </main>
+        <footer id="Generic__Footer">
+            <div class="Container__List">
+                <img class="Container__List--logo" src="../IMAGES/Logos/ohmyfood@2xwhite.svg" alt="Logo Ohmyfood">
+                <ul class="List__Info">
+                    <li class="List__Info--suggest">
+                        <i class="fa-solid fa-utensils"></i>
+                        Proposer un restaurant</li>
+                    <li class="List__Info--partner"><i class="fa-solid fa-handshake-angle"></i>
+                        Devenir partenaire</li>
+                    <li class="List__Info--legal">Mentions légales</li>
+                    <li class="List__Info--contact">
+                        <a class="List__Info--link" href="mailto:ohmyfood@gmail.com">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>              
+    </body>                                      
             
-            </main>
-            <footer id="Generic__Footer">
-                <div class="Container__List">
-                    <img class="Container__List--logo" src="../IMAGES/Logos/ohmyfood@2xwhite.svg" alt="Logo Ohmyfood">
-                    <ul class="List__Info">
-                        <li class="List__Info--suggest">
-                            <i class="fa-solid fa-utensils"></i>
-                            Proposer un restaurant</li>
-                        <li class="List__Info--partner"><i class="fa-solid fa-handshake-angle"></i>
-                            Devenir partenaire</li>
-                        <li class="List__Info--legal">Mentions légales</li>
-                        <li class="List__Info--contact">
-                            <a class="List__Info--link" href="mailto:ohmyfood@gmail.com">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </footer>            
-        </div>
-    </body>      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+            
+                  
+          
 </html>        
         
