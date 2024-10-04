@@ -474,20 +474,44 @@
     padding-right: 5%;
     top: -187%;
   }
+  .Heart__Check {
+    display: grid;
+    grid-area: 2/7/3/8;
+  }
+  .Heart__Check--box {
+    grid-area: 2/7/3/8;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+  }
   .bi-heart {
     display: grid;
     grid-area: 2/7/3/8;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
     cursor: pointer;
     font-weight: 100;
-    font-size: 30px;
     color: black;
+  }
+  .bi-heart:hover {
+    display: none;
   }
   .bi-heart-fill {
     display: grid;
-    grid-area: 2/7/3/9;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    grid-area: 2/7/3/8;
     cursor: pointer;
     align-self: flex-start;
-    font-size: 30px;
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .bi-heart-fill:hover {
+    display: grid;
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
     background-clip: text;
     -webkit-background-clip: text;

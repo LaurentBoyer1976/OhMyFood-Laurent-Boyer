@@ -324,39 +324,31 @@
                     box-sizing: border-box;
                     max-height: 77px;
                     padding-right: 5%;                                                                                                                                                                                                                                                                      
-                }                                                                
+                }              
+                                                     
                 .bi-heart{
                 display: grid;
                 grid-area: 2/7/3/8;
                 @include HeartSize;            
                 cursor: pointer;    
                 font-weight: 100;                
-                color:black;
-                &:hover{
-                display: none;
-                }                                                                                            
-                }
-                .bi-heart-fill{                
-                display: grid;
-                @include HeartSize;
-                grid-area: 2/7/3/9;                
-                cursor: pointer;                                                       
-                align-self: flex-start;                                  
-                background: $HeartGradient; 
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                &:hover{
-                display: grid;                 
-                background: $HeartGradient; 
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                }
+                color:black;                               
+                    &:hover::before{
+                        font-family: "bootstrap-icons";
+                        content:"\F415";
+                        background: $HeartGradient; 
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }                                                                                            
+                }                
+                
                   //:hover transition d'affichage du bas vers le haut l'état initial du coeur est 
                   //rempli l'apparition se fait par une animation partant du bas et allant vers le haut au survol et au click.
-                  //créer une mixin pour gérer l'affichage du coeur.                                                     
-                }                                                                                                                                                                                                                                                                            
+                  //créer une mixin pour gérer l'affichage du coeur.
+                  //Pour faire en sorte que le coeur change au click dans la checkbox utiliser les combinateurs d'adjacence avec la pseudo classe :active
+                  //faire en sorte que la taille de l'input englobe le coeur( en forme de cercle)                                                      
+                                                                                                                                                                                                                                                                                           
             .Description__text{
                 display: grid;
                 grid-template-columns: 1fr;

@@ -494,24 +494,9 @@
     font-weight: 100;
     color: black;
   }
-  .bi-heart:hover {
-    display: none;
-  }
-  .bi-heart-fill {
-    display: grid;
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    grid-area: 2/7/3/9;
-    cursor: pointer;
-    align-self: flex-start;
-    background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .bi-heart-fill:hover {
-    display: grid;
+  .bi-heart:hover::before {
+    font-family: "bootstrap-icons";
+    content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
     background-clip: text;
     -webkit-background-clip: text;
