@@ -1,0 +1,38 @@
+/* Transitions et Animations pour les pages menus*/
+@import '../Var&Mixins.scss';
+/*HOVER Heart checkbox*/
+.Restaurant__Presentation--heart[type="checkbox"]{
+    display: flex;    
+    @include HeartSize;            
+    cursor: pointer;    
+    position: absolute;                       
+}                      
+.Restaurant__Presentation--label::before{                        
+    font-family: "bootstrap-icons";
+    content:"\F417";
+    position: absolute;                                                                       
+}         
+.Restaurant__Presentation--label{
+    display: flex;
+    @include HeartSize;            
+    cursor: pointer;
+    color:black;    
+    font-weight: 100;
+    position: absolute;                                              
+        &:hover::before{
+            position: absolute;
+            font-family: "bootstrap-icons";
+            content:"\F415";
+            background: $HeartGradient; 
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;                           
+        }                                                                                  
+}
+  &--heart[type="checkbox"]:checked ~ label::before{
+        background: $HeartGradient; 
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: absolute;                           
+}  

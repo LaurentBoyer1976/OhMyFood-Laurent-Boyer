@@ -80,10 +80,41 @@
   /*mixins Section HowItWorks*/
   /*mixins section cards restaurant*/
   /*Mixin page menu*/
+  /* @import '../Animation&Transition.scss';*/
   /*Général*/
   /*body & Main-container*/
   /*header et navbar styles*/
   /*Main et Menu et card menu*/
+  /*.bi-heart{
+          display: flex;
+          @include HeartSize;
+          position: absolute;
+          top: 53%;
+          right: 37%;
+          text-align: center;            
+          cursor: pointer;              
+          color:black;    
+          font-weight: 100; 
+          &:hover::before{                
+              font-family: "bootstrap-icons";
+              content:"\F415";
+              background: $HeartGradient; 
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+          }                                    
+      }*/
+  /*.bi::before{/*mozilla*/
+  /*display: flex;
+      @include HeartSize;
+      position: absolute;
+      left: 150%;
+      margin-left: 40px;            
+      text-align: center;            
+      cursor: pointer;              
+      color:black;    
+      font-weight: 100;
+  }*/
 }
 @media screen and (min-width: 1024px) and (max-width: 2500px) and (min-width: 1024px) and (max-width: 2500px) {
   #Generic__Footer {
@@ -245,6 +276,7 @@
     width: 100%;
     box-sizing: border-box;
     border-radius: 40px 40px 0 0;
+    position: relative;
     gap: 24px;
   }
   .Restaurant__Presentation--title {
@@ -252,15 +284,8 @@
     font-size: 1.75rem;
     margin: 31px 0 0 0;
   }
-  .Restaurant__Presentation i {
-    font-size: x-large;
-    width: 21px;
-    height: 21px;
-    position: relative;
-    bottom: 10px;
-    align-self: end;
-    text-align: center;
-    margin-right: 10px;
+  .Restaurant__Presentation--heart {
+    display: flex;
   }
   .Menu {
     display: flex;

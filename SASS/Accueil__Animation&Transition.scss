@@ -1,0 +1,40 @@
+/*Animations et transition*/
+@import '../Var&Mixins.scss';
+/*Heart Hover & Animation*/
+
+.Information__Box--heart[type="checkbox"]{
+    display: none;
+    grid-area: 2/7/3/8;
+    @include HeartSize;            
+    cursor: pointer;    
+    position: absolute;                       
+}                      
+.Information__Box--label::before{                        
+    font-family: "bootstrap-icons";
+    content:"\F417";
+    position: absolute;                                                                       
+}         
+.Information__Box--label{
+    grid-area: 2/7/3/8;
+    @include HeartSize;            
+    cursor: pointer;
+    color:black;    
+    font-weight: 100;
+    position: absolute;                                              
+        &:hover::before{
+            position: absolute;
+            font-family: "bootstrap-icons";
+            content:"\F415";
+            background: $HeartGradient; 
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;                           
+        }                                                                                  
+}
+  &--heart[type="checkbox"]:checked ~ label::before{
+        background: $HeartGradient; 
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: absolute;                           
+}  

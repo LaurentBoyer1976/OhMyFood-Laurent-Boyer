@@ -86,6 +86,22 @@
   /* Explore__section*/
   /*How It Works Section*/
   /*Main-Article, restaurant lien et carte de présentation*/
+  /* .bi-heart{
+   display: grid;
+   grid-area: 2/7/3/8;
+   @include HeartSize;            
+   cursor: pointer;              
+   color:black;    
+   font-weight: 100;                                
+       &:hover::before{
+           font-family: "bootstrap-icons";
+           content:"\F415";
+           background: $HeartGradient; 
+           background-clip: text;
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+       }                                                                                            
+   } */
 }
 @media screen and (min-width: 1024px) and (max-width: 2500px) and (min-width: 1024px) and (max-width: 2500px) {
   #Generic__Footer {
@@ -412,6 +428,7 @@
     width: 160%;
     max-width: 490px;
     box-sizing: border-box;
+    position: relative;
   }
   .Restaurant__link:nth-of-type(1) {
     grid-area: link1;
@@ -484,23 +501,46 @@
     max-height: 77px;
     padding-right: 5%;
   }
-  .bi-heart {
-    display: grid;
+  .Information__Box--heart[type=checkbox] {
+    display: none;
     grid-area: 2/7/3/8;
     width: 30px;
     height: 30px;
     font-size: 30px;
     cursor: pointer;
-    font-weight: 100;
-    color: black;
+    visibility: hidden;
+    position: absolute;
   }
-  .bi-heart:hover::before {
+  .Information__Box--label::before {
+    font-family: "bootstrap-icons";
+    content: "\f417";
+    position: absolute;
+  }
+  .Information__Box--label {
+    grid-area: 2/7/3/8;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    font-weight: 100;
+    position: absolute;
+  }
+  .Information__Box--label:hover::before {
+    position: absolute;
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .Information__Box--heart[type=checkbox]:checked ~ label::before {
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
   }
   .Description__text {
     display: grid;
