@@ -3,6 +3,7 @@
 
     @import '../Footer';
     @import '../Var&Mixins.scss';
+    @import '../Accueil__Animation&Transition.scss';
 
 /*Général*/
     *{
@@ -196,8 +197,7 @@
                         padding: 15px 25px 15px 15px;
                         background-color: $InfoBoxBCkcolor;
                         border-radius: 0 0 15px 15px;
-                        color: $BlackFont;
-                                                            
+                        color: $BlackFont;                                                            
                         & i{                       
                             font-size: 30px;
                         }                                                       

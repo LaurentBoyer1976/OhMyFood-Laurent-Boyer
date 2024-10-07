@@ -5,6 +5,7 @@
     @import '../Footer';
     @import '../Var&Mixins.scss';
     @import '../Menu__Animations&Transition.scss';
+   
 
     /*Général*/
     *{ 
@@ -105,50 +106,9 @@ body {
             font-family: $brandFont;
             font-size: $mainFontS28;
             margin: 31px 0 0 0;            
-        }                  
-    }
-    .Restaurant__Presentation--heart[type="checkbox"]{
-        display: none;        
-        @include HeartSize;            
-        cursor: pointer;    
-        position: absolute;                       
-    }
-    .Restaurant__Presentation--heart[type="checkbox"]{
-        display: flex;    
-        @include HeartSize;            
-        cursor: pointer;    
-        position: absolute;                       
-    }                      
-    .Restaurant__Presentation--label::before{                        
-        font-family: "bootstrap-icons";
-        content:"\F417";
-        position: absolute;                                                                       
-    }         
-    .Restaurant__Presentation--label{
-        display: flex;
-        @include HeartSize;            
-        cursor: pointer;
-        color:black;    
-        font-weight: 100;
-        position: absolute;                                              
-            &:hover::before{
-                position: absolute;
-                font-family: "bootstrap-icons";
-                content:"\F415";
-                background: $HeartGradient; 
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;                           
-            }                                                                                  
-    }
-      &--heart[type="checkbox"]:checked ~ label::before{
-            background: $HeartGradient; 
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: absolute;                           
-    }              
-  
+        }
+                  
+    }     
     .Menu{
         @include Display__Box();
         @include Size__Box($MinW: unset);
