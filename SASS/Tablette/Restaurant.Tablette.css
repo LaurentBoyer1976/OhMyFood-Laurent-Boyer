@@ -80,6 +80,29 @@
   /*mixins Section HowItWorks*/
   /*mixins section cards restaurant*/
   /*Mixin page menu*/
+  /* Transitions et Animations pour les pages menus*/
+  /*Variables*/
+  /*color*/
+  /*Font*/
+  /*Sizing Width Height Box-Sizing*/
+  /*rendre visible ou caché un élément*/
+  /*Animations, Transition*/
+  /*Mixins générales*/
+  /*Mixins Navbar*/
+  /*mixins Section HowItWorks*/
+  /*mixins section cards restaurant*/
+  /*Mixin page menu*/
+  /*HOVER Heart checkbox*/
+  /*.bi::before{
+      display: flex;
+      @include HeartSize;
+      position: absolute;        
+      margin-left: 40px;            
+      text-align: center;            
+      cursor: pointer;              
+      color:black;    
+      font-weight: 100;
+  }*/
   /*Général*/
   /*body & Main-container*/
   /*header et navbar styles*/
@@ -138,6 +161,33 @@
     display: inline-block;
     justify-self: start;
     grid-area: 1/5/1/6;
+  }
+}
+@media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
+  .bi-heart {
+    display: flex;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    font-weight: 100;
+    top: 51%;
+    right: 32%;
+  }
+  .bi-heart:hover::before {
+    font-family: "bootstrap-icons";
+    content: "\f415";
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+@media screen and (min-width: 780.1px) and (max-width: 1023.9px) and (min-width: 780.1px) and (max-width: 1023.9px) {
+  .bi-heart {
+    right: 20%;
   }
 }
 @media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
@@ -238,29 +288,20 @@
   }
   .Restaurant__Presentation {
     display: flex;
-    flex-flow: row;
-    justify-content: center;
+    flex-flow: column;
+    justify-content: normal;
     align-items: center;
     padding-right: 17px;
     width: 100%;
     box-sizing: border-box;
     border-radius: 40px 40px 0 0;
+    position: relative;
     gap: 24px;
   }
   .Restaurant__Presentation--title {
     font-family: "Shrikhand", sans-serif;
     font-size: 1.75rem;
     margin: 31px 0 0 0;
-  }
-  .Restaurant__Presentation i {
-    font-size: x-large;
-    width: 21px;
-    height: 21px;
-    position: relative;
-    bottom: 10px;
-    align-self: end;
-    text-align: center;
-    margin-right: 10px;
   }
   .Menu {
     display: flex;

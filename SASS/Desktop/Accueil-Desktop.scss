@@ -103,8 +103,7 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr) 0.5fr 0.5fr 0.5fr repeat(2, 1fr);
                 grid-template-rows:  33% 33% 50px;
-                width: 100%;
-                              
+                width: 100%;                              
                 grid-area: C-Explore__Site;                  
                     &--title{
                         grid-area: 1/1/2/8;
@@ -325,68 +324,8 @@
                     box-sizing: border-box;
                     max-height: 77px;
                     padding-right: 5%;
-                      /*&--heart[type="checkbox"]{
-                        display: none;
-                        grid-area: 2/7/3/8;
-                        @include HeartSize;            
-                        cursor: pointer;
-                        visibility: hidden;
-                        position: absolute;                       
-                      }                      
-                      &--label::before{                        
-                        font-family: "bootstrap-icons";
-                        content:"\F417";
-                        position: absolute;                                                                       
-                      }         
-                      &--label{
-                        grid-area: 2/7/3/8;
-                        @include HeartSize;            
-                        cursor: pointer;
-                        color:black;    
-                        font-weight: 100;
-                        position: absolute;                                              
-                        &:hover::before{
-                            position: absolute;
-                            font-family: "bootstrap-icons";
-                            content:"\F415";
-                            background: $HeartGradient; 
-                            background-clip: text;
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;                           
-                        }                                                                                  
-                      }
-                      &--heart[type="checkbox"]:checked ~ label::before{
-                            background: $HeartGradient; 
-                            background-clip: text;
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
-                            position: absolute;                           
-                      }*/                                                                                                                                                                                                                                                                                                    
-                }              
-                                    
-               /* .bi-heart{
-                display: grid;
-                grid-area: 2/7/3/8;
-                @include HeartSize;            
-                cursor: pointer;              
-                color:black;    
-                font-weight: 100;                                
-                    &:hover::before{
-                        font-family: "bootstrap-icons";
-                        content:"\F415";
-                        background: $HeartGradient; 
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                    }                                                                                            
-                } */               
-                
-                  //:hover transition d'affichage du bas vers le haut l'état initial du coeur est 
-                  //rempli l'apparition se fait par une animation partant du bas et allant vers le haut au survol et au click.
-                  //créer une mixin pour gérer l'affichage du coeur.
-                  //Pour faire en sorte que le coeur change au click dans la checkbox utiliser les combinateurs d'adjacence avec la pseudo classe :active
-                  //faire en sorte que la taille de l'input englobe le coeur( en forme de cercle)                                                      
-                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                        
+                }                                                                                                                                                                                                                                                                                                                                                                        
             .Description__text{
                 display: grid;
                 grid-template-columns: 1fr;

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/* Transitions et Animations pour les pages menus*/
+/*Variables*/
+/*color*/
+/*Font*/
+/*Sizing Width Height Box-Sizing*/
+/*rendre visible ou caché un élément*/
+/*Animations, Transition*/
+/*Mixins générales*/
+/*Mixins Navbar*/
+/*mixins Section HowItWorks*/
+/*mixins section cards restaurant*/
+/*Mixin page menu*/
+/*HOVER Heart checkbox*/
+.bi-heart {
+  display: flex;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+  font-weight: 100;
+  top: 51%;
+  right: 32%;
+}
+.bi-heart:hover::before {
+  font-family: "bootstrap-icons";
+  content: "\f415";
+  background: linear-gradient(to top, #ff79da 40%, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*.bi::before{
+    display: flex;
+    @include HeartSize;
+    position: absolute;        
+    margin-left: 40px;            
+    text-align: center;            
+    cursor: pointer;              
+    color:black;    
+    font-weight: 100;
+}*/
+@media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
+  .bi-heart {
+    right: 20%;
+  }
+}/*# sourceMappingURL=Menu__Animations&Transition.css.map */
