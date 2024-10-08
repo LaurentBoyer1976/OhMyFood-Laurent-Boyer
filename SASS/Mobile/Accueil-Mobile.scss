@@ -187,7 +187,8 @@
                         @include BoxNew--color;
                         @include BoxNew--Size;
                         @include BoxNew--Fontsize;
-                        @include BoxNew--position;                        
+                        @include BoxNew--position;
+                        margin:$MargeAuto                        
                     }   
                 }                                            
                 .Information__Box{

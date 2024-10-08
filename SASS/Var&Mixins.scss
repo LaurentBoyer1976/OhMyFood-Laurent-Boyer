@@ -21,6 +21,7 @@
         $ShadowHover:0px 4px 15px 0px rgba(0,0,0,0.35);
         
         /*Font*/
+        $BootsIcon: "bootstrap-icons";
         $mainFont : 'Roboto', sans-serif;
         $brandFont : 'Shrikhand', sans-serif; 
         $mainFontW300: 300;
@@ -37,7 +38,8 @@
         $mainFontS40: 2.5rem;
         $FontStyleItal: italic;
     
-        /*Sizing Width Height Box-Sizing*/
+        /*Sizing Width Height Box-Sizing Margin*/
+        $MargeAuto: auto;
         $main-Width:100%;
         $main-MinW: 320px;
         $main-MaxW: 100%;
@@ -46,36 +48,7 @@
 
         /*rendre visible ou caché un élément*/
         
-        $Advertise: hidden;
-    
-        /*Animations, Transition*/
-        $TransHover: 0.3s ease-in-out;
-        @mixin HeartSize($Width:30px, $Height:30px, $FontS:30px){
-            width: $Width;
-            height: $Height;
-            font-size: $FontS;
-        }
-        @mixin HeartPosition( $display: flex, $position: absolute, $topposition: 3%, $Rightposition: 10%){
-            display: $display;
-            position: $position;
-            top: $topposition;
-            right: $Rightposition;
-        }
-        @mixin HeartStyle($Fweight: 100, $Cursor: pointer, $Color: black){
-            font-weight: $Fweight;
-            cursor: $Cursor;
-            color: $Color;            
-        }
-        @mixin HeartHovBef($Ffamily: "bootstrap-icons", $content:"\F415", $Background: $HeartGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
-            font-family: $Ffamily;
-            content: $content;
-            background: $Background; 
-            background-clip: $BCK-clip;
-            -webkit-background-clip: $WebBCK-Clip;
-            -webkit-text-fill-color: $WebTF-Clip;
-        }
-        
-
+        $Advertise: hidden;                  
        
         /*Mixins générales*/
         @mixin Size__Box($MinW: $main-MinW, $MaxW: $main-MaxW, $Sizing:$main-Bsizing){
@@ -204,3 +177,72 @@
             box-sizing:$B-Sizing;
             border-radius:$Radius;
         }
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------        
+
+ /*Animations, Transition*/
+
+ //Variables
+
+ $TransHover: right 0.3s ease-in-out;
+
+
+//Mixins
+
+ @mixin HeartSize($Width:30px, $Height:30px, $FontS:30px){
+     width: $Width;
+     height: $Height;
+     font-size: $FontS;
+ }
+ @mixin HeartPosition( $display: flex, $position: absolute, $topposition: 3%, $Rightposition: 10%){
+     display: $display;
+     position: $position;
+     top: $topposition;
+     right: $Rightposition;
+ }
+ @mixin HeartStyle($Fweight: 100, $Cursor: pointer, $Color: black){
+     font-weight: $Fweight;
+     cursor: $Cursor;
+     color: $Color;            
+ }
+ @mixin HeartHovBef($Ffamily: $BootsIcon, $content:"\F415", $Background: $HeartGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
+     font-family: $Ffamily;
+     content: $content;
+     background: $Background; 
+     background-clip: $BCK-clip;
+     -webkit-background-clip: $WebBCK-Clip;
+     -webkit-text-fill-color: $WebTF-Clip;
+ }
+ @mixin GreenCheckHoverDis($Flow: wrap, $position: absolute, $justifyC: center, $alignC: center, $TextAlign:center,  $right:0){
+         position:$position;
+         right: $right;                
+         flex-flow: $Flow;
+         justify-content: $justifyC;
+         align-content: $alignC;                                                                                          
+         text-align: $TextAlign;       
+ }
+ @mixin GreenCheckHoverStyl($Ffamily: $BootsIcon, $FontS: 20px, $content: "\F26A",  $BorderRadius: inherit, $color:white, $BCKcolor: $NewCardColor){
+        font-family: $Ffamily;
+        border-top-right-radius: $BorderRadius;
+        border-bottom-right-radius: $BorderRadius;
+        font-size: $FontS;
+        content: $content;
+        color: $color;
+        background-color: $BCKcolor;
+ }
+ @mixin GreenCheckHoverSize($Mwidth: 59px, $Height: 69px, $Margin: auto){
+         min-width: $Mwidth;
+         height:$Height;
+         margin: $Margin; 
+ }
+ @mixin textOverflow($Wspace: Nowrap, $TextOverF: ellipsis, $overF:hidden){
+    white-space: $Wspace;
+    text-overflow: $TextOverF;
+    overflow: $overF;
+    @mixin Dishe--Info-translation($Width: 70%, $Transmove: $TransHover){
+        width: $Width;
+        transition:$TransHover;
+     }
+ }
+ 

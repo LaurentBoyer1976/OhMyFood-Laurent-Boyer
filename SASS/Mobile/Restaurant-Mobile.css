@@ -2,14 +2,14 @@
 /*Variables*/
 /*color*/
 /*Font*/
-/*Sizing Width Height Box-Sizing*/
+/*Sizing Width Height Box-Sizing Margin*/
 /*rendre visible ou caché un élément*/
-/*Animations, Transition*/
 /*Mixins générales*/
 /*Mixins Navbar*/
 /*mixins Section HowItWorks*/
 /*mixins section cards restaurant*/
 /*Mixin page menu*/
+/*Animations, Transition*/
 /*Footer générique ohmyfood*/
 #Generic__Footer {
   display: flex;
@@ -128,26 +128,26 @@
 /*Variables*/
 /*color*/
 /*Font*/
-/*Sizing Width Height Box-Sizing*/
+/*Sizing Width Height Box-Sizing Margin*/
 /*rendre visible ou caché un élément*/
-/*Animations, Transition*/
 /*Mixins générales*/
 /*Mixins Navbar*/
 /*mixins Section HowItWorks*/
 /*mixins section cards restaurant*/
 /*Mixin page menu*/
+/*Animations, Transition*/
 /* Transitions et Animations pour les pages menus*/
 /*Variables*/
 /*color*/
 /*Font*/
-/*Sizing Width Height Box-Sizing*/
+/*Sizing Width Height Box-Sizing Margin*/
 /*rendre visible ou caché un élément*/
-/*Animations, Transition*/
 /*Mixins générales*/
 /*Mixins Navbar*/
 /*mixins Section HowItWorks*/
 /*mixins section cards restaurant*/
 /*Mixin page menu*/
+/*Animations, Transition*/
 /*HOVER Heart checkbox*/
 @media screen and (min-width: 320px) and (max-width: 780px) {
   .bi-heart {
@@ -378,17 +378,17 @@
     flex-flow: wrap;
     justify-content: center;
     align-content: center;
+    text-align: center;
     font-family: "bootstrap-icons";
     border-top-right-radius: inherit;
     border-bottom-right-radius: inherit;
     font-size: 20px;
     content: "\f26a";
+    color: white;
+    background-color: #99E2D0;
     min-width: 59px;
     height: 69px;
     margin: auto;
-    color: white;
-    background-color: #99E2D0;
-    text-align: center;
   }
   .Menu__Select {
     display: flex;
@@ -404,7 +404,6 @@
   }
   .Menu__Select:hover {
     width: 70%;
-    /*right: 60px;*/
     transition: right 0.3s ease-in-out;
   }
   .Menu__Select--dishe {
@@ -414,11 +413,10 @@
     max-width: 100%;
   }
   .Menu__Select--dishe:hover {
-    white-space: nowrap;
+    white-space: Nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     width: 70%;
-    /*right: 60px;*/
     transition: right 0.3s ease-in-out;
   }
   .Menu__Select--info {
@@ -429,12 +427,11 @@
     max-width: 100%;
   }
   .Menu__Select--info:hover {
-    width: 70%;
-    /*right: 60px;*/
-    transition: right 0.3s ease-in-out;
-    white-space: nowrap;
+    white-space: Nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    width: 70%;
+    transition: right 0.3s ease-in-out;
   }
   .Menu__CommandBTN {
     font-weight: 500;
@@ -444,9 +441,18 @@
     padding: 13px 16px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     border: none;
-    transition: 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out;
     width: 50%;
     margin: auto;
+  }
+  .Menu__CommandBTN:hover {
+    font-weight: 500;
+    color: #FFFFFF;
+    border-radius: 25px;
+    background: linear-gradient(to top, #a16be0 40%, #ff7edb);
+    padding: 13px 16px;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+    border: none;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 369px) {
@@ -464,10 +470,26 @@
     font-weight: 500;
     margin: 0;
   }
+  .Menu__Select--dishe:hover {
+    white-space: Nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 70%;
+    transition: right 0.3s ease-in-out;
+  }
   .Menu__Select--info {
     font-weight: 300;
     font-size: 0.875rem;
     align-self: flex-start;
     margin: 0;
+  }
+  .Menu__Select--info:hover {
+    white-space: Nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .Menu__Select--info:hover.Dishe--Info-translation {
+    width: 70%;
+    transition: right 0.3s ease-in-out;
   }
 }/*# sourceMappingURL=Restaurant-Mobile.css.map */
