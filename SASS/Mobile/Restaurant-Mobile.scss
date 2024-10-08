@@ -111,23 +111,45 @@ body {
         }        
     }
     .Menu__Btn{
-        @include Display__Box($flow: row);
-        width: 90%; 
+        @include Display__Box($flow: row);        
+        width: 100%;
+        max-height: 69px; 
         border: none;
+        padding: 0;
         background-color: $BtnFontColor;
-        border-radius: 15px;
-        padding: 13.5px 15px;
+        border-radius: 15px;        
         box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
             &--price{
                 align-self: end;
                 font-weight: $mainFontW700;
                 font-size: $mainFontS15;
-            }         
+                padding: 13.5px 15px 13.5px;
+            }       
+            &:hover::after{
+                display: flex;
+                flex-flow: wrap;
+                justify-content: center;
+                align-content: center;                
+                font-family: "bootstrap-icons";
+                border-top-right-radius: inherit;
+                border-bottom-right-radius: inherit;
+                font-size: 20px;
+                content: "\F26A";
+                min-width: 59px;
+                height:69px;
+                margin: auto;                
+                color: white;
+                background-color: $NewCardColor;
+                text-align: center;                                           
+            }            
     }
+    
+    
     .Menu__Select{
         @include Display__Box($flow: column wrap, $Alignitems: flex-start);
         width: 100%;
-        gap: 5px;        
+        gap: 5px;
+        padding: 13.5px 0 13.5px 15px;        
         &--dishe{
             font-size: $mainFontS18;
             font-weight: $mainFontW500;
@@ -143,6 +165,7 @@ body {
     .Menu__CommandBTN{
         @include mains__Btn--Rounded();
         width: 50%;
+        margin:auto
     }
     
 }
