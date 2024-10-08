@@ -50,12 +50,31 @@
     
         /*Animations, Transition*/
         $TransHover: 0.3s ease-in-out;
-        @mixin HeartSize($Width:30px, $Height:30px, $FontS: 30px){
+        @mixin HeartSize($Width:22px, $Height:21px, $FontS: 30px){
             width: $Width;
             height: $Height;
             font-size: $FontS;
         }
-        //@mixin HeartPosition($display) 
+        @mixin HeartPosition( $display: flex, $position: absolute, $topposition: 3%, $Rightposition: 10%){
+            display: $display;
+            position: $position;
+            top: $topposition;
+            right: $Rightposition;
+        }
+        @mixin HeartStyle($Fweight: 100, $Cursor: pointer, $Color: black){
+            font-weight: $Fweight;
+            cursor: $Cursor;
+            color: $Color;            
+        }
+        @mixin HeartHovBef($Ffamily: "bootstrap-icons", $content:"\F415", $Background: $HeartGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
+            font-family: $Ffamily;
+            content: $content;
+            background: $Background; 
+            background-clip: $BCK-clip;
+            -webkit-background-clip: $WebBCK-Clip;
+            -webkit-text-fill-color: $WebTF-Clip;
+        }
+        
 
        
         /*Mixins générales*/

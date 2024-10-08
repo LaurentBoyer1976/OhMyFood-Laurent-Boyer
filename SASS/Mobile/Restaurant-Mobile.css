@@ -149,41 +149,55 @@
 /*mixins section cards restaurant*/
 /*Mixin page menu*/
 /*HOVER Heart checkbox*/
-.bi-heart {
-  display: flex;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-  cursor: pointer;
-  color: black;
-  font-weight: 100;
-  top: 51%;
-  right: 32%;
+@media screen and (min-width: 320px) and (max-width: 780px) {
+  .bi-heart {
+    display: flex;
+    position: absolute;
+    top: 3%;
+    right: 10%;
+    width: 22px;
+    height: 21px;
+    font-size: 30px;
+    font-weight: 100;
+    cursor: pointer;
+    color: black;
+  }
+  .bi-heart:hover::before {
+    font-family: "bootstrap-icons";
+    content: "\f415";
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
-.bi-heart:hover::before {
-  font-family: "bootstrap-icons";
-  content: "\f415";
-  background: linear-gradient(to top, #ff79da 40%, #9356dc);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+@media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
+  .bi-heart {
+    right: 20%;
+  }
 }
-
-.bi::before { /*mozilla*/
-  display: flex;
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-  position: absolute;
-  left: -10%;
-  margin-left: 40px;
-  text-align: center;
-  cursor: pointer;
-  color: black;
-  font-weight: 100;
+@media screen and (min-width: 1024px) and (max-width: 2500px) {
+  .bi-heart {
+    display: flex;
+    position: absolute;
+    top: 3%;
+    right: 10%;
+    width: 22px;
+    height: 21px;
+    font-size: 30px;
+    font-weight: 100;
+    cursor: pointer;
+    color: black;
+  }
+  .bi-heart:hover::before {
+    font-family: "bootstrap-icons";
+    content: "\f415";
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
-
 @media screen and (min-width: 320px) and (max-width: 780px) {
   /*Général*/
   * {
@@ -211,15 +225,16 @@
   }
   .Navbar {
     display: flex;
-    flex-flow: normal;
+    flex-flow: row;
     justify-content: normal;
     align-items: normal;
     box-sizing: border-box;
     min-width: 320px;
     width: 100%;
     max-width: 100%;
-    padding: 12.5px 25%;
+    padding: 12.5px 9% 12.5px 1%;
     margin: 0;
+    gap: 70px;
   }
   .Navbar__Title {
     display: flex;
@@ -292,16 +307,6 @@
     font-family: "Shrikhand", sans-serif;
     font-size: 1.75rem;
     margin: 31px 0 0 0;
-  }
-  .Restaurant__Presentation i {
-    font-size: x-large;
-    width: 21px;
-    height: 21px;
-    position: relative;
-    bottom: 10px;
-    align-self: end;
-    text-align: center;
-    margin-right: 10px;
   }
   .Menu {
     display: flex;

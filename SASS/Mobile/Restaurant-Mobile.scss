@@ -15,8 +15,7 @@ body {
     background-color: #1fe0;
     margin:0;
     @include Size__Box();            
-    }
-     
+    }   
 
     /*header et navbar styles*/
     #Head__site{        
@@ -26,12 +25,13 @@ body {
 
     }
     .Navbar{
-    @include NavbarStyle($flow:normal, $justifyC: normal, $Alignitems:normal);
+    @include NavbarStyle($flow:row, $justifyC: normal, $Alignitems:normal);
         min-width: 320px;
         width: 100%;
         max-width: 100%;
-        padding: 12.5px 25%;
+        padding: 12.5px 9% 12.5px 1%;
         margin: 0;
+        gap: 70px;
     }
     .Navbar__Title{
         display: flex;
@@ -79,23 +79,12 @@ body {
         background-color: $bodyColor;
     }
     .Restaurant__Presentation{
-        @include Restaurant__present();      
-
-        &--title{
-            font-family: $brandFont;
-            font-size: $mainFontS28;
-            margin: 31px 0 0 0;            
-        }
-        & i{
-            font-size: x-large;
-            width: 21px;
-            height: 21px;
-            position: relative;
-            bottom: 10px;
-            align-self: end;
-            text-align: center;
-            margin-right: 10px;
-        }
+        @include Restaurant__present();
+            &--title{
+                font-family: $brandFont;
+                font-size: $mainFontS28;
+                margin: 31px 0 0 0;            
+            }        
     }
     .Menu{
         @include Display__Box();
@@ -129,11 +118,11 @@ body {
         border-radius: 15px;
         padding: 13.5px 15px;
         box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
-        &--price{
-            align-self: end;
-            font-weight: $mainFontW700;
-            font-size: $mainFontS15;
-        }         
+            &--price{
+                align-self: end;
+                font-weight: $mainFontW700;
+                font-size: $mainFontS15;
+            }         
     }
     .Menu__Select{
         @include Display__Box($flow: column wrap, $Alignitems: flex-start);
