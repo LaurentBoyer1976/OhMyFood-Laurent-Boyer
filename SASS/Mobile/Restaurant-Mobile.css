@@ -155,8 +155,8 @@
     position: absolute;
     top: 3%;
     right: 10%;
-    width: 22px;
-    height: 21px;
+    width: 30px;
+    height: 30px;
     font-size: 30px;
     font-weight: 100;
     cursor: pointer;
@@ -182,8 +182,8 @@
     position: absolute;
     top: 3%;
     right: 10%;
-    width: 22px;
-    height: 21px;
+    width: 30px;
+    height: 30px;
     font-size: 30px;
     font-weight: 100;
     cursor: pointer;
@@ -347,10 +347,11 @@
   .Menu__Btn {
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: normal;
     align-items: center;
+    position: relative;
     width: 100%;
-    max-height: 69px;
+    height: 69px;
     border: none;
     padding: 0;
     background-color: #FFFFFF;
@@ -358,13 +359,22 @@
     box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
   }
   .Menu__Btn--price {
+    position: absolute;
+    right: 3%;
+    top: 75%;
     align-self: end;
     font-weight: 700;
     font-size: 0.9375rem;
     padding: 13.5px 15px 13.5px;
+    transform: translateY(-60%);
+  }
+  .Menu__Btn--price:hover {
+    right: 17%;
+    transition: right 0.3s ease-in-out;
   }
   .Menu__Btn:hover::after {
-    display: flex;
+    position: absolute;
+    right: 0;
     flex-flow: wrap;
     justify-content: center;
     align-content: center;
@@ -385,20 +395,46 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: flex-start;
+    position: absolute;
     width: 100%;
+    height: 100%;
+    left: 0;
     gap: 5px;
-    padding: 13.5px 0 13.5px 15px;
+    padding: 4% 0 4% 2%;
+  }
+  .Menu__Select:hover {
+    width: 70%;
+    /*right: 60px;*/
+    transition: right 0.3s ease-in-out;
   }
   .Menu__Select--dishe {
     font-size: 1.125rem;
     font-weight: 500;
     margin: 0;
+    max-width: 100%;
+  }
+  .Menu__Select--dishe:hover {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 70%;
+    /*right: 60px;*/
+    transition: right 0.3s ease-in-out;
   }
   .Menu__Select--info {
     font-weight: 300;
     font-size: 0.9375rem;
     align-self: flex-start;
     margin: 0;
+    max-width: 100%;
+  }
+  .Menu__Select--info:hover {
+    width: 70%;
+    /*right: 60px;*/
+    transition: right 0.3s ease-in-out;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .Menu__CommandBTN {
     font-weight: 500;
@@ -411,5 +447,27 @@
     transition: 0.3s ease-in-out;
     width: 50%;
     margin: auto;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 369px) {
+  .Menu__Select {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 5px;
+    padding: 4% 0 4% 2%;
+  }
+  .Menu__Select--dishe {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  .Menu__Select--info {
+    font-weight: 300;
+    font-size: 0.875rem;
+    align-self: flex-start;
+    margin: 0;
   }
 }/*# sourceMappingURL=Restaurant-Mobile.css.map */

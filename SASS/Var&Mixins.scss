@@ -50,7 +50,7 @@
     
         /*Animations, Transition*/
         $TransHover: 0.3s ease-in-out;
-        @mixin HeartSize($Width:22px, $Height:21px, $FontS: 30px){
+        @mixin HeartSize($Width:30px, $Height:30px, $FontS:30px){
             width: $Width;
             height: $Height;
             font-size: $FontS;
