@@ -1,6 +1,6 @@
 @import '../Footer';
 @import '../Var&Mixins.scss';
-@import '../Menu__Animations&Transition.scss';
+
 
 @media screen and (min-width : 320px) and (max-width : 780px){
 
@@ -142,8 +142,7 @@ body {
                 @include GreenCheckHoverSize();
                 transition: $TransHover;
                 transform: translateX(0);
-                visibility: visible;
-                 
+                visibility: visible;                 
             }                   
             &--price{ 
                 position:absolute;
@@ -158,8 +157,7 @@ body {
     .Menu__Btn:hover .Menu__Btn--price{
         transition: $TransHover;
         transform: translateX(-60%);
-        right: 6%;       
-
+        right: 6%;      
     }
     .Menu__Btn:hover .Menu__Select{
         width: 70%;

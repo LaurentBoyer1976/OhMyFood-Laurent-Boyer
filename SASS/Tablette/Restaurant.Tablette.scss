@@ -3,7 +3,7 @@
 
   @import '../Footer';
   @import '../Var&Mixins.scss';
-  @import '../Menu__Animations&Transition.scss';
+  
   
 
   /*Général*/
@@ -96,14 +96,22 @@ body {
   }
   .Restaurant__Presentation{
       @include Restaurant__present( $flow:column, $justifyC:normal);
-      position: relative;
-      gap: 24px;  
-      &--title{
-          font-family: $brandFont;
-          font-size: $mainFontS28;
-          margin: 31px 0 0 0;            
+      position: relative;                    
+      &--title{        
+        font-family: $brandFont;
+        font-size: $mainFontS28;
+        margin: 31px 15% 0 0;
+        align-self: center;            
       }   
   }
+  .bi-heart{
+    @include HeartPosition($topposition: 50%, $Rightposition:25%);
+    @include HeartSize;
+    @include HeartStyle;                 
+        &:hover::before{
+            @include HeartHovBef;           
+        }                                                                               
+    }
   .Menu{
       @include Display__Box($justifyC:space-evenly);
       @include Size__Box($MinW: unset);
@@ -133,38 +141,77 @@ body {
   }
   .Menu__Btn{
       @include Display__Box($flow: row);
-      width: 100%; 
+      position: relative;
+      width: 100%;
+      height: 69px; 
       border: none;
       background-color: $BtnFontColor;
-      border-radius: 15px;
-      padding: 13.5px 15px;
+      border-radius: 15px;      
       box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
+      transform: translateX(0%);
+      &::after{                
+        @include GreenCheckHoverDis;
+        @include GreenCheckHoverStyl;
+        @include GreenCheckHoverSize;
+        transition: $TransHover;
+        visibility: hidden;                                                                
+        }
+    &:hover::after{
+        @include GreenCheckHoverDis;
+        @include GreenCheckHoverSize();
+        transition: $TransHover;
+        transform: translateX(0);
+        visibility: visible;         
+    }        
       &--price{
-          align-self: end;
-          font-weight: $mainFontW700;
-          font-size: $mainFontS15;
+        position:absolute;
+        right: 3%;
+        top: 38%;       
+        align-self: end;
+        font-weight: $mainFontW700;
+        font-size: $mainFontS15;
+        padding: 13.5px 15px 13.5px;
       }         
   }
+  .Menu__Btn:hover .Menu__Btn--price{
+    transition: $TransHover;
+    transform: translateX(-60%);
+    right: 6%;       
+}
+.Menu__Btn:hover .Menu__Select{
+    width: 70%;
+    transition: $TransHover;  
+}
+.Menu__Btn:hover > .Menu__Select > *{
+    @include textOverflow;  
+}
   .Menu__Select{
       @include Display__Box($flow: column wrap, $Alignitems: flex-start);
+      position: absolute;
       width: 100%;
-      max-height: 69px;
+      height: 100%;
+      left: 2.25%;
       gap: 5px;        
       &--dishe{
           font-size: $mainFontS18;
           font-weight: $mainFontW500;
           margin: 0;
+          max-width: 100%;
       }
       &--info{
           font-weight: $mainFontW300;
           font-size: $mainFontS15;
           align-self: flex-start;
           margin: 0;
+          max-width: 100%;
       }       
   }
   .Menu__CommandBTN{
       @include mains__Btn--Rounded();
       width: 34%;
+      &:hover{
+        @include mains__Btn--RoundedLighter;           
+    }       
   }
   #Generic__Footer{
       grid-area: 4 / 1 / 4 / 2;

@@ -136,45 +136,6 @@
 /*mixins section cards restaurant*/
 /*Mixin page menu*/
 /*Animations, Transition*/
-/* Transitions et Animations pour les pages menus*/
-/*Variables*/
-/*color*/
-/*Font*/
-/*Sizing Width Height Box-Sizing Margin*/
-/*rendre visible ou caché un élément*/
-/*Mixins générales*/
-/*Mixins Navbar*/
-/*mixins Section HowItWorks*/
-/*mixins section cards restaurant*/
-/*Mixin page menu*/
-/*Animations, Transition*/
-@media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
-  .bi-heart {
-    right: 20%;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 2500px) {
-  .bi-heart {
-    display: flex;
-    position: absolute;
-    top: 45%;
-    right: 23%;
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    font-weight: 100;
-    cursor: pointer;
-    color: black;
-  }
-  .bi-heart:hover::before {
-    font-family: "bootstrap-icons";
-    content: "\f415";
-    background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
 @media screen and (min-width: 320px) and (max-width: 780px) {
   /*Général*/
   * {
