@@ -3,37 +3,14 @@
 /*Variables*/
 /*color*/
 /*Font*/
-/*Sizing Width Height Box-Sizing*/
+/*Sizing Width Height Box-Sizing Margin*/
 /*rendre visible ou caché un élément*/
-/*Animations, Transition*/
 /*Mixins générales*/
 /*Mixins Navbar*/
 /*mixins Section HowItWorks*/
 /*mixins section cards restaurant*/
 /*Mixin page menu*/
-/*HOVER Heart checkbox*/
-@media screen and (min-width: 320px) and (max-width: 780px) {
-  .bi-heart {
-    display: flex;
-    position: absolute;
-    top: 3%;
-    right: 10%;
-    width: 22px;
-    height: 21px;
-    font-size: 30px;
-    font-weight: 100;
-    cursor: pointer;
-    color: black;
-  }
-  .bi-heart:hover::before {
-    font-family: "bootstrap-icons";
-    content: "\f415";
-    background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
+/*Animations, Transition*/
 @media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
   .bi-heart {
     right: 20%;
@@ -43,10 +20,10 @@
   .bi-heart {
     display: flex;
     position: absolute;
-    top: 3%;
-    right: 10%;
-    width: 22px;
-    height: 21px;
+    top: 45%;
+    right: 23%;
+    width: 30px;
+    height: 30px;
     font-size: 30px;
     font-weight: 100;
     cursor: pointer;

@@ -308,6 +308,7 @@
                     @include BoxNew--position($display:grid, $Alignitems: normal);
                     position: absolute;
                     top: -28%;
+                    margin:$MargeAuto;
                     }
                  
                 }                                            
