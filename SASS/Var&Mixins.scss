@@ -28,6 +28,7 @@
         $mainFontW400: 400;  
         $mainFontW500: 500;
         $mainFontW700: 700;
+        $mainFontS13: 0.8125rem;
         $mainFontS14: 0.875rem;
         $mainFontS15: 0.9375rem;
         $mainFontS16: 1rem;
@@ -239,10 +240,10 @@
  @mixin textOverflow($Wspace: Nowrap, $TextOverF: ellipsis, $overF:hidden){
     white-space: $Wspace;
     text-overflow: $TextOverF;
-    overflow: $overF;
-    @mixin Dishe--Info-translation($Width: 70%, $Transmove: $TransHover){
-        width: $Width;
-        transition:$TransHover;
-     }
+    overflow: $overF;    
+ }
+ @mixin Dishe--Info-translation($Width: 70%, $Transmove: $TransHover){
+    width: $Width;
+    transition:$TransHover;
  }
  

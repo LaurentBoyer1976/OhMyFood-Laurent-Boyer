@@ -2,81 +2,16 @@
 
 @import '../SASS/Var&Mixins.scss';
 
-/*HOVER Heart checkbox*/
 
-@media screen and (min-width : 320px) and (max-width : 369px){
-    .Menu__Select{             
-        &--dishe{            
-            &:hover{
-                @include textOverflow;                
-                &.Dishe--Info-translation{
-                    @include Dishe--Info-translation;
-                }
-            }            
-        }
-        &--info{            
-            &:hover{
-                @include textOverflow;                
-                &.Dishe--Info-translation{
-                    @include Dishe--Info-translation;
-                }
-            }            
-        }       
-    }
 
-}
 
-@media screen and (min-width : 320px) and (max-width : 780px){
-    .bi-heart{
-        @include HeartPosition;
-        @include HeartSize;
-        @include HeartStyle;                 
-            &:hover::before{
-                @include HeartHovBef;           
-            }                                                                               
-        }
 //Menu
 
-.Menu__Btn{
-    &:hover{
-        right: 17%;
-        transition: $TransHover;
-        }
-    &:hover::after{                
-        @include GreenCheckHoverDis;
-        @include GreenCheckHoverStyl;
-        @include GreenCheckHoverSize;                                         
-        }            
-    }
-.Menu__Select{
-    &:hover{
-        width: 70%;           
-        transition: $TransHover;
-        }
-        &--dishe{
-            &:hover{
-                @include textOverflow;                
-                &.Dishe--Info-translation{
-                    @include Dishe--Info-translation;
-                    }          
-                }    
 
-            }
-        &--info{
-            &:hover{
-                @include textOverflow;                
-                &.Dishe--Info-translation{
-                    @include Dishe--Info-translation;
-                }
-            }
-        }
-    }
-.Menu__CommandBTN{           
-    &:hover{
-        @include mains__Btn--RoundedLighter;           
-    }
-}
-}
+
+
+
+
 @media screen and (min-width:780.1px) and (max-width:1023.9px){
     .bi-heart{
         right: 20%;
@@ -85,7 +20,7 @@
 
 @media screen and (min-width : 1024px) and (max-width : 2500px){
     .bi-heart{
-        @include HeartPosition;
+        @include HeartPosition($topposition:45%, $Rightposition:23%);
         @include HeartSize;
         @include HeartStyle;                 
             &:hover::before{

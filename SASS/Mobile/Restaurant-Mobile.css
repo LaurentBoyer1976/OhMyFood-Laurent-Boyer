@@ -148,29 +148,6 @@
 /*mixins section cards restaurant*/
 /*Mixin page menu*/
 /*Animations, Transition*/
-/*HOVER Heart checkbox*/
-@media screen and (min-width: 320px) and (max-width: 780px) {
-  .bi-heart {
-    display: flex;
-    position: absolute;
-    top: 3%;
-    right: 10%;
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    font-weight: 100;
-    cursor: pointer;
-    color: black;
-  }
-  .bi-heart:hover::before {
-    font-family: "bootstrap-icons";
-    content: "\f415";
-    background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
 @media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
   .bi-heart {
     right: 20%;
@@ -180,8 +157,8 @@
   .bi-heart {
     display: flex;
     position: absolute;
-    top: 3%;
-    right: 10%;
+    top: 45%;
+    right: 23%;
     width: 30px;
     height: 30px;
     font-size: 30px;
@@ -308,6 +285,26 @@
     font-size: 1.75rem;
     margin: 31px 0 0 0;
   }
+  .bi-heart {
+    display: flex;
+    position: absolute;
+    top: 3%;
+    right: 10%;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    font-weight: 100;
+    cursor: pointer;
+    color: black;
+  }
+  .bi-heart:hover::before {
+    font-family: "bootstrap-icons";
+    content: "\f415";
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .Menu {
     display: flex;
     flex-flow: column nowrap;
@@ -357,20 +354,7 @@
     background-color: #FFFFFF;
     border-radius: 15px;
     box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
-  }
-  .Menu__Btn--price {
-    position: absolute;
-    right: 3%;
-    top: 75%;
-    align-self: end;
-    font-weight: 700;
-    font-size: 0.9375rem;
-    padding: 13.5px 15px 13.5px;
     transform: translateY(-60%);
-  }
-  .Menu__Btn--price:hover {
-    right: 17%;
-    transition: right 0.3s ease-in-out;
   }
   .Menu__Btn:hover::after {
     position: absolute;
@@ -390,6 +374,29 @@
     height: 69px;
     margin: auto;
   }
+  .Menu__Btn--price {
+    position: absolute;
+    right: 3%;
+    top: 38%;
+    align-self: end;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    padding: 13.5px 15px 13.5px;
+  }
+  .Menu__Btn:hover .Menu__Btn--price {
+    transition: right 0.3s ease-in-out;
+    transform: translateX(-60%);
+    right: 6%;
+  }
+  .Menu__Btn:hover .Menu__Select {
+    width: 70%;
+    transition: right 0.3s ease-in-out;
+  }
+  .Menu__Btn:hover > .Menu__Select > * {
+    white-space: Nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
   .Menu__Select {
     display: flex;
     flex-flow: column wrap;
@@ -398,13 +405,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    left: 0;
+    left: 2.25%;
     gap: 5px;
-    padding: 4% 0 4% 2%;
-  }
-  .Menu__Select:hover {
-    width: 70%;
-    transition: right 0.3s ease-in-out;
   }
   .Menu__Select--dishe {
     font-size: 1.125rem;
@@ -412,26 +414,12 @@
     margin: 0;
     max-width: 100%;
   }
-  .Menu__Select--dishe:hover {
-    white-space: Nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    width: 70%;
-    transition: right 0.3s ease-in-out;
-  }
   .Menu__Select--info {
     font-weight: 300;
     font-size: 0.9375rem;
     align-self: flex-start;
     margin: 0;
     max-width: 100%;
-  }
-  .Menu__Select--info:hover {
-    white-space: Nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    width: 70%;
-    transition: right 0.3s ease-in-out;
   }
   .Menu__CommandBTN {
     font-weight: 500;
@@ -456,6 +444,32 @@
   }
 }
 @media screen and (min-width: 320px) and (max-width: 369px) {
+  .bi-heart {
+    display: flex;
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    font-weight: 100;
+    cursor: pointer;
+    color: black;
+  }
+  .bi-heart:hover::before {
+    font-family: "bootstrap-icons";
+    content: "\f415";
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .Menu__Btn--price {
+    font-size: 0.8125rem;
+  }
+  .Menu__Btn--price:hover {
+    right: 15%;
+  }
   .Menu__Select {
     display: flex;
     flex-flow: column wrap;
@@ -464,6 +478,10 @@
     width: 100%;
     gap: 5px;
     padding: 4% 0 4% 2%;
+  }
+  .Menu__Select:hover {
+    width: 70%;
+    transition: right 0.3s ease-in-out;
   }
   .Menu__Select--dishe {
     font-size: 0.9375rem;
@@ -474,12 +492,14 @@
     white-space: Nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+  .Menu__Select--dishe:hover.Dishe--Info-translation {
     width: 70%;
     transition: right 0.3s ease-in-out;
   }
   .Menu__Select--info {
     font-weight: 300;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     align-self: flex-start;
     margin: 0;
   }
