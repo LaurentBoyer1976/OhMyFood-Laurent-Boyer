@@ -186,7 +186,7 @@
 
  //Variables
 
- $TransHover: right 0.3s ease-in-out;
+ $TransHover: right 0.4s ease-in-out;
 
 
 //Mixins
@@ -232,8 +232,8 @@
         color: $color;
         background-color: $BCKcolor;
  }
- @mixin GreenCheckHoverSize($Mwidth: 59px, $Height: 69px, $Margin: auto){
-         min-width: $Mwidth;
+ @mixin GreenCheckHoverSize($Width: 59px, $Height: 69px, $Margin: auto){
+         width: $Width;
          height:$Height;
          margin: $Margin; 
  }

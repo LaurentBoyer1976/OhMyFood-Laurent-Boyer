@@ -354,9 +354,9 @@
     background-color: #FFFFFF;
     border-radius: 15px;
     box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
-    transform: translateY(-60%);
+    transform: translateX(0%);
   }
-  .Menu__Btn:hover::after {
+  .Menu__Btn::after {
     position: absolute;
     right: 0;
     flex-flow: wrap;
@@ -370,9 +370,25 @@
     content: "\f26a";
     color: white;
     background-color: #99E2D0;
-    min-width: 59px;
+    width: 59px;
     height: 69px;
     margin: auto;
+    transition: right 0.4s ease-in-out;
+    visibility: hidden;
+  }
+  .Menu__Btn:hover::after {
+    position: absolute;
+    right: 0;
+    flex-flow: wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    width: 59px;
+    height: 69px;
+    margin: auto;
+    transition: right 0.4s ease-in-out;
+    transform: translateX(0);
+    visibility: visible;
   }
   .Menu__Btn--price {
     position: absolute;
@@ -384,13 +400,13 @@
     padding: 13.5px 15px 13.5px;
   }
   .Menu__Btn:hover .Menu__Btn--price {
-    transition: right 0.3s ease-in-out;
+    transition: right 0.4s ease-in-out;
     transform: translateX(-60%);
     right: 6%;
   }
   .Menu__Btn:hover .Menu__Select {
     width: 70%;
-    transition: right 0.3s ease-in-out;
+    transition: right 0.4s ease-in-out;
   }
   .Menu__Btn:hover > .Menu__Select > * {
     white-space: Nowrap;
@@ -429,7 +445,7 @@
     padding: 13px 16px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     border: none;
-    transition: right 0.3s ease-in-out;
+    transition: right 0.4s ease-in-out;
     width: 50%;
     margin: auto;
   }
@@ -481,7 +497,7 @@
   }
   .Menu__Select:hover {
     width: 70%;
-    transition: right 0.3s ease-in-out;
+    transition: right 0.4s ease-in-out;
   }
   .Menu__Select--dishe {
     font-size: 0.9375rem;
@@ -495,7 +511,7 @@
   }
   .Menu__Select--dishe:hover.Dishe--Info-translation {
     width: 70%;
-    transition: right 0.3s ease-in-out;
+    transition: right 0.4s ease-in-out;
   }
   .Menu__Select--info {
     font-weight: 300;
@@ -510,6 +526,6 @@
   }
   .Menu__Select--info:hover.Dishe--Info-translation {
     width: 70%;
-    transition: right 0.3s ease-in-out;
+    transition: right 0.4s ease-in-out;
   }
 }/*# sourceMappingURL=Restaurant-Mobile.css.map */
