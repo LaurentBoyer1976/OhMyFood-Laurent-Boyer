@@ -244,39 +244,65 @@
   .Restaurant__Presentation {
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     padding-right: 17px;
     width: 100%;
     box-sizing: border-box;
     border-radius: 40px 40px 0 0;
     position: relative;
-    gap: 24px;
+    margin-bottom: 3.75%;
   }
   .Restaurant__Presentation--title {
     font-family: "Shrikhand", sans-serif;
     font-size: 1.75rem;
-    margin: 31px 0 0 0;
+    margin: 5% 5% 0 15%;
   }
-  .bi-heart {
+  .Restaurant__Presentation .Heartbox {
+    display: flex;
+    position: relative;
+    margin-top: 5%;
+    width: 31px;
+    height: 31px;
+    right: 17%;
+  }
+  .Restaurant__Presentation .Heartbox .bi-heart {
     display: flex;
     position: absolute;
-    top: 45%;
-    right: 23%;
+    top: 3%;
+    right: 5%;
     width: 30px;
     height: 30px;
     font-size: 30px;
     font-weight: 100;
     cursor: pointer;
     color: black;
+    transition: all 0.5s cubic-bezier(0.7, 0.04, 0.71, 0.36);
   }
-  .bi-heart:hover::before {
+  .Restaurant__Presentation .Heartbox:hover > .bi-heart {
+    opacity: 0;
+  }
+  .Restaurant__Presentation .Heartbox::after {
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.7, 0.04, 0.71, 0.36);
+  }
+  .Restaurant__Presentation .Heartbox:hover::after {
+    font-family: "bootstrap-icons";
+    content: "\f415";
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
   }
   .Menu {
     display: flex;

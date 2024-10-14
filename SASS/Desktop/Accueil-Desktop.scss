@@ -4,7 +4,6 @@
 
     @import '../Footer';
     @import '../Var&Mixins.scss';
-    @import '../Accueil__Animation&Transition.scss';
     
 
     /*Général*/
@@ -64,9 +63,12 @@
                 grid-area: 1/1/2/6;
                 grid-template-columns: repeat(20, 1fr);
                 justify-self: center;
-                align-self: center;                                         
+                align-self: center;
+                position: absolute;
+                left: 8%;                                         
                 & img{
-                    grid-area: 1/9/2/11;                  
+                    grid-area: 1/9/2/11;
+                    min-width: 200px;                  
                 }                                             
                 }        
             .Navbar__GeoLoc{
@@ -74,15 +76,17 @@
                 grid-template-columns: repeat(20, 1fr);
                 grid-area: 2/1/3/6;                
                 background-color: $geolocColor;              
-                padding: 15.5px 0;                                              
+                padding: 15.5px 0;
+                justify-items: center;
+                                                            
                 &--sample{
                     font-weight: $mainFontW500;
                     font-size: $mainFontS16;
-                    grid-area: 2/10/2/13;                                    
+                    grid-area: 2/9/2/13;                                    
                     }
                     & i{
                     grid-area: 2/9/2/10;
-                    justify-self: center;
+                    justify-self: end;
                     }           
                 }        
         /* Explore__section*/
@@ -306,9 +310,9 @@
                     @include BoxNew--Size($Padding: 4px 0);
                     @include BoxNew--Fontsize;
                     @include BoxNew--position($display:grid);
-                    position: absolute;
-                    top: -28%;
-                                        
+                    align-content: center;                    
+                    position: absolute;                    
+                    top: -28%;                                        
                     }
                  
                 }                                            
@@ -325,8 +329,36 @@
                     box-sizing: border-box;
                     max-height: 77px;
                     padding-right: 5%;
-                                                                                                                                                                                                                                                                                                                        
-                }                                                                                                                                                                                                                                                                                                                                                                        
+                    .Heartbox{
+                        display: grid;
+                        grid-area: 2/7/3/9;
+                        position: relative;
+                        margin-top: 10px;         
+                        width: 31px;
+                        height: 31px;
+                        .bi-heart{
+                            @include HeartPosition;
+                            @include HeartSize;
+                            @include HeartStyle;
+                            transition: all 0.5s cubic-bezier(.7,.04,.71,.36);                                                                                 
+                            }
+                                &:hover > .bi-heart{
+                                    opacity: 0;
+                                }
+                        &::after{
+                            @include HeartHovAft;
+                            font-size: 30px;
+                            width: 30px;
+                            height: 30px;
+                            opacity: 0;
+                            transition: all 0.5s cubic-bezier(.7,.04,.71,.36);            
+                            }                 
+                            &:hover::after{
+                                @include HeartHovAft;
+                                opacity: 1;           
+                            }      
+                    }                                               
+            }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
             .Description__text{
                 display: grid;
                 grid-template-columns: 1fr;

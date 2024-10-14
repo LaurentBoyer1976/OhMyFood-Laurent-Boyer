@@ -196,7 +196,7 @@
      height: $Height;
      font-size: $FontS;
  }
- @mixin HeartPosition( $display: flex, $position: absolute, $topposition: 3%, $Rightposition: 10%){
+ @mixin HeartPosition( $display: flex, $position: absolute, $topposition: 3%, $Rightposition: 5%){
      display: $display;
      position: $position;
      top: $topposition;
@@ -207,7 +207,7 @@
      cursor: $Cursor;
      color: $Color;            
  }
- @mixin HeartHovBef($Ffamily: $BootsIcon, $content:"\F415", $Background: $HeartGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
+ @mixin HeartHovAft($Ffamily: $BootsIcon, $content:"\F415", $Background: $HeartGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
      font-family: $Ffamily;
      content: $content;
      background: $Background; 
