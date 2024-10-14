@@ -195,9 +195,12 @@
     grid-template-columns: repeat(20, 1fr);
     justify-self: center;
     align-self: center;
+    position: absolute;
+    left: 8%;
   }
   .Navbar__Title img {
     grid-area: 1/9/2/11;
+    min-width: 200px;
   }
   .Navbar__GeoLoc {
     display: grid;
@@ -205,15 +208,16 @@
     grid-area: 2/1/3/6;
     background-color: #EAEAEA;
     padding: 15.5px 0;
+    justify-items: center;
   }
   .Navbar__GeoLoc--sample {
     font-weight: 500;
     font-size: 1rem;
-    grid-area: 2/10/2/13;
+    grid-area: 2/9/2/13;
   }
   .Navbar__GeoLoc i {
     grid-area: 2/9/2/10;
-    justify-self: center;
+    justify-self: end;
   }
   #Explore {
     display: grid;
