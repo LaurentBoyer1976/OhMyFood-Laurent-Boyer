@@ -301,14 +301,14 @@
                     max-height: 231px;                                                            
                     }
                 &--new{                    
-                    grid-area: 4/9/5/11;
+                    grid-area: 4/9/6/11;
                     @include BoxNew--color;
-                    @include BoxNew--Size($Padding: 9px 0);
+                    @include BoxNew--Size($Padding: 4px 0);
                     @include BoxNew--Fontsize;
-                    @include BoxNew--position($display:grid, $Alignitems: normal);
+                    @include BoxNew--position($display:grid);
                     position: absolute;
                     top: -28%;
-                    margin:$MargeAuto;
+                                        
                     }
                  
                 }                                            

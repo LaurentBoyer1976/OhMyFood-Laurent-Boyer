@@ -143,16 +143,16 @@
         @mixin BoxNew--position($display: flex, $justifyC: center, $Alignitems: center, $Zindex: 2){       
             display: $display;
             justify-content: $justifyC;
-            align-items: $Alignitems;
+            align-items: $Alignitems;            
             z-index: $Zindex;    
         }
         @mixin BoxNew--color($BCKGroundColor: $NewCardColor, $Color: $FontNewCardColor){
             background-color: $BCKGroundColor;
             color: $Color;
          }
-         @mixin BoxNew--Size($Width: 90%, $Height: 45%, $Padding: 10px 0px, $Radius: 2px){
+         @mixin BoxNew--Size($Width:90%, $Height:45%, $Padding: 10px 0px, $Radius: 2px){
             width: $Width;
-            height: $Height;
+            height: $Height;            
             padding: $Padding;
             border-radius: $Radius;
         } 

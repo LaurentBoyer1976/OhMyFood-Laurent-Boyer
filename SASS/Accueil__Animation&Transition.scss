@@ -9,7 +9,8 @@
     @include HeartSize;            
     cursor: pointer;              
     color:black;    
-    font-weight: 100;                                
+    font-weight: 100;
+    transform-origin: bottom center;                                
         &:hover::before{
             font-family: "bootstrap-icons";
             content:"\F415";
@@ -18,4 +19,5 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }                                                                                                
-    }    
+    }
+    

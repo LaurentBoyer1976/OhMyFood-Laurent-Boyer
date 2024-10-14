@@ -134,8 +134,7 @@ body {
                 @include GreenCheckHoverStyl;
                 @include GreenCheckHoverSize;
                 transition: $TransHover;
-                visibility: hidden;
-                                                                        
+                visibility: hidden;                                                                        
                 }
             &:hover::after{
                 @include GreenCheckHoverDis;
@@ -219,9 +218,8 @@ body {
         gap: 5px;
         padding: 4% 0 4% 2%;
         &:hover{
-            width: 70%;           
-            transition: $TransHover;
-            
+            width: 70%;          
+            transition: $TransHover;            
         }                            
         &--dishe{
             font-size: $mainFontS15;
