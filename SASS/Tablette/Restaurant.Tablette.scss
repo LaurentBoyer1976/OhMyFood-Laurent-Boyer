@@ -95,23 +95,44 @@ body {
       height: 115%;
   }
   .Restaurant__Presentation{
-      @include Restaurant__present( $flow:column, $justifyC:normal);
+      @include Restaurant__present($justifyC: space-evenly);
       position: relative;                    
       &--title{        
         font-family: $brandFont;
         font-size: $mainFontS28;
-        margin: 31px 15% 0 0;
+        margin: 5% 5% 0 15%;
         align-self: center;            
       }   
   }
-  .bi-heart{
-    @include HeartPosition($topposition: 50%, $Rightposition:25%);
-    @include HeartSize;
-    @include HeartStyle;                 
-        &:hover::before{
-            @include HeartHovBef;           
-        }                                                                               
-    }
+  .Heartbox{
+    display: flex;    
+    position: relative;
+    margin-top: 5%;         
+    width: 31px;
+    height: 31px;    
+    right: 10%;
+    .bi-heart{
+        @include HeartPosition;
+        @include HeartSize;
+        @include HeartStyle;
+        transition: all 0.5s cubic-bezier(.7,.04,.71,.36);                                                                                 
+        }
+            &:hover > .bi-heart{
+                opacity: 0;
+            }
+    &::after{
+        @include HeartHovAft;
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(.7,.04,.71,.36);            
+        }                 
+        &:hover::after{
+            @include HeartHovAft;
+            opacity: 1;           
+        }      
+} 
   .Menu{
       @include Display__Box($justifyC:space-evenly);
       @include Size__Box($MinW: unset);

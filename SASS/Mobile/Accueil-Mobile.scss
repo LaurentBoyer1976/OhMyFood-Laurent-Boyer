@@ -2,8 +2,7 @@
 /*Importation des fichiers styles, variables et mixins*/
 
     @import '../Footer';
-    @import '../Var&Mixins.scss';
-    @import '../Accueil__Animation&Transition.scss';
+    @import '../Var&Mixins.scss';    
 
 /*Général*/
     *{
@@ -79,7 +78,7 @@
                     }
                     &--Btn{
                         @include mains__Btn--Rounded();
-                        @include Hover-Gradient-Lighter($BtnGradient);
+                        @include mains__Btn--RoundedLighter($BtnGradient);
                     }            
                 }
             }
@@ -174,7 +173,8 @@
                     min-height: 150px;
                     grid-template-columns: repeat(10, 1fr);
                     grid-template-rows: repeat(10, 1fr);                                                  
-                    border-radius: 15px;                    
+                    border-radius: 15px;
+                    position: relative;                    
                     &--IMG{
                         grid-area: 1/1/8/11;
                         clip-path: $cutoutIMG;
@@ -192,16 +192,44 @@
                     }   
                 }                                            
                 .Information__Box{
-                        grid-area: 8/1/11/11;
+                        grid-area: 8/1/11/10;
                         @include Display__Box($flow:row, $justifyC: space-between);
-                        height: 30%;
-                        padding: 15px 25px 15px 15px;
+                        height: 60%;
+                        padding: 4.5% 7.5% 4.5% 4.5%;
                         background-color: $InfoBoxBCkcolor;
                         border-radius: 0 0 15px 15px;
-                        color: $BlackFont;                                                            
-                        & i{                       
-                            font-size: 30px;
-                        }                                                       
+                        color: $BlackFont;
+                        position: absolute;
+                        width: 100%;
+                        top: -30%;                                                            
+                        .Heartbox{
+                            display: flex;
+                            position: relative;
+                            margin-top: 31px;         
+                            width: 31px;
+                            height: 31px;
+                            .bi-heart{
+                                @include HeartPosition;
+                                @include HeartSize;
+                                @include HeartStyle;
+                                transition: all 0.5s cubic-bezier(.7,.04,.71,.36);                                                                                 
+                                }
+                                &:hover > .bi-heart{
+                                    opacity: 0;
+                                }
+                            &::after{
+                                @include HeartHovAft;
+                                font-size: 30px;
+                                width: 30px;
+                                height: 30px;
+                                opacity: 0;
+                                transition: all 0.5s cubic-bezier(.7,.04,.71,.36);            
+                            }                 
+                                &:hover::after{
+                                    @include HeartHovAft;
+                                    opacity: 1;           
+                                }      
+                        }                                               
                 }                                                                                
                 .Description__text{
                     display: flex;
@@ -224,4 +252,20 @@
                 .Cards__Container .Restaurant__link:nth-child(5) .Card__Box--new:first-child {
                     visibility: $Advertise;
                 }                                         
+}
+@media screen and (min-width : 320px) and (max-width : 369px){
+         
+    .Card__Box{
+        grid-template-rows: repeat(8,1fr);
+    }
+    .Card__Box--new{                    
+            grid-area: 3/8/4/11;                                   
+        }   
+                           
+    .Information__Box{
+        grid-area: 7/1/11/10;
+        top: -40%;
+        max-height: fit-content;
+    }
+
 }

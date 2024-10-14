@@ -3,21 +3,32 @@
 
 /*Heart Hover & Animation*/
 
-.bi-heart{
-    display: grid;
-    grid-area: 2/7/3/8;
-    @include HeartSize;            
-    cursor: pointer;              
-    color:black;    
-    font-weight: 100;
-    transform-origin: bottom center;                                
-        &:hover::before{
-            font-family: "bootstrap-icons";
-            content:"\F415";
-            background: $HeartGradient; 
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }                                                                                                
-    }
+.Heartbox{
+    display: flex;
+    position: relative;
+    margin-top: 31px;         
+    width: 31px;
+    height: 31px;
+    .bi-heart{
+        @include HeartPosition;
+        @include HeartSize;
+        @include HeartStyle;
+        transition: all 0.5s cubic-bezier(.7,.04,.71,.36);                                                                                 
+        }
+        &:hover > .bi-heart{
+            opacity: 0;
+        }
+    &::after{
+        @include HeartHovAft;
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(.7,.04,.71,.36);            
+    }                 
+        &:hover::after{
+            @include HeartHovAft;
+            opacity: 1;           
+        }      
+}
     
