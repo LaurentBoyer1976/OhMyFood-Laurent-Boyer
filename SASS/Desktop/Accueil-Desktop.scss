@@ -4,7 +4,6 @@
 
     @import '../Footer';
     @import '../Var&Mixins.scss';
-    @import '../Accueil__Animation&Transition.scss';
     
 
     /*Général*/
@@ -306,9 +305,9 @@
                     @include BoxNew--Size($Padding: 4px 0);
                     @include BoxNew--Fontsize;
                     @include BoxNew--position($display:grid);
-                    position: absolute;
-                    top: -28%;
-                                        
+                    align-content: center;                    
+                    position: absolute;                    
+                    top: -28%;                                        
                     }
                  
                 }                                            
@@ -325,8 +324,36 @@
                     box-sizing: border-box;
                     max-height: 77px;
                     padding-right: 5%;
-                                                                                                                                                                                                                                                                                                                        
-                }                                                                                                                                                                                                                                                                                                                                                                        
+                    .Heartbox{
+                        display: grid;
+                        grid-area: 2/7/3/9;
+                        position: relative;
+                        margin-top: 10px;         
+                        width: 31px;
+                        height: 31px;
+                        .bi-heart{
+                            @include HeartPosition;
+                            @include HeartSize;
+                            @include HeartStyle;
+                            transition: all 0.5s cubic-bezier(.7,.04,.71,.36);                                                                                 
+                            }
+                                &:hover > .bi-heart{
+                                    opacity: 0;
+                                }
+                        &::after{
+                            @include HeartHovAft;
+                            font-size: 30px;
+                            width: 30px;
+                            height: 30px;
+                            opacity: 0;
+                            transition: all 0.5s cubic-bezier(.7,.04,.71,.36);            
+                            }                 
+                            &:hover::after{
+                                @include HeartHovAft;
+                                opacity: 1;           
+                            }      
+                    }                                               
+            }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
             .Description__text{
                 display: grid;
                 grid-template-columns: 1fr;
