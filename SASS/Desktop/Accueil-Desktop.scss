@@ -63,9 +63,12 @@
                 grid-area: 1/1/2/6;
                 grid-template-columns: repeat(20, 1fr);
                 justify-self: center;
-                align-self: center;                                         
+                align-self: center;
+                position: absolute;
+                left: 8%;                                         
                 & img{
-                    grid-area: 1/9/2/11;                  
+                    grid-area: 1/9/2/11;
+                    min-width: 200px;                  
                 }                                             
                 }        
             .Navbar__GeoLoc{
@@ -73,15 +76,17 @@
                 grid-template-columns: repeat(20, 1fr);
                 grid-area: 2/1/3/6;                
                 background-color: $geolocColor;              
-                padding: 15.5px 0;                                              
+                padding: 15.5px 0;
+                justify-items: center;
+                                                            
                 &--sample{
                     font-weight: $mainFontW500;
                     font-size: $mainFontS16;
-                    grid-area: 2/10/2/13;                                    
+                    grid-area: 2/9/2/13;                                    
                     }
                     & i{
                     grid-area: 2/9/2/10;
-                    justify-self: center;
+                    justify-self: end;
                     }           
                 }        
         /* Explore__section*/
