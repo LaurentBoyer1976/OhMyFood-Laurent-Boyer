@@ -12,6 +12,17 @@
   /*mixins section cards restaurant*/
   /*Mixin page menu*/
   /*Animations, Transition*/
+  @keyframes Heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   /*Footer générique ohmyfood*/
   #Generic__Footer {
     display: flex;
@@ -146,6 +157,17 @@
   }
 }
 @media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
+  @keyframes Heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   * {
     font-family: "Roboto", sans-serif;
   }
@@ -265,6 +287,7 @@
     width: 31px;
     height: 31px;
     right: 10%;
+    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
   }
   .Heartbox .bi-heart {
     display: flex;
@@ -303,6 +326,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 1;
+    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
   }
   .Menu {
     display: flex;
@@ -352,10 +376,10 @@
     width: 100%;
     height: 69px;
     border: none;
+    padding: 0;
     background-color: #FFFFFF;
     border-radius: 15px;
     box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
-    transform: translateX(0%);
   }
   .Menu__Btn::after {
     position: absolute;
@@ -371,11 +395,12 @@
     content: "\f26a";
     color: white;
     background-color: #99E2D0;
-    width: 59px;
+    width: 0px;
     height: 69px;
     margin: auto;
-    transition: right 0.4s ease-in-out;
-    visibility: hidden;
+    transform: translateX(0) left;
+    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+    opacity: 0;
   }
   .Menu__Btn:hover::after {
     position: absolute;
@@ -387,9 +412,9 @@
     width: 59px;
     height: 69px;
     margin: auto;
-    transition: right 0.4s ease-in-out;
-    transform: translateX(0);
-    visibility: visible;
+    transform: translateX(-60%) right;
+    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+    opacity: 1;
   }
   .Menu__Btn--price {
     position: absolute;
@@ -399,15 +424,17 @@
     font-weight: 700;
     font-size: 0.9375rem;
     padding: 13.5px 15px 13.5px;
+    transform: translateX(0%);
+    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
   }
   .Menu__Btn:hover .Menu__Btn--price {
-    transition: right 0.4s ease-in-out;
     transform: translateX(-60%);
+    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
     right: 6%;
   }
   .Menu__Btn:hover .Menu__Select {
     width: 70%;
-    transition: right 0.4s ease-in-out;
+    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
   }
   .Menu__Btn:hover > .Menu__Select > * {
     white-space: Nowrap;
@@ -430,6 +457,9 @@
     font-weight: 500;
     margin: 0;
     max-width: 100%;
+    white-space: Nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .Menu__Select--info {
     font-weight: 300;
@@ -437,6 +467,9 @@
     align-self: flex-start;
     margin: 0;
     max-width: 100%;
+    white-space: Nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .Menu__CommandBTN {
     font-weight: 500;
