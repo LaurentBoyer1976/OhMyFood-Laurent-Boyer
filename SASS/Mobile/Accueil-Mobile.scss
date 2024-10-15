@@ -183,7 +183,7 @@
                         max-width: 100%;                                                                                                                 
                     }
                     &--new{                    
-                        grid-area: 3/9/4/11;
+                        grid-area: 3/8/4/11;
                         @include BoxNew--color;
                         @include BoxNew--Size;
                         @include BoxNew--Fontsize;
@@ -208,6 +208,7 @@
                             margin-top: 31px;         
                             width: 31px;
                             height: 31px;
+                            animation:$HeartPulse;
                             .bi-heart{
                                 @include HeartPosition;
                                 @include HeartSize;
@@ -227,7 +228,8 @@
                             }                 
                                 &:hover::after{
                                     @include HeartHovAft;
-                                    opacity: 1;           
+                                    opacity: 1;
+                                    animation: $HeartPulse;           
                                 }      
                         }                                               
                 }                                                                                
