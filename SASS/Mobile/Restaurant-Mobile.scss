@@ -77,6 +77,7 @@ body {
         gap: 40px;
         border-radius: 40px 40px 0 0;
         background-color: $bodyColor;
+        //animation: Main__Article--arrival 1s ease ;
     }
     .Restaurant__Presentation{
         @include Restaurant__present();
@@ -140,6 +141,15 @@ body {
             height: 3px;
             background-color:$NewCardColor;
         }        
+    }
+    .Menu__Starter{
+        animation: Menu__arrival 1s linear 0.2s backwards;
+    }
+    .Menu__Maincourse{
+        animation: Menu__arrival 1s linear 1.2s backwards;
+    }
+    .Menu__Dessert{
+        animation: Menu__arrival 1s linear 2.2s backwards;
     }
     .Menu__Btn{
         @include Display__Box($flow: row, $justifyC:normal);
