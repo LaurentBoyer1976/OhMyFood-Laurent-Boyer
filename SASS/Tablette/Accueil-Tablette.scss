@@ -271,6 +271,7 @@
                                 margin-top: 10px;         
                                 width: 31px;
                                 height: 31px;
+                                animation:$HeartPulse;
                                 .bi-heart{
                                     @include HeartPosition;
                                     @include HeartSize;
@@ -290,7 +291,8 @@
                                     }                 
                                     &:hover::after{
                                         @include HeartHovAft;
-                                        opacity: 1;           
+                                        opacity: 1;
+                                        animation: $HeartPulse;           
                                     }      
                             }                                                                                                                                                                                                                                                                       
                         }                                                                                                                                                                                                                                                                                                                                                                                         
