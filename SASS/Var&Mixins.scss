@@ -297,5 +297,18 @@
         transform: scale(1);
     }
  }
+ @keyframes Menu__arrival{
+    0%{
+        opacity: 0;
+        transform-origin: 100% 0;       
+    }
+    50%{        
+        opacity: 0.5;        
+    }      
+    100%{        
+        opacity: 1;
+        transform-origin: 100% 100%;
+    }
+ }
  
 
