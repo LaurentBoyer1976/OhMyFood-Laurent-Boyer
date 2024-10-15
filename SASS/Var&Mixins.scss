@@ -19,6 +19,7 @@
         $BtnGradientLighter: linear-gradient(to top, $LightBtnBckColor1 40%, $LightBtnBckColor2);
         $Shadow:0px 4px 10px 0px rgba(0,0,0,0.15);
         $ShadowHover:0px 4px 15px 0px rgba(0,0,0,0.35);
+        $ShadowMenu_Btn: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
         
         /*Font*/
         $BootsIcon: "bootstrap-icons";
@@ -178,6 +179,25 @@
             box-sizing:$B-Sizing;
             border-radius:$Radius;
         }
+        @mixin MenuPrice($position: absolute, $Right: 3%, $Top: 38%, $AlignS: end, $FontW:$mainFontW700, $FontS: $mainFontS15, $padding: 13.5px 15px 13.5px){
+            position:$position;
+            right: $Right;
+            top: $Top;                              
+            align-self: $AlignS;
+            font-weight: $FontW;
+            font-size: $FontS;
+            padding: $padding;
+        }
+        @mixin Menu__BTN($position:relative, $Width: 100%, $Height: 69px, $border: none, $padding: 0,  $bckg-color: $BtnFontColor, $Bradius: 15px, $Bshadow: $ShadowMenu_Btn){
+            position: $position;        
+            width: $Width;
+            height: $Height; 
+            border: $border;
+            padding: $padding;
+            background-color: $bckg-color;
+            border-radius: $Bradius;        
+            box-shadow: $Bshadow;
+        }
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------        
@@ -187,7 +207,10 @@
  //Variables
 
  $TransHover: right 0.4s ease-in-out;
-
+ $TransHovGreenCheck: 0.9s cubic-bezier(.97,.1,.45,.7);
+ $TransHovtextoverflow: 0.9s cubic-bezier(.97,.1,.45,.7) 0.3s;
+ $HeartPulse: Heartbeat 0.3s ease-in-out 2 0.5s;
+ 
 
 //Mixins
 
@@ -246,4 +269,37 @@
     width: $Width;
     transition:$TransHover;
  }
+ @mixin RtoL_greencheck($transform:translateX(-60%) right, $transition: $TransHovGreenCheck, $opacity:1 ){
+    transform: $transform;
+    transition: $transition;
+    opacity: $opacity; 
+ }
+ @mixin LtoR_greencheck($transform:translateX(0)left, $transition: $TransHovGreenCheck, $opacity:0 ){
+    transform: $transform;
+    transition: $transition;
+    opacity: $opacity; 
+ }
+ @mixin LtoR_PriceTranslate($transform: translateX(0%), $transition: $TransHovGreenCheck){
+    transform: $transform;
+    transition: $TransHovGreenCheck;  
+ }
+ @mixin RtoL_PriceTranslate($transform: translateX(-60%), $transition: $TransHovGreenCheck, $right: 6%){
+    transform: $transform;
+    transition: $TransHovGreenCheck;
+    right: $right;  
+ }
+
+ //Animations et Keyframes
+ @keyframes Heartbeat{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+ }
  
+

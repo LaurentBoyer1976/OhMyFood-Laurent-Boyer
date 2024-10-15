@@ -11,6 +11,17 @@
 /*mixins section cards restaurant*/
 /*Mixin page menu*/
 /*Animations, Transition*/
+@keyframes Heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*Footer générique ohmyfood*/
 #Generic__Footer {
   display: flex;
@@ -142,6 +153,17 @@
 /*mixins section cards restaurant*/
 /*Mixin page menu*/
 /*Animations, Transition*/
+@keyframes Heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*Général*/
 * {
   font-family: "Roboto", sans-serif;
@@ -401,7 +423,7 @@
     max-width: 100%;
   }
   .Card__Box--new {
-    grid-area: 3/9/4/11;
+    grid-area: 3/8/4/11;
     background-color: #99E2D0;
     color: #008766;
     width: 90%;
@@ -437,6 +459,7 @@
     margin-top: 31px;
     width: 31px;
     height: 31px;
+    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
   }
   .Information__Box .Heartbox .bi-heart {
     display: flex;
@@ -475,6 +498,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 1;
+    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
   }
   .Description__text {
     display: flex;
