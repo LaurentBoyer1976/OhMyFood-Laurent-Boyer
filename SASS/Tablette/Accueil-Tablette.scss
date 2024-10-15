@@ -3,7 +3,7 @@
 
  @import '../Footer';
  @import '../Var&Mixins.scss';
- @import '../Accueil__Animation&Transition.scss';
+
  
 
  /*Général*/
@@ -241,10 +241,11 @@
                         &--new{                    
                             grid-area: 4/8/5/11;
                             @include BoxNew--color;
-                            @include BoxNew--Size($Padding: 4px 0);
+                            @include BoxNew--Size($Padding: 8% 0);
                             @include BoxNew--Fontsize;
                             @include BoxNew--position($display: grid);
                             position: absolute;
+                            align-content: center;
                             top: -90%;                            
                             }
                          
@@ -262,48 +263,39 @@
                             box-sizing: border-box;
                             max-height: 77px;
                             padding-right: 5%;
-                            top: -187%;                                                                                                                                                                                                                                                                      
-                        }                                                                
-                        .Heart__Check{
-                            display: grid;
-                            grid-area:2/7/3/8 ;                    
-                            &--box{
-                            grid-area:2/7/3/8;
-                            @include HeartSize;
-                            }
-                        }                                                                
-                        .bi-heart{
-                        display: grid;
-                        grid-area: 2/7/3/8;
-                        @include HeartSize;            
-                        cursor: pointer;    
-                        font-weight: 100;                
-                        color:black;
-                        &:hover{
-                        display: none;
-                        }                                                                                            
-                        }
-                        .bi-heart-fill{                
-                        display: grid;
-                        @include HeartSize;
-                        grid-area: 2/7/3/8;                
-                        cursor: pointer;                                                       
-                        align-self: flex-start;                                  
-                        background: $HeartGradient; 
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        &:hover{
-                        display: grid;                 
-                        background: $HeartGradient; 
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        }
-                          //:hover transition d'affichage du bas vers le haut l'état initial du coeur est 
-                          //rempli l'apparition se fait par une animation partant du bas et allant vers le haut au survol et au click.
-                          //créer une mixin pour gérer l'affichage du coeur.                                                     
-                        }                                                                                                                                                                                                                                                                                                         
+                            top: -187%;
+                            .Heartbox{
+                                display: grid;
+                                grid-area: 2/7/3/8;
+                                position: relative;
+                                margin-top: 10px;         
+                                width: 31px;
+                                height: 31px;
+                                animation:$HeartPulse;
+                                .bi-heart{
+                                    @include HeartPosition;
+                                    @include HeartSize;
+                                    @include HeartStyle;
+                                    transition: all 0.5s cubic-bezier(.7,.04,.71,.36);                                                                                 
+                                    }
+                                        &:hover > .bi-heart{
+                                            opacity: 0;
+                                        }
+                                &::after{
+                                    @include HeartHovAft;
+                                    font-size: 30px;
+                                    width: 30px;
+                                    height: 30px;
+                                    opacity: 0;
+                                    transition: all 0.5s cubic-bezier(.7,.04,.71,.36);            
+                                    }                 
+                                    &:hover::after{
+                                        @include HeartHovAft;
+                                        opacity: 1;
+                                        animation: $HeartPulse;           
+                                    }      
+                            }                                                                                                                                                                                                                                                                       
+                        }                                                                                                                                                                                                                                                                                                                                                                                         
                     .Description__text{
                         display: grid;
                         grid-template-columns: 1fr;

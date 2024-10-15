@@ -12,6 +12,17 @@
   /*mixins section cards restaurant*/
   /*Mixin page menu*/
   /*Animations, Transition*/
+  @keyframes Heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   /*Footer générique ohmyfood*/
   #Generic__Footer {
     display: flex;
@@ -146,6 +157,17 @@
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 2500px) {
+  @keyframes Heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   * {
     font-family: "Roboto", sans-serif;
   }
@@ -244,39 +266,67 @@
   .Restaurant__Presentation {
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     padding-right: 17px;
     width: 100%;
     box-sizing: border-box;
     border-radius: 40px 40px 0 0;
     position: relative;
-    gap: 24px;
+    margin-bottom: 3.75%;
   }
   .Restaurant__Presentation--title {
     font-family: "Shrikhand", sans-serif;
     font-size: 1.75rem;
-    margin: 31px 0 0 0;
+    margin: 5% 5% 0 15%;
   }
-  .bi-heart {
+  .Restaurant__Presentation .Heartbox {
+    display: flex;
+    position: relative;
+    margin-top: 5%;
+    width: 31px;
+    height: 31px;
+    right: 17%;
+    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
+  }
+  .Restaurant__Presentation .Heartbox .bi-heart {
     display: flex;
     position: absolute;
-    top: 45%;
-    right: 23%;
+    top: 3%;
+    right: 5%;
     width: 30px;
     height: 30px;
     font-size: 30px;
     font-weight: 100;
     cursor: pointer;
     color: black;
+    transition: all 0.5s cubic-bezier(0.7, 0.04, 0.71, 0.36);
   }
-  .bi-heart:hover::before {
+  .Restaurant__Presentation .Heartbox:hover > .bi-heart {
+    opacity: 0;
+  }
+  .Restaurant__Presentation .Heartbox::after {
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.7, 0.04, 0.71, 0.36);
+  }
+  .Restaurant__Presentation .Heartbox:hover::after {
+    font-family: "bootstrap-icons";
+    content: "\f415";
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
   }
   .Menu {
     display: flex;
@@ -324,10 +374,10 @@
     width: 100%;
     height: 69px;
     border: none;
+    padding: 0;
     background-color: #FFFFFF;
     border-radius: 15px;
     box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
-    transform: translateX(0%);
   }
   .Menu__Btn::after {
     position: absolute;
@@ -343,11 +393,12 @@
     content: "\f26a";
     color: white;
     background-color: #99E2D0;
-    width: 59px;
+    width: 0px;
     height: 69px;
     margin: auto;
-    transition: right 0.4s ease-in-out;
-    visibility: hidden;
+    transform: translateX(0) left;
+    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+    opacity: 0;
   }
   .Menu__Btn:hover::after {
     position: absolute;
@@ -359,22 +410,25 @@
     width: 59px;
     height: 69px;
     margin: auto;
-    transition: right 0.4s ease-in-out;
-    transform: translateX(0);
-    visibility: visible;
+    transform: translateX(-60%) right;
+    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+    opacity: 1;
   }
   .Menu__Btn--price {
     position: absolute;
     right: 5%;
-    bottom: 25%;
+    top: 38%;
     align-self: end;
     font-weight: 700;
     font-size: 0.9375rem;
+    padding: 13.5px 15px 13.5px;
+    transform: translateX(0%);
+    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
   }
   .Menu__Btn:hover .Menu__Btn--price {
-    transition: right 0.4s ease-in-out;
     transform: translateX(-60%);
-    right: 10%;
+    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+    right: 6%;
   }
   .Menu__Btn:hover .Menu__Select {
     width: 70%;
@@ -395,12 +449,16 @@
     height: 100%;
     gap: 5px;
     left: 2.25%;
+    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7) 0.3s;
   }
   .Menu__Select--dishe {
     font-size: 1.125rem;
     font-weight: 500;
     margin: 0;
     max-width: 100%;
+    white-space: Nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .Menu__Select--info {
     font-weight: 300;
@@ -408,6 +466,9 @@
     align-self: flex-start;
     margin: 0;
     max-width: 100%;
+    white-space: Nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .Menu__CommandBTN {
     font-weight: 500;

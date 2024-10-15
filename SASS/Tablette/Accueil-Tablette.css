@@ -4,14 +4,25 @@
   /*Variables*/
   /*color*/
   /*Font*/
-  /*Sizing Width Height Box-Sizing*/
+  /*Sizing Width Height Box-Sizing Margin*/
   /*rendre visible ou caché un élément*/
-  /*Animations, Transition*/
   /*Mixins générales*/
   /*Mixins Navbar*/
   /*mixins Section HowItWorks*/
   /*mixins section cards restaurant*/
   /*Mixin page menu*/
+  /*Animations, Transition*/
+  @keyframes Heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   /*Footer générique ohmyfood*/
   #Generic__Footer {
     display: flex;
@@ -72,14 +83,14 @@
   /*Variables*/
   /*color*/
   /*Font*/
-  /*Sizing Width Height Box-Sizing*/
+  /*Sizing Width Height Box-Sizing Margin*/
   /*rendre visible ou caché un élément*/
-  /*Animations, Transition*/
   /*Mixins générales*/
   /*Mixins Navbar*/
   /*mixins Section HowItWorks*/
   /*mixins section cards restaurant*/
   /*Mixin page menu*/
+  /*Animations, Transition*/
   /*Général*/
   /*Main*/
   /*Header*/
@@ -147,6 +158,17 @@
   }
 }
 @media screen and (min-width: 780.1px) and (max-width: 1023.9px) {
+  @keyframes Heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   * {
     font-family: "Roboto", sans-serif;
   }
@@ -251,7 +273,7 @@
     padding: 13px 16px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     border: none;
-    transition: 0.3s ease-in-out;
+    transition: right 0.4s ease-in-out;
     font-size: 1rem;
   }
   .C-Explore__Site--Btn:hover {
@@ -453,15 +475,16 @@
     color: #008766;
     width: 90%;
     height: 45%;
-    padding: 9px 0;
+    padding: 8% 0;
     border-radius: 2px;
     font-size: 0.875rem;
     font-weight: 500;
     display: grid;
     justify-content: center;
-    align-items: normal;
+    align-items: center;
     z-index: 2;
     position: absolute;
+    align-content: center;
     top: -90%;
   }
   .Information__Box {
@@ -479,48 +502,53 @@
     padding-right: 5%;
     top: -187%;
   }
-  .Heart__Check {
+  .Information__Box .Heartbox {
     display: grid;
     grid-area: 2/7/3/8;
+    position: relative;
+    margin-top: 10px;
+    width: 31px;
+    height: 31px;
+    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
   }
-  .Heart__Check--box {
-    grid-area: 2/7/3/8;
+  .Information__Box .Heartbox .bi-heart {
+    display: flex;
+    position: absolute;
+    top: 3%;
+    right: 5%;
     width: 30px;
     height: 30px;
     font-size: 30px;
-  }
-  .bi-heart {
-    display: grid;
-    grid-area: 2/7/3/8;
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    cursor: pointer;
     font-weight: 100;
+    cursor: pointer;
     color: black;
+    transition: all 0.5s cubic-bezier(0.7, 0.04, 0.71, 0.36);
   }
-  .bi-heart:hover {
-    display: none;
+  .Information__Box .Heartbox:hover > .bi-heart {
+    opacity: 0;
   }
-  .bi-heart-fill {
-    display: grid;
+  .Information__Box .Heartbox::after {
+    font-family: "bootstrap-icons";
+    content: "\f415";
+    background: linear-gradient(to top, #ff79da 40%, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
     width: 30px;
     height: 30px;
-    font-size: 30px;
-    grid-area: 2/7/3/8;
-    cursor: pointer;
-    align-self: flex-start;
-    background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.7, 0.04, 0.71, 0.36);
   }
-  .bi-heart-fill:hover {
-    display: grid;
+  .Information__Box .Heartbox:hover::after {
+    font-family: "bootstrap-icons";
+    content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    opacity: 1;
+    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
   }
   .Description__text {
     display: grid;

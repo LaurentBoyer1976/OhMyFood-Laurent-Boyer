@@ -95,23 +95,46 @@ body {
       height: 115%;
   }
   .Restaurant__Presentation{
-      @include Restaurant__present( $flow:column, $justifyC:normal);
+      @include Restaurant__present($justifyC: space-evenly);
       position: relative;                    
       &--title{        
         font-family: $brandFont;
         font-size: $mainFontS28;
-        margin: 31px 15% 0 0;
+        margin: 5% 5% 0 15%;
         align-self: center;            
       }   
   }
-  .bi-heart{
-    @include HeartPosition($topposition: 50%, $Rightposition:25%);
-    @include HeartSize;
-    @include HeartStyle;                 
-        &:hover::before{
-            @include HeartHovBef;           
-        }                                                                               
-    }
+  .Heartbox{
+    display: flex;    
+    position: relative;
+    margin-top: 5%;         
+    width: 31px;
+    height: 31px;    
+    right: 10%;
+    animation:$HeartPulse;
+    .bi-heart{
+        @include HeartPosition;
+        @include HeartSize;
+        @include HeartStyle;
+        transition: all 0.5s cubic-bezier(.7,.04,.71,.36);                                                                                 
+        }
+            &:hover > .bi-heart{
+                opacity: 0;
+            }
+    &::after{
+        @include HeartHovAft;
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(.7,.04,.71,.36);            
+        }                 
+        &:hover::after{
+            @include HeartHovAft;
+            opacity: 1;
+            animation: $HeartPulse;           
+        }      
+} 
   .Menu{
       @include Display__Box($justifyC:space-evenly);
       @include Size__Box($MinW: unset);
@@ -141,46 +164,29 @@ body {
   }
   .Menu__Btn{
       @include Display__Box($flow: row);
-      position: relative;
-      width: 100%;
-      height: 69px; 
-      border: none;
-      background-color: $BtnFontColor;
-      border-radius: 15px;      
-      box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
-      transform: translateX(0%);
+      @include Menu__BTN;      
       &::after{                
         @include GreenCheckHoverDis;
         @include GreenCheckHoverStyl;
-        @include GreenCheckHoverSize;
-        transition: $TransHover;
-        visibility: hidden;                                                                
+        @include GreenCheckHoverSize($Width:0px);
+        @include  LtoR_greencheck;                                                                 
         }
     &:hover::after{
         @include GreenCheckHoverDis;
         @include GreenCheckHoverSize();
-        transition: $TransHover;
-        transform: translateX(0);
-        visibility: visible;         
+        @include  RtoL_greencheck;           
     }        
       &--price{
-        position:absolute;
-        right: 3%;
-        top: 38%;       
-        align-self: end;
-        font-weight: $mainFontW700;
-        font-size: $mainFontS15;
-        padding: 13.5px 15px 13.5px;
+        @include MenuPrice;
+        @include  LtoR_PriceTranslate;     
       }         
   }
   .Menu__Btn:hover .Menu__Btn--price{
-    transition: $TransHover;
-    transform: translateX(-60%);
-    right: 6%;       
+    @include RtoL_PriceTranslate;       
 }
 .Menu__Btn:hover .Menu__Select{
     width: 70%;
-    transition: $TransHover;  
+    transition: $TransHovGreenCheck;  
 }
 .Menu__Btn:hover > .Menu__Select > *{
     @include textOverflow;  
@@ -197,6 +203,7 @@ body {
           font-weight: $mainFontW500;
           margin: 0;
           max-width: 100%;
+          @include textOverflow;
       }
       &--info{
           font-weight: $mainFontW300;
@@ -204,13 +211,15 @@ body {
           align-self: flex-start;
           margin: 0;
           max-width: 100%;
+          @include textOverflow;
       }       
   }
   .Menu__CommandBTN{
       @include mains__Btn--Rounded();
-      width: 34%;
+      width: 34%;      
       &:hover{
-        @include mains__Btn--RoundedLighter;           
+        
+        @include mains__Btn--RoundedLighter;                   
     }       
   }
   #Generic__Footer{
