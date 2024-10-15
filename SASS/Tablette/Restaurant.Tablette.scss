@@ -215,10 +215,9 @@ body {
       }       
   }
   .Menu__CommandBTN{
-      @include mains__Btn--Rounded();
-      width: 34%;      
-      &:hover{
-        
+      @include mains__Btn--Rounded;
+      width: 55%;      
+      &:hover{        
         @include mains__Btn--RoundedLighter;                   
     }       
   }

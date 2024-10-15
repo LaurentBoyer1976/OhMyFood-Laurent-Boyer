@@ -68,24 +68,20 @@
             font-size: $size;
             font-weight: $weight;
         }
-        @mixin mains__Btn--Rounded($weight: $mainFontW500, $FontColor: $BtnFontColor, $Radius:25px, $Padding: 13px 16px, $Gradient: $BtnGradient, $BtnShadow: $Shadow, $Border: none, $TransBtnH: $TransHover){
-            font-weight: $weight;
+        @mixin mains__Btn--Rounded($FontW: $mainFontW500, $FontS: $mainFontS16, $FontColor: $BtnFontColor, $Radius:25px, $Padding: 13px 16px, $Gradient: $BtnGradient, $BtnShadow: $Shadow, $Border: none, $transition: all 0.5s ease-out){
+            font-weight: $FontW;
+            font-size: $FontS;
             color: $BtnFontColor;
             border-radius: $Radius;
             background: $Gradient;        
             padding: $Padding;
             box-shadow: $BtnShadow;
             border: $Border;
-            transition: $TransBtnH;
+            transition: $transition;            
         }
-        @mixin mains__Btn--RoundedLighter($weight: $mainFontW500, $FontColor: $BtnFontColor, $Radius:25px, $Padding: 13px 16px, $Gradient: $BtnGradientLighter, $BtnShadow: $ShadowHover, $Border: none){
-            font-weight: $weight;
-            color: $BtnFontColor;
-            border-radius: $Radius;
-            background: $Gradient;        
-            padding: $Padding;
-            box-shadow: $BtnShadow;
-            border: $Border;
+        @mixin mains__Btn--RoundedLighter($opacity: 0.8, $Bshadow: $ShadowHover){
+            opacity:$opacity;
+            box-shadow: $Bshadow;
         }
       
         @mixin Menu__Title($alignS: self-start, $FontWeight: $mainFontW300, $FontSize: $mainFontS16){

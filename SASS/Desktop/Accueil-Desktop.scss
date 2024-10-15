@@ -126,8 +126,7 @@
                         max-width: 77%;
                         min-width: 65%;
                         justify-self: center; 
-                        @include mains__Btn--Rounded;                                              
-                        font-size: $mainFontS16;
+                        @include mains__Btn--Rounded;                                                                     
                             &:hover{
                             @include mains__Btn--RoundedLighter();
                             }                                                                   

@@ -268,20 +268,18 @@
   }
   #Explore .C-Explore__Site--Btn {
     font-weight: 500;
+    font-size: 1rem;
     color: #FFFFFF;
     border-radius: 25px;
     background: linear-gradient(to top, #9356dc 40%, #ff79da);
     padding: 13px 16px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     border: none;
-    transition: right 0.4s ease-in-out;
-    font-weight: linear-gradient(to top, #9356dc 40%, #ff79da);
-    color: #FFFFFF;
-    border-radius: 25px;
-    background: linear-gradient(to top, #a16be0 40%, #ff7edb);
-    padding: 13px 16px;
+    transition: all 0.5s ease-out;
+  }
+  #Explore .C-Explore__Site--Btn:hover {
+    opacity: 0.8;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
-    border: none;
   }
   /*How It Works Section*/
   #HowItWorks {

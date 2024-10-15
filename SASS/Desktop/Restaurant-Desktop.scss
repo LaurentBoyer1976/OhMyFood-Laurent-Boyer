@@ -222,7 +222,7 @@ body {
     }
     .Menu__CommandBTN{
         @include mains__Btn--Rounded();
-        width: 34%;
+        width: 30%;
         &:hover{
         @include mains__Btn--RoundedLighter();
         }

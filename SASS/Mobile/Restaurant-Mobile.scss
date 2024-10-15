@@ -199,8 +199,8 @@ body {
         width: 50%;
         margin:auto;
         &:hover{
-            @include mains__Btn--RoundedLighter;           
-        }          
+            @include mains__Btn--RoundedLighter;                                                       
+        }     
     }
     
 }
