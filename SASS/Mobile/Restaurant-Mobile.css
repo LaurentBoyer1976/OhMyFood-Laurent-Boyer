@@ -21,17 +21,6 @@
     transform: scale(1);
   }
 }
-@keyframes HeartFlat {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 /*Footer générique ohmyfood*/
 #Generic__Footer {
   display: flex;
@@ -169,17 +158,6 @@
   }
   50% {
     transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes HeartFlat {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.9);
   }
   100% {
     transform: scale(1);
@@ -410,7 +388,7 @@
     height: 69px;
     margin: auto;
     transform: translateX(0) left;
-    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
     opacity: 0;
   }
   .Menu__Btn:hover::after {
@@ -424,7 +402,7 @@
     height: 69px;
     margin: auto;
     transform: translateX(-60%) right;
-    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
     opacity: 1;
   }
   .Menu__Btn--price {
@@ -436,16 +414,16 @@
     font-size: 0.9375rem;
     padding: 13.5px 15px 13.5px;
     transform: translateX(0%);
-    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
   }
   .Menu__Btn:hover .Menu__Btn--price {
     transform: translateX(-60%);
-    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
     right: 6%;
   }
   .Menu__Btn:hover .Menu__Select {
     width: 70%;
-    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
   }
   .Menu__Btn:hover > .Menu__Select > * {
     white-space: Nowrap;
@@ -462,7 +440,7 @@
     height: 100%;
     left: 2.25%;
     gap: 5px;
-    transition: 0.9s cubic-bezier(0.97, 0.1, 0.45, 0.7) 0.3s;
+    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7) 0.3s;
   }
   .Menu__Select--dishe {
     font-size: 1.125rem;
@@ -491,18 +469,13 @@
     padding: 13px 16px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     border: none;
-    transition: right 0.4s ease-in-out;
+    transition: all 0.5s ease-out;
     width: 50%;
     margin: auto;
   }
   .Menu__CommandBTN:hover {
-    font-weight: 500;
-    color: #FFFFFF;
-    border-radius: 25px;
-    background: linear-gradient(to top, #a16be0 40%, #ff7edb);
-    padding: 13px 16px;
+    opacity: 0.8;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
-    border: none;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 369px) {

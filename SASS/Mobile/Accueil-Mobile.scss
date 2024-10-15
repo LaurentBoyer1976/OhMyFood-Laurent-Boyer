@@ -77,8 +77,10 @@
                         text-align: center;
                     }
                     &--Btn{
-                        @include mains__Btn--Rounded();
-                        @include mains__Btn--RoundedLighter($BtnGradient);
+                        @include mains__Btn--Rounded;                                               
+                        &:hover{
+                            @include mains__Btn--RoundedLighter;                                                       
+                        }                        
                     }            
                 }
             }
