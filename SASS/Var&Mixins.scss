@@ -13,13 +13,17 @@
         $FooterBCKColor: #353535;
         $ArrowLcolor: #353535;
         $FontNewCardColor: #008766;
-        $BlackFont: black;    
+        $BlackFont: black;
+        $LoaderGradient2: radial-gradient(circle, rgba(147,86,220,1) 0%, rgba(187,145,236,1) 54%, rgba(255,121,218,1) 100%);
+        $LoaderGradient1: radial-gradient(circle, rgba(147,86,220,1) 0%, rgba(187,145,236,1) 54%, rgba(255,121,218,1) 100%);
+        $GreenGradient: linear-gradient(298deg, rgba(0,135,102,1) 0%, rgba(76,189,161,1) 69%, rgba(153,226,208,1) 100%);    
         $BtnGradient: linear-gradient(to top, $BtnBckColor1 40%, $BtnBckColor2);
         $HeartGradient: linear-gradient(to top, $BtnBckColor2 40%, $BtnBckColor1);
         $BtnGradientLighter: linear-gradient(to top, $LightBtnBckColor1 40%, $LightBtnBckColor2);
         $Shadow:0px 4px 10px 0px rgba(0,0,0,0.15);
         $ShadowHover:0px 4px 15px 0px rgba(0,0,0,0.35);
         $ShadowMenu_Btn: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
+        $Loaderbrand:"Ohmyfood";
         
         /*Font*/
         $BootsIcon: "bootstrap-icons";
@@ -284,6 +288,15 @@
     transition: $TransHovGreenCheck;
     right: $right;  
  }
+ @mixin Loader($Ffamily: $brandFont, $content:$Loaderbrand, $FontS: 40px, $Background: $LoaderGradient1, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
+    font-family: $Ffamily;
+    font-size: $FontS;
+    content: $content;
+    background: $Background; 
+    background-clip: $BCK-clip;
+    -webkit-background-clip: $WebBCK-Clip;
+    -webkit-text-fill-color: $WebTF-Clip;
+}
 
  //Animations et Keyframes
  @keyframes Heartbeat{

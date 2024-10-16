@@ -4,6 +4,7 @@
 
     @import '../Footer';
     @import '../Var&Mixins.scss';
+    @import '../Loader.scss';
     
 
     /*Général*/
@@ -21,7 +22,8 @@
         grid-auto-flow: row;
         grid-template-areas:
             "main"
-            "Generic__Footer";            
+            "Generic__Footer";
+            position: relative;            
     }               
         /*Main*/
         main{
