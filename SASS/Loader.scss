@@ -1,0 +1,165 @@
+//Style et Animations du Loader de la page d'accueil
+
+
+@import '../SASS/Var&Mixins.scss';
+
+
+#Loader{
+    display: grid;    
+    align-items: center;
+    justify-items: center;
+    background: linear-gradient(0deg, rgba(22,21,23,1) 82%, rgba(217,195,242,1) 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 3;   
+}
+.Loader__Container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15%;
+    &--heart{
+        display: flex;        
+        position: relative;
+        width: 30px;
+        height: 30px;
+        .bi-heart{
+            display: flex;
+            @include HeartSize($FontS:20px);
+            @include HeartHovAft($Background: $GreenGradient);
+            position: absolute;
+            top: 6%;
+            right: -3%;
+            justify-content: center;
+            align-items: center;
+        }
+        &::before{
+            display: flex;
+            @include HeartHovAft;
+            @include HeartSize($FontS:19px);
+            position: absolute;
+            top: 6%;
+            right: -3%;
+            justify-content: center;
+            align-items: center;                     
+        }
+    }
+    
+    &--name{
+        display: inherit;
+        justify-content: center;
+        width: 260px;
+        position: relative;
+        &::before{
+            @include Loader;
+            -webkit-text-stroke: 0.5px $NewCardColor;            
+        }
+        
+    }
+    &--underline{
+        display: inherit;
+        width: 90%;
+        height: 5px;
+        border: 2px solid $NewCardColor;
+        border-radius: 15px;
+        position: absolute;
+        bottom: -20%;        
+    }
+   
+}
+
+@media screen and (min-width: 1024px) and (max-width:2500px){
+    #Loader{
+        background: linear-gradient(0deg, rgba(22,21,23,1) 70%, rgba(217,195,242,1) 100%);
+    }
+    .Loader__Container{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 40%;
+        &--name{
+            width: 900px;
+            &::before{
+                @include Loader($FontS: 140px);
+                -webkit-text-stroke: 0.5px $NewCardColor;  
+            }
+        }
+        &--heart{
+            display: flex;        
+            position: relative;
+            width: 75px;
+            height: 75px;
+            .bi-heart{
+                display: flex;
+                @include HeartSize($Width: 75px , $Height: 75px, $FontS: 72px);
+                @include HeartHovAft($Background: $GreenGradient);
+                position: absolute;
+                top: 6%;
+                right: -3%;
+            }
+            &::before{
+                display: flex;
+                @include HeartHovAft;
+                @include HeartSize($Width: 75px , $Height: 75px, $FontS: 70px);
+                position: absolute;
+                top: 6%;
+                right: -3%;                           
+            }
+        }
+        &--underline{           
+            bottom: 7%;
+            height: 15px;        
+        }        
+    }
+}
+@media screen and (min-width: 780.1px) and (max-width:1023.9px){
+    #Loader{
+        background: linear-gradient(0deg, rgba(22,21,23,1) 67%, rgba(217,195,242,1) 100%);
+    }
+    .Loader__Container{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 30%;
+        &--name{
+            width: 650px;                       
+            &::before{
+                @include Loader($FontS: 100px);             
+                -webkit-text-stroke: 0.5px $NewCardColor;                  
+            }        
+        }
+        &--heart{
+            display: flex;        
+            position: relative;
+            width: 55px;
+            height: 55px;
+            .bi-heart{
+                display: flex;
+                @include HeartSize($Width: 55px , $Height: 55px, $FontS: 51px);
+                @include HeartHovAft($Background: $GreenGradient);
+                position: absolute;
+                top: 6%;
+                right: -3%;
+            }
+            &::before{
+                display: flex;
+                @include HeartHovAft;
+                @include HeartSize($Width: 55px , $Height: 55px, $FontS: 49px);
+                position: absolute;
+                top: 6%;
+                right: -3%;                           
+            }
+        }
+        &--underline{           
+            bottom: 7%;
+            height: 10px;            
+        }          
+    }
+}
