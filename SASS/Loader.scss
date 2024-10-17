@@ -8,13 +8,22 @@
     .Loader__Container{
         @include Loadercontain;
         width: auto;     
-        &--heart{
-            @include LoaderHeartContain;                 
+        &--Lheart{
+            @include LoaderHeartContain;
+            left: 5%;                 
             &::after{
                 @include HeartLoader($FontS:19px, $Top: 6%);            
                 @include HeartLoadAft;                                         
             }
-        }    
+        }
+        &--Rheart{
+            @include LoaderHeartContain;
+            right: 5%;                 
+            &::after{
+                @include HeartLoader($FontS:19px, $Top: 6%);            
+                @include HeartLoadAft;                                         
+            }
+        }        
         &--name{
             @include LoaderNameContain;        
             &::after{            
@@ -42,7 +51,14 @@
         .Loader__Container{
             @include Loadercontain($Top: 20%);
             
-                &--heart{
+                &--Lheart{
+                    @include LoaderHeartContain($Width: 55px, $Height: 55px);                         
+                    &::after{
+                        @include HeartLoader($Width: 55px , $Height: 55px, $FontS: 49px, $Top: 6%);            
+                        @include HeartLoadAft;                                                
+                    }
+                }
+                &--Rheart{
                     @include LoaderHeartContain($Width: 55px, $Height: 55px);                         
                     &::after{
                         @include HeartLoader($Width: 55px , $Height: 55px, $FontS: 49px, $Top: 6%);            
@@ -79,14 +95,21 @@
         .Loader__Container{
             @include Loadercontain($Fwrap: nowrap, $Top: 25%);
             width: 900px;
-            &--heart{
+            &--Lheart{
                 @include LoaderHeartContain($Width: 75px, $Height: 75px);                 
                 &::after{
                     @include HeartLoader($Width: 75px , $Height: 75px, $FontS: 70px, $Top: 8%);            
                     @include HeartLoadAft;
                                                 
                 }
-            }                                                            
+            }&--Rheart{
+                @include LoaderHeartContain($Width: 75px, $Height: 75px);                                 
+                &::after{
+                    @include HeartLoader($Width: 75px , $Height: 75px, $FontS: 70px, $Top: 8%);            
+                    @include HeartLoadAft;
+                                                
+                }
+            }                                                                    
             &--name{
                 @include LoaderNameContain($Width: 900px);
                 &::after{
