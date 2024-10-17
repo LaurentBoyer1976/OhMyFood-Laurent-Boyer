@@ -8,20 +8,25 @@
     .Loader__Container{
         @include Loadercontain;
         width: auto;     
-        &--heart{
-            @include LoaderHeartContain;      
-            .bi-heart{            
-                @include HeartLoader;
-                @include HeartLoadStyle;            
-            }
-            &::before{
+        &--Lheart{
+            @include LoaderHeartContain;
+            left: 5%;                 
+            &::after{
                 @include HeartLoader($FontS:19px, $Top: 6%);            
-                @include HeartLoadBef;                                         
+                @include HeartLoadAft;                                         
             }
-        }    
+        }
+        &--Rheart{
+            @include LoaderHeartContain;
+            right: 5%;                 
+            &::after{
+                @include HeartLoader($FontS:19px, $Top: 6%);            
+                @include HeartLoadAft;                                         
+            }
+        }        
         &--name{
             @include LoaderNameContain;        
-            &::before{            
+            &::after{            
                 @include LoaderBrand;                     
             }        
         }
@@ -29,9 +34,15 @@
             @include LoaderUnderline;         
         }    
 }
-   
 }
-
+.bi-heart{            
+    @include HeartLoader;
+    @include HeartLoadStyle;
+    &::before{
+        @include HeartLoader($Top:15%);
+        @include HeartLoadStyle;
+    }               
+}  
 //--------------------------------Tablette----------------------------------
 
 @media screen and (min-width: 780.1px) and (max-width:1023.9px){
@@ -40,21 +51,24 @@
         .Loader__Container{
             @include Loadercontain($Top: 20%);
             
-                &--heart{
-                    @include LoaderHeartContain($Width: 55px, $Height: 55px);      
-                    .bi-heart{            
-                        @include HeartLoader($Width: 55px , $Height: 55px, $FontS: 51px, $Top: 6%);
-                        @include HeartLoadStyle;            
-                    }
-                    &::before{
+                &--Lheart{
+                    @include LoaderHeartContain($Width: 55px, $Height: 55px);                         
+                    &::after{
                         @include HeartLoader($Width: 55px , $Height: 55px, $FontS: 49px, $Top: 6%);            
-                        @include HeartLoadBef;                                                
+                        @include HeartLoadAft;                                                
+                    }
+                }
+                &--Rheart{
+                    @include LoaderHeartContain($Width: 55px, $Height: 55px);                         
+                    &::after{
+                        @include HeartLoader($Width: 55px , $Height: 55px, $FontS: 49px, $Top: 6%);            
+                        @include HeartLoadAft;                                                
                     }
                 }
                 &--name{
                     @include LoaderNameContain($Width: 650px);               
                     
-                    &::before{
+                    &::after{
                         @include LoaderBrand($FontS:100px);
                     }
                 }                                                           
@@ -63,7 +77,14 @@
                 }          
         }
     }
-    
+    .bi-heart{            
+        @include HeartLoader($FontS:53px, $Top: -7%, $Right: 0, $Width: 55px, $Height: 55px);
+        @include HeartLoadStyle;
+        &::before{
+            @include HeartLoader($FontS:53px, $Top: 13%, $Right: 0, $Width: 55px, $Height: 55px);
+            @include HeartLoadStyle;
+        }               
+    }      
 }
 
 //--------------------------------Desktop----------------------------------
@@ -73,22 +94,25 @@
         @include LoaderBCKG($BackG: linear-gradient(0deg, rgba(22,21,23,1) 70%, rgba(217,195,242,1) 100%));       
         .Loader__Container{
             @include Loadercontain($Fwrap: nowrap, $Top: 25%);
-            width: 850px;
-            &--heart{
-                @include LoaderHeartContain($Width: 75px, $Height: 75px);      
-                .bi-heart{            
-                    @include HeartLoader($Width: 75px , $Height: 75px, $FontS: 72px, $Top: 6%);
-                    @include HeartLoadStyle;            
-                }
-                &::before{
+            width: 900px;
+            &--Lheart{
+                @include LoaderHeartContain($Width: 75px, $Height: 75px);                 
+                &::after{
                     @include HeartLoader($Width: 75px , $Height: 75px, $FontS: 70px, $Top: 8%);            
-                    @include HeartLoadBef;
+                    @include HeartLoadAft;
                                                 
                 }
-            }                                                            
+            }&--Rheart{
+                @include LoaderHeartContain($Width: 75px, $Height: 75px);                                 
+                &::after{
+                    @include HeartLoader($Width: 75px , $Height: 75px, $FontS: 70px, $Top: 8%);            
+                    @include HeartLoadAft;
+                                                
+                }
+            }                                                                    
             &--name{
                 @include LoaderNameContain($Width: 900px);
-                &::before{
+                &::after{
                     @include LoaderBrand($FontS:100px);                                                            
                 }
             }        
@@ -97,5 +121,12 @@
             }                                        
         }
     }
-   
+    .bi-heart{            
+        @include HeartLoader($FontS:72px, $Top: 16%, $Right: 0, $Width: 75px, $Height: 75px);
+        @include HeartLoadStyle;
+        &::before{
+            @include HeartLoader($FontS:75px, $Top: -7%, $Right: 0, $Width: 75px, $Height: 75px);
+            @include HeartLoadStyle;
+        }               
+    }     
 }

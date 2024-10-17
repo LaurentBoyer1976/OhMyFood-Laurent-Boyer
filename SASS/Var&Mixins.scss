@@ -350,7 +350,7 @@
         height: $Height;
         width: $Width;        
     }
-    @mixin HeartLoader($Display:flex, $Position:absolute, $JustifyC:center, $AlignI: center, $Width:30px, $Height:30px, $FontS:20px, $Top:15%, $Right:-3%){
+    @mixin HeartLoader($Display:flex, $Position:absolute, $JustifyC:center, $AlignI: center, $Width:30px, $Height:30px, $FontS:21px, $Top:-7%, $Right:0){
         display: $Display;
         position: $Position;        
         justify-content: $JustifyC;
@@ -361,13 +361,15 @@
         right: $Right;
         font-size: $FontS;        
     }
-    @mixin HeartLoadStyle($Background: $GreenGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){        
+    @mixin HeartLoadStyle($Ffamily: $BootsIcon, $content:"\F417",$Background: $GreenGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){        
+        font-family: $Ffamily;
+        content: $content;
         background: $Background; 
         background-clip: $BCK-clip;
         -webkit-background-clip: $WebBCK-Clip;
         -webkit-text-fill-color: $WebTF-Clip;
     }    
-    @mixin HeartLoadBef($Ffamily: $BootsIcon, $content:"\F415", $Background: $HeartGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
+    @mixin HeartLoadAft($Ffamily: $BootsIcon, $content:"\F415", $Background: $HeartGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
         font-family: $Ffamily;
         content: $content;
         background: $Background; 
