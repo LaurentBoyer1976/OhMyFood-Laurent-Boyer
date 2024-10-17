@@ -323,6 +323,7 @@
         $LoaderGradient2: radial-gradient(circle, rgba(147,86,220,1) 0%, rgba(187,145,236,1) 54%, rgba(255,121,218,1) 100%);
         $LoaderGradient1: radial-gradient(circle, rgba(147,86,220,1) 0%, rgba(187,145,236,1) 54%, rgba(255,121,218,1) 100%);
 
+
 /*---------------------Loader's mixin--------------------*/  
 
     @mixin LoaderBCKG($Display:grid, $AlignI: center, $JustifyI: center, $BackG:$LoaderBCK-color, $Height:100%, $Width:100%, $Position:absolute, $Zindex:3){
@@ -595,7 +596,7 @@
     
         5% {
             animation-timing-function: ease-in;
-            transform: translateY(30px);
+            transform: translateY(5%);
         }
     
         15% {
@@ -605,7 +606,7 @@
     
         25% {
             animation-timing-function: ease-in;
-            transform: translateY(38px);
+            transform: translateY(10%);
         }
     
         38% {
@@ -615,7 +616,7 @@
     
         52% {
             animation-timing-function: ease-in;
-            transform: translateY(75px);
+            transform: translateY(25%);
         }
     
         70% {
@@ -629,8 +630,7 @@
     
         100% {
             opacity: 0;
-            transform: translateY(800px);
-            visibility: collapse;
+            transform: translateY(100%);            
         }
     }
     @keyframes neon-blink {
@@ -663,6 +663,18 @@
         45% {
             animation-timing-function: ease-out;
             transform: scale(1);
+        }
+    }
+    @keyframes LoaderIn {
+        0% {
+            opacity: 1;
+            display: grid;
+        }
+    
+        100% {
+            opacity: 1;
+            display: none;
+            height: 0;
         }
     }
  

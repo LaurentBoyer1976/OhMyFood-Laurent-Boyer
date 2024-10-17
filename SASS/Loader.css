@@ -203,7 +203,7 @@
   }
   5% {
     animation-timing-function: ease-in;
-    transform: translateY(30px);
+    transform: translateY(5%);
   }
   15% {
     animation-timing-function: ease-out;
@@ -211,7 +211,7 @@
   }
   25% {
     animation-timing-function: ease-in;
-    transform: translateY(38px);
+    transform: translateY(10%);
   }
   38% {
     animation-timing-function: ease-out;
@@ -219,7 +219,7 @@
   }
   52% {
     animation-timing-function: ease-in;
-    transform: translateY(75px);
+    transform: translateY(25%);
   }
   70% {
     animation-timing-function: ease-out;
@@ -230,8 +230,7 @@
   }
   100% {
     opacity: 0;
-    transform: translateY(800px);
-    visibility: collapse;
+    transform: translateY(100%);
   }
 }
 @keyframes neon-blink {
@@ -268,6 +267,17 @@
     transform: scale(1);
   }
 }
+@keyframes LoaderIn {
+  0% {
+    opacity: 1;
+    display: grid;
+  }
+  100% {
+    opacity: 1;
+    display: none;
+    height: 0;
+  }
+}
 #Loader {
   display: grid;
   align-items: center;
@@ -277,7 +287,7 @@
   width: 100%;
   position: absolute;
   z-index: 3;
-  animation: LoaderOut 2s ease 4s 1 normal forwards;
+  animation: LoaderIn 5s linear 3.5s 1 normal forwards, LoaderOut 2s ease 3.5s 1 normal forwards;
 }
 #Loader .Loader__Container {
   display: flex;
@@ -311,7 +321,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: LeftHeartIn 1.5s ease 0.3s 1 normal forwards, HeartPulseLoad 5s ease-in-out 0.3s infinite normal forwards;
+  animation: LeftHeartIn 1.5s ease 0.3s 1 normal forwards, HeartPulseLoad 4s ease-in-out 0.3s infinite normal forwards;
 }
 #Loader .Loader__Container--Rheart {
   display: flex;
@@ -336,7 +346,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: RightHeartIn 1.5s ease 0.2s 1 normal forwards, HeartPulseLoad 5s ease-in-out 0.3s infinite normal forwards;
+  animation: RightHeartIn 1.5s ease 0.2s 1 normal forwards, HeartPulseLoad s ease-in-out 0.3s infinite normal forwards;
 }
 #Loader .Loader__Container--name {
   display: inherit;
@@ -381,7 +391,7 @@
   animation: ChargeBarFullIn 1.8s ease-in-out 0.9s 1 normal backwards, neon-blink 3s ease-in-out 2.9s infinite forwards;
 }
 
-.bi-heart {
+.HeartLoader {
   display: flex;
   position: absolute;
   justify-content: center;
@@ -398,7 +408,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.bi-heart::before {
+.HeartLoader::before {
   display: flex;
   position: absolute;
   justify-content: center;
@@ -513,7 +523,7 @@
   #Loader .Loader__Container--underline::after {
     height: 10px;
   }
-  .bi-heart {
+  .HeartLoader {
     display: flex;
     position: absolute;
     justify-content: center;
@@ -530,7 +540,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .bi-heart::before {
+  .HeartLoader::before {
     display: flex;
     position: absolute;
     justify-content: center;
@@ -645,7 +655,7 @@
   #Loader .Loader__Container--underline::after {
     height: 15px;
   }
-  .bi-heart {
+  .HeartLoader {
     display: flex;
     position: absolute;
     justify-content: center;
@@ -662,7 +672,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .bi-heart::before {
+  .HeartLoader::before {
     display: flex;
     position: absolute;
     justify-content: center;
