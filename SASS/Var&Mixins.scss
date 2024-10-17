@@ -341,7 +341,8 @@
         justify-content: $JustifyC;
         align-items: $AlignI;
         position: $Position;
-        top: $Top;                
+        top: $Top;
+                        
     }
     @mixin LoaderHeartContain($Display:flex, $Position:relative,  $Height:30px, $Width:30px){
         display: $Display;              

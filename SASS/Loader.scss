@@ -1,0 +1,101 @@
+/*Style et Animations du Loader de la page d'accueil*/
+
+
+@import '../SASS/Var&Mixins.scss';
+
+#Loader{
+    @include LoaderBCKG;
+    .Loader__Container{
+        @include Loadercontain;
+        width: auto;     
+        &--heart{
+            @include LoaderHeartContain;      
+            .bi-heart{            
+                @include HeartLoader;
+                @include HeartLoadStyle;            
+            }
+            &::before{
+                @include HeartLoader($FontS:19px, $Top: 6%);            
+                @include HeartLoadBef;                                         
+            }
+        }    
+        &--name{
+            @include LoaderNameContain;        
+            &::before{            
+                @include LoaderBrand;                     
+            }        
+        }
+        &--underline{
+            @include LoaderUnderline;         
+        }    
+}
+   
+}
+
+//--------------------------------Tablette----------------------------------
+
+@media screen and (min-width: 780.1px) and (max-width:1023.9px){
+    #Loader{
+        @include LoaderBCKG($BackG: linear-gradient(0deg, rgba(22,21,23,1) 75%, rgba(217,195,242,1) 100%)); 
+        .Loader__Container{
+            @include Loadercontain($Top: 20%);
+            
+                &--heart{
+                    @include LoaderHeartContain($Width: 55px, $Height: 55px);      
+                    .bi-heart{            
+                        @include HeartLoader($Width: 55px , $Height: 55px, $FontS: 51px, $Top: 6%);
+                        @include HeartLoadStyle;            
+                    }
+                    &::before{
+                        @include HeartLoader($Width: 55px , $Height: 55px, $FontS: 49px, $Top: 6%);            
+                        @include HeartLoadBef;                                                
+                    }
+                }
+                &--name{
+                    @include LoaderNameContain($Width: 650px);               
+                    
+                    &::before{
+                        @include LoaderBrand($FontS:100px);
+                    }
+                }                                                           
+                &--underline{           
+                    @include LoaderUnderline($Bottom: 8%);           
+                }          
+        }
+    }
+    
+}
+
+//--------------------------------Desktop----------------------------------
+
+@media screen and (min-width: 1024px) and (max-width:2500px){
+    #Loader{
+        @include LoaderBCKG($BackG: linear-gradient(0deg, rgba(22,21,23,1) 70%, rgba(217,195,242,1) 100%));       
+        .Loader__Container{
+            @include Loadercontain($Fwrap: nowrap, $Top: 25%);
+            width: 850px;
+            &--heart{
+                @include LoaderHeartContain($Width: 75px, $Height: 75px);      
+                .bi-heart{            
+                    @include HeartLoader($Width: 75px , $Height: 75px, $FontS: 72px, $Top: 6%);
+                    @include HeartLoadStyle;            
+                }
+                &::before{
+                    @include HeartLoader($Width: 75px , $Height: 75px, $FontS: 70px, $Top: 8%);            
+                    @include HeartLoadBef;
+                                                
+                }
+            }                                                            
+            &--name{
+                @include LoaderNameContain($Width: 900px);
+                &::before{
+                    @include LoaderBrand($FontS:100px);                                                            
+                }
+            }        
+            &--underline{           
+                @include LoaderUnderline($Bottom:5%, $Height: 15px);           
+            }                                        
+        }
+    }
+   
+}
