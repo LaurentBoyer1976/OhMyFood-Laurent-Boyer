@@ -5,15 +5,19 @@
 
 #Loader{
     @include LoaderBCKG;
+    animation: LoaderOut 2s ease 4s 1 normal forwards;
     .Loader__Container{
         @include Loadercontain;
         width: auto;     
         &--Lheart{
-            @include LoaderHeartContain;
+            @include LoaderHeartContain;            
             left: 5%;                 
             &::after{
                 @include HeartLoader($FontS:19px, $Top: 6%);            
-                @include HeartLoadAft;                                         
+                @include HeartLoadAft;
+                animation: LeftHeartIn 1.5s ease 0.3s 1 normal forwards,
+                HeartPulseLoad 5s ease-in-out 0.3s infinite normal forwards;
+                                                        
             }
         }
         &--Rheart{
@@ -21,17 +25,32 @@
             right: 5%;                 
             &::after{
                 @include HeartLoader($FontS:19px, $Top: 6%);            
-                @include HeartLoadAft;                                         
+                @include HeartLoadAft;
+                animation: RightHeartIn 1.5s ease 0.2s 1 normal forwards,
+                HeartPulseLoad 5s ease-in-out 0.3s infinite normal forwards;                                         
             }
         }        
         &--name{
             @include LoaderNameContain;        
             &::after{            
-                @include LoaderBrand;                     
+                @include LoaderBrand;
+                animation: NameInCenter 2s ease 0.5s 1 normal backwards,
+                neon-blink 3s ease-in-out 2.9s infinite forwards;                     
             }        
         }
         &--underline{
-            @include LoaderUnderline;         
+            @include LoaderUnderline;
+            animation: ChargeBarLeftIn 1s ease 0s 1 normal forwards;            
+            &::after{
+                content: '';
+                @include LoaderUnderline($Border:none, $Width: 100%);
+                background: $GreenGradient;
+                animation: ChargeBarFullIn 1.8s ease-in-out 0.9s 1 normal backwards,
+                neon-blink 3s ease-in-out 2.9s infinite forwards;
+                 
+            }           
+            
+                   
         }    
 }
 }
@@ -41,6 +60,8 @@
     &::before{
         @include HeartLoader($Top:15%);
         @include HeartLoadStyle;
+        animation: GreenHeartIn 2s ease 0s 1 normal forwards;
+        
     }               
 }  
 //--------------------------------Tablette----------------------------------
@@ -73,7 +94,10 @@
                     }
                 }                                                           
                 &--underline{           
-                    @include LoaderUnderline($Bottom: 8%);           
+                    @include LoaderUnderline($Bottom: 5%, $Height: 10px);
+                    &::after{
+                        height: 10px;
+                    }           
                 }          
         }
     }
@@ -117,7 +141,10 @@
                 }
             }        
             &--underline{           
-                @include LoaderUnderline($Bottom:5%, $Height: 15px);           
+                @include LoaderUnderline($Bottom:0, $Height: 15px);
+                &::after{
+                    height: 15px;
+                }           
             }                                        
         }
     }
