@@ -162,6 +162,15 @@ body {
           background-color:$NewCardColor;
       }        
   }
+  .Menu__Starter{
+    animation: Menu__arrival 1s linear 0.2s backwards;
+}
+.Menu__Maincourse{
+    animation: Menu__arrival 1s linear 1.2s backwards;
+}
+.Menu__Dessert{
+    animation: Menu__arrival 1s linear 2.2s backwards;
+}
   .Menu__Btn{
       @include Display__Box($flow: row);
       @include Menu__BTN;      

@@ -1,0 +1,157 @@
+/*Style et Animations du Loader de la page d'accueil*/
+
+
+@import '../SASS/Var&Mixins.scss';
+
+#Loader{
+    @include LoaderBCKG;    
+    animation: LoaderIn 5s linear 3.5s 1 normal forwards,
+    LoaderOut 2s ease 3.5s 1 normal forwards;
+    .Loader__Container{
+        @include Loadercontain;
+        width: auto;     
+        &--Lheart{
+            @include LoaderHeartContain;            
+            left: 5%;                 
+            &::after{
+                @include HeartLoader($FontS:19px, $Top: 6%);            
+                @include HeartLoadAft;
+                animation: LeftHeartIn 1.5s ease 0.3s 1 normal forwards,
+                HeartPulseLoad 4s ease-in-out 0.3s infinite normal forwards;                                                        
+            }
+        }
+        &--Rheart{
+            @include LoaderHeartContain;
+            right: 5%;                 
+            &::after{
+                @include HeartLoader($FontS:19px, $Top: 6%);            
+                @include HeartLoadAft;
+                animation:RightHeartIn 1.5s ease 0.2s 1 normal forwards,
+                HeartPulseLoad s ease-in-out 0.3s infinite normal forwards;                                       
+            }
+        }        
+        &--name{
+            @include LoaderNameContain;        
+            &::after{            
+                @include LoaderBrand;
+                animation: NameInCenter 2s ease 0.5s 1 normal backwards,
+                neon-blink 3s ease-in-out 2.9s infinite forwards;                     
+            }        
+        }
+        &--underline{
+            @include LoaderUnderline;
+            animation: ChargeBarLeftIn 1s ease 0s 1 normal forwards;            
+            &::after{
+                content: '';
+                @include LoaderUnderline($Border:none, $Width: 100%);
+                background: $GreenGradient;
+                animation: ChargeBarFullIn 1.8s ease-in-out 0.9s 1 normal backwards,
+                neon-blink 3s ease-in-out 2.9s infinite forwards;
+                 
+            }           
+            
+                   
+        }    
+}
+}
+.HeartLoader{            
+    @include HeartLoader;
+    @include HeartLoadStyle;    
+    &::before{
+        @include HeartLoader($Top:15%);
+        @include HeartLoadStyle;
+        animation: GreenHeartIn 2s ease 0s 1 normal forwards;        
+    }               
+}  
+//--------------------------------Tablette----------------------------------
+
+@media screen and (min-width: 780.1px) and (max-width:1023.9px){
+    #Loader{
+        @include LoaderBCKG($BackG: linear-gradient(0deg, rgba(22,21,23,1) 75%, rgba(217,195,242,1) 100%)); 
+        .Loader__Container{
+            @include Loadercontain($Top: 20%);
+            
+                &--Lheart{
+                    @include LoaderHeartContain($Width: 55px, $Height: 55px);                         
+                    &::after{
+                        @include HeartLoader($Width: 55px , $Height: 55px, $FontS: 49px, $Top: 6%);            
+                        @include HeartLoadAft;                                                
+                    }
+                }
+                &--Rheart{
+                    @include LoaderHeartContain($Width: 55px, $Height: 55px);                         
+                    &::after{
+                        @include HeartLoader($Width: 55px , $Height: 55px, $FontS: 49px, $Top: 6%);            
+                        @include HeartLoadAft;                                                
+                    }
+                }
+                &--name{
+                    @include LoaderNameContain($Width: 650px);               
+                    
+                    &::after{
+                        @include LoaderBrand($FontS:100px);
+                    }
+                }                                                           
+                &--underline{           
+                    @include LoaderUnderline($Bottom: 5%, $Height: 10px);
+                    &::after{
+                        height: 10px;
+                    }           
+                }          
+        }
+    }
+    .HeartLoader{            
+        @include HeartLoader($FontS:53px, $Top: -7%, $Right: 0, $Width: 55px, $Height: 55px);
+        @include HeartLoadStyle;
+        &::before{
+            @include HeartLoader($FontS:53px, $Top: 13%, $Right: 0, $Width: 55px, $Height: 55px);
+            @include HeartLoadStyle;
+        }               
+    }      
+}
+
+//--------------------------------Desktop----------------------------------
+
+@media screen and (min-width: 1024px) and (max-width:2500px){
+    #Loader{
+        @include LoaderBCKG($BackG: linear-gradient(0deg, rgba(22,21,23,1) 70%, rgba(217,195,242,1) 100%));       
+            .Loader__Container{
+                @include Loadercontain($Fwrap: nowrap, $Top: 25%);
+                width: 900px;
+            &--Lheart{
+                @include LoaderHeartContain($Width: 75px, $Height: 75px);                 
+                    &::after{
+                        @include HeartLoader($Width: 75px , $Height: 75px, $FontS: 70px, $Top: 8%);            
+                        @include HeartLoadAft;                                                
+                    }
+            }
+            &--Rheart{
+                @include LoaderHeartContain($Width: 75px, $Height: 75px);                                 
+                    &::after{
+                        @include HeartLoader($Width: 75px , $Height: 75px, $FontS: 70px, $Top: 8%);            
+                        @include HeartLoadAft;                                                
+                    }
+            }                                                                    
+            &--name{
+                @include LoaderNameContain($Width: 900px);
+                    &::after{
+                        @include LoaderBrand($FontS:100px);                                                            
+                    }
+            }        
+            &--underline{           
+                @include LoaderUnderline($Bottom:0, $Height: 15px);
+                    &::after{
+                        height: 15px;
+                    }           
+            }                                        
+        }
+    }
+    .HeartLoader{            
+        @include HeartLoader($FontS:72px, $Top: 16%, $Right: 0, $Width: 75px, $Height: 75px);
+        @include HeartLoadStyle;
+            &::before{
+                @include HeartLoader($FontS:75px, $Top: -7%, $Right: 0, $Width: 75px, $Height: 75px);
+                @include HeartLoadStyle;
+            }               
+    }     
+}

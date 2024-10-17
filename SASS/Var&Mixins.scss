@@ -13,13 +13,15 @@
         $FooterBCKColor: #353535;
         $ArrowLcolor: #353535;
         $FontNewCardColor: #008766;
-        $BlackFont: black;    
+        $BlackFont: black;        
+        $GreenGradient: linear-gradient(298deg, rgba(0,135,102,1) 0%, rgba(76,189,161,1) 69%, rgba(153,226,208,1) 100%);    
         $BtnGradient: linear-gradient(to top, $BtnBckColor1 40%, $BtnBckColor2);
         $HeartGradient: linear-gradient(to top, $BtnBckColor2 40%, $BtnBckColor1);
         $BtnGradientLighter: linear-gradient(to top, $LightBtnBckColor1 40%, $LightBtnBckColor2);
         $Shadow:0px 4px 10px 0px rgba(0,0,0,0.15);
         $ShadowHover:0px 4px 15px 0px rgba(0,0,0,0.35);
         $ShadowMenu_Btn: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
+       
         
         /*Font*/
         $BootsIcon: "bootstrap-icons";
@@ -48,10 +50,9 @@
         $main-Bsizing: border-box;
         $cutoutIMG: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
 
-        /*rendre visible ou caché un élément*/
+        /*rendre visible ou caché un élément*/        
+        $Advertise: hidden;
         
-        $Advertise: hidden;                  
-       
         /*Mixins générales*/
         @mixin Size__Box($MinW: $main-MinW, $MaxW: $main-MaxW, $Sizing:$main-Bsizing){
             min-width: $MinW;
@@ -284,9 +285,8 @@
     transition: $TransHovGreenCheck;
     right: $right;  
  }
-
- //Animations et Keyframes
- @keyframes Heartbeat{
+//Animations et Keyframes Accueil et menu
+@keyframes Heartbeat{
     0%{
         transform: scale(1);
     }
@@ -297,5 +297,386 @@
         transform: scale(1);
     }
  }
+ @keyframes Menu__arrival{
+    0%{
+        opacity: 0;
+        transform-origin: 100% 0;       
+    }
+    50%{        
+        opacity: 0.5;        
+    }      
+    100%{        
+        opacity: 1;
+        transform-origin: 100% 100%;
+    }
+ }
+/*----------------------------------Loader's mixin & variables & Animations---------------------------------------------*/
+
+/*---------------------Loader's variable--------------------*/
+    //Content variable
+        $Loaderbrand:"Ohmyfood";
+
+    //Gradient variable
+        $LoaderBCK-color: linear-gradient(0deg, rgba(22,21,23,1) 82%, rgba(217,195,242,1) 100%);
+        $LoaderGreenGrad: linear-gradient(298deg, rgba(0,135,102,1) 0%, rgba(76,189,161,1) 69%, rgba(153,226,208,1) 100%);    
+        $LoaderHeartGrad: linear-gradient(to top, $BtnBckColor2 40%, $BtnBckColor1);
+        $LoaderGradient2: radial-gradient(circle, rgba(147,86,220,1) 0%, rgba(187,145,236,1) 54%, rgba(255,121,218,1) 100%);
+        $LoaderGradient1: radial-gradient(circle, rgba(147,86,220,1) 0%, rgba(187,145,236,1) 54%, rgba(255,121,218,1) 100%);
+
+
+/*---------------------Loader's mixin--------------------*/  
+
+    @mixin LoaderBCKG($Display:grid, $AlignI: center, $JustifyI: center, $BackG:$LoaderBCK-color, $Height:100%, $Width:100%, $Position:absolute, $Zindex:3){
+        display: $Display;    
+        align-items: $AlignI;
+        justify-items: $JustifyI;
+        background: $BackG ;
+        height: $Height;
+        width: $Width;
+        position: $Position;
+        z-index: $Zindex;   
+    }
+    @mixin Loadercontain($Display:flex, $Fwrap:wrap, $Position:absolute, $JustifyC:center, $AlignI: center, $Top:15%){
+        display: $Display;
+        flex-wrap: $Fwrap;
+        justify-content: $JustifyC;
+        align-items: $AlignI;
+        position: $Position;
+        top: $Top;
+                        
+    }
+    @mixin LoaderHeartContain($Display:flex, $Position:relative,  $Height:30px, $Width:30px){
+        display: $Display;              
+        position: $Position;
+        height: $Height;
+        width: $Width;        
+    }
+    @mixin HeartLoader($Display:flex, $Position:absolute, $JustifyC:center, $AlignI: center, $Width:30px, $Height:30px, $FontS:21px, $Top:-7%, $Right:0){
+        display: $Display;
+        position: $Position;        
+        justify-content: $JustifyC;
+        align-items: $AlignI;
+        width: $Width;
+        height: $Height;
+        top: $Top;
+        right: $Right;
+        font-size: $FontS;        
+    }
+    @mixin HeartLoadStyle($Ffamily: $BootsIcon, $content:"\F417",$Background: $GreenGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){        
+        font-family: $Ffamily;
+        content: $content;
+        background: $Background; 
+        background-clip: $BCK-clip;
+        -webkit-background-clip: $WebBCK-Clip;
+        -webkit-text-fill-color: $WebTF-Clip;
+    }    
+    @mixin HeartLoadAft($Ffamily: $BootsIcon, $content:"\F415", $Background: $HeartGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
+        font-family: $Ffamily;
+        content: $content;
+        background: $Background; 
+        background-clip: $BCK-clip;
+        -webkit-background-clip: $WebBCK-Clip;
+        -webkit-text-fill-color: $WebTF-Clip;
+    }
+    @mixin LoaderNameContain($Display: inherit, $position: relative, $JustifyC: center, $Width: 270px){
+        display: $Display;
+        justify-content: $JustifyC;
+        width: $Width;
+        position: $position;
+    }
+    @mixin LoaderBrand($Display: flex, $JustifyC: center, $Width: 100%, $Webtext-Stroke:0.5px $NewCardColor, $Ffamily: $brandFont, $content:$Loaderbrand, $FontS: 40px, $Background: $LoaderGradient1, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
+        display: $Display;
+        justify-content: $JustifyC;
+        width: $Width; 
+        font-family: $Ffamily;
+        font-size: $FontS;
+        content: $content;
+        background: $Background; 
+        background-clip: $BCK-clip;
+        -webkit-background-clip: $WebBCK-Clip;
+        -webkit-text-fill-color: $WebTF-Clip;
+        -webkit-text-stroke: $Webtext-Stroke;           
+    }
+    @mixin LoaderUnderline($Display: inherit, $position: absolute, $Width: 90%, $Height: 5px, $Border: 2px solid $NewCardColor, $BorderR: 15px, $Bottom: -4%){
+        display: $Display;
+        position: $position;
+        bottom: $Bottom;    
+        width: $Width;
+        height: $Height;
+        border: $Border;
+        border-radius: $BorderR;                      
+    }
+    @keyframes ChargeBarLeftIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-250px);
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes ChargeBarFullIn {
+        0% {
+            opacity: 0;
+            
+        }
+        25%{
+            opacity: 0.25;
+            animation-timing-function: cubic-bezier(.11,.54,.99,.21);
+        }
+        50%{
+            opacity: 0.5;
+            animation-timing-function: cubic-bezier(.2,.42,.95,.4);
+        }
+        75%{
+            opacity: 0.75;
+            animation-timing-function: cubic-bezier(.08,.98,.95,.19);
+        } 
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes LeftHeartIn {
+        0% {
+            animation-timing-function: ease-in;
+            opacity: 0;
+            transform: translateX(-60%);
+        }
+    
+        38% {
+            animation-timing-function: ease-out;
+            opacity: 1;
+            transform: translateX(0);
+        }
+    
+        55% {
+            animation-timing-function: ease-in;
+            transform: translateX(-30%);
+        }
+    
+        72% {
+            animation-timing-function: ease-out;
+            transform: translateX(0);
+        }
+    
+        81% {
+            animation-timing-function: ease-in;
+            transform: translateX(-10%);
+        }
+    
+        90% {
+            animation-timing-function: ease-out;
+            transform: translateX(0);
+        }
+    
+        95% {
+            animation-timing-function: ease-in;
+            transform: translateX(-3%);
+        }
+    
+        100% {
+            animation-timing-function: ease-out;
+            transform: translateX(0);
+        }
+    }
+    @keyframes RightHeartIn {
+        0% {
+            animation-timing-function: ease-in;
+            opacity: 0;
+            transform: translateX(60%);
+        }
+    
+        38% {
+            animation-timing-function: ease-out;
+            opacity: 1;
+            transform: translateX(0);
+        }
+    
+        55% {
+            animation-timing-function: ease-in;
+            transform: translateX(30%);
+        }
+    
+        72% {
+            animation-timing-function: ease-out;
+            transform: translateX(0);
+        }
+    
+        81% {
+            animation-timing-function: ease-in;
+            transform: translateX(10%);
+        }
+    
+        90% {
+            animation-timing-function: ease-out;
+            transform: translateX(0);
+        }
+    
+        95% {
+            animation-timing-function: ease-in;
+            transform: translateX(3%);
+        }
+    
+        100% {
+            animation-timing-function: ease-out;
+            transform: translateX(0);
+        }
+    }
+    @keyframes GreenHeartIn {
+        0% {
+            animation-timing-function: ease-in;
+            opacity: 0;
+            transform: scale(7);
+        }
+    
+        38% {
+            animation-timing-function: ease-out;
+            opacity: 1;
+            transform: scale(1);
+        }
+    
+        55% {
+            animation-timing-function: ease-in;
+            transform: scale(1.5);
+        }
+    
+        72% {
+            animation-timing-function: ease-out;
+            transform: scale(1);
+        }
+    
+        81% {
+            animation-timing-function: ease-in;
+            transform: scale(1.24);
+        }
+    
+        89% {
+            animation-timing-function: ease-out;
+            transform: scale(1);
+        }
+    
+        95% {
+            animation-timing-function: ease-in;
+            transform: scale(1.04);
+        }
+    
+        100% {
+            animation-timing-function: ease-out;
+            transform: scale(1);
+        }
+    }
+    @keyframes NameInCenter {
+        0% {
+            opacity: 0;
+        }
+        25%{
+            opacity: 0.25;
+            animation-timing-function: cubic-bezier(.11,.54,.99,.21);
+        }
+        50%{
+            opacity: 0.5;
+            animation-timing-function: cubic-bezier(.2,.42,.95,.4);
+        }
+        75%{
+            opacity: 0.75;
+            animation-timing-function: cubic-bezier(.08,.98,.95,.19);
+        } 
+    
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes LoaderOut {
+        0% {
+            animation-timing-function: ease-out;
+            transform: translateY(0);
+        }
+    
+        5% {
+            animation-timing-function: ease-in;
+            transform: translateY(5%);
+        }
+    
+        15% {
+            animation-timing-function: ease-out;
+            transform: translateY(0);
+        }
+    
+        25% {
+            animation-timing-function: ease-in;
+            transform: translateY(10%);
+        }
+    
+        38% {
+            animation-timing-function: ease-out;
+            transform: translateY(0);
+        }
+    
+        52% {
+            animation-timing-function: ease-in;
+            transform: translateY(25%);
+        }
+    
+        70% {
+            animation-timing-function: ease-out;
+            transform: translateY(0);
+        }
+    
+        85% {
+            opacity: 1;
+        }
+    
+        100% {
+            opacity: 0;
+            transform: translateY(100%);            
+        }
+    }
+    @keyframes neon-blink {
+        0%, 24.5%,  34.5%, 35.5%, 79%, 81%, 100% { opacity:1; }
+        25.5%, 40%, 52%, 63%, 86%, 97% {opacity: 0.5;}
+        17%, 25%, 35%, 44%, 80%, 90% { opacity:0; } /* coupures */
+      }
+      @keyframes HeartPulseLoad {
+        0% {
+            animation-timing-function: ease-out;
+            transform: scale(1);
+            transform-origin: center center;
+        }
+    
+        10% {
+            animation-timing-function: ease-in;
+            transform: scale(1.5);
+        }
+    
+        17% {
+            animation-timing-function: ease-out;
+            transform: scale(0.7);
+        }
+    
+        33% {
+            animation-timing-function: ease-in;
+            transform: scale(1.5);
+        }
+    
+        45% {
+            animation-timing-function: ease-out;
+            transform: scale(1);
+        }
+    }
+    @keyframes LoaderIn {
+        0% {
+            opacity: 1;
+            display: grid;
+        }
+    
+        100% {
+            opacity: 1;
+            display: none;
+            height: 0;
+        }
+    }
+ 
  
 
