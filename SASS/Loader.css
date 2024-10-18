@@ -346,7 +346,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: RightHeartIn 1.5s ease 0.2s 1 normal forwards, HeartPulseLoad ease-in-out 0.3s infinite normal forwards;
+  animation: RightHeartIn 1.5s ease 0.2s 1 normal forwards, HeartPulseLoad 4s ease-in-out 0.3s infinite normal forwards;
 }
 #Loader .Loader__Container--name {
   display: inherit;
