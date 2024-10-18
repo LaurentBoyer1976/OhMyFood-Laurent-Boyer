@@ -303,7 +303,7 @@
                     max-height: 231px;                                                            
                     }
                 &--new{                    
-                    grid-area: 4/9/6/11;
+                    grid-area: 5/9/7/11;
                     @include BoxNew--color;
                     @include BoxNew--Size($Padding: 4px 0);
                     @include BoxNew--Fontsize;

@@ -276,6 +276,7 @@
     100% {
       opacity: 1;
       display: none;
+      height: 0;
     }
   }
   /*Footer générique ohmyfood*/
@@ -693,6 +694,7 @@
     100% {
       opacity: 1;
       display: none;
+      height: 0;
     }
   }
   @keyframes Heartbeat {
@@ -956,6 +958,7 @@
     100% {
       opacity: 1;
       display: none;
+      height: 0;
     }
   }
   #Loader {
@@ -967,7 +970,7 @@
     width: 100%;
     position: absolute;
     z-index: 3;
-    animation: LoaderIn 6s linear 0s 1 normal forwards, LoaderOut 2s ease 3.5s 1 normal forwards;
+    animation: LoaderIn 5s linear 3.5s 1 normal forwards, LoaderOut 2s ease 3.5s 1 normal forwards;
   }
   #Loader .Loader__Container {
     display: flex;
@@ -998,8 +1001,8 @@
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: LeftHeartIn 1.5s ease 0.3s 1 normal forwards, HeartPulseLoad 4s ease-in-out 0.3s infinite normal forwards;
   }
@@ -1023,10 +1026,10 @@
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: RightHeartIn 1.5s ease 0.2s 1 normal forwards, HeartPulseLoad s ease-in-out 0.3s infinite normal forwards;
+    animation: RightHeartIn 1.5s ease 0.2s 1 normal forwards, HeartPulseLoad ease-in-out 0.3s infinite normal forwards;
   }
   #Loader .Loader__Container--name {
     display: inherit;
@@ -1042,8 +1045,8 @@
     font-size: 40px;
     content: "Ohmyfood";
     background: radial-gradient(circle, rgb(147, 86, 220) 0%, rgb(187, 145, 236) 54%, rgb(255, 121, 218) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 0.5px #99E2D0;
     animation: NameInCenter 2s ease 0.5s 1 normal backwards, neon-blink 3s ease-in-out 2.9s infinite forwards;
@@ -1083,8 +1086,8 @@
     font-family: "bootstrap-icons";
     content: "\f417";
     background: linear-gradient(298deg, rgb(0, 135, 102) 0%, rgb(76, 189, 161) 69%, rgb(153, 226, 208) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .HeartLoader::before {
@@ -1100,8 +1103,8 @@
     font-family: "bootstrap-icons";
     content: "\f417";
     background: linear-gradient(298deg, rgb(0, 135, 102) 0%, rgb(76, 189, 161) 69%, rgb(153, 226, 208) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: GreenHeartIn 2s ease 0s 1 normal forwards;
   }
@@ -1144,8 +1147,8 @@
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   #Loader .Loader__Container--Rheart {
@@ -1167,8 +1170,8 @@
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   #Loader .Loader__Container--name {
@@ -1185,8 +1188,8 @@
     font-size: 100px;
     content: "Ohmyfood";
     background: radial-gradient(circle, rgb(147, 86, 220) 0%, rgb(187, 145, 236) 54%, rgb(255, 121, 218) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 0.5px #99E2D0;
   }
@@ -1215,8 +1218,8 @@
     font-family: "bootstrap-icons";
     content: "\f417";
     background: linear-gradient(298deg, rgb(0, 135, 102) 0%, rgb(76, 189, 161) 69%, rgb(153, 226, 208) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .HeartLoader::before {
@@ -1232,8 +1235,8 @@
     font-family: "bootstrap-icons";
     content: "\f417";
     background: linear-gradient(298deg, rgb(0, 135, 102) 0%, rgb(76, 189, 161) 69%, rgb(153, 226, 208) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
@@ -1276,8 +1279,8 @@
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   #Loader .Loader__Container--Rheart {
@@ -1299,8 +1302,8 @@
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   #Loader .Loader__Container--name {
@@ -1317,8 +1320,8 @@
     font-size: 100px;
     content: "Ohmyfood";
     background: radial-gradient(circle, rgb(147, 86, 220) 0%, rgb(187, 145, 236) 54%, rgb(255, 121, 218) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 0.5px #99E2D0;
   }
@@ -1347,8 +1350,8 @@
     font-family: "bootstrap-icons";
     content: "\f417";
     background: linear-gradient(298deg, rgb(0, 135, 102) 0%, rgb(76, 189, 161) 69%, rgb(153, 226, 208) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .HeartLoader::before {
@@ -1364,8 +1367,8 @@
     font-family: "bootstrap-icons";
     content: "\f417";
     background: linear-gradient(298deg, rgb(0, 135, 102) 0%, rgb(76, 189, 161) 69%, rgb(153, 226, 208) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
@@ -1673,8 +1676,8 @@
   }
   .Card__Box--IMG {
     grid-area: 1/1/7/11;
-    -webkit-clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
-            clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+    -webkit-clip-path: inset(25% 0% 0% 0% round 15px 15px);
+            clip-path: inset(25% 0% 0% 0% round 15px 15px);
     box-sizing: border-box;
     -o-object-fit: cover;
        object-fit: cover;
@@ -1682,7 +1685,7 @@
     max-height: 231px;
   }
   .Card__Box--new {
-    grid-area: 4/9/6/11;
+    grid-area: 5/9/7/11;
     background-color: #99E2D0;
     color: #008766;
     width: 90%;
@@ -1742,8 +1745,8 @@
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 30px;
     width: 30px;
@@ -1755,8 +1758,8 @@
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 1;
     animation: Heartbeat 0.3s ease-in-out 2 0.5s;

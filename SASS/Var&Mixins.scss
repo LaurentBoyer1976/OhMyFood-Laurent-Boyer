@@ -48,7 +48,8 @@
         $main-MinW: 320px;
         $main-MaxW: 100%;
         $main-Bsizing: border-box;
-        $cutoutIMG: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+        $cutoutIMG: inset(25% 0% 0% 0% round 15px 15px);
+       
 
         /*rendre visible ou caché un élément*/        
         $Advertise: hidden;
@@ -230,9 +231,9 @@
  @mixin HeartHovAft($Ffamily: $BootsIcon, $content:"\F415", $Background: $HeartGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
      font-family: $Ffamily;
      content: $content;
-     background: $Background; 
-     background-clip: $BCK-clip;
+     background: $Background;     
      -webkit-background-clip: $WebBCK-Clip;
+     background-clip: $BCK-clip;
      -webkit-text-fill-color: $WebTF-Clip;
  }
  @mixin GreenCheckHoverDis($Flow: wrap, $position: absolute, $justifyC: center, $alignC: center, $TextAlign:center,  $right:0){
@@ -266,12 +267,12 @@
     width: $Width;
     transition:$TransHover;
  }
- @mixin RtoL_greencheck($transform:translateX(-60%) right, $transition: $TransHovGreenCheck, $opacity:1 ){
+ @mixin RtoL_greencheck($transform:translateX(0), $transition: $TransHovGreenCheck, $opacity:1 ){
     transform: $transform;
     transition: $transition;
     opacity: $opacity; 
  }
- @mixin LtoR_greencheck($transform:translateX(0)left, $transition: $TransHovGreenCheck, $opacity:0 ){
+ @mixin LtoR_greencheck($transform:translateX(0), $transition: $TransHovGreenCheck, $opacity:0 ){
     transform: $transform;
     transition: $transition;
     opacity: $opacity; 
@@ -365,17 +366,17 @@
     @mixin HeartLoadStyle($Ffamily: $BootsIcon, $content:"\F417",$Background: $GreenGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){        
         font-family: $Ffamily;
         content: $content;
-        background: $Background; 
-        background-clip: $BCK-clip;
+        background: $Background;         
         -webkit-background-clip: $WebBCK-Clip;
+        background-clip: $BCK-clip;
         -webkit-text-fill-color: $WebTF-Clip;
     }    
     @mixin HeartLoadAft($Ffamily: $BootsIcon, $content:"\F415", $Background: $HeartGradient, $BCK-clip: text, $WebBCK-Clip: text, $WebTF-Clip: transparent){
         font-family: $Ffamily;
         content: $content;
-        background: $Background; 
-        background-clip: $BCK-clip;
+        background: $Background;        
         -webkit-background-clip: $WebBCK-Clip;
+        background-clip: $BCK-clip;
         -webkit-text-fill-color: $WebTF-Clip;
     }
     @mixin LoaderNameContain($Display: inherit, $position: relative, $JustifyC: center, $Width: 270px){
@@ -391,9 +392,9 @@
         font-family: $Ffamily;
         font-size: $FontS;
         content: $content;
-        background: $Background; 
-        background-clip: $BCK-clip;
+        background: $Background;         
         -webkit-background-clip: $WebBCK-Clip;
+        background-clip: $BCK-clip;
         -webkit-text-fill-color: $WebTF-Clip;
         -webkit-text-stroke: $Webtext-Stroke;           
     }
