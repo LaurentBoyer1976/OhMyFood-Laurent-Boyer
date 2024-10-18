@@ -276,6 +276,7 @@
     100% {
       opacity: 1;
       display: none;
+      height: 0;
     }
   }
   /*Footer générique ohmyfood*/
@@ -677,6 +678,7 @@
     100% {
       opacity: 1;
       display: none;
+      height: 0;
     }
   }
   * {
@@ -967,8 +969,8 @@
   }
   .Card__Box--IMG {
     grid-area: 1/1/8/11;
-    -webkit-clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
-            clip-path: xywh(0% 23% 100% 85% round 15px 15px 0% 0%);
+    -webkit-clip-path: inset(25% 0% 0% 0% round 15px 15px);
+            clip-path: inset(25% 0% 0% 0% round 15px 15px);
     box-sizing: border-box;
     -o-object-fit: cover;
        object-fit: cover;
@@ -976,7 +978,7 @@
     max-height: 231px;
   }
   .Card__Box--new {
-    grid-area: 5/8/5/11;
+    grid-area: 4/8/5/11;
     background-color: #99E2D0;
     color: #008766;
     width: 90%;
@@ -1037,8 +1039,8 @@
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 30px;
     width: 30px;
@@ -1050,8 +1052,8 @@
     font-family: "bootstrap-icons";
     content: "\f415";
     background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 1;
     animation: Heartbeat 0.3s ease-in-out 2 0.5s;

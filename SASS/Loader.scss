@@ -27,7 +27,7 @@
                 @include HeartLoader($FontS:19px, $Top: 6%);            
                 @include HeartLoadAft;
                 animation:RightHeartIn 1.5s ease 0.2s 1 normal forwards,
-                HeartPulseLoad s ease-in-out 0.3s infinite normal forwards;                                       
+                HeartPulseLoad ease-in-out 0.3s infinite normal forwards;                                       
             }
         }        
         &--name{
