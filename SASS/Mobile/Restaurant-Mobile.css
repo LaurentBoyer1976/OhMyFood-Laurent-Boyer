@@ -675,398 +675,422 @@
     height: 0;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 780px) {
-  /*Général*/
-  * {
-    font-family: "Roboto", sans-serif;
-  }
-  /*body & Main-container*/
-  body {
-    grid-template-columns: 1fr;
-    background-color: rgba(17, 255, 238, 0);
-    margin: 0;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  /*header et navbar styles*/
-  #Head__site {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    width: 100%;
-  }
-  .Navbar {
-    display: flex;
-    flex-flow: row;
-    justify-content: normal;
-    align-items: normal;
-    box-sizing: border-box;
-    min-width: 320px;
-    width: 100%;
-    max-width: 100%;
-    padding: 12.5px 9% 12.5px 1%;
-    margin: 0;
-    gap: 70px;
-  }
-  .Navbar__Title {
-    display: flex;
-  }
-  .Navbar__Title--Logo {
-    width: 100%;
-  }
-  .Navbar__Link {
-    display: flex;
-    font-size: x-large;
-    width: 30px;
-    height: 30px;
-    text-decoration: none;
-    align-items: center;
-  }
-  .Navbar__Link i {
-    width: 17px;
-    color: #353535;
-    margin-left: 17px;
-  }
-  /*Main et Menu et card menu*/
-  main {
-    background-color: #f6f6f6;
-    width: 100%;
-  }
-  .Background__Menu {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    width: 100%;
-    height: 275px;
-    background-size: cover;
-    z-index: -1;
-  }
-  .Background__Menu--IMG {
-    min-width: 320px;
-    max-width: 100%;
-    width: 100%;
-    height: 275px;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  #Main__Article {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -55px;
-    padding: 0 13px;
-    gap: 40px;
-    border-radius: 40px 40px 0 0;
-    background-color: #f6f6f6;
-  }
-  .Restaurant__Presentation {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 17px;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 40px 40px 0 0;
-  }
+/*Général*/
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+/*body & Main-container*/
+body {
+  grid-template-columns: 1fr;
+  background-color: rgba(17, 255, 238, 0);
+  margin: 0;
+  min-width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/*header et navbar styles*/
+#Head__site {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.Navbar {
+  display: flex;
+  flex-flow: row;
+  justify-content: normal;
+  align-items: normal;
+  box-sizing: border-box;
+  min-width: 320px;
+  width: 100%;
+  max-width: 100%;
+  padding: 12.5px 9% 12.5px 1%;
+  margin: 0;
+  gap: 70px;
+}
+
+.Navbar__Title {
+  display: flex;
+}
+.Navbar__Title--Logo {
+  width: 100%;
+}
+
+.Navbar__Link {
+  display: flex;
+  font-size: x-large;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  align-items: center;
+}
+.Navbar__Link i {
+  width: 17px;
+  color: #353535;
+  margin-left: 17px;
+}
+
+/*Main et Menu et card menu*/
+main {
+  background-color: #f6f6f6;
+  width: 100%;
+}
+
+.Background__Menu {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 275px;
+  background-size: cover;
+  z-index: -1;
+}
+.Background__Menu--IMG {
+  min-width: 320px;
+  max-width: 100%;
+  width: 100%;
+  height: 275px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#Main__Article {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -55px;
+  padding: 0 13px;
+  gap: 40px;
+  border-radius: 40px 40px 0 0;
+  background-color: #f6f6f6;
+}
+
+.Restaurant__Presentation {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 17px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 40px 40px 0 0;
+}
+.Restaurant__Presentation--title {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.75rem;
+  margin: 31px 0 0 0;
+}
+
+.Heartbox {
+  display: flex;
+  position: relative;
+  margin-top: 31px;
+  width: 31px;
+  height: 31px;
+  animation: Heartbeat 0.3s ease-in-out 2 0.5s;
+}
+.Heartbox .bi-heart {
+  display: flex;
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  font-weight: 100;
+  cursor: pointer;
+  color: black;
+  transition: all 0.5s cubic-bezier(0.7, 0.04, 0.71, 0.36);
+}
+.Heartbox:hover > .bi-heart {
+  opacity: 0;
+}
+.Heartbox::after {
+  font-family: "bootstrap-icons";
+  content: "\f415";
+  background: linear-gradient(to top, #ff79da 40%, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.7, 0.04, 0.71, 0.36);
+}
+.Heartbox:hover::after {
+  font-family: "bootstrap-icons";
+  content: "\f415";
+  background: linear-gradient(to top, #ff79da 40%, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
+  animation: Heartbeat 0.3s ease-in-out 2 0.5s;
+}
+
+.Menu {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  gap: 40px;
+}
+
+.Menu__Starter, .Menu__Maincourse, .Menu__Dessert {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: unset;
+  min-width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  gap: 12px;
+  width: 100%;
+}
+.Menu__Starter--title, .Menu__Maincourse--title, .Menu__Dessert--title {
+  align-self: self-start;
+  font-weight: 300;
+  font-size: 1rem;
+  margin: 0;
+}
+.Menu__Starter--title::after, .Menu__Maincourse--title::after, .Menu__Dessert--title::after {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
+}
+
+.Menu__Starter {
+  animation: Menu__arrival 1s linear 0.2s backwards;
+}
+
+.Menu__Maincourse {
+  animation: Menu__arrival 1s linear 1.2s backwards;
+}
+
+.Menu__Dessert {
+  animation: Menu__arrival 1s linear 2.2s backwards;
+}
+
+.Menu__Btn {
+  display: flex;
+  flex-flow: row;
+  justify-content: normal;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 69px;
+  border: none;
+  padding: 0;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
+}
+.Menu__Btn::after {
+  position: absolute;
+  right: 0;
+  flex-flow: wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-family: "bootstrap-icons";
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  font-size: 20px;
+  content: "\f26a";
+  color: white;
+  background-color: #99E2D0;
+  width: 0px;
+  height: 69px;
+  margin: auto;
+  transform: translateX(0);
+  transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+  opacity: 0;
+}
+.Menu__Btn:hover::after {
+  position: absolute;
+  right: 0;
+  flex-flow: wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 59px;
+  height: 69px;
+  margin: auto;
+  transform: translateX(0);
+  transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+  opacity: 1;
+}
+.Menu__Btn--price {
+  position: absolute;
+  right: 3%;
+  top: 38%;
+  align-self: end;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: 13.5px 15px 13.5px;
+  transform: translateX(0%);
+  transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+}
+
+.Menu__Btn:hover .Menu__Btn--price {
+  transform: translateX(-60%);
+  transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+  right: 6%;
+}
+
+.Menu__Btn:hover .Menu__Select {
+  width: 70%;
+  transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
+}
+
+.Menu__Btn:hover > .Menu__Select > * {
+  white-space: Nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.Menu__Select {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 2.25%;
+  gap: 5px;
+  transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7) 0.3s;
+}
+.Menu__Select--dishe {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0;
+  max-width: 100%;
+  white-space: Nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.Menu__Select--info {
+  font-weight: 300;
+  font-size: 0.9375rem;
+  align-self: flex-start;
+  margin: 0;
+  max-width: 100%;
+  white-space: Nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.Menu__CommandBTN {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #FFFFFF;
+  border-radius: 25px;
+  background: linear-gradient(to top, #9356dc 40%, #ff79da);
+  padding: 13px 16px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+  border: none;
+  transition: all 0.5s ease-out;
+  width: 50%;
+  margin: auto;
+}
+.Menu__CommandBTN:hover {
+  opacity: 0.8;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+@media screen and (min-width: 320px) and (max-width: 369px) {
   .Restaurant__Presentation--title {
-    font-family: "Shrikhand", sans-serif;
-    font-size: 1.75rem;
-    margin: 31px 0 0 0;
-  }
-  .Heartbox {
-    display: flex;
-    position: relative;
-    margin-top: 31px;
-    width: 31px;
-    height: 31px;
-    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
-  }
-  .Heartbox .bi-heart {
-    display: flex;
-    position: absolute;
-    top: 3%;
-    right: 5%;
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    font-weight: 100;
-    cursor: pointer;
-    color: black;
-    transition: all 0.5s cubic-bezier(0.7, 0.04, 0.71, 0.36);
-  }
-  .Heartbox:hover > .bi-heart {
-    opacity: 0;
-  }
-  .Heartbox::after {
-    font-family: "bootstrap-icons";
-    content: "\f415";
-    background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 30px;
-    width: 30px;
-    height: 30px;
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.7, 0.04, 0.71, 0.36);
-  }
-  .Heartbox:hover::after {
-    font-family: "bootstrap-icons";
-    content: "\f415";
-    background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 1;
-    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
-  }
-  .Menu {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    width: 100%;
-    gap: 40px;
-  }
-  .Menu__Starter, .Menu__Maincourse, .Menu__Dessert {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: unset;
-    min-width: 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    gap: 12px;
-    width: 100%;
-  }
-  .Menu__Starter--title, .Menu__Maincourse--title, .Menu__Dessert--title {
-    align-self: self-start;
-    font-weight: 300;
-    font-size: 1rem;
-    margin: 0;
-  }
-  .Menu__Starter--title::after, .Menu__Maincourse--title::after, .Menu__Dessert--title::after {
-    content: "";
-    display: block;
-    margin-top: 5px;
-    width: 40px;
-    height: 3px;
-    background-color: #99E2D0;
-  }
-  .Menu__Starter {
-    animation: Menu__arrival 1s linear 0.2s backwards;
-  }
-  .Menu__Maincourse {
-    animation: Menu__arrival 1s linear 1.2s backwards;
-  }
-  .Menu__Dessert {
-    animation: Menu__arrival 1s linear 2.2s backwards;
-  }
-  .Menu__Btn {
-    display: flex;
-    flex-flow: row;
-    justify-content: normal;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 69px;
-    border: none;
-    padding: 0;
-    background-color: #FFFFFF;
-    border-radius: 15px;
-    box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
-  }
-  .Menu__Btn::after {
-    position: absolute;
-    right: 0;
-    flex-flow: wrap;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    font-family: "bootstrap-icons";
-    border-top-right-radius: inherit;
-    border-bottom-right-radius: inherit;
-    font-size: 20px;
-    content: "\f26a";
-    color: white;
-    background-color: #99E2D0;
-    width: 0px;
-    height: 69px;
-    margin: auto;
-    transform: translateX(0);
-    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
-    opacity: 0;
-  }
-  .Menu__Btn:hover::after {
-    position: absolute;
-    right: 0;
-    flex-flow: wrap;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    width: 59px;
-    height: 69px;
-    margin: auto;
-    transform: translateX(0);
-    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
-    opacity: 1;
-  }
-  .Menu__Btn--price {
-    position: absolute;
-    right: 3%;
-    top: 38%;
-    align-self: end;
-    font-weight: 700;
-    font-size: 0.9375rem;
-    padding: 13.5px 15px 13.5px;
-    transform: translateX(0%);
-    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
-  }
-  .Menu__Btn:hover .Menu__Btn--price {
-    transform: translateX(-60%);
-    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
-    right: 6%;
-  }
-  .Menu__Btn:hover .Menu__Select {
-    width: 70%;
-    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
-  }
-  .Menu__Btn:hover > .Menu__Select > * {
-    white-space: Nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  .Menu__Select {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: flex-start;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 2.25%;
-    gap: 5px;
-    transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7) 0.3s;
-  }
-  .Menu__Select--dishe {
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin: 0;
-    max-width: 100%;
-    white-space: Nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  .Menu__Select--info {
-    font-weight: 300;
-    font-size: 0.9375rem;
-    align-self: flex-start;
-    margin: 0;
-    max-width: 100%;
-    white-space: Nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  .Menu__CommandBTN {
-    font-weight: 500;
-    font-size: 1rem;
-    color: #FFFFFF;
-    border-radius: 25px;
-    background: linear-gradient(to top, #9356dc 40%, #ff79da);
-    padding: 13px 16px;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
-    border: none;
-    transition: all 0.5s ease-out;
-    width: 50%;
-    margin: auto;
-  }
-  .Menu__CommandBTN:hover {
-    opacity: 0.8;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+    font-size: 1.6rem;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 369px) {
-  .bi-heart {
-    display: flex;
-    position: absolute;
-    top: 3%;
-    right: 5%;
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    font-weight: 100;
-    cursor: pointer;
-    color: black;
-  }
-  .bi-heart:hover::before {
-    font-family: "bootstrap-icons";
-    content: "\f415";
-    background: linear-gradient(to top, #ff79da 40%, #9356dc);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .Menu__Btn--price {
-    font-size: 0.8125rem;
-  }
-  .Menu__Btn--price:hover {
-    right: 15%;
-  }
-  .Menu__Select {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    gap: 5px;
-    padding: 4% 0 4% 2%;
-  }
-  .Menu__Select:hover {
-    width: 70%;
-    transition: right 0.4s ease-in-out;
-  }
-  .Menu__Select--dishe {
-    font-size: 0.9375rem;
-    font-weight: 500;
-    margin: 0;
-  }
-  .Menu__Select--dishe:hover {
-    white-space: Nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  .Menu__Select--dishe:hover.Dishe--Info-translation {
-    width: 70%;
-    transition: right 0.4s ease-in-out;
-  }
-  .Menu__Select--info {
-    font-weight: 300;
-    font-size: 0.8125rem;
-    align-self: flex-start;
-    margin: 0;
-  }
-  .Menu__Select--info:hover {
-    white-space: Nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  .Menu__Select--info:hover.Dishe--Info-translation {
-    width: 70%;
-    transition: right 0.4s ease-in-out;
-  }
+.bi-heart {
+  display: flex;
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  font-weight: 100;
+  cursor: pointer;
+  color: black;
+}
+.bi-heart:hover::before {
+  font-family: "bootstrap-icons";
+  content: "\f415";
+  background: linear-gradient(to top, #ff79da 40%, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Menu__Btn--price {
+  font-size: 0.8125rem;
+}
+.Menu__Btn--price:hover {
+  right: 15%;
+}
+.Menu__Btn--price .Menu__Select {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: 5px;
+  padding: 4% 0 4% 2%;
+}
+.Menu__Btn--price .Menu__Select:hover {
+  width: 70%;
+  transition: right 0.4s ease-in-out;
+}
+.Menu__Btn--price .Menu__Select--dishe {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin: 0;
+}
+.Menu__Btn--price .Menu__Select--dishe:hover {
+  white-space: Nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.Menu__Btn--price .Menu__Select--dishe:hover.Dishe--Info-translation {
+  width: 70%;
+  transition: right 0.4s ease-in-out;
+}
+.Menu__Btn--price .Menu__Select--info {
+  font-weight: 300;
+  font-size: 0.8125rem;
+  align-self: flex-start;
+  margin: 0;
+}
+.Menu__Btn--price .Menu__Select--info:hover {
+  white-space: Nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.Menu__Btn--price .Menu__Select--info:hover.Dishe--Info-translation {
+  width: 70%;
+  transition: right 0.4s ease-in-out;
 }/*# sourceMappingURL=Restaurant-Mobile.css.map */

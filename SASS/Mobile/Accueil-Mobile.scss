@@ -9,7 +9,7 @@
         font-family: $mainFont;        
     }
 
-@media screen and (min-width : 320px) and (max-width : 780px){
+//@media screen and (min-width : 320px) and (max-width : 780px){}
 /*BODY*/
     body {
          width: 100%; 
@@ -144,11 +144,11 @@
                     padding:0 18px 55px 18px;
                     width: $main-Width;
                     &--title {
-                        grid-area: 1/1/3/2;                                                                       
+                        grid-area: 1/1/2/2;                                                                       
                         font-size: $mainFontS24;
                         font-weight: $mainFontW700;
                         justify-self: left;                    
-                        margin:43% 0 -10% 0;                                                                                                  
+                        margin:43% 0 -20% 0;                                                                                                  
                     }
                 }
                 .Restaurant__link{
@@ -257,10 +257,10 @@
                 .Cards__Container .Restaurant__link:nth-child(5) .Card__Box--new:first-child {
                     visibility: $Advertise;
                 }                                         
-}
+
 @media screen and (min-width : 320px) and (max-width : 376px){
          
-    .Card__Box{
+   .Card__Box{
         grid-template-rows: repeat(8,1fr);
     }
     .Card__Box--new{                    

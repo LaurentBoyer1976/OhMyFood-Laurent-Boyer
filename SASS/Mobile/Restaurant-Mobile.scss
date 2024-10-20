@@ -2,7 +2,7 @@
 @import '../Var&Mixins.scss';
 
 
-@media screen and (min-width : 320px) and (max-width : 780px){
+//@media screen and (min-width : 320px) and (max-width : 780px){}
 
 /*Général*/
 *{
@@ -213,8 +213,13 @@ body {
         }     
     }
     
-}
+
 @media screen and (min-width : 320px) and (max-width : 369px){
+    
+    .Restaurant__Presentation--title {        
+        font-size: 1.6rem;        
+    }
+}
 
     .bi-heart{
         @include HeartPosition($Rightposition: 5%);
@@ -229,7 +234,7 @@ body {
         &:hover{
             right: 15%;
         }
-}
+
     .Menu__Select{
         @include Display__Box($flow: column wrap, $Alignitems: flex-start);
         width: 100%;
