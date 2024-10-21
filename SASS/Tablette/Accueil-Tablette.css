@@ -1017,7 +1017,7 @@
     margin-top: 10px;
     width: 31px;
     height: 31px;
-    animation: Heartbeat 0.3s ease-in-out 2 0.5s;
+    animation: Heartbeat 0.3s ease-in-out 2 7s;
   }
   .Information__Box .Heartbox .bi-heart {
     display: flex;

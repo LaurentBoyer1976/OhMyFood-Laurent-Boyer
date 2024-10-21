@@ -211,7 +211,7 @@
                             margin-top: auto;         
                             width: 31px;
                             height: 31px;
-                            animation:$HeartPulse;
+                            animation:$HeartPulseIndex;
                             .bi-heart{
                                 @include HeartPosition;
                                 @include HeartSize;

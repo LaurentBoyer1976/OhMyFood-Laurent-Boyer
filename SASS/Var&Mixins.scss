@@ -207,7 +207,8 @@
  $TransHover: right 0.4s ease-in-out;
  $TransHovGreenCheck: 0.6s cubic-bezier(.97,.1,.45,.7);
  $TransHovtextoverflow: 0.6s cubic-bezier(.97,.1,.45,.7) 0.3s;
- $HeartPulse: Heartbeat 0.3s ease-in-out 2 0.5s; 
+ $HeartPulse: Heartbeat 0.3s ease-in-out 2 0.5s;
+ $HeartPulseIndex: Heartbeat 0.3s ease-in-out 2 7s;  
  
 
 //Mixins
@@ -594,7 +595,6 @@
             animation-timing-function: ease-out;
             transform: translateY(0);
         }
-    
         5% {
             animation-timing-function: ease-in;
             transform: translateY(5%);
@@ -602,7 +602,7 @@
     
         15% {
             animation-timing-function: ease-out;
-            transform: translateY(0);
+            opacity: 0.85;
         }
     
         25% {
