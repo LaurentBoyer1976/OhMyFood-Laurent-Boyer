@@ -47,67 +47,41 @@
     }
     @media screen and (min-width : 1024px) and (max-width : 2500px){
         #Generic__Footer{
-            display: grid;
-            align-items: end;            
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr;
-            grid-template-areas: "Container__List";  
+            @include Display__Box($flow: row-reverse, $justifyC: normal, $Alignitems: flex-end);
             min-height: 114px;       
             
         }
         .Container__List{
-            grid-area: Container__List;
-            display: grid;
-            grid-template-columns:repeat(8, 1fr);
-            grid-template-rows: 1fr;                                  
-            padding-right: 3%;
-            gap: 3%;
-            position: relative;
-            &--logo{
-                display: inline-grid;
-                grid-area: 1/8/1/8;
-                align-self: self-start;
-                position: absolute;
-                top: -45%;
-            }                                                 
+            @include Display__Box($flow: row-reverse, $justifyC: normal, $Alignitems: center);                    
+            width: 100%;
+            div:first-child{
+                @include Display__Box($flow: row-reverse, $justifyC: normal, $Alignitems: normal);
+                margin-right: 5%;       
+            }
+            div:last-child{
+                @include Display__Box( $justifyC: flex-end, $Alignitems: normal);
+                align-items: flex-end;                
+                margin-right: 2%;
+                width: 100%;
+                .List__Info{
+                    @include Display__Box($flow: row nowrap, $justifyC: flex-end, $Alignitems: center);
+                    width: 100%;                     
+                    justify-items: end;
+                    column-gap: 1%;                                                                 
+                        &--suggest{                
+                            @include Display__Box($flow: row nowrap, $justifyC: normal);                                                           
+                        }
+                        &--partner{                
+                            @include Display__Box($flow: row nowrap, $justifyC: normal);                                           
+                            margin-right: 2%;
+                        }
+                        &--legal{
+                            @include Display__Box($flow: row nowrap, $justifyC: normal);
+                            
+                        }                                                                                              
+                }
+            }                                            
         }
-        .List__Info{
-            grid-area: 1/1/1/8;
-            display: grid;
-            grid-template-columns: repeat(4, 1.5fr) 0.5fr;
-            grid-template-rows: 1fr;
-            justify-items: end; 
-            justify-self: end;          
-                       
-            &--suggest{
-                display: inline-block;                
-                grid-area: 1/1/1/3;
-                justify-self: start;
-                margin-left: -18%;                                 
-            }
-            &--partner{
-                display: inline-block;
-                grid-area: 1/2/1/4;
-                justify-self: start;
-                padding-left: 16%; 
-                
-            }           
-            &--legal{
-                display: inline-block;
-                grid-area: 1/4/1/5;
-                
-            }
-            &--contact{
-                display: inline-block;
-                justify-self: start;
-                grid-area: 1/5/1/6;
-            }
-            &--contact{
-                display: inline-block;
-                justify-self: start;
-                grid-area: 1/5/1/6;
-            }
-
-        }        
+               
        
     }
