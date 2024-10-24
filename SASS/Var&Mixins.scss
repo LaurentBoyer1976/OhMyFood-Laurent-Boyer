@@ -282,7 +282,7 @@
     transform: $transform;
     transition: $TransHovGreenCheck;  
  }
- @mixin RtoL_PriceTranslate($transform: translateX(-60%), $transition: $TransHovGreenCheck, $right: 6%){
+ @mixin RtoL_PriceTranslate($transform: translateX(0%), $transition: $TransHovGreenCheck, $right: 6%){
     transform: $transform;
     transition: $TransHovGreenCheck;
     right: $right;  
