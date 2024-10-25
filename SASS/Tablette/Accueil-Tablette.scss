@@ -103,7 +103,7 @@
                  }                         
                  .C-HowItWorks__Container{
                      @include Display__Box($Alignitems:normal);
-                     @include Size__Box();
+                     @include Size__Box($Sizing:unset);
                      padding: 0 10.85% 0 12.5%;                                                    
                      &--title{
                          @include mains__title();
@@ -174,8 +174,7 @@
                             ". link3 . link4 ."
                             ". . . . .";                            
                         height: 82%;
-                        width: 75%;                                
-                        box-sizing: $main-Bsizing;                                                            
+                        width: 75%;                                                                                                                   
                         position: relative;
                         justify-items: center;
                         justify-self: center;                               
@@ -197,8 +196,7 @@
                         text-decoration: none;                                                              
                         height: 251px;
                         width: 160%;
-                        max-width: 490px;
-                        box-sizing: border-box;               
+                        max-width: 490px;                                       
                         }                          
                     .Restaurant__link:nth-of-type(1){
                         grid-area: link1;                
@@ -233,8 +231,7 @@
                         position: relative;                                        
                         &--IMG{
                             grid-area: 1/1/8/11;
-                            clip-path: $cutoutIMG;
-                            box-sizing: border-box;
+                            clip-path: $cutoutIMG;                            
                             object-fit: cover;
                             width: 100%;
                             max-height: 231px;                                                            

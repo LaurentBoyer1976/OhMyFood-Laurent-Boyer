@@ -17,7 +17,7 @@ body {
   grid-template-columns: 1fr;
   background-color: #1fe0;
   margin:0;
-  @include Size__Box();            
+  @include Size__Box($Sizing: unset);            
   }
   .Main-Container{
      display: grid;
@@ -80,7 +80,7 @@ body {
   }      
   .Background__Menu{
       grid-area: 1 / 1 / 5 / 4;
-      @include Size__Box;        
+      @include Size__Box($Sizing: unset);        
       width: 100%;
       height: 373px;
       background-size: cover;      

@@ -822,7 +822,7 @@
     align-items: normal;
     min-width: 320px;
     max-width: 100%;
-    box-sizing: border-box;
+    box-sizing: unset;
     padding: 0 10.85% 0 12.5%;
   }
   .C-HowItWorks__Container--title {
@@ -868,8 +868,8 @@
     position: relative;
     align-content: unset;
     justify-content: normal;
-    margin: 5px;
-    padding: 30px 10px 30px 0px;
+    margin: 0;
+    padding: 0;
     width: 100%;
     font-weight: 500;
     background-color: #f6f6f6;
@@ -913,7 +913,6 @@
     grid-template-areas: ". Cards__Container--title Cards__Container--title Cards__Container--title Cards__Container--title" " . link1 . link2 ." ". . . . ." ". link3 . link4 ." ". . . . .";
     height: 82%;
     width: 75%;
-    box-sizing: border-box;
     position: relative;
     justify-items: center;
     justify-self: center;
@@ -936,7 +935,6 @@
     height: 251px;
     width: 160%;
     max-width: 490px;
-    box-sizing: border-box;
   }
   .Restaurant__link:nth-of-type(1) {
     grid-area: link1;
@@ -972,7 +970,6 @@
     grid-area: 1/1/8/11;
     -webkit-clip-path: inset(25% 0% 0% 0% round 15px 15px);
             clip-path: inset(25% 0% 0% 0% round 15px 15px);
-    box-sizing: border-box;
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
