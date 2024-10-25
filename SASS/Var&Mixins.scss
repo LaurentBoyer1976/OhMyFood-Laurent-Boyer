@@ -107,7 +107,7 @@
             box-sizing: $B-Sizing;  
         }
         /*mixins Section HowItWorks*/
-        @mixin HowItWorksBTN($display: flex, $flow: wrap, $position: relative, $alignC: center, $justifyC: center, $Lmargin: 5px, $Padding: 30px 10px 30px 0px, $Radius: 20px, $FontSize: 1rem, $Width: 100%, $FontWeight: $mainFontW500, $BCKGroundColor: $bodyColor, $Border: none, $BShadow: $Shadow) {
+        @mixin HowItWorksBTN($display: flex, $flow: wrap, $position: relative, $alignC: center, $justifyC: center, $Lmargin: 0, $Padding: 0, $Radius: 20px, $FontSize: 1rem, $Width: 100%, $FontWeight: $mainFontW500, $BCKGroundColor: $bodyColor, $Border: none, $BShadow: $Shadow) {
             @include Display-Step($display, $flow, $position, $alignC, $justifyC);
             margin: $Lmargin;
             padding: $Padding;

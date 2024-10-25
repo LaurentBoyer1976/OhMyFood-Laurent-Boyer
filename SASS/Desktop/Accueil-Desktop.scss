@@ -30,7 +30,7 @@
         main{
             grid-area: main;
             display: grid;
-            max-width: 1900px;
+            max-width: 1440px;
             width: 100%;            
             grid-template-columns: 1fr;
             grid-template-rows: 11% 18% 17% 54%;                        
@@ -155,12 +155,14 @@
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
                         grid-template-rows: 0.5fr 1fr 0.5fr ;                                                                              
-                        grid-area: C-HowItWorks__Container;
-                        padding: 0 10.85% 0 12.5%;                                                    
+                        grid-area: C-HowItWorks__Container;                        
+                        margin: 0 auto;
+                        width: 90%;
+                        max-width: 1080px;
+                        justify-items: center;                                                    
                         &--title{
                             display: grid;
-                            align-items: center;
-                            padding-left: 6%;
+                            justify-self: start;                            
                             grid-area: 1/1/2/4;
                             @include mains__title();                                                        
                         }                                                           
@@ -171,32 +173,42 @@
                         grid-template-columns: repeat(3, 1fr) ;
                         grid-template-rows: 0.5fr;                        
                         grid-auto-flow: row;
-                        grid-template-areas:"Step1 Step2 Step3";                        
+                        grid-template-areas:"Step1 Step2 Step3";
+                        column-gap: 4%;
+                        width: 100%;
+                        max-width: 1080px;
                                                         
                         }                              
                     .C-HowItWorks__BlockStep{
                         display: grid;
-                        grid-template-columns: 0.5fr 1fr 1fr 1fr;
+                        grid-template-columns: repeat(3, 1fr);
                         grid-template-rows: 1fr;
-                        grid-template-areas:"NumberContainer Btn Btn Btn";
+                        grid-template-areas:"Btn Btn Btn";
                         position: relative;
                         width: 100%;
-                        max-width: 335px;                                                                           
+                        max-width: 335px;
+                        align-items: center;                                                                           
                         &--NumberContainer{
                             grid-area: NumberContainer;
-                            position: relative;
-                            top: -27%;
-                            right: -30%;                            
+                            position: absolute;                            
+                            width: 25px;                            
+                            height: 25px;
+                            z-index: 2;
+                            left: -5%;
+                            
                             }                
                         &--Nbr{
-                            @include Display-Step($position: absolute);                   
-                            @include Position-Step( $Postop: 62%, $PosRight: 3%);
+                            @include Display-Step($position: static);                   
+                            @include Position-Step($Zindex:0, $Postop:0, $PosRight: 0);
                             @include Step-Style();                          
                             }                               
                         &--Btn{
                             grid-area: Btn; 
-                            @include HowItWorksBTN($justifyC:normal, $alignC:unset, $flow: nowrap);                                                                               
-                            font-size: $mainFontS16;                                                           
+                            @include HowItWorksBTN($justifyC:normal, $alignC:normal, $flow: nowrap);                                                                               
+                            height: 73px;
+                            max-width: 322px;
+                            font-size: $mainFontS16;
+                            align-items: center;                                                           
                             }
                         &--Btn i{ 
                             display: flex;                                                                                                   
@@ -231,17 +243,18 @@
                 .Cards__Container{
                 grid-area: Cards__Container;
                 display: grid;
-                grid-template-columns: repeat(6, 1fr); 
+                grid-template-columns: repeat(12, 1fr); 
                 grid-template-rows: 0.5fr 1fr 0.5fr 1fr 0.5fr;                                                        
                 height: 82%;
-                width: 75%;                                                                                                           
+                width: 100%;
+                max-width: 1080px;                                                                                                           
                 position: relative;                                              
                 &--title {
                     grid-area: 1/1/2/2;                                                                       
                     font-size: $mainFontS24;
                     font-weight: $mainFontW700;                                                                                
                     position: absolute; 
-                    left: 22%;                                                                                                                     
+                    left: 60%;                                                                                                                     
                     }
                 }
             .Restaurant__link{
@@ -252,33 +265,32 @@
                 text-decoration: none;                                                              
                 height: 251px;
                 min-width: 351px;
-                max-width: 490px;
-                box-sizing: border-box; 
+                max-width: 445px;
+                width: 100%;                
                 position: relative;                               
                 }                          
             .Restaurant__link:nth-of-type(1){
-                grid-area: 2/1/4/3;                
+                grid-area: 2/1/4/6;                
                 position: absolute;
                 top: -30%;
-                left: 10%;
+                left: 11%;
                 }
             .Restaurant__link:nth-of-type(2){
-                grid-area: 2/4/4/6;                
+                grid-area: 2/8/4/13;                
                 position: absolute;
                 top: -30%;
-                right: -62%;                                                                                                                         
+                                                                                                                                        
                 }          
             .Restaurant__link:nth-of-type(3){
-                grid-area:  3/1/5/3;
+                grid-area:  3/1/5/6;
                 position: absolute;
                 top: 15%;
-                left: 10%;                                                                                                                                                   
+                left: 11%;                                                                                                                                                  
                 }          
             .Restaurant__link:nth-of-type(4){
-                grid-area:  3/4/5/6;               
+                grid-area:  3/8/5/13;               
                 position: absolute;
-                top: 15%;
-                right: -62%;              
+                top: 15%;                              
                                                                                                                                         
                 }                                      
             .Card__Box{
