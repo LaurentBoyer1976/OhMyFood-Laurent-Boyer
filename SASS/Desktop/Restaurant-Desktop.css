@@ -944,13 +944,13 @@
     font-weight: 700;
     font-size: 0.9375rem;
     padding: 13.5px 15px 13.5px;
-    transform: translateX(0%);
+    transform: translateX(0);
     transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
   }
   .Menu__Btn:hover .Menu__Btn--price {
-    transform: translateX(0%);
+    transform: translateX(0);
     transition: 0.6s cubic-bezier(0.97, 0.1, 0.45, 0.7);
-    right: 6%;
+    right: 15%;
   }
   .Menu__Btn:hover .Menu__Select {
     width: 70%;

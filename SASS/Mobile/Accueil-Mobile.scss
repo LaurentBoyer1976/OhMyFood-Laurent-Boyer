@@ -26,19 +26,19 @@
         /*Header*/                                 
             #Head__site{
                 @include HeaderPosition();            
-                @include Size__Box();                
+                @include Size__Box($Sizing: unset);                
                 width: $main-Width;
                 z-index: 2;
             }
             .Navbar{
-                @include NavbarStyle();                
+                @include NavbarStyle($B-Sizing: unset);                
                 width: $main-Width;
             }                    
                 .Navbar__Title{
                     padding: 14px 89px 13px 89px;
                 }        
                 .Navbar__GeoLoc{
-                    @include NavbarStyle($flow: row wrap);                
+                    @include NavbarStyle($flow: row wrap, $B-Sizing: unset);                
                     background-color: $geolocColor;
                     gap: 17px;
                     width: 100%;
@@ -52,7 +52,7 @@
                 /* Explore__section*/
             #Explore{
                 @include Display__Box($justifyC: normal);
-                @include Size__Box();
+                @include Size__Box($Sizing: unset);
                 background-color: $bodyColor;
                 padding: 35px 0 55px 0;
                 width: $main-Width;
@@ -62,7 +62,7 @@
                 }
                 .C-Explore__Site{
                     @include Display__Box($justifyC: normal);
-                    @include Size__Box();
+                    @include Size__Box($Sizing: unset);
                     gap:20px;                   
                     &--title{
                         @include mains__title();                    
@@ -89,36 +89,51 @@
             #HowItWorks{
                 @include Display__Box($justifyC: unset, $Alignitems:unset);
                 @include Size__Box();
-                padding: 40px 20px 65px 20px;
+                
                 width: 100%;
             }        
                     .C-HowItWorks{
                         @include Display__Box($justifyC: unset, $Alignitems:unset);
-                        @include Size__Box();                    
+                        @include Size__Box($Sizing: unset);                    
                         height: 100%;
                     }                         
                             .C-HowItWorks__Container{
                                 @include Display__Box($Alignitems:unset);
-                                @include Size__Box();
-                                
+                                @include Size__Box($Sizing: unset);
+                                margin: 30px auto;
+                                row-gap: 24px;                                
                                 &--title{
                                     @include mains__title();
                                     align-self: flex-start;
                                     margin: 0;
-                                }                                                           
+                                }                                                                            
+                            }
+                            .C-HowItWorks__Step{
+                                display: flex;
+                                flex-flow: column nowrap;
+                                row-gap: 24px;
                             }                               
                             .C-HowItWorks__BlockStep{
-                                &--NumberContainer{
-                                    display: flex;
-                                }                
+                                display: flex;
+                                align-items: center;
+                                min-height: 73px;
+                                position: relative;
+                                    &--NumberContainer{
+                                        display: flex;
+                                        width: 25px;
+                                        height: 25px;
+                                        position: absolute;
+                                        left: -10px;
+                                    }                                              
                                 &--Nbr{
-                                    @include Display-Step();                   
-                                    @include Position-Step();
+                                    @include Display-Step($position : static);                   
+                                    @include Position-Step($Postop:0, $PosRight: 0,);
                                     @include Step-Style();                          
                                 }                               
                                 &--Btn{ 
-                                    @include HowItWorksBTN($justifyC:unset, $alignC:unset );                                                                               
+                                    @include HowItWorksBTN($justifyC:unset, $alignC:center);                                                                               
                                     font-size: $mainFontS16;
+                                    height: 73px;
                                 }
                                 &--Btn i{ 
                                     display: flex;                                                                                                   

@@ -195,7 +195,6 @@ body {
     }
     .Menu__Btn:hover .Menu__Btn--price{
         @include RtoL_PriceTranslate; 
-
     }
     .Menu__Btn:hover .Menu__Select{
         width: 70%;

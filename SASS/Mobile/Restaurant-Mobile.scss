@@ -168,7 +168,7 @@ body {
             &--price{
                 @include MenuPrice;
                 @include  LtoR_PriceTranslate;                                           
-            }                   
+            }                              
     }
     .Menu__Btn:hover .Menu__Btn--price{
         @include RtoL_PriceTranslate;           

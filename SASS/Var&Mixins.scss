@@ -279,13 +279,13 @@
     transition: $transition;
     opacity: $opacity; 
  }
- @mixin LtoR_PriceTranslate($transform: translateX(0%), $transition: $TransHovGreenCheck){
+ @mixin LtoR_PriceTranslate($transform: translateX(0), $transition: $TransHovGreenCheck){
     transform: $transform;
-    transition: $TransHovGreenCheck;  
+    transition: $transition;  
  }
- @mixin RtoL_PriceTranslate($transform: translateX(0%), $transition: $TransHovGreenCheck, $right: 6%){
+ @mixin RtoL_PriceTranslate($transform: translateX(0), $transition: $TransHovGreenCheck, $right:15%){
     transform: $transform;
-    transition: $TransHovGreenCheck;
+    transition: $transition;
     right: $right;  
  }
 //Animations et Keyframes Accueil et menu
