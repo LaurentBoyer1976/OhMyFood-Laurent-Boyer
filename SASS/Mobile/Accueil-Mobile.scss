@@ -253,8 +253,7 @@
                 }                                                                                
                 .Description__text{
                     display: flex;
-                    flex-flow: column;
-                    height: 100%;
+                    flex-flow: column;                   
                     justify-content: space-around;
                     gap: 10%;                    
                     &--name{
@@ -286,6 +285,7 @@
                            
     .Information__Box{
         grid-area: 7/1/10/10;
+        height: 100%;
         top: -40%;
         max-height: fit-content;
     }

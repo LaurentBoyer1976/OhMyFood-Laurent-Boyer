@@ -1052,7 +1052,6 @@ main {
 .Description__text {
   display: flex;
   flex-flow: column;
-  height: 100%;
   justify-content: space-around;
   gap: 10%;
 }
@@ -1084,6 +1083,7 @@ main {
   }
   .Information__Box {
     grid-area: 7/1/10/10;
+    height: 100%;
     top: -40%;
     max-height: -moz-fit-content;
     max-height: fit-content;
