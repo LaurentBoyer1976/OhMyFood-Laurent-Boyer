@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@media screen and (min-width: 1024px) and (max-width: 2500px) {
+@media (min-width: 1024px) {
   /*Importation des fichiers styles, variables et mixins*/
   /*Variables*/
   /*color*/
@@ -372,7 +372,7 @@
   /*How It Works Section*/
   /*Main-Article, restaurant lien et carte de présentation*/
 }
-@media screen and (min-width: 1024px) and (max-width: 2500px) and (min-width: 1024px) and (max-width: 2500px) {
+@media screen and (min-width: 1024px) and (min-width: 1024px) and (max-width: 2500px) {
   #Generic__Footer {
     display: flex;
     flex-flow: row-reverse;
@@ -433,7 +433,7 @@
     align-items: center;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 2500px) {
+@media (min-width: 1024px) {
   @keyframes Heartbeat {
     0% {
       transform: scale(1);
@@ -1110,7 +1110,7 @@
     animation: GreenHeartIn 2s ease 0s 1 normal forwards;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 2500px) and (min-width: 780.1px) and (max-width: 1023.9px) {
+@media screen and (min-width: 1024px) and (min-width: 780.1px) and (max-width: 1023.9px) {
   #Loader {
     display: grid;
     align-items: center;
@@ -1241,7 +1241,7 @@
     -webkit-text-fill-color: transparent;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 2500px) and (min-width: 1024px) and (max-width: 2500px) {
+@media screen and (min-width: 1024px) and (min-width: 1024px) and (max-width: 2500px) {
   #Loader {
     display: grid;
     align-items: center;
@@ -1373,7 +1373,7 @@
     -webkit-text-fill-color: transparent;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 2500px) {
+@media (min-width: 1024px) {
   * {
     font-family: "Roboto", sans-serif;
     margin: 0;
@@ -1651,7 +1651,7 @@
     text-decoration: none;
     height: 251px;
     min-width: 351px;
-    max-width: 445px;
+    max-width: 490px;
     width: 100%;
     position: absolute;
   }

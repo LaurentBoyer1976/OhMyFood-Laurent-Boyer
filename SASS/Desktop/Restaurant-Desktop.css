@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@media screen and (min-width: 1024px) and (max-width: 2500px) {
+@media (min-width: 1024px) {
   /*Importation des fichiers styles, variables et mixins*/
   /*Variables*/
   /*color*/
@@ -355,7 +355,7 @@
   /*header et navbar styles*/
   /*Main et Menu et card menu*/
 }
-@media screen and (min-width: 1024px) and (max-width: 2500px) and (min-width: 1024px) and (max-width: 2500px) {
+@media screen and (min-width: 1024px) and (min-width: 1024px) and (max-width: 2500px) {
   #Generic__Footer {
     display: flex;
     flex-flow: row-reverse;
@@ -416,7 +416,7 @@
     align-items: center;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 2500px) {
+@media (min-width: 1024px) {
   @keyframes Heartbeat {
     0% {
       transform: scale(1);
