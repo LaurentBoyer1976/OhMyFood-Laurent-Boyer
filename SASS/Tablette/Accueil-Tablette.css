@@ -356,7 +356,7 @@
   /* Explore__section*/
   /*How It Works Section*/
 }
-@media screen and (min-width: 780.1px) and (max-width: 1023.9px) and (min-width: 1024px) and (max-width: 2500px) {
+@media screen and (min-width: 780.1px) and (max-width: 1023.9px) and (min-width: 1024px) {
   #Generic__Footer {
     display: flex;
     flex-flow: row-reverse;

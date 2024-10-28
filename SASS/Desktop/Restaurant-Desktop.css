@@ -355,7 +355,7 @@
   /*header et navbar styles*/
   /*Main et Menu et card menu*/
 }
-@media screen and (min-width: 1024px) and (min-width: 1024px) and (max-width: 2500px) {
+@media (min-width: 1024px) and (min-width: 1024px) {
   #Generic__Footer {
     display: flex;
     flex-flow: row-reverse;

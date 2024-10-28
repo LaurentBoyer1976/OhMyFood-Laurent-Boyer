@@ -45,7 +45,7 @@
             color: $BtnFontColor;
         }
     }
-    @media screen and (min-width : 1024px) and (max-width : 2500px){
+    @media (min-width : 1024px) {
         #Generic__Footer{
             @include Display__Box($flow: row-reverse, $justifyC: normal, $Alignitems: flex-end);
             min-height: 114px;       
